@@ -40,5 +40,4 @@ public class Potion : MonoBehaviour
             Debug.Log("Currently not a known potion");
         }
     }
-    
 }
