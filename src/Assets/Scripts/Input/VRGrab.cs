@@ -26,9 +26,9 @@ public class VRGrab : MonoBehaviour
     [SerializeField] private Animator _gloveAnimator;
     private UnityEngine.XR.InputDevice inputDevice;
 
-    private float indexValue;
-    private float thumbValue;
-    private float threeFingersValue;
+    private float indexValue = 0;
+    private float thumbValue = 0;
+    private float threeFingersValue = 0;
 
     private void Awake()
     {
@@ -43,6 +43,34 @@ public class VRGrab : MonoBehaviour
         pointAction.canceled += UnPoint;
     }
 
+    private bool _isGrabbing;
+    private bool _isTriggering;
+
+    private void FixedUpdate()
+    {
+        if (_isGrabbing)
+        {
+            threeFingersValue += thumbMoveSpeed;
+        }
+        else
+        {
+            threeFingersValue -= thumbMoveSpeed;
+        }
+
+        if (_isTriggering)
+        {
+            indexValue += thumbMoveSpeed;
+        }
+        else
+        {
+            indexValue -= thumbMoveSpeed;
+        }
+
+        threeFingersValue = Mathf.Clamp(threeFingersValue, 0, 1);
+        indexValue = Mathf.Clamp(indexValue, 0, 1);
+        _gloveAnimator.SetFloat("ThreeFingers", threeFingersValue);
+        _gloveAnimator.SetFloat("Index", indexValue);
+    }
     private void Start()
     {
         ResetAnimations();
@@ -50,7 +78,7 @@ public class VRGrab : MonoBehaviour
 
     private void ResetAnimations()
     {
-        _gloveAnimator.SetFloat("Thumb", 0);
+        _gloveAnimator.SetFloat("Thumb", thumbValue);
         _gloveAnimator.SetFloat("ThreeFingers", 0);
         _gloveAnimator.SetFloat("Index", 0);
     }
@@ -66,22 +94,22 @@ public class VRGrab : MonoBehaviour
 
     private void Point(InputAction.CallbackContext context)
     {
-        _gloveAnimator.SetFloat("Index", 1);
+        _isTriggering = true;
     }
 
     private void UnPoint(InputAction.CallbackContext context)
     {
-        _gloveAnimator.SetFloat("Index", 0);
+        _isTriggering = false;
     }
 
     private void Grab(InputAction.CallbackContext context)
     {
-        _gloveAnimator.SetFloat("ThreeFingers", 1);
+        _isGrabbing = true;
     }
 
     private void UnGrab(InputAction.CallbackContext context)
     {
-        _gloveAnimator.SetFloat("ThreeFingers", 0);
+        _isGrabbing = false;
     }
 
     private UnityEngine.XR.InputDevice GetInputDevice()
