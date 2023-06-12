@@ -7,24 +7,13 @@ public class IngredientSpawner : MonoBehaviour
     [SerializeField] private Ingredient prefabToSpawn;
 
     [SerializeField] private IngredientData ingredientData;
-    // Start is called before the first frame update
-    void Start()
-    {
-        SpawnIngredient();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
+    
     private float VarianceToValue(float variance)
     {
         return Random.value * variance - variance / 2;
     }
     
-    private void SpawnIngredient()
+    public Ingredient SpawnIngredient()
     {
         GameObject noob = Instantiate(prefabToSpawn.gameObject, transform.position, Quaternion.identity);
         Ingredient ingredient = noob.GetComponent<Ingredient>();
@@ -39,5 +28,7 @@ public class IngredientSpawner : MonoBehaviour
         ingredient.IntensityModifier =
             ingredientData.IntensityModifier + VarianceToValue(ingredientData.IntensityVariance);
         ingredient.SwirlModifier = ingredientData.SwirlModifier + VarianceToValue(ingredientData.SwirlVariance);
+
+        return ingredient;
     }
 }
