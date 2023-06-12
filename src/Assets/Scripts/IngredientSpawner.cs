@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class IngredientSpawner : MonoBehaviour
 {
-    [SerializeField] private GameObject prefabToSpawn;
+    [SerializeField] private Ingredient prefabToSpawn;
 
     [SerializeField] private IngredientData ingredientData;
     // Start is called before the first frame update
@@ -26,7 +26,7 @@ public class IngredientSpawner : MonoBehaviour
     
     private void SpawnIngredient()
     {
-        GameObject noob = Instantiate(prefabToSpawn, transform.position, Quaternion.identity);
+        GameObject noob = Instantiate(prefabToSpawn.gameObject, transform.position, Quaternion.identity);
         Ingredient ingredient = noob.GetComponent<Ingredient>();
         ingredient.IngredientType = ingredientData.IngredientType;
         

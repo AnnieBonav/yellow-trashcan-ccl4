@@ -152,8 +152,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 285e8afbd6a0f4421a4fd911b2dbca0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefabToSpawn: {fileID: 5053701683856031596, guid: 1157d7efe1da0ab4c9e0a4d31fd5fc44, type: 3}
-  ingredientData: {fileID: 11400000, guid: 05492c23de4574057bfd42da10e16095, type: 2}
+  prefabToSpawn: {fileID: -8148156931760929126, guid: 1157d7efe1da0ab4c9e0a4d31fd5fc44, type: 3}
+  ingredientData: {fileID: 11400000, guid: 298e99dd6638f491f9d8d49936823edd, type: 2}
 --- !u!4 &307151328
 Transform:
   m_ObjectHideFlags: 0
@@ -477,5 +477,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 285e8afbd6a0f4421a4fd911b2dbca0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefabToSpawn: {fileID: 5053701683856031596, guid: 1157d7efe1da0ab4c9e0a4d31fd5fc44, type: 3}
+  prefabToSpawn: {fileID: -8148156931760929126, guid: 1157d7efe1da0ab4c9e0a4d31fd5fc44, type: 3}
   ingredientData: {fileID: 11400000, guid: 05492c23de4574057bfd42da10e16095, type: 2}
