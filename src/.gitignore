@@ -65,3 +65,14 @@ crashlytics-build.properties
 # Other
 **/[Ss]amples/
 
+#WWise
+
+.backup*
+.cache*
+*.akd
+*.prof
+*.validationcache
+*.wsettings
+AKWwiseProjectData.asset
+IncrementalSoundBankData.xml
+PluginInfo.xmlSoundbanksInfo.xml
