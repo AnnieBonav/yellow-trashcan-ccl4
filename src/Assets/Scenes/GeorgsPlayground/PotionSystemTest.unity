@@ -215,6 +215,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   recipes:
   - {fileID: 11400000, guid: 23218b9a0fd364227aa53a9b1568ba52, type: 2}
+  - {fileID: 11400000, guid: 8a90ea8e119794d4a8b0357f589dda30, type: 2}
 --- !u!1 &360858055
 GameObject:
   m_ObjectHideFlags: 0

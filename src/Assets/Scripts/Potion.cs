@@ -40,12 +40,5 @@ public class Potion : MonoBehaviour
             Debug.Log("Currently not a known potion");
         }
     }
-
-    private void Start()
-    {
-        AddIngredient(IngredientType.Placeholder1);
-        AddIngredient(IngredientType.Placeholder1);
-        AddIngredient(IngredientType.Placeholder2);
-        AddIngredient(IngredientType.Placeholder2);
-    }
+    
 }
