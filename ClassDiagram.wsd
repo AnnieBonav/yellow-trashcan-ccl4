@@ -1,0 +1,100 @@
+class Ingredient {
+    - intensityModifier : float
+    - colourModifier : Vector4
+    - prefab : GameObject
+    - collider : Collider
+    --
+    - Destroy() : void
+}
+
+enum IngredientType {
+    - name : string
+}
+
+class Potion {
+    - ingredients : Dictionary<IngredientType, int>
+    --
+    + IsEqual(Potion) : bool
+}
+
+Potion o-- IngredientType
+
+class Brew {
+    - correctPotions : List<Dictionary<IngredientType, int>>
+    - addedIngredients : Dictionary<IngredientType, int>
+    --
+    + AddIngredient(Ingredient) : void
+    + ConvertToPotion() : void
+}
+
+Brew o-- IngredientType
+
+class Refiller {
+    - ingredient : Ingredient
+    {static} RefillIngredient: Action<Ingredient>
+    --
+    - Refill() : void
+}
+
+class Timer {
+    - timeToLive : float
+    {static} FinishedTime: Action<>
+    --
+    + StartTimer() : void
+    + PauseTimer() : void
+    + KillTimer() : void
+}
+
+class StateHandler {
+    - levelDuration : Timer
+    - dialogueTrigger : Dictionary<Dialogue, bool>
+    --
+    - NextDialogue() : void
+}
+
+StateHandler *-- Timer
+
+class Client {
+    - potionRequest : Potion
+    - animator : Animator
+    - timeToFulfill : Timer
+    --
+    - RequestPotion() : void
+}
+
+Client *-- Timer
+
+
+class Player {
+    - currentPoints : int
+    --
+    - AddPoints(int) : void
+}
+
+class Grababble {
+    - collider : Collider
+    - isClose : bool
+    --
+    + Grab() : void
+    + Release() : void
+}
+
+class Container {
+    - Grab() : void
+}
+
+class Refiller {
+    - ingredientPrefab : GameObject
+    --
+    - SpawnIngredient() : void
+}
+
+class Dialogue {
+    - sentence : string
+}
+
+class StorageManager {
+    + Dictionary<Ingredient, int>
+    --
+    - AddIngredient(Ingredient) : void
+}

@@ -22,11 +22,6 @@ The order in which the ingredients are put does not matter for the final outcome
 ## Taking out the potion
 The user needs to be the one that says when the potion is done, hence, there needs to be an extra action for it. They will need to grab one of the empty available flasks and grab the potion with it, then the inside will be transfered to the flask and they will be able to chosoe which client it goes to.
 
-## Stirring
-A cool way of implementing anotehr interaction that is made possible by using VR is stirring. The elixir that the customers are asking for will have a sign on how the stirring should go. The user can choose to complete the potion without stirring. But, if the user does decide to stirr and they do it correctly, then they will be rewarded. If they do not do the stirring correctly, thenm they will be punished. And if they do not stir at all, nothing out of the ordinary will happen.
-
-Whenever the user grabs the stirring object, the view will be locked on the pot and the stirring interaction will start.
-
 ## Refilling ingredients
 ** TBD **
 
@@ -91,4 +86,8 @@ UI will be super important to make sure the suer knows what is going on.
 ## Future possible challenges
 - Need to wait for stuff to refill
 - Glasses need to be cleaned
+
+A cool way of implementing anotehr interaction that is made possible by using VR is stirring. The elixir that the customers are asking for will have a sign on how the stirring should go. The user can choose to complete the potion without stirring. But, if the user does decide to stirr and they do it correctly, then they will be rewarded. If they do not do the stirring correctly, thenm they will be punished. And if they do not stir at all, nothing out of the ordinary will happen.
+
+Whenever the user grabs the stirring object, the view will be locked on the pot and the stirring interaction will start.
 
