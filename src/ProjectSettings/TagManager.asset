@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Floor
   - Vial
+  - Container
   layers:
   - Default
   - TransparentFX
