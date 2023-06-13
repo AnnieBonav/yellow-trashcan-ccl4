@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using TMPro;
 using UnityEngine;
@@ -23,7 +24,7 @@ public class Customer : MonoBehaviour
     private RecipeData _requestedPotion;
     private IEnumerator _getAngryCoroutine;
 
-    private Quaternion _previousRotation;
+    private Vector3 _previousForward;
     private Vector3 _lookAtPosition;
     private float _lookAtTimer = 0;
     
@@ -60,8 +61,8 @@ public class Customer : MonoBehaviour
     {
         if(_lookAtTimer >= 1) return;
         _lookAtTimer += delta;
-        Quaternion lookTarget = Quaternion.LookRotation(_lookAtPosition, transform.position);
-        transform.rotation = Quaternion.Euler(0, Quaternion.Slerp(_previousRotation, lookTarget, _lookAtTimer).eulerAngles.y, 0);
+        Vector3 directionVector =  new Vector3(_lookAtPosition.x - transform.position.x, 0, _lookAtPosition.z - transform.position.z);
+        transform.forward = Vector3.Lerp(_previousForward, directionVector, _lookAtTimer);
     }
     
     public void StartCustomerBehaviour(Vector3 orderPosition, Vector3 lookAt)
@@ -86,7 +87,7 @@ public class Customer : MonoBehaviour
         orderText.text = $"Hello I want a {_requestedPotion.name}!";
         orderText.gameObject.SetActive(true);
         _state = CustomerState.Ordered;
-        _previousRotation = transform.rotation;
+        _previousForward = transform.forward;
         _getAngryCoroutine = AngryInSeconds(10);
         StartCoroutine(_getAngryCoroutine);
     }
