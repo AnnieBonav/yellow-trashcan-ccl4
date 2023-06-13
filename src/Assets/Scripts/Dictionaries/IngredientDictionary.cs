@@ -5,7 +5,9 @@ namespace Dictionaries
     [System.Serializable]
     public struct IngredientDictionary
     {
-        public int placeholder1;
-        public int placeholder2;
+        public int liquid;
+        public int mushroom;
+        public int herb;
+        public int bark;
     }
 }

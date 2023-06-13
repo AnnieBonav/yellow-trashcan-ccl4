@@ -7,6 +7,8 @@ TagManager:
   - Floor
   - Container
   - Potion
+  - Ingredient
+  - Flask
   layers:
   - Default
   - TransparentFX

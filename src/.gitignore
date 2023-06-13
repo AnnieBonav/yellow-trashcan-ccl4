@@ -65,6 +65,8 @@ crashlytics-build.properties
 # Other
 **/[Ss]amples/
 **/ShadersPlayground/
+**/Android/
+**/Android.meta
 
 #WWise
 

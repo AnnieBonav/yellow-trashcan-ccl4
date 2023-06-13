@@ -7,7 +7,7 @@ using UnityEngine;
 public class Brew : MonoBehaviour
 {
     [SerializeField] private List<RecipeData> recipes;
-    private IngredientDictionary _currentIngredients;
+    [SerializeField] private IngredientDictionary _currentIngredients;
 
     private RecipeData CurrentBrew()
     {
@@ -23,11 +23,17 @@ public class Brew : MonoBehaviour
     {
         switch (type)
         {
-            case IngredientType.Placeholder1:
-                _currentIngredients.placeholder1++;
+            case IngredientType.Liquid:
+                _currentIngredients.liquid++;
                 break;
-            case IngredientType.Placeholder2:
-                _currentIngredients.placeholder2++;
+            case IngredientType.Mushroom:
+                _currentIngredients.mushroom++;
+                break;
+            case IngredientType.Herb:
+                _currentIngredients.herb++;
+                break;
+            case IngredientType.Bark:
+                _currentIngredients.bark++;
                 break;
             default:
                 throw new ArgumentOutOfRangeException(nameof(type), type, null);
@@ -38,6 +44,30 @@ public class Brew : MonoBehaviour
         else
         {
             Debug.Log("Currently not a known potion");
+        }
+    }
+
+    private void OnTriggerEnter(Collider collider)
+    {
+        if (collider.gameObject.CompareTag("Flask"))
+        {
+            print("Collided with flask");
+            MakePotion(collider.gameObject.GetComponentInParent<Transform>().gameObject);
+        }
+    }
+
+    private void MakePotion(GameObject flask)
+    {
+        RecipeData currentBrew = CurrentBrew();
+
+        if (currentBrew is not null)
+        {
+            Debug.Log($"You made a {currentBrew.name}!!");
+            Destroy(flask);
+        }
+        else
+        {
+            Debug.Log("You made trash.");
         }
     }
 }
