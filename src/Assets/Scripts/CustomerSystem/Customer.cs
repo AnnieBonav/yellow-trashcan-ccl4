@@ -23,6 +23,10 @@ public class Customer : MonoBehaviour
     private RecipeData _requestedPotion;
     private IEnumerator _getAngryCoroutine;
 
+    private Quaternion _previousRotation;
+    private Vector3 _lookAtPosition;
+    private float _lookAtTimer = 0;
+    
     private void Awake()
     {
         _navMeshAgent = GetComponent<NavMeshAgent>();
@@ -44,15 +48,27 @@ public class Customer : MonoBehaviour
             case CustomerState.GoAway:
                 DespawnIfAtSpawn();
                 break;
+            case CustomerState.Ordered:
+                RotateTowardsLookPosition(Time.deltaTime);
+                break;
             default:
                 break;
         }
     }
 
-    public void StartCustomerBehaviour(Vector3 orderPosition)
+    private void RotateTowardsLookPosition(float delta)
+    {
+        if(_lookAtTimer >= 1) return;
+        _lookAtTimer += delta;
+        Quaternion lookTarget = Quaternion.LookRotation(_lookAtPosition, transform.position);
+        transform.rotation = Quaternion.Euler(0, Quaternion.Slerp(_previousRotation, lookTarget, _lookAtTimer).eulerAngles.y, 0);
+    }
+    
+    public void StartCustomerBehaviour(Vector3 orderPosition, Vector3 lookAt)
     {
         _state = CustomerState.WalkToOrder;
         _navMeshAgent.destination = orderPosition;
+        _lookAtPosition = lookAt;
     }
 
     private void OrderIfAtOrderPoint()
@@ -70,6 +86,7 @@ public class Customer : MonoBehaviour
         orderText.text = $"Hello I want a {_requestedPotion.name}!";
         orderText.gameObject.SetActive(true);
         _state = CustomerState.Ordered;
+        _previousRotation = transform.rotation;
         _getAngryCoroutine = AngryInSeconds(10);
         StartCoroutine(_getAngryCoroutine);
     }
