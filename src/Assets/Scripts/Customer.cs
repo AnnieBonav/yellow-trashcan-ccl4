@@ -88,7 +88,7 @@ public class Customer : MonoBehaviour
 
     private void OnCollisionEnter(Collision other)
     {
-        if (other.gameObject.CompareTag("Vial") && _state == CustomerState.Ordered)
+        if (other.gameObject.CompareTag("Potion") && _state == CustomerState.Ordered)
         {
             Vial vial = other.gameObject.GetComponent<Vial>();
             Give(vial);
