@@ -15,8 +15,13 @@ public class CustomerSpawner : MonoBehaviour
     private IEnumerator SpawnCustomerAfterSeconds(float delay)
     {
         yield return new WaitForSeconds(delay);
-        Customer noob = Instantiate(customerPrefabs[Random.Range(0, customerPrefabs.Count)], transform.position,
+        while (true)
+        {
+            Customer noob = Instantiate(customerPrefabs[Random.Range(0, customerPrefabs.Count)], transform.position,
             Quaternion.identity);
-        noob.StartCustomerBehaviour(orderPoint.position);
+            noob.StartCustomerBehaviour(orderPoint.position);
+            yield return new WaitForSeconds(10);
+        }
+        
     }
 }
