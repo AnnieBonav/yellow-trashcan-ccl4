@@ -1,20 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
 <SoundBanksInfo Platform="Mac" BasePlatform="Mac" SchemaVersion="12" SoundbankVersion="140">
 	<RootPaths>
-		<ProjectRoot>/Users/gbecker/Library/Application Support/Wwise2019/Bottles/Wwise2019x64/dosdevices/y:/git/yellow-trashcan-ccl4/src/src_WwiseProject/</ProjectRoot>
-		<SourceFilesRoot>/Users/gbecker/Library/Application Support/Wwise2019/Bottles/Wwise2019x64/dosdevices/y:/git/yellow-trashcan-ccl4/src/src_WwiseProject/.cache/Mac/</SourceFilesRoot>
-		<SoundBanksRoot>/Users/gbecker/Library/Application Support/Wwise2019/Bottles/Wwise2019x64/dosdevices/y:/git/yellow-trashcan-ccl4/src/src_WwiseProject/GeneratedSoundBanks/Mac/</SoundBanksRoot>
+		<ProjectRoot>C:\Projects\YellowTrashcan\yellow-trashcan-ccl4\src\src_WwiseProject\</ProjectRoot>
+		<SourceFilesRoot>C:\Projects\YellowTrashcan\yellow-trashcan-ccl4\src\src_WwiseProject\.cache\Mac\</SourceFilesRoot>
+		<SoundBanksRoot>C:\Projects\YellowTrashcan\yellow-trashcan-ccl4\src\src_WwiseProject\GeneratedSoundBanks\Mac\</SoundBanksRoot>
 		<ExternalSourcesInputFile></ExternalSourcesInputFile>
-		<ExternalSourcesOutputRoot>/Users/gbecker/Library/Application Support/Wwise2019/Bottles/Wwise2019x64/dosdevices/y:/git/yellow-trashcan-ccl4/src/src_WwiseProject/GeneratedSoundBanks/Mac</ExternalSourcesOutputRoot>
+		<ExternalSourcesOutputRoot>C:\Projects\YellowTrashcan\yellow-trashcan-ccl4\src\src_WwiseProject\GeneratedSoundBanks\Mac</ExternalSourcesOutputRoot>
 	</RootPaths>
 	<DialogueEvents/>
 	<StreamedFiles/>
 	<MediaFilesNotInAnyBank/>
 	<SoundBanks>
-		<SoundBank Id="782826392" Language="SFX" Hash="1898844233">
+		<SoundBank Id="782826392" Language="SFX" Hash="4212933665">
 			<ObjectPath>\SoundBanks\Default Work Unit\Default</ObjectPath>
 			<ShortName>Default</ShortName>
 			<Path>Default.bnk</Path>
+			<IncludedEvents>
+				<Event Id="2990278359" Name="Play_Pop" ObjectPath="\Events\Default Work Unit\Play_Pop" DurationType="OneShot" DurationMin="0.544802" DurationMax="0.686407">
+					<IncludedMemoryFiles>
+						<File Id="228669474" Language="SFX">
+							<ShortName>SFX_BubblePop_HigherPitch.wav</ShortName>
+							<Path>SFX\SFX_BubblePop_HigherPitch_10C4C929.wem</Path>
+						</File>
+						<File Id="925952195" Language="SFX">
+							<ShortName>SFX_BubblePop_NormalPitch.wav</ShortName>
+							<Path>SFX\SFX_BubblePop_NormalPitch_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+			</IncludedEvents>
 		</SoundBank>
 		<SoundBank Id="1355168291" Language="SFX" Hash="2754342975">
 			<ObjectPath>Init</ObjectPath>
