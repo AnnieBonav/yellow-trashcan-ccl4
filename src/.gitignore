@@ -64,6 +64,7 @@ crashlytics-build.properties
 
 # Other
 **/[Ss]amples/
+**/ShadersPlayground/
 
 #WWise
 
