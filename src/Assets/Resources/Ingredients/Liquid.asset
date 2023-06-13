@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a5fb07e93f8064eb19d65a454332929a, type: 3}
-  m_Name: MyOtherIngredient
+  m_Name: Liquid
   m_EditorClassIdentifier: 
-  ingredientType: 1
-  intensityModifier: 5
-  intensityVariance: 0.5
-  swirlModifier: 4
-  swirlVariance: 1
-  colourModifier: {r: 0.9245283, g: 0.004360993, b: 0.004360993, a: 0}
-  colourVariance: 0.1
+  ingredientType: 0
+  intensityModifier: 2
+  intensityVariance: 0.2
+  swirlModifier: 1
+  swirlVariance: 0.1
+  colourModifier: {r: 1, g: 0, b: 0.3824153, a: 0}
+  colourVariance: 0.05

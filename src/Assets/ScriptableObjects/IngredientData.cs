@@ -3,8 +3,10 @@ using UnityEngine;
 
 public enum IngredientType
 {
-    Placeholder1,
-    Placeholder2
+    Liquid,
+    Mushroom,
+    Herb,
+    Bark
 }
 
 [CreateAssetMenu(fileName = "Ingredient", menuName = "ScriptableObjects/Ingredient")] 

@@ -15,11 +15,6 @@ public class PotionKnowledgebase : MonoBehaviour
             instance = this;
             DontDestroyOnLoad(gameObject);
             availableRecipes = Resources.LoadAll<RecipeData>("Recipes");
-            foreach (var recipe in availableRecipes)
-            {
-                Debug.Log(recipe.name);
-            }
-
         }
         else
         {
