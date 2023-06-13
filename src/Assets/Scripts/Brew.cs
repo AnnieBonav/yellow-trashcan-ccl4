@@ -4,12 +4,12 @@ using System.Collections.Generic;
 using Dictionaries;
 using UnityEngine;
 
-public class Potion : MonoBehaviour
+public class Brew : MonoBehaviour
 {
     [SerializeField] private List<RecipeData> recipes;
     private IngredientDictionary _currentIngredients;
 
-    private RecipeData CurrentPotion()
+    private RecipeData CurrentBrew()
     {
         for (int i = 0; i < recipes.Count; i++)
         {
@@ -33,8 +33,8 @@ public class Potion : MonoBehaviour
                 throw new ArgumentOutOfRangeException(nameof(type), type, null);
         }
 
-        RecipeData currentPotion = CurrentPotion();
-        if(currentPotion is not null) Debug.Log($"Currently {currentPotion.name}");
+        RecipeData currentBrew = CurrentBrew();
+        if(currentBrew is not null) Debug.Log($"Currently {currentBrew.name}");
         else
         {
             Debug.Log("Currently not a known potion");

@@ -561,7 +561,7 @@ GameObject:
   - component: {fileID: 1457824571}
   m_Layer: 0
   m_Name: AssPotion
-  m_TagString: Vial
+  m_TagString: Potion
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -960,7 +960,7 @@ GameObject:
   - component: {fileID: 2056882936}
   m_Layer: 0
   m_Name: CoolPotion
-  m_TagString: Vial
+  m_TagString: Potion
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
