@@ -90,13 +90,13 @@ public class Customer : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Potion") && _state == CustomerState.Ordered)
         {
-            Vial vial = other.gameObject.GetComponent<Vial>();
-            Give(vial);
+            Potion potion = other.gameObject.GetComponent<Potion>();
+            Give(potion);
             Destroy(other.gameObject);
         }
     }
 
-    private void Give(Vial vial)
+    private void Give(Potion vial)
     {
         if (vial is null) return;
         if (vial.Type.name == _requestedPotion.name)
