@@ -5,8 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Floor
-  - Vial
   - Container
+  - Potion
   layers:
   - Default
   - TransparentFX
