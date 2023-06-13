@@ -1,0 +1,7 @@
+Event	ID	Name			Wwise Object Path	Notes
+	2990278359	Play_Pop			\Default Work Unit\Play_Pop	
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	228669474	SFX_BubblePop_HigherPitch	C:\Projects\YellowTrashcan\yellow-trashcan-ccl4\src\src_WwiseProject\.cache\Windows\SFX\SFX_BubblePop_HigherPitch_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Pop\SFX_BubblePop_HigherPitch		107936
+	925952195	SFX_BubblePop_NormalPitch	C:\Projects\YellowTrashcan\yellow-trashcan-ccl4\src\src_WwiseProject\.cache\Windows\SFX\SFX_BubblePop_NormalPitch_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Pop\SFX_BubblePop_NormalPitch		107936
+

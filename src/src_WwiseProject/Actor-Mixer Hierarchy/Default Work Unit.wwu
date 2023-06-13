@@ -1,6 +1,93 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{D534BECF-C975-4104-9E89-B949A9C3F6A0}" SchemaVersion="103">
 	<AudioObjects>
-		<WorkUnit Name="Default Work Unit" ID="{D534BECF-C975-4104-9E89-B949A9C3F6A0}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{D534BECF-C975-4104-9E89-B949A9C3F6A0}" PersistMode="Standalone">
+			<ChildrenList>
+				<RandomSequenceContainer Name="Pop" ID="{C430E259-50B5-46CA-B9E4-BAFD8B6B3720}" ShortID="100447153">
+					<PropertyList>
+						<Property Name="Pitch" Type="int32">
+							<ModifierList>
+								<ModifierInfo>
+									<Modifier Name="" ID="{7499F00B-A8E7-4A1D-814E-1BB5E417EBDE}">
+										<PropertyList>
+											<Property Name="Enabled" Type="bool" Value="True"/>
+											<Property Name="Max" Type="Real64" Value="200"/>
+											<Property Name="Min" Type="Real64" Value="-200"/>
+										</PropertyList>
+									</Modifier>
+								</ModifierInfo>
+							</ModifierList>
+						</Property>
+						<Property Name="RandomAvoidRepeating" Type="bool" Value="False"/>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{F4AF011D-EC8C-4834-8840-395EB0F23260}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2240F60-F21E-49E0-9C98-1F9198DDBECE}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<Sound Name="SFX_BubblePop_HigherPitch" ID="{903A732B-9E58-4451-AB7E-B42C82924397}" ShortID="810613065">
+							<PropertyList>
+								<Property Name="Pitch" Type="int32">
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{B072C592-2ADE-4AA1-8E9F-6322CBB63F6F}"/>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{F4AF011D-EC8C-4834-8840-395EB0F23260}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2240F60-F21E-49E0-9C98-1F9198DDBECE}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="SFX_BubblePop_HigherPitch" ID="{47134CC4-1059-4037-AD73-F4C26B7E2F9F}">
+									<Language>SFX</Language>
+									<AudioFile>SFX_BubblePop_HigherPitch.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="228669474"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ObjectLists/>
+							<ActiveSourceList>
+								<ActiveSource Name="SFX_BubblePop_HigherPitch" ID="{47134CC4-1059-4037-AD73-F4C26B7E2F9F}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="SFX_BubblePop_NormalPitch" ID="{9762ABD4-48E8-460F-8145-0D911D471011}" ShortID="521045562">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{F4AF011D-EC8C-4834-8840-395EB0F23260}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2240F60-F21E-49E0-9C98-1F9198DDBECE}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="SFX_BubblePop_NormalPitch" ID="{47AEDB13-4213-4604-BE33-0E646D4537DA}">
+									<Language>SFX</Language>
+									<AudioFile>SFX_BubblePop_NormalPitch.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="925952195"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ObjectLists/>
+							<ActiveSourceList>
+								<ActiveSource Name="SFX_BubblePop_NormalPitch" ID="{47AEDB13-4213-4604-BE33-0E646D4537DA}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
+					<ObjectLists/>
+				</RandomSequenceContainer>
+			</ChildrenList>
+		</WorkUnit>
 	</AudioObjects>
 </WwiseDocument>
