@@ -1,6 +1,4 @@
-using System;
 using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.AI;
@@ -8,11 +6,6 @@ using UnityEngine.AI;
 [RequireComponent(typeof(NavMeshAgent))]
 public class Customer : MonoBehaviour
 {
-    [SerializeField] private float distanceEpsilon = 0.1f;
-
-    [SerializeField] private TextMeshProUGUI orderText;
-    private Vector3 _spawnPosition;
-    
     private enum CustomerState
     {
         Waiting,
@@ -20,7 +13,11 @@ public class Customer : MonoBehaviour
         Ordered,
         GoAway
     }
-    // Start is called before the first frame update
+
+    [SerializeField] private float distanceEpsilon = 0.1f;
+    [SerializeField] private TextMeshProUGUI orderText;
+
+    private Vector3 _spawnPosition;
     private NavMeshAgent _navMeshAgent;
     private CustomerState _state = CustomerState.Waiting;
     private RecipeData _requestedPotion;
@@ -37,7 +34,6 @@ public class Customer : MonoBehaviour
         _requestedPotion = PotionKnowledgebase.Instance.RandomRecipe();
     }
 
-    // Update is called once per frame
     void Update()
     {
         switch (_state)
