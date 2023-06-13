@@ -19,7 +19,7 @@ public class Brew : MonoBehaviour
         return null;
     }
 
-    private void AddIngredient(IngredientType type)
+    public void AddIngredient(IngredientType type)
     {
         switch (type)
         {
