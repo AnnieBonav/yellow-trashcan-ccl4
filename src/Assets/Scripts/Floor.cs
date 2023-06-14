@@ -17,7 +17,7 @@ public class Floor : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Ingredient"))
         {
-            Destroy(collision.gameObject);
+            // Destroy(collision.gameObject);
         }
     }
 }

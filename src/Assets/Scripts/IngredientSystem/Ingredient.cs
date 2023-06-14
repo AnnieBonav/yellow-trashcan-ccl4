@@ -8,7 +8,12 @@ public class Ingredient : MonoBehaviour
     [SerializeField] private Color colourModifier;
     [SerializeField] private float intensityModifier;
     [SerializeField] private float swirlModifier;
-        
+    private Rigidbody rb;
+
+    private void Awake()
+    {
+        rb = GetComponent<Rigidbody>();
+    }
     public IngredientType IngredientType
     {
         get { return ingredientType; }
@@ -41,6 +46,11 @@ public class Ingredient : MonoBehaviour
             print("It had an empty container");
             emptyContainer.DestroyContainer();
         }
+    }
+
+    public void ResetFreeze()
+    {
+        rb.constraints = RigidbodyConstraints.None;
     }
 
 }
