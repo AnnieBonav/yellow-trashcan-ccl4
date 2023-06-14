@@ -68,6 +68,15 @@ public class Brew : MonoBehaviour
         {
             Debug.Log("You made trash.");
         }
+        ResetCurrentIngredients();
         Destroy(flask.transform.parent.gameObject);
+    }
+
+    private void ResetCurrentIngredients()
+    {
+        _currentIngredients.liquid = 0;
+        _currentIngredients.mushroom = 0;
+        _currentIngredients.bark = 0;
+        _currentIngredients.herb = 0;
     }
 }
