@@ -35,7 +35,6 @@ public class Ingredient : MonoBehaviour
 
     private void OnDestroy()
     {
-        print("I am being destroyed");
         EmptyGrabbable emptyContainer = GetComponentInParent<EmptyGrabbable>();
         if(emptyContainer != null)
         {
