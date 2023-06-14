@@ -11,6 +11,8 @@ public class IngredientContainer : MonoBehaviour
     [SerializeField] private int maximumCapacity = 3;
     [SerializeField] private int currentCapacity;
     [SerializeField] private TextMeshProUGUI fillDisplay;
+
+    [SerializeField] private bool needsEmpty;
     [SerializeField] private GameObject emptyIngredient;
 
     private IngredientSpawner _spawner;
@@ -34,7 +36,7 @@ public class IngredientContainer : MonoBehaviour
 
     private void Start()
     {
-        ResetEmptyIngredient();
+        if(needsEmpty) ResetEmptyIngredient(); // Only bark
     }
 
     private void RefillSlot()
@@ -46,6 +48,7 @@ public class IngredientContainer : MonoBehaviour
             {
                 noobIngredient.gameObject.transform.SetParent(spawnPosition.transform, false);
                 noobIngredient.transform.position = spawnPosition.transform.position;
+
                 return;
             }
         }
@@ -53,10 +56,12 @@ public class IngredientContainer : MonoBehaviour
 
     public void RefillSingle()
     {
+        print("Current capacity: " + currentCapacity + " Max capacity: " + maximumCapacity);
         if(currentCapacity != maximumCapacity)
         {
             RefillSlot();
-            currentCapacity++;
+            currentCapacity--;
+            print("Refilled");
         }
         else
         {
@@ -71,7 +76,7 @@ public class IngredientContainer : MonoBehaviour
 
     public Ingredient TakeIngredient()
     {
-        if (currentCapacity <= 0)
+        if (currentCapacity < 0)
         {
             print("There are no more ingredients");
             return null;
@@ -93,6 +98,24 @@ public class IngredientContainer : MonoBehaviour
     private void UpdateFillDisplayText()
     {
         if (fillDisplay is not null) fillDisplay.text = $"{currentCapacity}/{maximumCapacity}";
+    }
+
+    /* Mess with parents
+        GameObject parent = collider.transform.parent.gameObject;
+        GameObject grandParent = parent.transform.parent.gameObject;
+        GameObject greatGrandParent = grandParent.transform.parent.gameObject;
+        GameObject greatGreatGrandParent = greatGrandParent.transform.parent.gameObject;
+        GameObject superParent = collider.transform.parent.parent.parent.parent.gameObject; // This will be the parent container
+
+    */
+
+    private void OnTriggerExit(Collider collider)
+    {
+        if (collider.CompareTag("Ingredient")) // If they have the same parent, then the ingredient should be unparented because it is taken away
+        {
+            currentCapacity--;
+            print("An ingredient left. Current capacity: " + currentCapacity);
+        }
     }
 
 }
