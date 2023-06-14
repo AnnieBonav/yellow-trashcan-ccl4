@@ -17,3 +17,4 @@ MonoBehaviour:
     mushroom: 1
     herb: 1
     bark: 1
+  potionPrefab: {fileID: 5006066164440354554, guid: a29979ddd8ac4d34095699400ee0f4be, type: 3}

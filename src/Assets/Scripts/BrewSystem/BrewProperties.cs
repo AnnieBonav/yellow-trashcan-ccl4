@@ -16,6 +16,8 @@ public class BrewProperties : MonoBehaviour
     [SerializeField] private Transform bubblingDisplay;
     [SerializeField] private Transform swirlDisplay;
 
+    [SerializeField] private Material baseBrewColour;
+
     private float _colourTimer = 0;
     private float _bubblingTimer = 0;
     private float _swirlTimer = 0;
@@ -24,13 +26,14 @@ public class BrewProperties : MonoBehaviour
     private float _lastBubbling;
     private float _lastSwirl;
 
-    private Color _currentColour = Color.cyan;
+    private Color _currentColour;
     private float _currentBubbling;
     private float _currentSwirl;
 
 
     void Start()
     {
+        _currentColour = baseBrewColour.color;
         _lastColour = _currentColour;
         _lastSwirl = _currentSwirl;
         _lastBubbling = _currentBubbling;
@@ -158,5 +161,10 @@ public class BrewProperties : MonoBehaviour
         }
 
         return mix / colours.Count;
+    }
+
+    public void ResetColor()
+    {
+        _currentColour = baseBrewColour.color;
     }
 }
