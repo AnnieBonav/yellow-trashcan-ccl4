@@ -10,12 +10,19 @@ public class IngredientContainer : MonoBehaviour
     [SerializeField] private int maximumCapacity = 3;
     [SerializeField] private int currentCapacity;
     [SerializeField] private TextMeshProUGUI fillDisplay;
+    [SerializeField] private GameObject emptyIngredient;
+
     private IngredientSpawner _spawner;
 
     private void Awake()
     {
         Refill();
         _spawner = GetComponent<IngredientSpawner>();
+    }
+
+    private void Start()
+    {
+        ResetEmptyIngredient();
     }
 
     public void Refill()
@@ -26,10 +33,23 @@ public class IngredientContainer : MonoBehaviour
 
     public Ingredient TakeIngredient()
     {
-        if (currentCapacity <= 0) return null;
+        if (currentCapacity <= 0)
+        {
+            print("There are no more ingredients");
+            return null;
+        }
         currentCapacity--;
         UpdateFillDisplayText();
-        return _spawner.SpawnIngredient();
+
+        Ingredient noobIngredient = _spawner.SpawnIngredient();
+        print("Returning new ingredient");
+        return noobIngredient;
+    }
+
+    public void ResetEmptyIngredient()
+    {
+        Instantiate(emptyIngredient, transform);
+        print("Creating new container");
     }
 
     private void UpdateFillDisplayText()

@@ -32,5 +32,16 @@ public class Ingredient : MonoBehaviour
         get { return swirlModifier; }
         set { swirlModifier = value; }
     }
-    
+
+    private void OnDestroy()
+    {
+        print("I am being destroyed");
+        EmptyGrabbable emptyContainer = GetComponentInParent<EmptyGrabbable>();
+        if(emptyContainer != null)
+        {
+            print("It had an empty container");
+            emptyContainer.DestroyContainer();
+        }
+    }
+
 }
