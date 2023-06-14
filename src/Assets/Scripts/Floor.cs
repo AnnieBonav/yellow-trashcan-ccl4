@@ -17,7 +17,6 @@ public class Floor : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Ingredient"))
         {
-            print("An ingredient fell, collider.");
             Destroy(collision.gameObject);
         }
     }
