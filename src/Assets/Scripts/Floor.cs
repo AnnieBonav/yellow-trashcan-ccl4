@@ -6,20 +6,18 @@ public class Floor : MonoBehaviour
 {
     private void OnTriggerEnter(Collider collider)
     {
-        print("Something fell");
         if (collider.CompareTag("Ingredient"))
         {
-            print("An ingredient fell");
+            print("An ingredient fell, trigger.");
             Destroy(collider.gameObject);
         }
     }
 
     private void OnCollisionEnter(Collision collision)
     {
-        print("Something fell");
         if (collision.gameObject.CompareTag("Ingredient"))
         {
-            print("An ingredient fell");
+            print("An ingredient fell, collider.");
             Destroy(collision.gameObject);
         }
     }

@@ -8,7 +8,6 @@ public class EmptyGrabbable : MonoBehaviour
 
     private void Awake()
     {
-        print("I am awaking");
         ingredientContainer = gameObject.GetComponentInParent<IngredientContainer>();
     }
 
