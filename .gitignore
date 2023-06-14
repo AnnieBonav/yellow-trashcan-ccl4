@@ -62,5 +62,5 @@ sysinfo.txt
 # Crashlytics generated file
 crashlytics-build.properties
 
-# Blender .blend
-*.blend[1-9]
+	# Blender .blend
+*.blend[0-9]
