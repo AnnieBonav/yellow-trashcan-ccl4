@@ -58,9 +58,9 @@ public class BrewProperties : MonoBehaviour
         }
 
         colourDisplay.material.color = _currentColour;
-        bubblingDisplay.localPosition = new Vector3(bubblingDisplay.localPosition.x, _currentBubbling,
-            bubblingDisplay.localPosition.z);
-        swirlDisplay.Rotate(Vector3.back, _currentSwirl * Time.deltaTime);
+        //bubblingDisplay.localPosition = new Vector3(bubblingDisplay.localPosition.x, _currentBubbling,
+        //bubblingDisplay.localPosition.z);
+        //swirlDisplay.Rotate(Vector3.back, _currentSwirl * Time.deltaTime);
         
     }
 
