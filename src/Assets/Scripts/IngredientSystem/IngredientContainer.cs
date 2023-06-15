@@ -61,7 +61,6 @@ public class IngredientContainer : MonoBehaviour
         {
             RefillSlot();
             currentCapacity--;
-            print("Refilled");
         }
         else
         {
