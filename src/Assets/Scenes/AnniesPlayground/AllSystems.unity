@@ -248,6 +248,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: HerbContainer
       objectReference: {fileID: 0}
+    - target: {fileID: 2913811386670923256, guid: b77a07c688af009478fc29b520d1ae7b, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: ffb196c1b04d2644085c0756435dabce, type: 2}
     - target: {fileID: 8561985217020693600, guid: b77a07c688af009478fc29b520d1ae7b, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -352,7 +356,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: ffb196c1b04d2644085c0756435dabce, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1160,7 +1164,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: ffb196c1b04d2644085c0756435dabce, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1886,6 +1890,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1110820026}
   - component: {fileID: 1110820025}
+  - component: {fileID: 1110820027}
   m_Layer: 0
   m_Name: Directional Light
   m_TagString: Untagged
@@ -1970,6 +1975,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!114 &1110820027
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1110820024}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 1
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
 --- !u!1001 &1119728648
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2084,7 +2109,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: ffb196c1b04d2644085c0756435dabce, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3588,7 +3613,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: fbc3458eb036fc644bc4293fa4a08fde, type: 2}
+  - {fileID: 2100000, guid: 663521b9829d3014ca4f7d928320c619, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3729,7 +3754,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: ffb196c1b04d2644085c0756435dabce, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4714,7 +4739,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: ffb196c1b04d2644085c0756435dabce, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5251,6 +5276,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3818864019811509809, guid: 4f6be3bf3bd753a4cad5462b73a3f829, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: ffb196c1b04d2644085c0756435dabce, type: 2}
     - target: {fileID: 7223622450811731197, guid: 4f6be3bf3bd753a4cad5462b73a3f829, type: 3}
       propertyPath: m_Name
       value: MushroomContainer
@@ -5369,6 +5398,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1927691728439148168, guid: 0890bb6ecc0222946b8a6cd9364c8128, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: ffb196c1b04d2644085c0756435dabce, type: 2}
     - target: {fileID: 7239193592124381834, guid: 0890bb6ecc0222946b8a6cd9364c8128, type: 3}
       propertyPath: m_Constraints
       value: 126
