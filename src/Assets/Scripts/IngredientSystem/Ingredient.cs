@@ -60,12 +60,14 @@ public class Ingredient : MonoBehaviour
     public void ReleasedIngredient()
     {
         print("Released ingredient");
-        InteractionRaised?.Invoke(InteractionEvents.ReleaseIngredient);
+        // Does not get called
     }
 
     public void ResetFreeze()
     {
+        print("Reset rb");
         rb.constraints = RigidbodyConstraints.None;
+        InteractionRaised?.Invoke(InteractionEvents.ReleaseIngredient);
     }
 
 }

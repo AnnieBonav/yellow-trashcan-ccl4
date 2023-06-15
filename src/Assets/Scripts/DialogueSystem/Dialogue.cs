@@ -44,12 +44,25 @@ public class Dialogue : MonoBehaviour
 
         TestFlags.InteractionRaised += HandleFlags;
         Ingredient.InteractionRaised += HandleFlags;
+        Refiller.InteractionRaised += HandleFlags;
+        Brew.InteractionRaised += HandleFlags;
+        Door.InteractionRaised += HandleFlags;
+        IngredientAcceptor.InteractionRaised += HandleFlags;
+        Potion.InteractionRaised += HandleFlags;
+        Customer.InteractionRaised += HandleFlags;
+        GarbageCan.InteractionRaised += HandleFlags;
     }
 
     private void OnDisable()
     {
         TestFlags.InteractionRaised -= HandleFlags;
         Ingredient.InteractionRaised -= HandleFlags;
+        Refiller.InteractionRaised -= HandleFlags;
+        Brew.InteractionRaised -= HandleFlags;
+        Door.InteractionRaised -= HandleFlags;
+        IngredientAcceptor.InteractionRaised -= HandleFlags;
+        Customer.InteractionRaised -= HandleFlags;
+        GarbageCan.InteractionRaised -= HandleFlags;
     }
 
     void Start()
@@ -82,16 +95,17 @@ public class Dialogue : MonoBehaviour
         {
             if (_canAdvance)
             {
+                _currentDialogue++;
                 print("Can Advance, inside of dialogue.");
                 StartCoroutine(NextTextblock());
-                _currentDialogue++;
+                DisableContinue();
             }
         }
     }
 
     private void HandleFlags(InteractionEvents interactionEvent)
     {
-        print("An interaction was raised: " + interactionEvent);
+        print("An interaction was raised: " + interactionEvent + "CurrentRoom Block: " + _currentDialogue );
         for (int i = 0; i < textBlocks[_currentDialogue].actionsToFulfill.Count; i ++) // Iterate through all of the needed actions to ulfill from the current block
         {
             // continuing if the action has been fulfilled would let us have two of the same but would prevent being able to revert a done to a needs to be done (like messing up something and you need to redo it)
