@@ -17,7 +17,10 @@ public class CharactersController : MonoBehaviour
     [SerializeField] private Transform playerBrewing;
     [SerializeField] private Transform playerGarden;
 
-
+    private void Awake()
+    {
+        Door.InteractionRaised += ChangePosition;
+    }
 
     private void Start()
     {
@@ -25,25 +28,25 @@ public class CharactersController : MonoBehaviour
         book.position = bookEntrance.position;
     }
 
-    public void ChangePosition(CurrentRoom newRoom)
+    public void ChangePosition(InteractionEvents interactionEvent)
     {
-        switch (newRoom)
+        switch (interactionEvent)
         {
-            case CurrentRoom.Entrance:
+            case InteractionEvents.TravelledEntrance:
                 player.position = playerEntrance.position;
                 book.position = bookEntrance.position;
 
                 book.LookAt(player);
                 break;
 
-            case CurrentRoom.Brewing:
+            case InteractionEvents.TravelledBrewing:
                 player.position = playerBrewing.position;
                 book.position = bookBrewing.position;
 
                 book.LookAt(player);
                 break;
 
-            case CurrentRoom.Garden:
+            case InteractionEvents.TravelledGarden:
                 player.position = playerGarden.position;
                 book.position = bookGarden.position;
 

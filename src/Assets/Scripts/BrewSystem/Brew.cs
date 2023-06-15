@@ -72,6 +72,7 @@ public class Brew : MonoBehaviour
             Debug.Log("You made trash.");
             InteractionRaised?.Invoke(InteractionEvents.CreateIncorrectPotion);
         }
+        InteractionRaised?.Invoke(InteractionEvents.CreatePotion);
         ResetCurrentIngredients();
         Destroy(flask.transform.parent.gameObject);
     }

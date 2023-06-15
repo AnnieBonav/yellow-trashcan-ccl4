@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -12,6 +13,7 @@ public struct TextBlock
     [SerializeField, TextArea] public string text;
     [SerializeField] public UnityEvent events;
     [SerializeField] public List<ActionToFulfill> actionsToFulfill;
+    [SerializeField] public bool needsClickToContinue;
 }
 
 [System.Serializable]
@@ -69,6 +71,7 @@ public class Dialogue : MonoBehaviour
     {
         continueButtonReference.SetActive(false);
         StartCoroutine(NextTextblock());
+        EnableContinue();
     }
 
     private IEnumerator NextTextblock()
@@ -99,6 +102,7 @@ public class Dialogue : MonoBehaviour
                 print("Can Advance, inside of dialogue.");
                 StartCoroutine(NextTextblock());
                 DisableContinue();
+                CheckIfFlagsFulfilled();
             }
         }
     }
@@ -138,6 +142,7 @@ public class Dialogue : MonoBehaviour
         print("Enabliong continue");
         continueButtonReference.SetActive(true);
         _canAdvance = true;
+        if(!textBlocks[_currentDialogue].needsClickToContinue) ProceedDialogue();
     }
 
     private void DisableContinue()
