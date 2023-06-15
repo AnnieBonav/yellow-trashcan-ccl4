@@ -7,41 +7,40 @@ public class Door : MonoBehaviour
 {
     public static event Action<InteractionEvents> InteractionRaised;
 
-    [SerializeField] private Transform roomPosition;
-    [SerializeField] private Transform gardenPosition;
-    [SerializeField] private Transform entrancePosition;
-
-    [SerializeField] private GameObject player;
     [SerializeField] private MeshRenderer handleMesh;
-
     [SerializeField] private CurrentRoom roomToGo;
 
+    private bool canActivateDoor;
     public void ChangeScenery()
     {
+        if (!canActivateDoor) return; // Cannot activate if it is not the time to do so
         switch (roomToGo)
         {
             case CurrentRoom.Garden:
-                player.transform.position = gardenPosition.position;
                 InteractionRaised?.Invoke(InteractionEvents.TravelledGarden);
                 break;
             case CurrentRoom.Brewing:
-                player.transform.position = roomPosition.position;
                 InteractionRaised?.Invoke(InteractionEvents.TravelledBrewing);
                 break;
             case CurrentRoom.Entrance:
-                player.transform.position = entrancePosition.position;
                 InteractionRaised?.Invoke(InteractionEvents.TravelledEntrance);
                 break;
         }
     }
 
+    public void CanActivateDoor(bool canActivate)
+    {
+        canActivateDoor = canActivate;
+    }
+
+    // TODO maybe make the can activate/deactivate better
     public void ActivateDoor()
     {
-        handleMesh.material.color = Color.green;
+        if(canActivateDoor) handleMesh.material.color = Color.green;
     }
 
     public void DeactivateDoor()
     {
-        handleMesh.material.color= Color.white;
+        if (canActivateDoor) handleMesh.material.color= Color.white;
     }
 }
