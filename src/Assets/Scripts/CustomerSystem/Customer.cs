@@ -14,6 +14,7 @@ public class Customer : MonoBehaviour
         Ordered,
         GoAway
     }
+    public static event Action<InteractionEvents> InteractionRaised;
 
     [SerializeField] private float distanceEpsilon = 0.1f;
     [SerializeField] private TextMeshProUGUI orderText;
@@ -117,11 +118,13 @@ public class Customer : MonoBehaviour
         {
             StopCoroutine(_getAngryCoroutine);
             orderText.text = "Thank you, exactly what I wanted";
+            InteractionRaised?.Invoke(InteractionEvents.DeliverCorrectPotion);
             MoveToDespawn();
         }
         else
         {
             orderText.text = "That is not what I ordered!";
+            InteractionRaised?.Invoke(InteractionEvents.DeliverIncorrectPotion);
         }
     }
 
