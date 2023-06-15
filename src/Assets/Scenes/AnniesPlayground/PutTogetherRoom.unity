@@ -1865,7 +1865,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textMesh: {fileID: 1180958694}
   textBlocks:
-  - text: Hey! Open the door.
+  - text: Hello there, welcome!
+    events:
+      m_PersistentCalls:
+        m_Calls: []
+    actionsToFulfill: []
+  - text: My name is Booko the book, and I will guide you in your exciting potions
+      journey!
+    events:
+      m_PersistentCalls:
+        m_Calls: []
+    actionsToFulfill: []
+  - text: For now, look around and interact with your entrance stuff.
+    events:
+      m_PersistentCalls:
+        m_Calls: []
+    actionsToFulfill: []
+  - text: 'Whenever you are ready, just open the store and lets get this started! '
     events:
       m_PersistentCalls:
         m_Calls: []
@@ -1881,16 +1897,14 @@ MonoBehaviour:
       hasBeenFulfilled: 0
     - interactionEvent: 1
       hasBeenFulfilled: 0
-  - text: My name is Booko the book, and I will guide you in your exciting potions
-      journey. Put ingredient in pot.
+  - text: ' Put ingredient in pot.'
     events:
       m_PersistentCalls:
         m_Calls: []
     actionsToFulfill:
     - interactionEvent: 2
       hasBeenFulfilled: 0
-  - text: For now, look around and interact with your porch stuff.  Refill liquid.
-      Refill solid.
+  - text: '  Refill liquid. Refill solid.'
     events:
       m_PersistentCalls:
         m_Calls: []
@@ -1899,8 +1913,7 @@ MonoBehaviour:
       hasBeenFulfilled: 0
     - interactionEvent: 4
       hasBeenFulfilled: 0
-  - text: Whenever you are ready, just open the store and lets start this! Create
-      Potion. Put ingredient.
+  - text: Create Potion. Put ingredient.
     events:
       m_PersistentCalls:
         m_Calls: []
