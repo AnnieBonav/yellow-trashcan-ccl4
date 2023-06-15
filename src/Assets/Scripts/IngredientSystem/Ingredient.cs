@@ -1,9 +1,12 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Ingredient : MonoBehaviour
 {
+    public static event Action<InteractionEvents> InteractionRaised;
+
     [SerializeField] private IngredientType ingredientType;
     [SerializeField] private Color colourModifier;
     [SerializeField] private float intensityModifier;
@@ -46,6 +49,18 @@ public class Ingredient : MonoBehaviour
             print("It had an empty container");
             emptyContainer.DestroyContainer();
         }
+    }
+
+    public void GrabbedIngredient()
+    {
+        print("Grabbed ingredient");
+        InteractionRaised?.Invoke(InteractionEvents.GrabIngredient);
+    }
+
+    public void ReleasedIngredient()
+    {
+        print("Released ingredient");
+        InteractionRaised?.Invoke(InteractionEvents.ReleaseIngredient);
     }
 
     public void ResetFreeze()
