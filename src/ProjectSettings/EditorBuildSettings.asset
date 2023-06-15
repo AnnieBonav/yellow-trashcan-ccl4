@@ -5,7 +5,7 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/AnniesPlayground/SystemsInteractionTest.unity
     guid: dad44440b8235c248976802ee28cd8d8
   m_configObjects:

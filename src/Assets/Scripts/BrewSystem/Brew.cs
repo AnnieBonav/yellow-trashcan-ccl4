@@ -8,6 +8,8 @@ public class Brew : MonoBehaviour
 {
     [SerializeField] private List<RecipeData> recipes;
     [SerializeField] private IngredientDictionary _currentIngredients;
+    [SerializeField] private Transform _potionSpawnOrigin;
+    [SerializeField] private bool _debugIngredientsIn;
 
     private RecipeData CurrentBrew()
     {
@@ -39,35 +41,42 @@ public class Brew : MonoBehaviour
                 throw new ArgumentOutOfRangeException(nameof(type), type, null);
         }
 
-        RecipeData currentBrew = CurrentBrew();
-        if(currentBrew is not null) Debug.Log($"Currently {currentBrew.name}");
-        else
+        
+        if (_debugIngredientsIn)
         {
-            Debug.Log("Currently not a known potion");
+            RecipeData currentBrew = CurrentBrew();
+
+            if (currentBrew is not null) Debug.Log($"Currently {currentBrew.name}");
+            else
+            {
+                Debug.Log("Currently not a known potion");
+            }
         }
     }
 
-    private void OnTriggerEnter(Collider collider)
-    {
-        if (collider.gameObject.CompareTag("Flask"))
-        {
-            print("Collided with flask");
-            MakePotion(collider.gameObject.GetComponentInParent<Transform>().gameObject);
-        }
-    }
-
-    private void MakePotion(GameObject flask)
+    public void MakePotion(GameObject flask)
     {
         RecipeData currentBrew = CurrentBrew();
 
         if (currentBrew is not null)
         {
             Debug.Log($"You made a {currentBrew.name}!!");
-            Destroy(flask);
+            GameObject noobPotion = Instantiate(currentBrew.PotionPrefab);
+            noobPotion.transform.position = _potionSpawnOrigin.transform.position;
         }
         else
         {
             Debug.Log("You made trash.");
         }
+        ResetCurrentIngredients();
+        Destroy(flask.transform.parent.gameObject);
+    }
+
+    private void ResetCurrentIngredients()
+    {
+        _currentIngredients.liquid = 0;
+        _currentIngredients.mushroom = 0;
+        _currentIngredients.bark = 0;
+        _currentIngredients.herb = 0;
     }
 }

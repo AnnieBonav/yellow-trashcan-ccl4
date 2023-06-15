@@ -7,6 +7,8 @@ using UnityEngine;
 public class RecipeData : ScriptableObject
 {
     [SerializeField] private IngredientDictionary ingredients;
+    [SerializeField] private GameObject potionPrefab;
     
     public IngredientDictionary Ingredients => ingredients;
+    public GameObject PotionPrefab => potionPrefab;
 }
