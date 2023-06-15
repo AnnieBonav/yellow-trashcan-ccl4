@@ -64,3 +64,4 @@ crashlytics-build.properties
 
 	# Blender .blend
 *.blend[0-9]
+.DS_Store
