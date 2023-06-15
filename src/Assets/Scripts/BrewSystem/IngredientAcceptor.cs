@@ -24,4 +24,20 @@ public class IngredientAcceptor : MonoBehaviour
         _brewProperties.AddSwirl(ingredient.SwirlModifier);
         Destroy(ingredient.gameObject);
     }
+
+    private void OnTriggerEnter(Collider collider)
+    {
+        if (collider.gameObject.CompareTag("Ingredient"))
+        {
+            Take(collider.gameObject.GetComponentInParent<Ingredient>());
+            return;
+        }
+
+        if (collider.gameObject.CompareTag("Flask"))
+        {
+            print("Collided with flask");
+            _brew.MakePotion(collider.gameObject);
+            _brewProperties.ResetColor();
+        }
+    }
 }

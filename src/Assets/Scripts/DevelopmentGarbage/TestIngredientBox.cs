@@ -5,16 +5,17 @@ using UnityEngine;
 public class TestIngredientBox : MonoBehaviour
 {
     [SerializeField] private IngredientContainer container;
-    // Start is called before the first frame update
-    void Start()
+
+    public void SpawnIngredient()
     {
-        StartCoroutine(Test());
+        container.TakeIngredient();
+        //tmp.transform.Translate(2, 3, 2);
     }
 
     private IEnumerator Test()
     {
         yield return new WaitForSeconds(3);
-        var tmp = container.TakeIngredient();
+        /* var tmp = container.TakeIngredient();
         tmp.transform.Translate(2, 3, 2);
         Debug.Log(tmp);
         yield return new WaitForSeconds(3);
@@ -31,6 +32,6 @@ public class TestIngredientBox : MonoBehaviour
         yield return new WaitForSeconds(3);
         tmp = container.TakeIngredient();
         tmp.transform.Translate(2, 8, 2);
-        Debug.Log(tmp);
+        Debug.Log(tmp);*/
     }
 }

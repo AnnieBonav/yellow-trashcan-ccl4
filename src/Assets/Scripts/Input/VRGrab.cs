@@ -70,7 +70,13 @@ public class VRGrab : MonoBehaviour
         indexValue = Mathf.Clamp(indexValue, 0, 1);
         _gloveAnimator.SetFloat("ThreeFingers", threeFingersValue);
         _gloveAnimator.SetFloat("Thumb", threeFingersValue);
-        _gloveAnimator.SetFloat("Index", indexValue);
+        _gloveAnimator.SetFloat("Index", threeFingersValue);
+
+        if(threeFingersValue <= 0.1)
+        {
+            _gloveAnimator.SetFloat("Index", indexValue);
+        }
+        
     }
     private void Start()
     {

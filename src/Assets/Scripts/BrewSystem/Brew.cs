@@ -7,7 +7,9 @@ using UnityEngine;
 public class Brew : MonoBehaviour
 {
     [SerializeField] private List<RecipeData> recipes;
-    private IngredientDictionary _currentIngredients;
+    [SerializeField] private IngredientDictionary _currentIngredients;
+    [SerializeField] private Transform _potionSpawnOrigin;
+    [SerializeField] private bool _debugIngredientsIn;
 
     private RecipeData CurrentBrew()
     {
@@ -23,21 +25,58 @@ public class Brew : MonoBehaviour
     {
         switch (type)
         {
-            case IngredientType.Placeholder1:
-                _currentIngredients.placeholder1++;
+            case IngredientType.Liquid:
+                _currentIngredients.liquid++;
                 break;
-            case IngredientType.Placeholder2:
-                _currentIngredients.placeholder2++;
+            case IngredientType.Mushroom:
+                _currentIngredients.mushroom++;
+                break;
+            case IngredientType.Herb:
+                _currentIngredients.herb++;
+                break;
+            case IngredientType.Bark:
+                _currentIngredients.bark++;
                 break;
             default:
                 throw new ArgumentOutOfRangeException(nameof(type), type, null);
         }
 
+        
+        if (_debugIngredientsIn)
+        {
+            RecipeData currentBrew = CurrentBrew();
+
+            if (currentBrew is not null) Debug.Log($"Currently {currentBrew.name}");
+            else
+            {
+                Debug.Log("Currently not a known potion");
+            }
+        }
+    }
+
+    public void MakePotion(GameObject flask)
+    {
         RecipeData currentBrew = CurrentBrew();
-        if(currentBrew is not null) Debug.Log($"Currently {currentBrew.name}");
+
+        if (currentBrew is not null)
+        {
+            Debug.Log($"You made a {currentBrew.name}!!");
+            GameObject noobPotion = Instantiate(currentBrew.PotionPrefab);
+            noobPotion.transform.position = _potionSpawnOrigin.transform.position;
+        }
         else
         {
-            Debug.Log("Currently not a known potion");
+            Debug.Log("You made trash.");
         }
+        ResetCurrentIngredients();
+        Destroy(flask.transform.parent.gameObject);
+    }
+
+    private void ResetCurrentIngredients()
+    {
+        _currentIngredients.liquid = 0;
+        _currentIngredients.mushroom = 0;
+        _currentIngredients.bark = 0;
+        _currentIngredients.herb = 0;
     }
 }
