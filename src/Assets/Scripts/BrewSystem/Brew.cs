@@ -6,6 +6,8 @@ using UnityEngine;
 
 public class Brew : MonoBehaviour
 {
+    public static event Action<InteractionEvents> InteractionRaised;
+
     [SerializeField] private List<RecipeData> recipes;
     [SerializeField] private IngredientDictionary _currentIngredients;
     [SerializeField] private Transform _potionSpawnOrigin;
@@ -63,10 +65,12 @@ public class Brew : MonoBehaviour
             Debug.Log($"You made a {currentBrew.name}!!");
             GameObject noobPotion = Instantiate(currentBrew.PotionPrefab);
             noobPotion.transform.position = _potionSpawnOrigin.transform.position;
+            InteractionRaised?.Invoke(InteractionEvents.CreateCorrectPotion);
         }
         else
         {
             Debug.Log("You made trash.");
+            InteractionRaised?.Invoke(InteractionEvents.CreateIncorrectPotion);
         }
         ResetCurrentIngredients();
         Destroy(flask.transform.parent.gameObject);

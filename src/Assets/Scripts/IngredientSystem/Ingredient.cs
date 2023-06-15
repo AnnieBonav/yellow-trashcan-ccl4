@@ -1,9 +1,12 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Ingredient : MonoBehaviour
 {
+    public static event Action<InteractionEvents> InteractionRaised;
+
     [SerializeField] private IngredientType ingredientType;
     [SerializeField] private Color colourModifier;
     [SerializeField] private float intensityModifier;
@@ -48,9 +51,23 @@ public class Ingredient : MonoBehaviour
         }
     }
 
+    public void GrabbedIngredient()
+    {
+        print("Grabbed ingredient");
+        InteractionRaised?.Invoke(InteractionEvents.GrabIngredient);
+    }
+
+    public void ReleasedIngredient()
+    {
+        print("Released ingredient");
+        // Does not get called
+    }
+
     public void ResetFreeze()
     {
+        print("Reset rb");
         rb.constraints = RigidbodyConstraints.None;
+        InteractionRaised?.Invoke(InteractionEvents.ReleaseIngredient);
     }
 
 }
