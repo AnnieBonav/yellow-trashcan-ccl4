@@ -10,10 +10,11 @@ public class Customer : MonoBehaviour
     private enum CustomerState
     {
         Waiting,
-        WalkToOrder,
+        WalkingToOrder,
         Ordered,
         GoAway
     }
+
     public static event Action<InteractionEvents> InteractionRaised;
 
     [SerializeField] private float distanceEpsilon = 0.1f;
@@ -28,30 +29,55 @@ public class Customer : MonoBehaviour
     private Vector3 _previousForward;
     private Vector3 _lookAtPosition;
     private float _lookAtTimer = 0;
-    
+
+    private int orderPosition = -1;
+    private bool hasLimit = true; // This lets us not have a time limit when in tutorial
+
     private void Awake()
     {
         _navMeshAgent = GetComponent<NavMeshAgent>();
         _spawnPosition = transform.position;
+
+        OrderPoint.CustomerArrived += HandleCustomerArrive;
     }
+
+    private void HandleCustomerArrive(int orderPoint)
+    {
+        print("A customer was said to arrive in: " + orderPoint);
+        if (orderPoint == orderPosition)
+        {
+            print("The customer" + transform.name + " Arrived to its place #" + orderPoint);
+            ChangeState();
+        }
+    }
+
+    public void StartTutorialCustomer(Vector3 orderWorldPosition, Transform lookAt, int whichOrderPosition)
+    {
+        _state = CustomerState.WalkingToOrder;
+        _navMeshAgent.destination = orderWorldPosition;
+        _lookAtPosition = lookAt.position;
+        orderPosition = whichOrderPosition; // This is the p[lace where they are supposed to go, it should be st by the customer spawner when it gets instanced
+        hasLimit = false;
+    }
+
 
     void Start()
     {
         _requestedPotion = PotionKnowledgebase.Instance.RandomRecipe();
     }
 
-    void Update()
+    void ChangeState()
     {
         switch (_state)
         {
-            case CustomerState.WalkToOrder:
-                OrderIfAtOrderPoint();
-                break;
-            case CustomerState.GoAway:
-                DespawnIfAtSpawn();
+            case CustomerState.WalkingToOrder: // If it is walking to order and change state is called, then it should now order
+                Order();
                 break;
             case CustomerState.Ordered:
                 RotateTowardsLookPosition(Time.deltaTime);
+                break;
+            case CustomerState.GoAway:
+                DespawnIfAtSpawn();
                 break;
             default:
                 break;
@@ -66,16 +92,11 @@ public class Customer : MonoBehaviour
         transform.forward = Vector3.Lerp(_previousForward, directionVector, _lookAtTimer);
     }
     
-    public void StartCustomerBehaviour(Vector3 orderPosition, Vector3 lookAt)
+    public void StartCustomerBehaviour(Vector3 orderPosition, Transform lookAt)
     {
-        _state = CustomerState.WalkToOrder;
+        _state = CustomerState.WalkingToOrder;
         _navMeshAgent.destination = orderPosition;
-        _lookAtPosition = lookAt;
-    }
-
-    private void OrderIfAtOrderPoint()
-    {
-        if (Vector3.Distance(transform.position, _navMeshAgent.destination) <= distanceEpsilon) Order();
+        _lookAtPosition = lookAt.position;
     }
 
     private void DespawnIfAtSpawn()
@@ -83,14 +104,21 @@ public class Customer : MonoBehaviour
         if(Vector3.Distance(transform.position, _navMeshAgent.destination) <= distanceEpsilon) Destroy(gameObject);
     }
 
-    private void Order()
+    private void Order() 
     {
         orderText.text = $"Hello I want a {_requestedPotion.name}!";
         orderText.gameObject.SetActive(true);
         _state = CustomerState.Ordered;
         _previousForward = transform.forward;
-        _getAngryCoroutine = AngryInSeconds(10);
-        StartCoroutine(_getAngryCoroutine);
+        ChangeState();
+
+        if (hasLimit)
+        {
+            print("Get angry is starting cause there is a limit");
+            _getAngryCoroutine = AngryInSeconds(10);
+            StartCoroutine(_getAngryCoroutine);
+            return;
+        }        
     }
 
     public IEnumerator AngryInSeconds(float seconds)
@@ -116,15 +144,20 @@ public class Customer : MonoBehaviour
         if (vial is null) return;
         if (vial.Type.name == _requestedPotion.name)
         {
-            StopCoroutine(_getAngryCoroutine);
+            if(hasLimit) StopCoroutine(_getAngryCoroutine);
             orderText.text = "Thank you, exactly what I wanted";
             InteractionRaised?.Invoke(InteractionEvents.DeliverCorrectPotion);
             MoveToDespawn();
         }
         else
         {
-            orderText.text = "That is not what I ordered!";
+            orderText.text = "That is not what I ordered! Try Again?";
             InteractionRaised?.Invoke(InteractionEvents.DeliverIncorrectPotion);
+            if (!hasLimit)
+            {
+                print("This is a tutorial, you can try again");
+                return;
+            }
         }
     }
 
