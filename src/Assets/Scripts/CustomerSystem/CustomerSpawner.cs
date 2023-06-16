@@ -27,7 +27,7 @@ public class CustomerSpawner : MonoBehaviour
     public void SpawnTutorialCustomer()
     {
         print("Spawning Tutorial customer");
-        int orderPosition = 1; // I decided so that it goes to the middle
+        int orderPosition = 0; // Overwritten so it works in scene with only one position
         GameObject noobCustomer = Instantiate(customerPrefabs[Random.Range(0, customerPrefabs.Count)], transform.position, Quaternion.identity);
         Customer customerComponent = noobCustomer.GetComponent<Customer>();
         customerComponent.StartTutorialCustomer(orderPoints[orderPosition].transform.position, lookAtPoint, orderPosition, exitPoint.position);

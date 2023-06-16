@@ -20,11 +20,17 @@ public class Customer : MonoBehaviour
     [SerializeField] private float distanceEpsilon = 0.1f;
     [SerializeField] private TextMeshProUGUI orderText;
     [SerializeField] private float timeUntilAngry = 15f;
+    [SerializeField] private Animator animator;
 
+    [SerializeField] private float timeAfterReceived = 3f;
+    
+    
     private NavMeshAgent _navMeshAgent;
     private CustomerState _state = CustomerState.Waiting;
     private RecipeData _requestedPotion;
     private IEnumerator _getAngryCoroutine;
+    
+    
 
     private Vector3 _previousForward;
     private Vector3 _lookAtPosition;
@@ -33,6 +39,8 @@ public class Customer : MonoBehaviour
     private int orderPosition = -1;
     private bool hasLimit = true; // This lets us not have a time limit when in tutorial
     private Vector3 exitPosition;
+    private static readonly int Walking = Animator.StringToHash("Walking");
+    private static readonly int Happy = Animator.StringToHash("Happy");
 
     private void Awake()
     {
@@ -69,6 +77,12 @@ public class Customer : MonoBehaviour
         orderPosition = whichOrderPosition;
         hasLimit = false;
         exitPosition = exitWorldPosition;
+        
+        if (animator is not null)
+        {
+            Debug.Log("Set bool Walking to true");
+            animator.SetBool(Walking, true);
+        }
     }
 
 
@@ -112,6 +126,13 @@ public class Customer : MonoBehaviour
         orderPosition = whichOrderPosition;
         hasLimit = true;
         exitPosition = exitWorldPosition;
+
+        if (animator is not null)
+        {
+            Debug.Log("Set bool Walking to true");
+            animator.SetBool(Walking, true);
+        }
+        
     }
 
     private void Order() 
@@ -127,8 +148,12 @@ public class Customer : MonoBehaviour
             print("Get angry is starting cause there is a limit");
             _getAngryCoroutine = AngryInSeconds(timeUntilAngry);
             StartCoroutine(_getAngryCoroutine);
-            return;
-        }        
+        }
+
+        if (animator is not null)
+        {
+            animator.SetBool(Walking, false);
+        }
     }
 
     public IEnumerator AngryInSeconds(float seconds)
@@ -157,7 +182,7 @@ public class Customer : MonoBehaviour
             if(hasLimit) StopCoroutine(_getAngryCoroutine);
             orderText.text = "Thank you, exactly what I wanted";
             InteractionRaised?.Invoke(InteractionEvents.DeliverCorrectPotion);
-            MoveToDespawn();
+            StartCoroutine(MoveToDespawnIn(timeAfterReceived));
         }
         else
         {
@@ -171,9 +196,24 @@ public class Customer : MonoBehaviour
         }
     }
 
+    private IEnumerator MoveToDespawnIn(float seconds)
+    {
+        if (animator is not null)
+        {
+            animator.SetTrigger(Happy);
+        }
+
+        yield return new WaitForSeconds(seconds);
+        MoveToDespawn();
+    }
+    
     private void MoveToDespawn()
     {
         _navMeshAgent.destination = exitPosition;
+        if (animator is not null)
+        {
+            animator.SetBool(Walking, true);
+        }
         // _state = CustomerState.GoAway;
     }
 }
