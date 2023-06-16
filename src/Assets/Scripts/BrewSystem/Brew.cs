@@ -12,6 +12,7 @@ public class Brew : MonoBehaviour
     [SerializeField] private IngredientDictionary _currentIngredients;
     [SerializeField] private Transform _potionSpawnOrigin;
     [SerializeField] private bool _debugIngredientsIn;
+    [SerializeField] private GameObject trashPotion;
 
     private RecipeData CurrentBrew()
     {
@@ -70,6 +71,8 @@ public class Brew : MonoBehaviour
         else
         {
             Debug.Log("You made trash.");
+            GameObject noobPotion = Instantiate(trashPotion);
+            noobPotion.transform.position = _potionSpawnOrigin.transform.position;
             InteractionRaised?.Invoke(InteractionEvents.CreateIncorrectPotion);
         }
         InteractionRaised?.Invoke(InteractionEvents.CreatePotion);
