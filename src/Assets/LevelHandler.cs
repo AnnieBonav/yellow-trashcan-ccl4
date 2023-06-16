@@ -7,6 +7,8 @@ public class LevelHandler : MonoBehaviour
     [SerializeField] private float levelDurationSeconds = 10;
     [SerializeField] private CharactersController characterController;
     [SerializeField] private Dialogue dialogue;
+    [SerializeField] private CustomerSpawner customerSpawner;
+    [SerializeField] private bool isDebugging = false;
 
     private WaitForSeconds levelTimer;
 
@@ -21,11 +23,21 @@ public class LevelHandler : MonoBehaviour
         levelTimer = new WaitForSeconds(levelDurationSeconds);
     }
 
+    private void Start()
+    {
+        if (isDebugging)
+        {
+            print("WIll start level");
+            StartLevel();
+        }
+    }
+
     public void StartLevel()
     {
+        StartCoroutine(LevelTimer());
         print("The level has officially started!");
         characterController.SetToLevelPosition();
-
+        customerSpawner.SpawnCustomer();
     }
 
     private IEnumerator LevelTimer()

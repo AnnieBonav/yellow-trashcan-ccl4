@@ -19,6 +19,7 @@ public class Customer : MonoBehaviour
 
     [SerializeField] private float distanceEpsilon = 0.1f;
     [SerializeField] private TextMeshProUGUI orderText;
+    [SerializeField] private float timeUntilAngry = 15f;
 
     private NavMeshAgent _navMeshAgent;
     private CustomerState _state = CustomerState.Waiting;
@@ -36,7 +37,17 @@ public class Customer : MonoBehaviour
     private void Awake()
     {
         _navMeshAgent = GetComponent<NavMeshAgent>();
+    }
+
+    private void OnEnable()
+    {
         OrderPoint.CustomerArrived += HandleCustomerArrive;
+    }
+
+
+    private void OnDisable()
+    {
+        OrderPoint.CustomerArrived -= HandleCustomerArrive;
     }
 
     private void HandleCustomerArrive(int orderPoint)
@@ -68,7 +79,6 @@ public class Customer : MonoBehaviour
 
     public void ChangeState() // TODO: Check how to make this better. RN it is public so the Exit point simply access the customer and triggers a change state, but that starts smelling
     {
-        print("Was called to change, the state is: " + _state);
         switch (_state)
         {
             case CustomerState.WalkingToOrder: // If it is walking to order and change state is called, then it should now order
@@ -78,12 +88,12 @@ public class Customer : MonoBehaviour
                 RotateTowardsLookPosition(Time.deltaTime);
                 break;
             case CustomerState.GoAway:
-                Despawn();
+                print("Should not arrive here");
+                // Despawn();
                 break;
             default:
                 break;
         }
-        print("And now: " + _state);
     }
 
     private void RotateTowardsLookPosition(float delta)
@@ -94,16 +104,14 @@ public class Customer : MonoBehaviour
         transform.forward = Vector3.Lerp(_previousForward, directionVector, _lookAtTimer);
     }
     
-    public void StartCustomerBehaviour(Vector3 orderPosition, Transform lookAt)
+    public void StartCustomerBehaviour(Vector3 orderWorldPosition, Transform lookAt, int whichOrderPosition, Vector3 exitWorldPosition)
     {
         _state = CustomerState.WalkingToOrder;
-        _navMeshAgent.destination = orderPosition;
+        _navMeshAgent.destination = orderWorldPosition;
         _lookAtPosition = lookAt.position;
-    }
-
-    private void Despawn()
-    {
-        Destroy(gameObject);
+        orderPosition = whichOrderPosition;
+        hasLimit = true;
+        exitPosition = exitWorldPosition;
     }
 
     private void Order() 
@@ -117,7 +125,7 @@ public class Customer : MonoBehaviour
         if (hasLimit)
         {
             print("Get angry is starting cause there is a limit");
-            _getAngryCoroutine = AngryInSeconds(10);
+            _getAngryCoroutine = AngryInSeconds(timeUntilAngry);
             StartCoroutine(_getAngryCoroutine);
             return;
         }        
@@ -166,6 +174,6 @@ public class Customer : MonoBehaviour
     private void MoveToDespawn()
     {
         _navMeshAgent.destination = exitPosition;
-        _state = CustomerState.GoAway;
+        // _state = CustomerState.GoAway;
     }
 }

@@ -1,15 +1,17 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
 
 public class ExitPoint : MonoBehaviour
 {
+    public static event Action CustomerLeft;
+
     private void OnTriggerEnter(Collider collider)
     {
-        print("A customer arrived");
         if (collider.CompareTag("Customer")){
+            print("A customer arrived");
             Customer customer = collider.transform.GetComponentInParent<Customer>();
-            customer.ChangeState();
+            Destroy(customer.gameObject);
+            CustomerLeft?.Invoke();
         }
     }
 }
