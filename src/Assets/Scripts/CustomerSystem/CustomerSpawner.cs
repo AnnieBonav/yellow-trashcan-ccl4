@@ -2,29 +2,89 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[System.Serializable]
-public struct OrderPoint
-{
-    public Transform moveTo;
-    public Transform lookAt;
-}
-
 public class CustomerSpawner : MonoBehaviour
 {
     [SerializeField] private List<OrderPoint> orderPoints;
-    [SerializeField] private List<Customer> customerPrefabs;
+    [SerializeField] private Transform lookAtPoint;
+    [SerializeField] private Transform exitPoint;
+    [SerializeField] private List<GameObject> customerPrefabs;
 
-    void Start()
+    [SerializeField] private bool isDebugging;
+    [SerializeField] private float timeBetweenCustomers;
+
+    private bool isCooledDown = true; // If it is cooled down, then anotehr custoemr can be spawned
+    private bool isWaitingToSpawn = false; // Means that the cooldown went down but there were no free spaces
+
+    private void Awake()
     {
-        if (orderPoints.Count > 0) StartCoroutine(SpawnCustomerAfterSeconds(3));
+        ExitPoint.CustomerLeft += HandleSpaceFreed;
+    }
+    private void Start()
+    {
+        if(isDebugging) SpawnTutorialCustomer();
     }
 
-    private IEnumerator SpawnCustomerAfterSeconds(float delay)
+    public void SpawnTutorialCustomer()
     {
-        yield return new WaitForSeconds(delay);
-        Customer noob = Instantiate(customerPrefabs[Random.Range(0, customerPrefabs.Count)], transform.position,
-            Quaternion.identity);
-        int orderPointIndex = Random.Range(0, orderPoints.Count);
-        noob.StartCustomerBehaviour(orderPoints[orderPointIndex].moveTo.position, orderPoints[orderPointIndex].lookAt.position );
+        print("Spawning Tutorial customer");
+        int orderPosition = 1; // I decided so that it goes to the middle
+        GameObject noobCustomer = Instantiate(customerPrefabs[Random.Range(0, customerPrefabs.Count)], transform.position, Quaternion.identity);
+        Customer customerComponent = noobCustomer.GetComponent<Customer>();
+        customerComponent.StartTutorialCustomer(orderPoints[orderPosition].transform.position, lookAtPoint, orderPosition, exitPoint.position);
+    }
+
+    public void SpawnCustomer()
+    {
+        if (!isCooledDown) return;
+        print("Start spawning normal customers");
+
+        List<int> freeOrderPoints = new List<int>(); // Stores reference to the int of the free order point
+        for(int i = 0; i < orderPoints.Count; i++) // Go through all of the points to see which are available
+        {
+            if (!orderPoints[i].isOccupied)
+            {
+                freeOrderPoints.Add(i);
+            }
+        }
+
+        if(freeOrderPoints.Count > 0) // If there are free points then I can spawn one
+        {
+            int orderPointIndex = Random.Range(0, freeOrderPoints.Count);
+            int orderPosition = freeOrderPoints[orderPointIndex];
+
+            GameObject noobCustomer = Instantiate(customerPrefabs[Random.Range(0, customerPrefabs.Count)], transform.position, Quaternion.identity);
+            Customer customerComponent = noobCustomer.GetComponent<Customer>();
+            customerComponent.StartCustomerBehaviour(orderPoints[orderPosition].transform.position, lookAtPoint, orderPosition, exitPoint.position); // TODO: can change tp be cleaner and use the same start customer behaviour
+            
+            orderPoints[orderPosition].isOccupied = true;
+            orderPoints[orderPosition].whichCustomerIsHere = noobCustomer;
+
+            StartCoroutine(CoolDownCustomer()); // I have spawned, so I need to start running my cooldown
+        }
+        else
+        {
+            print("Were no free spaces, so now will be waiting to spawn");
+            isWaitingToSpawn = true;
+        }
+    }
+
+    private void HandleSpaceFreed()
+    {
+        if (isWaitingToSpawn)
+        {
+            isWaitingToSpawn = false; // Reset it
+            print("Was waiting to spawn and now a space has been freed, so another customer can come");
+            SpawnCustomer();
+        }
+    }
+
+
+    private IEnumerator CoolDownCustomer()
+    {
+        print("Called cool down, so a customer was spawned");
+        isCooledDown = false;
+        yield return new WaitForSeconds(timeBetweenCustomers);
+        isCooledDown = true;
+        SpawnCustomer();
     }
 }
