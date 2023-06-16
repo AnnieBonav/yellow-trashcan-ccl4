@@ -28,6 +28,11 @@ public class CharactersController : MonoBehaviour
         book.position = bookEntrance.position;
     }
 
+    private void FixedUpdate()
+    {
+        book.LookAt(player);
+    }
+
     public void ChangePosition(InteractionEvents interactionEvent)
     {
         switch (interactionEvent)
