@@ -6,7 +6,10 @@ public class CustomerSpawner : MonoBehaviour
 {
     [SerializeField] private List<OrderPoint> orderPoints;
     [SerializeField] private Transform lookAtPoint;
+    [SerializeField] private Transform exitPoint;
     [SerializeField] private List<Customer> customerPrefabs;
+
+    [SerializeField] private bool isDebugging;
 
     private IEnumerator SpawnCustomerAfterSeconds(float delay)
     {
@@ -19,8 +22,7 @@ public class CustomerSpawner : MonoBehaviour
 
     private void Start()
     {
-        print("STARTing test");
-        SpawnTutorialCustomer();
+        if(isDebugging) SpawnTutorialCustomer();
     }
 
     private void SpawnCustomer()
@@ -33,7 +35,7 @@ public class CustomerSpawner : MonoBehaviour
         print("Spawning Tutorial customer");
         int orderPosition = 1; // I decided so that it goes to the middle
         Customer noob = Instantiate(customerPrefabs[Random.Range(0, customerPrefabs.Count)], transform.position, Quaternion.identity);
-        noob.StartTutorialCustomer(orderPoints[orderPosition].transform.position, lookAtPoint, orderPosition);
+        noob.StartTutorialCustomer(orderPoints[orderPosition].transform.position, lookAtPoint, orderPosition, exitPoint.position);
     }
 
     public void StartSpawningCustomers()

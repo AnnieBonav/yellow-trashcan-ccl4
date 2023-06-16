@@ -20,7 +20,6 @@ public class Customer : MonoBehaviour
     [SerializeField] private float distanceEpsilon = 0.1f;
     [SerializeField] private TextMeshProUGUI orderText;
 
-    private Vector3 _spawnPosition;
     private NavMeshAgent _navMeshAgent;
     private CustomerState _state = CustomerState.Waiting;
     private RecipeData _requestedPotion;
@@ -32,12 +31,11 @@ public class Customer : MonoBehaviour
 
     private int orderPosition = -1;
     private bool hasLimit = true; // This lets us not have a time limit when in tutorial
+    private Vector3 exitPosition;
 
     private void Awake()
     {
         _navMeshAgent = GetComponent<NavMeshAgent>();
-        _spawnPosition = transform.position;
-
         OrderPoint.CustomerArrived += HandleCustomerArrive;
     }
 
@@ -47,17 +45,19 @@ public class Customer : MonoBehaviour
         if (orderPoint == orderPosition)
         {
             print("The customer" + transform.name + " Arrived to its place #" + orderPoint);
+            InteractionRaised?.Invoke(InteractionEvents.CustomerArrives);
             ChangeState();
         }
     }
 
-    public void StartTutorialCustomer(Vector3 orderWorldPosition, Transform lookAt, int whichOrderPosition)
+    public void StartTutorialCustomer(Vector3 orderWorldPosition, Transform lookAt, int whichOrderPosition, Vector3 exitWorldPosition)
     {
         _state = CustomerState.WalkingToOrder;
         _navMeshAgent.destination = orderWorldPosition;
         _lookAtPosition = lookAt.position;
-        orderPosition = whichOrderPosition; // This is the p[lace where they are supposed to go, it should be st by the customer spawner when it gets instanced
+        orderPosition = whichOrderPosition;
         hasLimit = false;
+        exitPosition = exitWorldPosition;
     }
 
 
@@ -66,8 +66,9 @@ public class Customer : MonoBehaviour
         _requestedPotion = PotionKnowledgebase.Instance.RandomRecipe();
     }
 
-    void ChangeState()
+    public void ChangeState() // TODO: Check how to make this better. RN it is public so the Exit point simply access the customer and triggers a change state, but that starts smelling
     {
+        print("Was called to change, the state is: " + _state);
         switch (_state)
         {
             case CustomerState.WalkingToOrder: // If it is walking to order and change state is called, then it should now order
@@ -77,11 +78,12 @@ public class Customer : MonoBehaviour
                 RotateTowardsLookPosition(Time.deltaTime);
                 break;
             case CustomerState.GoAway:
-                DespawnIfAtSpawn();
+                Despawn();
                 break;
             default:
                 break;
         }
+        print("And now: " + _state);
     }
 
     private void RotateTowardsLookPosition(float delta)
@@ -99,9 +101,10 @@ public class Customer : MonoBehaviour
         _lookAtPosition = lookAt.position;
     }
 
-    private void DespawnIfAtSpawn()
+    private void Despawn()
     {
-        if(Vector3.Distance(transform.position, _navMeshAgent.destination) <= distanceEpsilon) Destroy(gameObject);
+        print("SHould have destroyed?");
+        Destroy(gameObject);
     }
 
     private void Order() 
@@ -163,7 +166,7 @@ public class Customer : MonoBehaviour
 
     private void MoveToDespawn()
     {
-        _navMeshAgent.destination = _spawnPosition;
+        _navMeshAgent.destination = exitPosition;
         _state = CustomerState.GoAway;
     }
 }
