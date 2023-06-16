@@ -18,3 +18,4 @@ MonoBehaviour:
     herb: 1
     bark: 0
   potionPrefab: {fileID: 3853862978801776299, guid: 1fe92225679a2364b8be3e9100740b20, type: 3}
+  potionColor: {r: 0.21794407, g: 0, b: 0.46226418, a: 0}

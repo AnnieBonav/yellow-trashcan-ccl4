@@ -10,12 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 647128aa66bb34d568b445b18ff9e7a6, type: 3}
-  m_Name: SleepRemedy
+  m_Name: TrashPotion
   m_EditorClassIdentifier: 
   ingredients:
-    liquid: 1
-    mushroom: 1
-    herb: 0
-    bark: 1
-  potionPrefab: {fileID: 8116825069463645994, guid: dd31b7ac1eac8d64cb4ae1efd147b866, type: 3}
-  potionColor: {r: 0.3962264, g: 0.3962264, b: 0.3962264, a: 0}
+    liquid: 10
+    mushroom: 10
+    herb: 10
+    bark: 10
+  potionPrefab: {fileID: 1517099294185381978, guid: 14413ef61ad62fa428f1ec2124a75b76, type: 3}
