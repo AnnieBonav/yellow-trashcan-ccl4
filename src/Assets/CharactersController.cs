@@ -33,6 +33,15 @@ public class CharactersController : MonoBehaviour
         book.LookAt(player);
     }
 
+    public void SetToLevelPosition()
+    {
+        print("Setting to level position");
+        player.position = playerBrewing.position;
+        book.position = bookBrewing.position;
+        book.gameObject.SetActive(false);
+
+    }
+
     public void ChangePosition(InteractionEvents interactionEvent)
     {
         switch (interactionEvent)

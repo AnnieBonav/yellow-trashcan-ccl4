@@ -103,7 +103,6 @@ public class Customer : MonoBehaviour
 
     private void Despawn()
     {
-        print("SHould have destroyed?");
         Destroy(gameObject);
     }
 

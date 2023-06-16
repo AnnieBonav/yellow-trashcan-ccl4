@@ -11,15 +11,6 @@ public class CustomerSpawner : MonoBehaviour
 
     [SerializeField] private bool isDebugging;
 
-    private IEnumerator SpawnCustomerAfterSeconds(float delay)
-    {
-        yield return new WaitForSeconds(delay);
-        Customer noob = Instantiate(customerPrefabs[Random.Range(0, customerPrefabs.Count)], transform.position,
-            Quaternion.identity);
-        int orderPointIndex = Random.Range(0, orderPoints.Count);
-        noob.StartCustomerBehaviour(orderPoints[orderPointIndex].transform.position, lookAtPoint);
-    }
-
     private void Start()
     {
         if(isDebugging) SpawnTutorialCustomer();
@@ -45,5 +36,14 @@ public class CustomerSpawner : MonoBehaviour
             print("Start spawning normal customers");
             StartCoroutine(SpawnCustomerAfterSeconds(3));
         }
+    }
+
+    private IEnumerator SpawnCustomerAfterSeconds(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        Customer noob = Instantiate(customerPrefabs[Random.Range(0, customerPrefabs.Count)], transform.position,
+            Quaternion.identity);
+        int orderPointIndex = Random.Range(0, orderPoints.Count);
+        noob.StartCustomerBehaviour(orderPoints[orderPointIndex].transform.position, lookAtPoint);
     }
 }

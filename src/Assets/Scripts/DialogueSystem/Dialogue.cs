@@ -35,6 +35,8 @@ public class Dialogue : MonoBehaviour
 
     [SerializeField] private GameObject continueButtonReference;
 
+    [SerializeField] private int dialogueToStart = 0;
+
     private bool _writing = true;
     private bool _canAdvance = false;
     private int _currentDialogue = 0;
@@ -69,6 +71,7 @@ public class Dialogue : MonoBehaviour
 
     void Start()
     {
+        _currentDialogue = dialogueToStart;
         continueButtonReference.SetActive(false);
         StartCoroutine(NextTextblock());
         EnableContinue();
@@ -99,7 +102,6 @@ public class Dialogue : MonoBehaviour
             if (_canAdvance)
             {
                 _currentDialogue++;
-                print("Can Advance, inside of dialogue.");
                 StartCoroutine(NextTextblock());
                 DisableContinue();
                 CheckIfFlagsFulfilled();
@@ -139,7 +141,6 @@ public class Dialogue : MonoBehaviour
 
     private void EnableContinue()
     {
-        print("Enabliong continue");
         continueButtonReference.SetActive(true);
         _canAdvance = true;
         if(!textBlocks[_currentDialogue].needsClickToContinue) ProceedDialogue();
@@ -147,7 +148,6 @@ public class Dialogue : MonoBehaviour
 
     private void DisableContinue()
     {
-        print("Enabliong continue");
         continueButtonReference.SetActive(false);
         _canAdvance = false;
     }
@@ -166,7 +166,6 @@ public class Dialogue : MonoBehaviour
 
     private void PressedA(InputAction.CallbackContext context)
     {
-        print("PressedA");
         if(_canAdvance) ProceedDialogue();
     }
 
