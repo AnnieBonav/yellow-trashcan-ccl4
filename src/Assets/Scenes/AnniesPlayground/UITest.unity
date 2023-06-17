@@ -1966,13 +1966,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelDurationSeconds: 200
-  charactersController: {fileID: 1173198618}
+  charactersController: {fileID: 0}
   dialogue: {fileID: 1811891161}
   customerSpawner: {fileID: 2088302916}
   isDebugging: 0
-  _interactPauseMenu: {fileID: 6495535394599772413, guid: c348712bda248c246b8c49b3db54643f, type: 3}
-  pauseMenu: {fileID: 3446413}
-  startRoom: 2
+  _interactPauseMenu: {fileID: 0}
+  pauseMenu: {fileID: 0}
+  startRoom: 0
 --- !u!4 &629228275
 Transform:
   m_ObjectHideFlags: 0
@@ -4259,16 +4259,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1920290770}
   book: {fileID: 2063255384}
-  uiPause: {fileID: 3446415}
+  uiPause: {fileID: 0}
   bookEntrance: {fileID: 1825570635}
   bookBrewing: {fileID: 1360862591}
   bookGarden: {fileID: 289254651}
   playerEntrance: {fileID: 1154113477}
   playerBrewing: {fileID: 93519960}
   playerGarden: {fileID: 839081351}
-  uiBrewing: {fileID: 1964642857}
-  uiGarden: {fileID: 1252450486}
-  uiEntrance: {fileID: 1649041883}
+  uiBrewing: {fileID: 0}
+  uiGarden: {fileID: 0}
+  uiEntrance: {fileID: 0}
 --- !u!1001 &1179992481
 PrefabInstance:
   m_ObjectHideFlags: 0
