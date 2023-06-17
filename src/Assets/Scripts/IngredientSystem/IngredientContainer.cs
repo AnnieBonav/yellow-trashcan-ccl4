@@ -91,7 +91,6 @@ public class IngredientContainer : MonoBehaviour
     public void ResetEmptyIngredient()
     {
         Instantiate(emptyIngredient, transform);
-        print("Creating new container");
     }
 
     private void UpdateFillDisplayText()
