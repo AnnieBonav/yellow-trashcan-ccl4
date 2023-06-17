@@ -1,6 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{ACADDBE3-532E-4389-8B01-D8996527A357}" SchemaVersion="103">
 	<SoundcasterSessions>
-		<WorkUnit Name="Default Work Unit" ID="{ACADDBE3-532E-4389-8B01-D8996527A357}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{ACADDBE3-532E-4389-8B01-D8996527A357}" PersistMode="Standalone">
+			<ChildrenList>
+				<SoundcasterSession Name="DefaultSoundcaster" ID="{36597676-3A31-4DF3-90DE-3EC11CFAA76C}">
+					<ModuleList>
+						<Module>
+							<ObjectRef Name="Play_BackgroundMusic" ID="{87C0199A-1A13-4CDB-A19D-B9633C11A305}" WorkUnitID="{BFC7D3B1-44B4-4C51-9812-44E9AEA27384}"/>
+							<Position X="0" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Play_PickIngredient" ID="{E72313BC-28B2-46F0-A3AA-131A1A462620}" WorkUnitID="{BFC7D3B1-44B4-4C51-9812-44E9AEA27384}"/>
+							<Position X="1" Y="0"/>
+						</Module>
+					</ModuleList>
+					<RTPCValueList ShowAll="true">
+						<RTPCValue>
+							<GameParameterRef Name="BubblesIntensity" ID="{C3739CB7-27CD-40C5-B147-C73A9F3605B7}"/>
+							<Value>54.3498168498168</Value>
+						</RTPCValue>
+						<RTPCValue>
+							<GameParameterRef Name="VolumeMusic" ID="{4B951CDC-F786-40E3-B3B8-D25F31A06C14}"/>
+							<Value>50</Value>
+						</RTPCValue>
+						<RTPCValue>
+							<GameParameterRef Name="VolumeUI" ID="{A4C9F994-8C98-4A1B-A232-ADFE170C79CB}"/>
+							<Value>50</Value>
+						</RTPCValue>
+						<RTPCValue>
+							<GameParameterRef Name="VolumeSFX" ID="{DD73AF90-7824-4C01-9A73-EC4A9DB262E0}"/>
+							<Value>50</Value>
+						</RTPCValue>
+					</RTPCValueList>
+					<CurrentStateList ShowAll="true">
+						<CurrentStateRef Name="Brewing" ID="{CAE0A252-51F7-4514-A13A-E3887266E99D}"/>
+					</CurrentStateList>
+					<CurrentSwitchList ShowAll="true">
+						<CurrentSwitchRef Name="Fairy" ID="{E80D63B8-DA83-4824-9A9C-2E125EE9A4D3}"/>
+					</CurrentSwitchList>
+				</SoundcasterSession>
+			</ChildrenList>
+		</WorkUnit>
 	</SoundcasterSessions>
 </WwiseDocument>
