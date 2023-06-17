@@ -26,7 +26,7 @@ public class CustomerSpawner : MonoBehaviour
 
     public void SpawnTutorialCustomer()
     {
-        print("Spawning Tutorial customer");
+        if (isDebugging)  print("Spawning Tutorial customer");
         int orderPosition = 0; // Overwritten so it works in scene with only one position
         GameObject noobCustomer = Instantiate(customerPrefabs[Random.Range(0, customerPrefabs.Count)], transform.position, Quaternion.identity);
         Customer customerComponent = noobCustomer.GetComponent<Customer>();
@@ -36,7 +36,7 @@ public class CustomerSpawner : MonoBehaviour
     public void SpawnCustomer()
     {
         if (!isCooledDown) return;
-        print("Start spawning normal customers");
+        if (isDebugging) print("Start spawning normal customers");
 
         List<int> freeOrderPoints = new List<int>(); // Stores reference to the int of the free order point
         for(int i = 0; i < orderPoints.Count; i++) // Go through all of the points to see which are available
@@ -63,7 +63,7 @@ public class CustomerSpawner : MonoBehaviour
         }
         else
         {
-            print("Were no free spaces, so now will be waiting to spawn");
+            if(isDebugging) print("Were no free spaces, so now will be waiting to spawn");
             isWaitingToSpawn = true;
         }
     }
@@ -73,7 +73,7 @@ public class CustomerSpawner : MonoBehaviour
         if (isWaitingToSpawn)
         {
             isWaitingToSpawn = false; // Reset it
-            print("Was waiting to spawn and now a space has been freed, so another customer can come");
+            if(isDebugging) print("Was waiting to spawn and now a space has been freed, so another customer can come");
             SpawnCustomer();
         }
     }
@@ -81,7 +81,7 @@ public class CustomerSpawner : MonoBehaviour
 
     private IEnumerator CoolDownCustomer()
     {
-        print("Called cool down, so a customer was spawned");
+        if(isDebugging) print("Called cool down, so a customer was spawned");
         isCooledDown = false;
         yield return new WaitForSeconds(timeBetweenCustomers);
         isCooledDown = true;
