@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 1110820025}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -149,7 +149,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4229392}
   m_LocalRotation: {x: 0, y: -0.1828361, z: 0, w: 0.98314345}
-  m_LocalPosition: {x: -0.712, y: -0.767, z: -0.131}
+  m_LocalPosition: {x: -0.31, y: 0.666, z: 0.23}
   m_LocalScale: {x: 0.14, y: 0.0453026, z: 0.0406462}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -2620,7 +2620,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 769933311}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.496, y: -1.608, z: -0.198}
+  m_LocalPosition: {x: 0.496, y: 0.51, z: -0.198}
   m_LocalScale: {x: 0.09, y: 0.09, z: 0.09}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -2851,12 +2851,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1513950950}
   book: {fileID: 1619158841}
+  uiPause: {fileID: 0}
   bookEntrance: {fileID: 96592964592944759}
   bookBrewing: {fileID: 63239081}
   bookGarden: {fileID: 1231905761}
   playerEntrance: {fileID: 1452543410}
   playerBrewing: {fileID: 1822894127}
   playerGarden: {fileID: 1576884592}
+  uiBrewing: {fileID: 0}
+  uiGarden: {fileID: 0}
+  uiEntrance: {fileID: 0}
 --- !u!4 &788342796
 Transform:
   m_ObjectHideFlags: 0
@@ -4178,7 +4182,7 @@ PrefabInstance:
     - target: {fileID: 4370951913967234905, guid: 9aea64545ad374dbdbe0f6b0a43255bb, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 7f0d5d8a5f5f6411eab2e65696e00d4e, type: 2}
+      objectReference: {fileID: 2100000, guid: 7c14e5459bedd4f82a912c7313feff96, type: 2}
     - target: {fileID: 4726094866879472222, guid: 9aea64545ad374dbdbe0f6b0a43255bb, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
@@ -5591,10 +5595,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelDurationSeconds: 10
-  characterController: {fileID: 788342795}
+  charactersController: {fileID: 0}
   dialogue: {fileID: 670868357}
   customerSpawner: {fileID: 1553894688}
   isDebugging: 1
+  _interactPauseMenu: {fileID: 0}
+  pauseMenu: {fileID: 0}
+  startRoom: 0
 --- !u!4 &1531996494
 Transform:
   m_ObjectHideFlags: 0
@@ -5608,7 +5615,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1536180193 stripped
 Transform:
@@ -5888,7 +5895,7 @@ Transform:
   - {fileID: 270008462}
   - {fileID: 1121230213}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1622725956
 PrefabInstance:

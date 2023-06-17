@@ -129,7 +129,6 @@ public class Customer : MonoBehaviour
 
         if (animator is not null)
         {
-            Debug.Log("Set bool Walking to true");
             animator.SetBool(Walking, true);
         }
         
