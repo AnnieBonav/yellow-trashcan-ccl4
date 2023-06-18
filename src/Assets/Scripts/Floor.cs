@@ -8,8 +8,9 @@ public class Floor : MonoBehaviour
     {
         if (collider.CompareTag("Ingredient"))
         {
-            print("An ingredient fell, trigger.");
-            Destroy(collider.gameObject);
+            print("An ingredient fell, trigger. Will Play sound.");
+            SoundEmitter ingredientSound = collider.transform.GetComponentInParent<SoundEmitter>();
+            ingredientSound.PlaySound();
         }
     }
 
@@ -17,6 +18,7 @@ public class Floor : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Ingredient"))
         {
+            print("An ingredient fell, collider. Should Play sound.");
             // Destroy(collision.gameObject);
         }
     }
