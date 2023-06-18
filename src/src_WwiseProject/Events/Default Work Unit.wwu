@@ -14,6 +14,97 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="Play_BackgroundMusic" ID="{87C0199A-1A13-4CDB-A19D-B9633C11A305}">
+					<ChildrenList>
+						<Action Name="" ID="{952B1E1C-9FF5-459B-AA17-033A58914867}" ShortID="760707001">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="BackgroundMusic" ID="{9B5CAC3C-0DA6-4229-BD4D-B125B2EC61C2}" WorkUnitID="{D534BECF-C975-4104-9E89-B949A9C3F6A0}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_CorrectPotion" ID="{672AAD94-8EA3-4366-8AB2-56E0B74091D1}">
+					<ChildrenList>
+						<Action Name="" ID="{BEF60C6F-01A7-43B7-BE17-9A7C888DF28A}" ShortID="200884890">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="CorrectPotion" ID="{3A9E3BEB-5CB3-48DC-BB10-3D5DD6283731}" WorkUnitID="{D534BECF-C975-4104-9E89-B949A9C3F6A0}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_IncorrectPotion" ID="{7FD00F68-9BBC-4668-9BEA-613686C35DED}">
+					<ChildrenList>
+						<Action Name="" ID="{35C7B9A5-92C0-4AA7-81B8-14C05A5543A2}" ShortID="666559615">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="IncorrectPotion" ID="{D99C8A4D-D4E3-4252-A283-9C82A912B46D}" WorkUnitID="{D534BECF-C975-4104-9E89-B949A9C3F6A0}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_Bubbles" ID="{9F4E5CE3-B5E3-47DF-88F7-59D8E787AE02}">
+					<ChildrenList>
+						<Action Name="" ID="{CEBFF9BF-DC83-4CB9-B6BE-EA2FEE7DE526}" ShortID="506015116">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Bubbles" ID="{33D2AF37-ABC2-4C00-AACB-9C9A180FFA57}" WorkUnitID="{D534BECF-C975-4104-9E89-B949A9C3F6A0}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Stop_Bubbles" ID="{7F720301-4987-4D41-BDC8-98509A41F425}">
+					<ChildrenList>
+						<Action Name="" ID="{B02F4041-F632-4C9F-A0D6-473DE0CCF174}" ShortID="1057398678">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Bubbles" ID="{33D2AF37-ABC2-4C00-AACB-9C9A180FFA57}" WorkUnitID="{D534BECF-C975-4104-9E89-B949A9C3F6A0}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_Door" ID="{08D89655-4DF5-47E1-B2F4-805A4664E481}">
+					<ChildrenList>
+						<Action Name="" ID="{4220D945-776D-424B-8E91-91D68D0C0664}" ShortID="564387179">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Door" ID="{91BE33FC-998C-4860-9F80-C10647B58575}" WorkUnitID="{D534BECF-C975-4104-9E89-B949A9C3F6A0}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_Footstep" ID="{E7DC6482-AF44-43A5-8FF7-FA92E9F2569B}">
+					<ChildrenList>
+						<Action Name="" ID="{800ACD4E-910B-4F6B-B06C-0F46626F0BBE}" ShortID="221566815">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Footsteps" ID="{2A1E0E23-6F60-4757-AF53-39D45BFE4EA1}" WorkUnitID="{D534BECF-C975-4104-9E89-B949A9C3F6A0}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_PickIngredient" ID="{E72313BC-28B2-46F0-A3AA-131A1A462620}">
+					<ChildrenList>
+						<Action Name="" ID="{5879D29B-4E87-407B-84FD-01343A5530F5}" ShortID="347946607">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="PickIngredient" ID="{229412C8-756B-49CA-99E8-DC50B50D1C6D}" WorkUnitID="{D534BECF-C975-4104-9E89-B949A9C3F6A0}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

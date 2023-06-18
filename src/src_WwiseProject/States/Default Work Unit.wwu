@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{2FD81666-B443-4CF4-B275-1034432FFE0C}" SchemaVersion="103">
 	<States>
-		<WorkUnit Name="Default Work Unit" ID="{2FD81666-B443-4CF4-B275-1034432FFE0C}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{2FD81666-B443-4CF4-B275-1034432FFE0C}" PersistMode="Standalone">
+			<ChildrenList>
+				<StateGroup Name="CurrentRoom" ID="{8AD22B4C-3435-4792-92F3-0C80E6663CAE}">
+					<ChildrenList>
+						<State Name="None" ID="{436F622D-D85B-4DA8-ACC0-37572241FC3E}"/>
+						<State Name="Brewing" ID="{CAE0A252-51F7-4514-A13A-E3887266E99D}"/>
+						<State Name="Garden" ID="{057B4A78-0161-4F69-885F-F4410803C3EF}"/>
+						<State Name="Entrance" ID="{334A35C3-4FCF-4D56-985A-BAB25095ADED}"/>
+					</ChildrenList>
+				</StateGroup>
+			</ChildrenList>
+		</WorkUnit>
 	</States>
 </WwiseDocument>
