@@ -92,11 +92,13 @@ public class LevelHandler : MonoBehaviour
         {
             pauseMenu.SetActive(false);
             menuOpened = false;
+            InteractionRaised?.Invoke(InteractionEvents.ResumeGame);
         }
         else
         {
             pauseMenu.SetActive(true);
             menuOpened = true;
+            InteractionRaised?.Invoke(InteractionEvents.PauseGame);
         }
     }
 

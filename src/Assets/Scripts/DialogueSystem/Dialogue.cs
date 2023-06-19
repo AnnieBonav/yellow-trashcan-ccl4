@@ -60,6 +60,7 @@ public class Dialogue : MonoBehaviour
 
     private void OnDisable()
     {
+        print("The dialogue was disabled");
         TestFlags.InteractionRaised -= HandleFlags;
         Ingredient.InteractionRaised -= HandleFlags;
         Refiller.InteractionRaised -= HandleFlags;
@@ -68,6 +69,7 @@ public class Dialogue : MonoBehaviour
         IngredientAcceptor.InteractionRaised -= HandleFlags;
         Customer.InteractionRaised -= HandleFlags;
         GarbageCan.InteractionRaised -= HandleFlags;
+        LevelHandler.InteractionRaised -= HandleFlags;
     }
 
     void Start()
@@ -81,6 +83,7 @@ public class Dialogue : MonoBehaviour
     public void CloseDialogue()
     {
         print("Closed dialogue");
+        gameObject.SetActive(false);
     }
 
     private IEnumerator NextTextblock()

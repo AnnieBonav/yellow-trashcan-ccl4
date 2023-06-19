@@ -59,7 +59,8 @@ MonoBehaviour:
         m_Calls: []
     actionsToFulfill: []
     needsClickToContinue: 1
-  - text: For now, look around and interact with your entrance stuff.
+  - text: For now, look around and feel free to interact objects. To do so, point
+      at the element and, if your vision gets pink, grab the object!
     events:
       m_PersistentCalls:
         m_Calls: []
@@ -227,14 +228,44 @@ MonoBehaviour:
     - interactionEvent: 9
       hasBeenFulfilled: 0
     needsClickToContinue: 0
-  - text: You did it! You are now ready to get your day ready. Good luck, and enjoy
-      your potion making!
+  - text: You did it! You are almost ready to get your day ready.
+    events:
+      m_PersistentCalls:
+        m_Calls: []
+    actionsToFulfill: []
+    needsClickToContinue: 1
+  - text: A few extra things! To pause the game, you can click the pause button in
+      your left hand.
     events:
       m_PersistentCalls:
         m_Calls: []
     actionsToFulfill:
-    - interactionEvent: 9
+    - interactionEvent: 20
       hasBeenFulfilled: 0
+    needsClickToContinue: 0
+  - text: You can move the sliders with the trigger. Then simply click again to close
+      it!
+    events:
+      m_PersistentCalls:
+        m_Calls: []
+    actionsToFulfill:
+    - interactionEvent: 21
+      hasBeenFulfilled: 0
+    needsClickToContinue: 0
+  - text: To see which ingredients you have put inside already, you can trigger on
+      the pot and they will magically appear for a few seconds on top of it.
+    events:
+      m_PersistentCalls:
+        m_Calls: []
+    actionsToFulfill:
+    - interactionEvent: 22
+      hasBeenFulfilled: 0
+    needsClickToContinue: 0
+  - text: Amazing, this is it! Good luck, and enjoy your potion making!
+    events:
+      m_PersistentCalls:
+        m_Calls: []
+    actionsToFulfill: []
     needsClickToContinue: 1
   - text: 
     events:
@@ -271,4 +302,4 @@ MonoBehaviour:
   characterDelay: 0.04
   _pressAAction: {fileID: 4323845545830496942, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   continueButtonReference: {fileID: 0}
-  dialogueToStart: 13
+  dialogueToStart: 0
