@@ -5,19 +5,16 @@ using UnityEngine.VFX;
 
 public class PlayVFXGraph : MonoBehaviour
 {
-    
-    //Annie did you know that start is triggered before the first frame is rendered?
+    [SerializeField] private VisualEffect correctPotionPoof;
+    [SerializeField] private VisualEffect trashPotionPoof;
 
-    [SerializeField] private VisualEffect goodPoof;
-    [SerializeField] private VisualEffect sadPoof;
-
-    public void Good()
+    public void PlayCorrectPotion()
     {
-        goodPoof.Play();
+        correctPotionPoof.Play();
     }
 
-    public void Sad()
+    public void PlayTrashPotion()
     {
-        sadPoof.Play();
+        trashPotionPoof.Play();
     }
 }

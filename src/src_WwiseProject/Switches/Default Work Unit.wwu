@@ -1,6 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{33AC2385-96B4-4090-91A0-52CFAEB08E0B}" SchemaVersion="103">
 	<Switches>
-		<WorkUnit Name="Default Work Unit" ID="{33AC2385-96B4-4090-91A0-52CFAEB08E0B}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{33AC2385-96B4-4090-91A0-52CFAEB08E0B}" PersistMode="Standalone">
+			<ChildrenList>
+				<SwitchGroup Name="Character" ID="{4FA7F62D-013F-499C-A583-B5D6AA09A184}">
+					<ChildrenList>
+						<Switch Name="Fairy" ID="{E80D63B8-DA83-4824-9A9C-2E125EE9A4D3}"/>
+						<Switch Name="Soldier" ID="{9A43A3BB-29F2-4A68-BC63-F07C5082C4A2}"/>
+						<Switch Name="Wizard" ID="{61F16407-D362-499C-B985-A35C48139FE2}"/>
+					</ChildrenList>
+				</SwitchGroup>
+			</ChildrenList>
+		</WorkUnit>
 	</Switches>
 </WwiseDocument>

@@ -11,11 +11,53 @@
 	<StreamedFiles/>
 	<MediaFilesNotInAnyBank/>
 	<SoundBanks>
-		<SoundBank Id="782826392" Language="SFX" Hash="4212933665">
+		<SoundBank Id="782826392" Language="SFX" Hash="985196560">
 			<ObjectPath>\SoundBanks\Default Work Unit\Default</ObjectPath>
 			<ShortName>Default</ShortName>
 			<Path>Default.bnk</Path>
 			<IncludedEvents>
+				<Event Id="548088167" Name="Play_BackgroundMusic" ObjectPath="\Events\Default Work Unit\Play_BackgroundMusic" DurationType="OneShot" DurationMin="145.130768" DurationMax="145.130768">
+					<IncludedMemoryFiles>
+						<File Id="486150385" Language="SFX">
+							<ShortName>BG_Brewing.wav</ShortName>
+							<Path>SFX\BG_Brewing_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="3381697299" Name="Play_Bubbles" ObjectPath="\Events\Default Work Unit\Play_Bubbles" DurationType="OneShot" DurationMin="26.163786" DurationMax="26.163786">
+					<IncludedMemoryFiles>
+						<File Id="321232555" Language="SFX">
+							<ShortName>SFX_Bubbles_VerySlow.wav</ShortName>
+							<Path>SFX\SFX_Bubbles_VerySlow_10C4C929.wem</Path>
+						</File>
+						<File Id="499140612" Language="SFX">
+							<ShortName>SFX_Bubbles_VeryFast.wav</ShortName>
+							<Path>SFX\SFX_Bubbles_VeryFast_10C4C929.wem</Path>
+						</File>
+						<File Id="569966857" Language="SFX">
+							<ShortName>SFX_Bubbles_Slow.wav</ShortName>
+							<Path>SFX\SFX_Bubbles_Slow_10C4C929.wem</Path>
+						</File>
+						<File Id="769955546" Language="SFX">
+							<ShortName>SFX_Bubbles_Fast.wav</ShortName>
+							<Path>SFX\SFX_Bubbles_Fast_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="3886503793" Name="Play_CorrectPotion" ObjectPath="\Events\Default Work Unit\Play_CorrectPotion" DurationType="OneShot" DurationMin="0." DurationMax="0."/>
+				<Event Id="2547633870" Name="Play_Door" ObjectPath="\Events\Default Work Unit\Play_Door" DurationType="OneShot" DurationMin="0." DurationMax="0."/>
+				<Event Id="1602358412" Name="Play_Footstep" ObjectPath="\Events\Default Work Unit\Play_Footstep" DurationType="OneShot" DurationMin="0." DurationMax="0.">
+					<SwitchContainers/>
+				</Event>
+				<Event Id="4198774158" Name="Play_IncorrectPotion" ObjectPath="\Events\Default Work Unit\Play_IncorrectPotion" DurationType="OneShot" DurationMin="0." DurationMax="0."/>
+				<Event Id="644243960" Name="Play_PickIngredient" ObjectPath="\Events\Default Work Unit\Play_PickIngredient" DurationType="OneShot" DurationMin="0.274773" DurationMax="0.366778">
+					<IncludedMemoryFiles>
+						<File Id="237706415" Language="SFX">
+							<ShortName>SFX_AbsorbG.wav</ShortName>
+							<Path>SFX\SFX_AbsorbG_77714374.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
 				<Event Id="2990278359" Name="Play_Pop" ObjectPath="\Events\Default Work Unit\Play_Pop" DurationType="OneShot" DurationMin="0.544802" DurationMax="0.686407">
 					<IncludedMemoryFiles>
 						<File Id="228669474" Language="SFX">
@@ -28,9 +70,22 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
+				<Event Id="1962155989" Name="Stop_Bubbles" ObjectPath="\Events\Default Work Unit\Stop_Bubbles" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
 			</IncludedEvents>
+			<GameParameters>
+				<GameParameter Id="3064925121" Name="BubblesIntensity" ObjectPath="\Game Parameters\Default Work Unit\BubblesIntensity"/>
+			</GameParameters>
+			<SwitchGroups>
+				<SwitchGroup Id="436743010" Name="Character" ObjectPath="\Switches\Default Work Unit\Character" GUID="{4FA7F62D-013F-499C-A583-B5D6AA09A184}">
+					<Switches>
+						<Switch Id="2469822380" Name="Fairy" ObjectPath="\Switches\Default Work Unit\Character\Fairy" GUID="{E80D63B8-DA83-4824-9A9C-2E125EE9A4D3}"/>
+						<Switch Id="3121013053" Name="Soldier" ObjectPath="\Switches\Default Work Unit\Character\Soldier" GUID="{9A43A3BB-29F2-4A68-BC63-F07C5082C4A2}"/>
+						<Switch Id="3202541808" Name="Wizard" ObjectPath="\Switches\Default Work Unit\Character\Wizard" GUID="{61F16407-D362-499C-B985-A35C48139FE2}"/>
+					</Switches>
+				</SwitchGroup>
+			</SwitchGroups>
 		</SoundBank>
-		<SoundBank Id="1355168291" Language="SFX" Hash="3690994985">
+		<SoundBank Id="1355168291" Language="SFX" Hash="1615303585">
 			<ObjectPath>Init</ObjectPath>
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>

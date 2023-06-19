@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{AA74C46D-B2DC-4F55-92E8-404EDE44EC1E}" SchemaVersion="103">
 	<MixingSessions>
-		<WorkUnit Name="Default Work Unit" ID="{AA74C46D-B2DC-4F55-92E8-404EDE44EC1E}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{AA74C46D-B2DC-4F55-92E8-404EDE44EC1E}" PersistMode="Standalone">
+			<ChildrenList>
+				<MixingSession Name="DefaultMix" ID="{B6138168-0035-494A-A435-952B5C03A829}">
+					<ObjectList>
+						<ObjectRef Name="BackgroundMusic" ID="{9B5CAC3C-0DA6-4229-BD4D-B125B2EC61C2}" WorkUnitID="{D534BECF-C975-4104-9E89-B949A9C3F6A0}"/>
+						<ObjectRef Name="PickIngredient" ID="{229412C8-756B-49CA-99E8-DC50B50D1C6D}" WorkUnitID="{D534BECF-C975-4104-9E89-B949A9C3F6A0}"/>
+					</ObjectList>
+				</MixingSession>
+			</ChildrenList>
+		</WorkUnit>
 	</MixingSessions>
 </WwiseDocument>
