@@ -14,7 +14,6 @@ public class LevelHandler : MonoBehaviour
 
     [Header("Scene components")]
     [SerializeField] private CharactersController charactersController;
-    [SerializeField] private Dialogue dialogue;
     [SerializeField] private CustomerSpawner customerSpawner;
 
     [Header("UI")]
@@ -30,12 +29,13 @@ public class LevelHandler : MonoBehaviour
 
     [SerializeField] private CurrentRoom startRoom;
 
-    public void OpenStartDayButton()
+    private void OpenStartDayButton()
     {
         print("The level handler is opening start day button");
         charactersController.RemoveBook();
         startDayButton.SetActive(true);
     }
+
     private void Awake()
     {
         startDayButton.SetActive(false);
@@ -51,6 +51,7 @@ public class LevelHandler : MonoBehaviour
         interactPauseAction.canceled += HandlePauseMenu;
 
         Door.InteractionRaised += ChangeRoom;
+        Dialogue.InteractionRaised += HandleInteractionRaised;
         currentRoom = startRoom;
     }
 
@@ -107,10 +108,20 @@ public class LevelHandler : MonoBehaviour
         return actionReference != null ? actionReference.action : null;
     }
 
-
+    private void HandleInteractionRaised(InteractionEvents interactionRaised)
+    {
+        switch (interactionRaised)
+        {
+            case InteractionEvents.FinishedTutorial:
+                print("Will start level because tutorial was finished");
+                OpenStartDayButton();
+                break;
+        }
+    }
     public void StartLevel()
     {
         InteractionRaised?.Invoke(InteractionEvents.LevelStarted);
+        startDayButton.SetActive(false);
         StartCoroutine(LevelTimer());
         print("The level has officially started!");
         charactersController.SetToLevelPosition();

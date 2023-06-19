@@ -18,6 +18,7 @@ public class CustomerSpawner : MonoBehaviour
     private void Awake()
     {
         ExitPoint.CustomerLeft += HandleSpaceFreed;
+        Dialogue.AskToSpawnCustomer += SpawnTutorialCustomer;
     }
 
     private void Start()
@@ -25,7 +26,7 @@ public class CustomerSpawner : MonoBehaviour
         if(isDebugging) SpawnCustomer();
     }
 
-    public void SpawnTutorialCustomer()
+    private void SpawnTutorialCustomer()
     {
         if (isDebugging) print("Spawning Tutorial customer");
         int orderPosition = 0; // Overwritten so it works in scene with only one position
