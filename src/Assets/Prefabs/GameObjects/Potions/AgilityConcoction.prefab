@@ -57,7 +57,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4029073272115822870, guid: 2caae71bd534bec4f8589e01e4fd889a, type: 3}
       propertyPath: m_Name
-      value: FocusConcoction
+      value: AgilityConcoction
       objectReference: {fileID: 0}
     - target: {fileID: 5498793695870394557, guid: 2caae71bd534bec4f8589e01e4fd889a, type: 3}
       propertyPath: m_Materials.Array.data[0]

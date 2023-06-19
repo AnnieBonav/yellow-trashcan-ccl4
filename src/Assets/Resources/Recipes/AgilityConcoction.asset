@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 647128aa66bb34d568b445b18ff9e7a6, type: 3}
-  m_Name: FocusConcoction
+  m_Name: AgilityConcoction
   m_EditorClassIdentifier: 
   ingredients:
     liquid: 1
