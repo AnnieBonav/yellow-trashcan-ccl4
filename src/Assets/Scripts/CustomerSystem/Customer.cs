@@ -33,7 +33,7 @@ public class Customer : MonoBehaviour
     
 
     private Vector3 _previousForward;
-    private Vector3 _lookAtPosition;
+    private Transform _lookAt;
     private float _lookAtTimer = 0;
 
     private int orderPosition = -1;
@@ -73,7 +73,7 @@ public class Customer : MonoBehaviour
     {
         _state = CustomerState.WalkingToOrder;
         _navMeshAgent.destination = orderWorldPosition;
-        _lookAtPosition = lookAt.position;
+        _lookAt = lookAt;
         orderPosition = whichOrderPosition;
         hasLimit = false;
         exitPosition = exitWorldPosition;
@@ -91,15 +91,18 @@ public class Customer : MonoBehaviour
         _requestedPotion = PotionKnowledgebase.Instance.RandomRecipe();
     }
 
+    private bool isRotating = false;
+
     public void ChangeState() // TODO: Check how to make this better. RN it is public so the Exit point simply access the customer and triggers a change state, but that starts smelling
     {
         switch (_state)
         {
             case CustomerState.WalkingToOrder: // If it is walking to order and change state is called, then it should now order
                 Order();
+                isRotating = true;
+                
                 break;
             case CustomerState.Ordered:
-                RotateTowardsLookPosition(Time.deltaTime);
                 break;
             case CustomerState.GoAway:
                 print("Should not arrive here");
@@ -110,11 +113,15 @@ public class Customer : MonoBehaviour
         }
     }
 
+    private void Update()
+    {
+        if(isRotating) RotateTowardsLookPosition(Time.deltaTime);
+    }
     private void RotateTowardsLookPosition(float delta)
     {
-        if(_lookAtTimer >= 1) return;
+        if(_lookAtTimer >= 1) return; // This makes it stop turning after 1 second
         _lookAtTimer += delta;
-        Vector3 directionVector =  new Vector3(_lookAtPosition.x - transform.position.x, 0, _lookAtPosition.z - transform.position.z);
+        Vector3 directionVector =  new Vector3(_lookAt.position.x - transform.position.x, 0, _lookAt.position.z - transform.position.z);
         transform.forward = Vector3.Lerp(_previousForward, directionVector, _lookAtTimer);
     }
     
@@ -122,7 +129,7 @@ public class Customer : MonoBehaviour
     {
         _state = CustomerState.WalkingToOrder;
         _navMeshAgent.destination = orderWorldPosition;
-        _lookAtPosition = lookAt.position;
+        _lookAt = lookAt;
         orderPosition = whichOrderPosition;
         hasLimit = true;
         exitPosition = exitWorldPosition;
