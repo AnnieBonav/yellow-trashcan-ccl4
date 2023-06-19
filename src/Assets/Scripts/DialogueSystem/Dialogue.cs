@@ -55,6 +55,7 @@ public class Dialogue : MonoBehaviour
         Potion.InteractionRaised += HandleFlags;
         Customer.InteractionRaised += HandleFlags;
         GarbageCan.InteractionRaised += HandleFlags;
+        LevelHandler.InteractionRaised += HandleFlags;
     }
 
     private void OnDisable()
@@ -75,6 +76,11 @@ public class Dialogue : MonoBehaviour
         continueButtonReference.SetActive(false);
         StartCoroutine(NextTextblock());
         EnableContinue();
+    }
+
+    public void CloseDialogue()
+    {
+        print("Closed dialogue");
     }
 
     private IEnumerator NextTextblock()

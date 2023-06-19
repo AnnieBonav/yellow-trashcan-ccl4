@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -6,28 +7,38 @@ using UnityEngine.InputSystem;
 
 public class LevelHandler : MonoBehaviour
 {
-    private CurrentRoom currentRoom;
+    public static event Action<InteractionEvents> InteractionRaised;
+
     [SerializeField] private float levelDurationSeconds = 10;
+    [SerializeField] private bool isDebugging = false;
+
+    [Header("Scene components")]
     [SerializeField] private CharactersController charactersController;
     [SerializeField] private Dialogue dialogue;
     [SerializeField] private CustomerSpawner customerSpawner;
-
-    [SerializeField] private bool isDebugging = false;
-
-    private WaitForSeconds levelTimer;
 
     [Header("UI")]
     [SerializeField]
     [Tooltip("This would be the opening and closing pause Menu action")]
     InputActionReference _interactPauseMenu;
-    [SerializeField] private GameObject pauseMenu;    
+    [SerializeField] private GameObject pauseMenu;
+    [SerializeField] private GameObject startDayButton;
 
+    private CurrentRoom currentRoom;
+    private WaitForSeconds levelTimer;
     private bool menuOpened = false;
 
     [SerializeField] private CurrentRoom startRoom;
 
+    public void OpenStartDayButton()
+    {
+        print("The level handler is opening start day button");
+        charactersController.RemoveBook();
+        startDayButton.SetActive(true);
+    }
     private void Awake()
     {
+        startDayButton.SetActive(false);
         if(levelDurationSeconds <= 10)
         {
             levelDurationSeconds = 10;
@@ -97,6 +108,7 @@ public class LevelHandler : MonoBehaviour
 
     public void StartLevel()
     {
+        InteractionRaised?.Invoke(InteractionEvents.LevelStarted);
         StartCoroutine(LevelTimer());
         print("The level has officially started!");
         charactersController.SetToLevelPosition();
@@ -107,5 +119,6 @@ public class LevelHandler : MonoBehaviour
     {
         yield return levelTimer;
         print("level timer has ended.");
+        InteractionRaised?.Invoke(InteractionEvents.LevelEnded);
     }
 }

@@ -24,6 +24,7 @@ public class CustomerSpawner : MonoBehaviour
     {
         if(isDebugging) SpawnCustomer();
     }
+
     public void SpawnTutorialCustomer()
     {
         if (isDebugging) print("Spawning Tutorial customer");
