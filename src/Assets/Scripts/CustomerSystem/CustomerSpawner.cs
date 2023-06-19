@@ -19,18 +19,16 @@ public class CustomerSpawner : MonoBehaviour
     {
         ExitPoint.CustomerLeft += HandleSpaceFreed;
     }
-    private void Start()
-    {
-        if(isDebugging) SpawnTutorialCustomer();
-    }
 
     public void SpawnTutorialCustomer()
     {
-        if (isDebugging)  print("Spawning Tutorial customer");
+        if (isDebugging) print("Spawning Tutorial customer");
         int orderPosition = 0; // Overwritten so it works in scene with only one position
         GameObject noobCustomer = Instantiate(customerPrefabs[Random.Range(0, customerPrefabs.Count)], transform.position, Quaternion.identity);
         Customer customerComponent = noobCustomer.GetComponent<Customer>();
         customerComponent.StartTutorialCustomer(orderPoints[orderPosition].transform.position, lookAtPoint, orderPosition, exitPoint.position);
+        orderPoints[orderPosition].isOccupied = true;
+        orderPoints[orderPosition].whichCustomerIsHere = noobCustomer;
     }
 
     public void SpawnCustomer()
