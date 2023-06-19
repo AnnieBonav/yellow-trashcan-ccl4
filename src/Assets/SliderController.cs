@@ -16,13 +16,13 @@ public class SliderController : MonoBehaviour
         {
             case SoundType.BackgroundMusic:
                 print("New music volume: " + newValue);
-                AkSoundEngine.SetRTPCValue("MusicVolume", newValue);
+                AkSoundEngine.SetRTPCValue("VolumeMusic", newValue);
                 break;
             case SoundType.SFX:
-                AkSoundEngine.SetRTPCValue("SFXVolume", newValue);
+                AkSoundEngine.SetRTPCValue("VolumeSFX", newValue);
                 break;
             case SoundType.UI:
-                AkSoundEngine.SetRTPCValue("UIVolume", newValue);
+                AkSoundEngine.SetRTPCValue("VolumeUI", newValue);
                 break;
         }
         
