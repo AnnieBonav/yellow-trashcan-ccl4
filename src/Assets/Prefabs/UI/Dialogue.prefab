@@ -301,5 +301,6 @@ MonoBehaviour:
     needsClickToContinue: 0
   characterDelay: 0.04
   _pressAAction: {fileID: 4323845545830496942, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  _pressYAction: {fileID: 2690011112501874771, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   continueButtonReference: {fileID: 0}
   dialogueToStart: 0

@@ -10,7 +10,7 @@ public class TalkingBook : MonoBehaviour
 
     private void Awake()
     {
-        //talkAnimation = bookAnimator.CloseAnimationStream();
+        // talkAnimation = bookAnimator.animat
     }
     public void PlayTalk()
     {

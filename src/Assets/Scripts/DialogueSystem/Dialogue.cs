@@ -33,6 +33,11 @@ public class Dialogue : MonoBehaviour
     [Tooltip("This is the pressing A action")]
     InputActionReference _pressAAction;
 
+    [SerializeField]
+    [Tooltip("This is the pressing Y (emergency exit) action")]
+    InputActionReference _pressYAction;
+
+
     [SerializeField] private GameObject continueButtonReference;
 
     [SerializeField] private int dialogueToStart = 0;
@@ -45,6 +50,9 @@ public class Dialogue : MonoBehaviour
     {
         var pressA = GetInputAction(_pressAAction);
         pressA.canceled += PressedA;
+
+        var pressY = GetInputAction(_pressYAction);
+        pressY.canceled += PressedY;
 
         TestFlags.InteractionRaised += HandleFlags;
         Ingredient.InteractionRaised += HandleFlags;
@@ -131,8 +139,6 @@ public class Dialogue : MonoBehaviour
                 return; // TODO: Make it better so that there could be two of grab ingredient
             }
         }
-        
-        
     }
 
     private void CheckIfFlagsFulfilled()
@@ -172,21 +178,18 @@ public class Dialogue : MonoBehaviour
         
     }
 
-
     private void PressedA(InputAction.CallbackContext context)
     {
         if(_canAdvance) ProceedDialogue();
     }
 
+    private void PressedY(InputAction.CallbackContext context)
+    {
+        print("pressed emergency button");
+    }
 
     static InputAction GetInputAction(InputActionReference actionReference)
     {
         return actionReference != null ? actionReference.action : null;
-    }
-
-    
-
-    
-
-    
+    }    
 }
