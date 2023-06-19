@@ -205,7 +205,7 @@ MonoBehaviour:
   lookAtPoint: {fileID: 1057469561}
   exitPoint: {fileID: 1653336966}
   customerPrefabs:
-  - {fileID: 8053947594520236510, guid: 73a1ba04c464f4380b3f4aabace761cb, type: 3}
+  - {fileID: 8053947594520236510, guid: 779afc0b5ee724d9492a8485ff35b482, type: 3}
   isDebugging: 1
   timeBetweenCustomers: 10
 --- !u!1 &552554488
