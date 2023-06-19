@@ -5,6 +5,7 @@ using UnityEngine;
 public class EmptyGrabbable : MonoBehaviour
 {
     private IngredientContainer ingredientContainer;
+    [SerializeField] private Collider emptyCollider;
 
     private void Awake()
     {
@@ -21,6 +22,12 @@ public class EmptyGrabbable : MonoBehaviour
     {
         gameObject.transform.SetParent(null);
         ingredientContainer.ResetEmptyIngredient();
+    }
+
+    public void ChangeIsTrigger()
+    {
+        print("Changing trigger");
+        emptyCollider.isTrigger = true;
     }
 
     public void DestroyContainer()
