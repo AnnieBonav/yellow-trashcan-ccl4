@@ -428,9 +428,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67341b15dc944c94095a761ee514780d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bookoCharacter: {fileID: 5379275239065122579}
-  bookoUI: {fileID: 5379275239503612668}
-  bookoAnimator: {fileID: 5072864650806991593}
+  BookoCharacter: {fileID: 5379275239065122579}
+  BookoUI: {fileID: 5379275239503612668}
+  DialogueText: {fileID: 5379275238216972445}
+  BookoAnimator: {fileID: 5072864650806991593}
+  ContinueButton: {fileID: 5379275237979574460}
 --- !u!114 &4312682396965903038
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -443,7 +445,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f59c6bf494a2042798216e1fc4dc468d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textMesh: {fileID: 5379275238216972445}
+  bookoFacade: {fileID: 865320411563311840}
   textBlocks:
   - text: Hello there, welcome!
     events:
@@ -587,8 +589,8 @@ MonoBehaviour:
     events:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: CustomerSpawner, Assembly-CSharp
+        - m_Target: {fileID: 4312682396965903038}
+          m_TargetAssemblyTypeName: Dialogue, Assembly-CSharp
           m_MethodName: SpawnTutorialCustomer
           m_Mode: 1
           m_Arguments:
@@ -682,18 +684,6 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: LevelHandler, Assembly-CSharp
-          m_MethodName: OpenStartDayButton
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
     actionsToFulfill:
     - interactionEvent: 18
       hasBeenFulfilled: 0
@@ -701,8 +691,8 @@ MonoBehaviour:
   characterDelay: 0.04
   _pressAAction: {fileID: 4323845545830496942, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   _pressYAction: {fileID: 2690011112501874771, guid: c348712bda248c246b8c49b3db54643f, type: 3}
-  continueButtonReference: {fileID: 5379275237979574460}
   dialogueToStart: 0
+  isDebugging: 1
 --- !u!1 &5379275239065122579
 GameObject:
   m_ObjectHideFlags: 0

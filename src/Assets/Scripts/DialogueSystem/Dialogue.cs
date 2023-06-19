@@ -24,7 +24,7 @@ public class ActionToFulfill
 
 public class Dialogue : MonoBehaviour
 {
-    [SerializeField] private TextMeshProUGUI textMesh;
+    [SerializeField] private BookoFacade bookoFacade;
     [SerializeField] private List<TextBlock> textBlocks;
     [SerializeField] private float characterDelay;
 
@@ -36,8 +36,6 @@ public class Dialogue : MonoBehaviour
     [Tooltip("This is the pressing Y (emergency exit) action")]
     InputActionReference _pressYAction;
 
-
-    [SerializeField] private GameObject continueButtonReference;
     [SerializeField] private int dialogueToStart = 0;
     [SerializeField] private bool isDebugging;
 
@@ -46,6 +44,8 @@ public class Dialogue : MonoBehaviour
     private int _currentDialogue = 0;
 
     public static event Action<CurrentRoom> AskToActivateDoor;
+    public static event Action AskToSpawnCustomer;
+    public static event Action<InteractionEvents> InteractionRaised;
 
     private void Awake()
     {
@@ -65,6 +65,7 @@ public class Dialogue : MonoBehaviour
         Customer.InteractionRaised += HandleFlags;
         GarbageCan.InteractionRaised += HandleFlags;
         LevelHandler.InteractionRaised += HandleFlags;
+        MagicCandle.InteractionRaised += HandleFlags;
     }
 
     private void OnDisable()
@@ -79,12 +80,13 @@ public class Dialogue : MonoBehaviour
         Customer.InteractionRaised -= HandleFlags;
         GarbageCan.InteractionRaised -= HandleFlags;
         LevelHandler.InteractionRaised -= HandleFlags;
+        MagicCandle.InteractionRaised -= HandleFlags;
     }
 
     void Start()
     {
         _currentDialogue = dialogueToStart;
-        continueButtonReference.SetActive(false);
+        bookoFacade.ContinueButton.SetActive(false);
         StartCoroutine(NextTextblock());
         EnableContinue();
     }
@@ -92,38 +94,44 @@ public class Dialogue : MonoBehaviour
     public void CloseDialogue()
     {
         if(isDebugging) print("Closed dialogue");
+        InteractionRaised?.Invoke(InteractionEvents.FinishedTutorial);
         gameObject.SetActive(false);
     }
 
     private IEnumerator NextTextblock()
     {
+        // print("Setting innactive");
+        // bookoFacade.ContinueButton.SetActive(false);
         if (_currentDialogue < textBlocks.Count)
         {
             _writing = true;
-            textMesh.text = "";
+            bookoFacade.DialogueText.text = "";
             char[] charArray = textBlocks[_currentDialogue].text.ToCharArray();
             for (int i = 0; i < charArray.Length; i++)
             {
-                textMesh.text += charArray[i];
+                bookoFacade.DialogueText.text += charArray[i];
                 yield return new WaitForSeconds(characterDelay);
             }
 
             textBlocks[_currentDialogue].events.Invoke();
             _writing = false;
         }
+        if (textBlocks[_currentDialogue].needsClickToContinue)
+        {
+            bookoFacade.ContinueButton.SetActive(true);
+            print("Setting in Next block");
+        }
+        
     }
 
     public void ProceedDialogue()
     {
         if (!_writing)
         {
-            if (_canAdvance)
-            {
-                _currentDialogue++;
-                StartCoroutine(NextTextblock());
-                DisableContinue();
-                CheckIfFlagsFulfilled();
-            }
+            _currentDialogue++;
+            StartCoroutine(NextTextblock());
+            DisableContinue();
+            CheckIfFlagsFulfilled();
         }
     }
 
@@ -157,14 +165,14 @@ public class Dialogue : MonoBehaviour
 
     private void EnableContinue()
     {
-        continueButtonReference.SetActive(true);
         _canAdvance = true;
         if(!textBlocks[_currentDialogue].needsClickToContinue) ProceedDialogue();
     }
 
     private void DisableContinue()
     {
-        continueButtonReference.SetActive(false);
+        print("Setting inactive in disable");
+        bookoFacade.ContinueButton.SetActive(false);
         _canAdvance = false;
     }
 
@@ -181,19 +189,19 @@ public class Dialogue : MonoBehaviour
 
     public void ActivateEntranceDoor()
     {
-        if (isDebugging) print("AskinG to activate entrance door");
+        if (isDebugging) print("Asking to activate entrance door");
         AskToActivateDoor?.Invoke(CurrentRoom.Entrance);
     }
 
     public void ActivateBrewingDoor()
     {
-        if (isDebugging) print("AskinG to activate brewing door");
+        if (isDebugging) print("Asking to activate brewing door");
         AskToActivateDoor?.Invoke(CurrentRoom.Brewing);
     }
 
     public void ActivateGardenDoor()
     {
-        if (isDebugging) print("AskinG to activate garden door");
+        if (isDebugging) print("Asking to activate garden door");
         AskToActivateDoor?.Invoke(CurrentRoom.Garden);
     }
     private void PressedA(InputAction.CallbackContext context)
@@ -203,7 +211,14 @@ public class Dialogue : MonoBehaviour
 
     private void PressedY(InputAction.CallbackContext context)
     {
-        if (isDebugging) print("pressed emergency button");
+        if (isDebugging) print("Pressed emergency button");
+        ProceedDialogue();
+    }
+
+    public void SpawnTutorialCustomer()
+    {
+        if (isDebugging) print("Asked to spawn tutorial customer.");
+        AskToSpawnCustomer?.Invoke();
     }
 
     static InputAction GetInputAction(InputActionReference actionReference)

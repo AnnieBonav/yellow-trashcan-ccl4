@@ -548,7 +548,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   distanceEpsilon: 0.1
   orderText: {fileID: 874850114023247579}
-  timeUntilAngry: 15
+  timeUntilAngry: 40
   animator: {fileID: 7181428990887240209}
   timeAfterReceived: 1.5
 --- !u!54 &4108191631887479536

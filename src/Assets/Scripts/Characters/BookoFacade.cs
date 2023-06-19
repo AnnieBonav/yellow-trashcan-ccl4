@@ -1,10 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class BookoFacade : MonoBehaviour
 {
-    public GameObject bookoCharacter;
-    public GameObject bookoUI;
-    public GameObject bookoAnimator;
+    public GameObject BookoCharacter;
+    public GameObject BookoUI;
+    public TextMeshProUGUI DialogueText;
+    public GameObject BookoAnimator;
+    public GameObject ContinueButton;
 }
