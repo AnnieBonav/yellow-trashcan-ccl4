@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class EmptyGrabbable : MonoBehaviour
 {
-    private IngredientContainer ingredientContainer;
     [SerializeField] private Collider emptyCollider;
+    private IngredientContainer ingredientContainer;
 
     private void Awake()
     {
