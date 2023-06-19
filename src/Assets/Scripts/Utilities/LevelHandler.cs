@@ -14,7 +14,6 @@ public class LevelHandler : MonoBehaviour
 
     [Header("Scene components")]
     [SerializeField] private CharactersController charactersController;
-    [SerializeField] private Dialogue dialogue;
     [SerializeField] private CustomerSpawner customerSpawner;
 
     [Header("UI")]

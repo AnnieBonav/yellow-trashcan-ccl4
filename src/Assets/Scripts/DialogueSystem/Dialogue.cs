@@ -5,9 +5,8 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
-using UnityEngine.UI;
 
-[System.Serializable]
+[Serializable]
 public struct TextBlock
 {
     [SerializeField, TextArea] public string text;
@@ -16,7 +15,7 @@ public struct TextBlock
     [SerializeField] public bool needsClickToContinue;
 }
 
-[System.Serializable]
+[Serializable]
 public class ActionToFulfill
 {
     [SerializeField] public InteractionEvents interactionEvent;
@@ -39,12 +38,14 @@ public class Dialogue : MonoBehaviour
 
 
     [SerializeField] private GameObject continueButtonReference;
-
     [SerializeField] private int dialogueToStart = 0;
+    [SerializeField] private bool isDebugging;
 
     private bool _writing = true;
     private bool _canAdvance = false;
     private int _currentDialogue = 0;
+
+    public static event Action<CurrentRoom> AskToActivateDoor;
 
     private void Awake()
     {
@@ -90,7 +91,7 @@ public class Dialogue : MonoBehaviour
 
     public void CloseDialogue()
     {
-        print("Closed dialogue");
+        if(isDebugging) print("Closed dialogue");
         gameObject.SetActive(false);
     }
 
@@ -128,7 +129,7 @@ public class Dialogue : MonoBehaviour
 
     private void HandleFlags(InteractionEvents interactionEvent)
     {
-        print("An interaction was raised: " + interactionEvent + "CurrentRoom Block: " + _currentDialogue );
+        if(isDebugging) print("An interaction was raised: " + interactionEvent + "CurrentRoom Block: " + _currentDialogue );
         for (int i = 0; i < textBlocks[_currentDialogue].actionsToFulfill.Count; i ++) // Iterate through all of the needed actions to ulfill from the current block
         {
             // continuing if the action has been fulfilled would let us have two of the same but would prevent being able to revert a done to a needs to be done (like messing up something and you need to redo it)
@@ -169,7 +170,7 @@ public class Dialogue : MonoBehaviour
 
     public void CheckWhichNeedToBeFulfilled()
     {
-        print("Dialogue check. Number: " + textBlocks[_currentDialogue].actionsToFulfill.Count + " dialogue: " + _currentDialogue);
+        if (isDebugging) print("Dialogue check. Number: " + textBlocks[_currentDialogue].actionsToFulfill.Count + " dialogue: " + _currentDialogue);
 
         for(int i = 0; i < textBlocks[_currentDialogue].actionsToFulfill.Count; i++)
         {
@@ -178,18 +179,35 @@ public class Dialogue : MonoBehaviour
         
     }
 
+    public void ActivateEntranceDoor()
+    {
+        if (isDebugging) print("AskinG to activate entrance door");
+        AskToActivateDoor?.Invoke(CurrentRoom.Entrance);
+    }
+
+    public void ActivateBrewingDoor()
+    {
+        if (isDebugging) print("AskinG to activate brewing door");
+        AskToActivateDoor?.Invoke(CurrentRoom.Brewing);
+    }
+
+    public void ActivateGardenDoor()
+    {
+        if (isDebugging) print("AskinG to activate garden door");
+        AskToActivateDoor?.Invoke(CurrentRoom.Garden);
+    }
     private void PressedA(InputAction.CallbackContext context)
     {
-        if(_canAdvance) ProceedDialogue();
+        if (_canAdvance) ProceedDialogue();
     }
 
     private void PressedY(InputAction.CallbackContext context)
     {
-        print("pressed emergency button");
+        if (isDebugging) print("pressed emergency button");
     }
 
     static InputAction GetInputAction(InputActionReference actionReference)
     {
         return actionReference != null ? actionReference.action : null;
-    }    
+    }
 }
