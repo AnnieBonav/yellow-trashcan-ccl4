@@ -197,13 +197,19 @@ VisualEffect:
   m_ResourceVersion: 1
   m_PropertySheet:
     m_Float:
-      m_Array: []
+      m_Array:
+      - m_Value: 5.79
+        m_Name: Rate
+        m_Overridden: 1
     m_Vector2f:
       m_Array: []
     m_Vector3f:
       m_Array: []
     m_Vector4f:
-      m_Array: []
+      m_Array:
+      - m_Value: {x: 0.8679245, y: 0.80559087, z: 0.118725546, w: 1}
+        m_Name: Colour
+        m_Overridden: 1
     m_Uint:
       m_Array: []
     m_Int:
