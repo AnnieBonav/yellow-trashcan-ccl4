@@ -61,7 +61,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: cc0ba0086fc95e94093a4d79aa179f96, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -207,8 +207,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b7b990c916227a4eaae00391f47fef2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  handleMesh: {fileID: 6877585616710667354}
   roomToGo: 1
+  handleMesh: {fileID: 6877585616710667354}
+  activeMaterial: {fileID: 2100000, guid: f6d3652dbf6870249b36140683c1a093, type: 2}
+  unactiveMaterial: {fileID: 2100000, guid: 32de8cd2eeba28746a13d03d6d1afd79, type: 2}
 --- !u!1 &6877585616710667355
 GameObject:
   m_ObjectHideFlags: 0
@@ -273,7 +275,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: ffb196c1b04d2644085c0756435dabce, type: 2}
+  - {fileID: 2100000, guid: 32de8cd2eeba28746a13d03d6d1afd79, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
