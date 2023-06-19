@@ -431,7 +431,7 @@ MonoBehaviour:
   BookoCharacter: {fileID: 5379275239065122579}
   BookoUI: {fileID: 5379275239503612668}
   DialogueText: {fileID: 5379275238216972445}
-  BookoAnimator: {fileID: 5072864650806991593}
+  BookoAnimator: {fileID: 5379275238652618683}
   ContinueButton: {fileID: 5379275237979574460}
 --- !u!114 &4312682396965903038
 MonoBehaviour:

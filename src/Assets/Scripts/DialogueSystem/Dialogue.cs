@@ -100,8 +100,7 @@ public class Dialogue : MonoBehaviour
 
     private IEnumerator NextTextblock()
     {
-        // print("Setting innactive");
-        // bookoFacade.ContinueButton.SetActive(false);
+        bookoFacade.BookoAnimator.SetBool("IsTalking", true);
         if (_currentDialogue < textBlocks.Count)
         {
             _writing = true;
@@ -121,7 +120,8 @@ public class Dialogue : MonoBehaviour
             bookoFacade.ContinueButton.SetActive(true);
             print("Setting in Next block");
         }
-        
+        bookoFacade.BookoAnimator.SetBool("IsTalking", false);
+
     }
 
     public void ProceedDialogue()
