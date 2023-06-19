@@ -20,6 +20,11 @@ public class CustomerSpawner : MonoBehaviour
         ExitPoint.CustomerLeft += HandleSpaceFreed;
     }
 
+    private void Start()
+    {
+        if(isDebugging) SpawnCustomer();
+    }
+
     public void SpawnTutorialCustomer()
     {
         if (isDebugging) print("Spawning Tutorial customer");

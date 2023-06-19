@@ -7,8 +7,11 @@ public class Door : MonoBehaviour
 {
     public static event Action<InteractionEvents> InteractionRaised;
 
-    [SerializeField] private MeshRenderer handleMesh;
     [SerializeField] private CurrentRoom roomToGo;
+    [Header("Active/unactive settings")]
+    [SerializeField] private MeshRenderer handleMesh;
+    [SerializeField] private Material activeMaterial;
+    [SerializeField] private Material unactiveMaterial;
 
     private bool canActivateDoor;
     public void ChangeScenery()
@@ -33,14 +36,13 @@ public class Door : MonoBehaviour
         canActivateDoor = canActivate;
     }
 
-    // TODO maybe make the can activate/deactivate better
     public void ActivateDoor()
     {
-        if(canActivateDoor) handleMesh.material.color = Color.green;
+        if(canActivateDoor) handleMesh.material = activeMaterial;
     }
 
     public void DeactivateDoor()
     {
-        if (canActivateDoor) handleMesh.material.color= Color.white;
+        if (canActivateDoor) handleMesh.material = unactiveMaterial;
     }
 }

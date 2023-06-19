@@ -32,6 +32,10 @@ public class CharactersController : MonoBehaviour
         book.gameObject.SetActive(false);
     }
 
+    public void RemoveBook()
+    {
+        book.gameObject.SetActive(false);
+    }
     public void PositionCharacters(CurrentRoom currentRoom)
     {
         print("Sent room to characters: " + currentRoom);
