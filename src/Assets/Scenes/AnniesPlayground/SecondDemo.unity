@@ -1912,6 +1912,10 @@ PrefabInstance:
       propertyPath: m_Text
       value: SFX
       objectReference: {fileID: 0}
+    - target: {fileID: 3572960641354290269, guid: 7d3d32373b3d0e14482563accf32ded1, type: 3}
+      propertyPath: soundType
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7d3d32373b3d0e14482563accf32ded1, type: 3}
 --- !u!224 &455952231 stripped
@@ -3841,6 +3845,10 @@ PrefabInstance:
     - target: {fileID: 3538581903791672942, guid: 7d3d32373b3d0e14482563accf32ded1, type: 3}
       propertyPath: m_Text
       value: UI
+      objectReference: {fileID: 0}
+    - target: {fileID: 3572960641354290269, guid: 7d3d32373b3d0e14482563accf32ded1, type: 3}
+      propertyPath: soundType
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7d3d32373b3d0e14482563accf32ded1, type: 3}
