@@ -8,7 +8,9 @@ public class RecipeData : ScriptableObject
 {
     [SerializeField] private IngredientDictionary ingredients;
     [SerializeField] private GameObject potionPrefab;
+    [SerializeField] private Color potionColor;
     
     public IngredientDictionary Ingredients => ingredients;
     public GameObject PotionPrefab => potionPrefab;
+    public Color PotionColor => potionColor;
 }

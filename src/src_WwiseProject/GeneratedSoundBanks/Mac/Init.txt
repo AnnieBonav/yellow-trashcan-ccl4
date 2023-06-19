@@ -1,3 +1,12 @@
+State Group	ID	Name			Wwise Object Path	Notes
+	1662371969	CurrentRoom			\Default Work Unit\CurrentRoom	
+
+State	ID	Name	State Group			Notes
+	278887670	Garden	CurrentRoom			
+	748895195	None	CurrentRoom			
+	2473152703	Brewing	CurrentRoom			
+	2656882895	Entrance	CurrentRoom			
+
 Audio Bus	ID	Name			Wwise Object Path	Notes
 	3803692087	Master Audio Bus			\Default Work Unit\Master Audio Bus	
 

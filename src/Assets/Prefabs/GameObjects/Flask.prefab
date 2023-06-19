@@ -42,10 +42,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.1
-  m_Height: 0.44781756
+  m_Radius: 0.10000001
+  m_Height: 0.595552
   m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: 0.21437633, z: -0.00000011920929}
+  m_Center: {x: 0.000000055879354, y: -0.0011481345, z: -0.00000012107193}
 --- !u!1 &9215632066318701189
 GameObject:
   m_ObjectHideFlags: 0
@@ -262,7 +262,7 @@ MonoBehaviour:
     m_RotationOrder: 4
   m_ThrowVelocityScale: 1.5
   m_ThrowAngularVelocityScale: 1
-  m_ForceGravityOnDetach: 0
+  m_ForceGravityOnDetach: 1
   m_RetainTransformParent: 1
   m_AttachPointCompatibilityMode: 0
   m_StartingSingleGrabTransformers: []

@@ -64,3 +64,10 @@ crashlytics-build.properties
 
 	# Blender .blend
 *.blend[0-9]
+.DS_Store
+
+# Other
+*.puml
+**/OnlyScripts
+src/user.keystore
+src/Assets/Plugins.meta
