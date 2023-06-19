@@ -279,7 +279,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: 30ad9a9deed574f0792bf774ccd7799a, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: d8fbb9f7cd1864693a68887db02cfc37, type: 2}
+      objectReference: {fileID: 2100000, guid: b79090bd030a649eda58326f9c20b298, type: 2}
     - target: {fileID: 919132149155446097, guid: 30ad9a9deed574f0792bf774ccd7799a, type: 3}
       propertyPath: m_Name
       value: Liquid_Vial
