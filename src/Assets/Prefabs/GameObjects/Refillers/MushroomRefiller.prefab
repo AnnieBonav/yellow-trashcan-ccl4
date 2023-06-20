@@ -7,6 +7,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 378004949626510654, guid: 9236f07cbc977b84d8f31d7fddc75ee3, type: 3}
+      propertyPath: meshRenderer
+      value: 
+      objectReference: {fileID: 6033896006156389601}
     - target: {fileID: 461367490766119136, guid: 9236f07cbc977b84d8f31d7fddc75ee3, type: 3}
       propertyPath: m_InteractionManager
       value: 
@@ -126,9 +130,17 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: a71382ed58fa04c5a99943234fdd927b, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: a71382ed58fa04c5a99943234fdd927b, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: d8fbb9f7cd1864693a68887db02cfc37, type: 2}
+    - target: {fileID: -7511558181221131132, guid: a71382ed58fa04c5a99943234fdd927b, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: -1063737681269835952, guid: a71382ed58fa04c5a99943234fdd927b, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -159,3 +171,8 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: d8fbb9f7cd1864693a68887db02cfc37, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a71382ed58fa04c5a99943234fdd927b, type: 3}
+--- !u!23 &6033896006156389601 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -7511558181221131132, guid: a71382ed58fa04c5a99943234fdd927b, type: 3}
+  m_PrefabInstance: {fileID: 4935137956927836261}
+  m_PrefabAsset: {fileID: 0}

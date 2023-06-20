@@ -75,6 +75,7 @@ GameObject:
   - component: {fileID: 8205406774412464405}
   - component: {fileID: 5038596000852657495}
   - component: {fileID: 7968589560645488586}
+  - component: {fileID: 4600197512601133009}
   m_Layer: 0
   m_Name: FlaskContainer
   m_TagString: Untagged
@@ -135,6 +136,21 @@ MonoBehaviour:
   maximumCapacity: 2
   currentCapacity: 0
   flaskPrefab: {fileID: 9215632066318701189, guid: 40d7f8152915f08489299c5e664ca71d, type: 3}
+--- !u!114 &4600197512601133009
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 740776884494298999}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29dcd657c73447f4f8f0c0cfef1eeaac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  meshRenderer: {fileID: 5008642451546991483}
+  idOfHighlight: 1
+  highlightMaterial: {fileID: 2100000, guid: 4d981b1558558dd45a119c100165c506, type: 2}
 --- !u!1 &2356047792529985424
 GameObject:
   m_ObjectHideFlags: 0
@@ -198,6 +214,7 @@ MeshRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

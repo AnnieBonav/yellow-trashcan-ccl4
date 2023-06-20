@@ -611,6 +611,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7986614264849653630}
+  - component: {fileID: 1445943104075803863}
   m_Layer: 0
   m_Name: CompletePot
   m_TagString: Untagged
@@ -639,6 +640,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1445943104075803863
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7986614264849653631}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29dcd657c73447f4f8f0c0cfef1eeaac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  meshRenderer: {fileID: 5229982544856336393}
+  idOfHighlight: 1
+  highlightMaterial: {fileID: 2100000, guid: 320fdf76a7ff3ce45b59345fc79e52d0, type: 2}
 --- !u!1 &7986614265045014006
 GameObject:
   m_ObjectHideFlags: 0
@@ -1014,15 +1030,28 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: 7a92fa594c0db43f8b637907ce6b5827, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 7a92fa594c0db43f8b637907ce6b5827, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 0bf2a09b741b04b4a9b7f6e8c8d2108d, type: 2}
+    - target: {fileID: -7511558181221131132, guid: 7a92fa594c0db43f8b637907ce6b5827, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 7a92fa594c0db43f8b637907ce6b5827, type: 3}
       propertyPath: m_Name
       value: Pot
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7a92fa594c0db43f8b637907ce6b5827, type: 3}
+--- !u!23 &5229982544856336393 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -7511558181221131132, guid: 7a92fa594c0db43f8b637907ce6b5827, type: 3}
+  m_PrefabInstance: {fileID: 6869454856948896909}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6403993010580239206 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 7a92fa594c0db43f8b637907ce6b5827, type: 3}

@@ -42,7 +42,7 @@ public class Brew : MonoBehaviour
 
     private void HandlePotionInteraction(InteractionEvents raisedEvent)
     {
-        if(raisedEvent == InteractionEvents.GrabPotion)
+        if(raisedEvent == InteractionEvents.GrabPotion || raisedEvent == InteractionEvents.ReleasePotion)
         {
             print("Potion grabbed");
             importantEffect.Stop();
