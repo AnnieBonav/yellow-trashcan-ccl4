@@ -17,7 +17,6 @@ public class Brew : MonoBehaviour
 
     [Header("VFX")]
     [SerializeField] private VisualEffect correctPotionPoof;
-    [SerializeField] private VisualEffect trashPotionPoof;
 
     private Gradient _poofGradient;
     private GradientColorKey[] _poofColor;
@@ -83,22 +82,13 @@ public class Brew : MonoBehaviour
     public void MakePotion(GameObject flask)
     {
         RecipeData currentBrew = CurrentBrew();
-
+        HandlePlayPoof(currentBrew);
         if (currentBrew is not null)
         {
             Debug.Log($"You made a {currentBrew.name}!!");
             GameObject noobPotion = Instantiate(currentBrew.PotionPrefab);
             noobPotion.transform.position = _potionSpawnOrigin.transform.position;
             InteractionRaised?.Invoke(InteractionEvents.CreateCorrectPotion);
-
-            _poofColor[1].color = currentBrew.PotionColor;
-            _poofColor[1].time = 1.0f;
-            _poofGradient.SetKeys(_poofColor, _poofAlfa);
-
-            correctPotionPoof.SetGradient("ColourGradient", _poofGradient);
-            correctPotionPoof.Play();
-
-            // PlayPotion(true);
         }
         else
         {
@@ -106,7 +96,6 @@ public class Brew : MonoBehaviour
             GameObject noobPotion = Instantiate(trashPotion);
             noobPotion.transform.position = _potionSpawnOrigin.transform.position;
             InteractionRaised?.Invoke(InteractionEvents.CreateIncorrectPotion);
-            PlayPotion(false);
         }
         InteractionRaised?.Invoke(InteractionEvents.CreatePotion);
         ResetCurrentIngredients();
@@ -123,12 +112,13 @@ public class Brew : MonoBehaviour
 
     
 
-    private void PlayPotion(bool wasCorrect)
+    private void HandlePlayPoof(RecipeData currentBrew)
     {
-        if (wasCorrect)
-        {
-            
-        }
-        else trashPotionPoof.Play();
+        _poofColor[1].color = currentBrew.PotionColor;
+        _poofColor[1].time = 1.0f;
+        _poofGradient.SetKeys(_poofColor, _poofAlfa);
+
+        correctPotionPoof.SetGradient("ColourGradient", _poofGradient);
+        correctPotionPoof.Play();
     }
 }
