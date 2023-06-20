@@ -7,13 +7,21 @@ public class Door : MonoBehaviour
 {
     public static event Action<InteractionEvents> InteractionRaised;
 
+    [SerializeField] private CurrentRoom currentRoom;
     [SerializeField] private CurrentRoom roomToGo;
+
     [Header("Active/unactive settings")]
     [SerializeField] private MeshRenderer handleMesh;
     [SerializeField] private Material activeMaterial;
-    [SerializeField] private Material unactiveMaterial;
+    [SerializeField] private Material inactiveMaterial;
+    [SerializeField] private Material hoveredMaterial;
 
     private bool canActivateDoor;
+
+    private void Awake()
+    {
+        Dialogue.AskToActivateDoor += ActivateDoor;
+    }
     public void ChangeScenery()
     {
         if (!canActivateDoor) return; // Cannot activate if it is not the time to do so
@@ -31,18 +39,24 @@ public class Door : MonoBehaviour
         }
     }
 
-    public void CanActivateDoor(bool canActivate)
+    private void ActivateDoor(CurrentRoom commingCurrentRoom)
     {
-        canActivateDoor = canActivate;
+        if(currentRoom == commingCurrentRoom)
+        {
+            print("It is activating the door");
+            canActivateDoor = true;
+        }
     }
 
-    public void ActivateDoor()
+    public void HoverDoor()
     {
-        if(canActivateDoor) handleMesh.material = activeMaterial;
+        if (!canActivateDoor) return;
+        handleMesh.material = hoveredMaterial;
     }
 
-    public void DeactivateDoor()
+    public void UnhoverDoor()
     {
-        if (canActivateDoor) handleMesh.material = unactiveMaterial;
+        if (!canActivateDoor) return;
+        handleMesh.material = activeMaterial;
     }
 }
