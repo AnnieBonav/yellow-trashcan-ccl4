@@ -2255,7 +2255,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1838acb18a8088a418ee87fb719e5213, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelDurationSeconds: 200
   isDebugging: 0
   charactersController: {fileID: 1173198618}
   customerSpawner: {fileID: 2088302916}
@@ -2263,6 +2262,9 @@ MonoBehaviour:
   pauseMenu: {fileID: 3446413}
   startDayButton: {fileID: 53898766}
   startRoom: 1
+  winningCondition: 1
+  levelDurationSeconds: 200
+  customersTargetAmount: 2
 --- !u!4 &629228275
 Transform:
   m_ObjectHideFlags: 0
@@ -3013,7 +3015,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &804309039
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3998,7 +4000,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7313654230448209575, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8821029318128668983, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
       propertyPath: m_CastShadows
@@ -7885,10 +7887,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3353292471911721041, guid: c7c3fafa8fb930240bafce1106ca6faf, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4312682396965903038, guid: c7c3fafa8fb930240bafce1106ca6faf, type: 3}
-      propertyPath: dialogueToStart
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5379275238940091479, guid: c7c3fafa8fb930240bafce1106ca6faf, type: 3}
