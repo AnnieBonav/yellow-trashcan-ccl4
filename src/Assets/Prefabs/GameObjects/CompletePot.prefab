@@ -409,8 +409,9 @@ MonoBehaviour:
   _potionSpawnOrigin: {fileID: 7986614264129548185}
   _debugIngredientsIn: 0
   trashPotion: {fileID: 1517099294185381978, guid: 14413ef61ad62fa428f1ec2124a75b76, type: 3}
-  correctPotionPoof: {fileID: 7986614265045013993}
-  trashPotionPoof: {fileID: 0}
+  potionPoof: {fileID: 7986614265045013993}
+  importantEffect: {fileID: 2093039111170453107}
+  bubblesVFX: {fileID: 714884783785913582}
 --- !u!114 &7986614263608142077
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -594,7 +595,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7986614264129548262}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.061, z: 0}
+  m_LocalPosition: {x: 0, y: 1.109, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

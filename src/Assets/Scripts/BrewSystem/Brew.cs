@@ -36,6 +36,18 @@ public class Brew : MonoBehaviour
         _poofAlfa[0].time = 0.0f;
         _poofAlfa[1].alpha = 0.0f;
         _poofAlfa[1].time = 1.0f;
+
+        Potion.InteractionRaised += HandlePotionInteraction;
+    }
+
+    private void HandlePotionInteraction(InteractionEvents raisedEvent)
+    {
+        if(raisedEvent == InteractionEvents.GrabPotion)
+        {
+            print("Potion grabbed");
+            importantEffect.Stop();
+            bubblesVFX.Play();
+        }
     }
 
     private void Start()
