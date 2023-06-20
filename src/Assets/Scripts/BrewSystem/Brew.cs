@@ -16,7 +16,9 @@ public class Brew : MonoBehaviour
     [SerializeField] private GameObject trashPotion;
 
     [Header("VFX")]
-    [SerializeField] private VisualEffect correctPotionPoof;
+    [SerializeField] private VisualEffect potionPoof;
+    [SerializeField] private VisualEffect importantEffect;
+    [SerializeField] private VisualEffect bubblesVFX;
 
     private Gradient _poofGradient;
     private GradientColorKey[] _poofColor;
@@ -34,8 +36,13 @@ public class Brew : MonoBehaviour
         _poofAlfa[0].time = 0.0f;
         _poofAlfa[1].alpha = 0.0f;
         _poofAlfa[1].time = 1.0f;
-
     }
+
+    private void Start()
+    {
+        importantEffect.Stop();
+    }
+
     private RecipeData CurrentBrew()
     {
         for (int i = 0; i < recipes.Count; i++)
@@ -83,6 +90,7 @@ public class Brew : MonoBehaviour
     {
         RecipeData currentBrew = CurrentBrew();
         HandlePlayPoof(currentBrew);
+        HandleVFX();
         if (currentBrew is not null)
         {
             Debug.Log($"You made a {currentBrew.name}!!");
@@ -110,7 +118,12 @@ public class Brew : MonoBehaviour
         _currentIngredients.herb = 0;
     }
 
-    
+    private void HandleVFX()
+    {
+        // importantEffect
+        importantEffect.Play();
+        bubblesVFX.Stop(); // TODO: Add that when the potion is picked the effects are reset
+    }
 
     private void HandlePlayPoof(RecipeData currentBrew)
     {
@@ -118,7 +131,7 @@ public class Brew : MonoBehaviour
         _poofColor[1].time = 1.0f;
         _poofGradient.SetKeys(_poofColor, _poofAlfa);
 
-        correctPotionPoof.SetGradient("ColourGradient", _poofGradient);
-        correctPotionPoof.Play();
+        potionPoof.SetGradient("ColourGradient", _poofGradient);
+        potionPoof.Play();
     }
 }
