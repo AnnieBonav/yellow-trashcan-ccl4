@@ -13,6 +13,7 @@ public struct TextBlock
     [SerializeField] public UnityEvent events;
     [SerializeField] public List<ActionToFulfill> actionsToFulfill;
     [SerializeField] public bool needsClickToContinue;
+    [SerializeField] public List<FVXHandler> elementsToVFX;
 }
 
 [Serializable]
@@ -20,6 +21,12 @@ public class ActionToFulfill
 {
     [SerializeField] public InteractionEvents interactionEvent;
     [SerializeField] public bool hasBeenFulfilled;
+}
+
+[Serializable]
+public class ElementsToVFX
+{
+    public List<MeshRenderer> meshRenderer;
 }
 
 public class Dialogue : MonoBehaviour
@@ -101,6 +108,8 @@ public class Dialogue : MonoBehaviour
     private IEnumerator NextTextblock()
     {
         bookoFacade.BookoAnimator.SetBool("IsTalking", true);
+        HandleVFXElements();
+
         if (_currentDialogue < textBlocks.Count)
         {
             _writing = true;
@@ -121,7 +130,19 @@ public class Dialogue : MonoBehaviour
             print("Setting in Next block");
         }
         bookoFacade.BookoAnimator.SetBool("IsTalking", false);
+    }
 
+    private void HandleVFXElements()
+    {
+        for (int i = 0; i < textBlocks[_currentDialogue].elementsToVFX.Count; i++) // Goes through all of the elements that should be dehilighted (in case they werent already)
+        {
+            textBlocks[_currentDialogue -1].elementsToVFX[i].DeactivateHighlight();
+        }
+
+        for (int i = 0; i < textBlocks[_currentDialogue].elementsToVFX.Count; i++) // Goes through all of the elements that should be highlighted
+        {
+            textBlocks[_currentDialogue].elementsToVFX[i].ActivateHighLight();
+        }
     }
 
     public void ProceedDialogue()
