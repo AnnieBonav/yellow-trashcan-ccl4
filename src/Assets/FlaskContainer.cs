@@ -77,23 +77,6 @@ public class FlaskContainer : MonoBehaviour
         currentCapacity = maximumCapacity;
     }
 
-    public Flask TakeFlask()
-    {
-        if (currentCapacity < 0)
-        {
-            print("There are no more ingredients");
-            return null;
-        }
-        currentCapacity--;
-
-        GameObject noobFlask = Instantiate(flaskPrefab);
-        Flask flask = noobFlask.GetComponent<Flask>();
-
-        print("Returning new flask");
-        return flask;
-    }
-
-
     private void OnTriggerExit(Collider collider)
     {
         if (collider.CompareTag("Ingredient")) // If they have the same parent, then the ingredient should be unparented because it is taken away
