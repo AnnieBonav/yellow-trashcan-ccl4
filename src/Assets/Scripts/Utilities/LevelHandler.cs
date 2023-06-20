@@ -5,11 +5,11 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+public enum WinningCondition { TimeLimit, CustomersLimit }
 public class LevelHandler : MonoBehaviour
 {
     public static event Action<InteractionEvents> InteractionRaised;
 
-    [SerializeField] private float levelDurationSeconds = 10;
     [SerializeField] private bool isDebugging = false;
 
     [Header("Scene components")]
@@ -17,29 +17,34 @@ public class LevelHandler : MonoBehaviour
     [SerializeField] private CustomerSpawner customerSpawner;
 
     [Header("UI")]
-    [SerializeField]
     [Tooltip("This would be the opening and closing pause Menu action")]
-    InputActionReference _interactPauseMenu;
+    [SerializeField] private InputActionReference _interactPauseMenu;
+
     [SerializeField] private GameObject pauseMenu;
     [SerializeField] private GameObject startDayButton;
 
     private CurrentRoom currentRoom;
-    private WaitForSeconds levelTimer;
+    
     private bool menuOpened = false;
 
     [SerializeField] private CurrentRoom startRoom;
 
-    private void OpenStartDayButton()
-    {
-        print("The level handler is opening start day button");
-        charactersController.RemoveBook();
-        startDayButton.SetActive(true);
-    }
+    [Header("Winning condition")]
+    [Tooltip("Whether the level will end after a certain time or number of customers that have appeared.")]
+    [SerializeField] WinningCondition winningCondition = WinningCondition.CustomersLimit;
+
+    [Tooltip("How long the level will last. AFter this time the game ends.")]
+    [SerializeField] private float levelDurationSeconds = 10;
+    private WaitForSeconds levelTimer;
+
+    [Tooltip("How many customers will appear in the whole level. When this amount is reached, the level ends.")]
+    [SerializeField] private int customersTargetAmount;
+    private int currentAmountOfCustomers = 0; // How many customers have been served (correct or wrong, does not matter)
 
     private void Awake()
     {
         startDayButton.SetActive(false);
-        if(levelDurationSeconds <= 10)
+        if(winningCondition == WinningCondition.TimeLimit && levelDurationSeconds <= 10)
         {
             levelDurationSeconds = 10;
             print("The level will not last less than 10 seconds.");
@@ -52,18 +57,37 @@ public class LevelHandler : MonoBehaviour
 
         Door.InteractionRaised += ChangeRoom;
         Dialogue.InteractionRaised += HandleInteractionRaised;
+        CustomerSpawner.SpawnedCustomer += HandleSpawnedCustomer;
         currentRoom = startRoom;
     }
 
     private void Start()
     {
         pauseMenu.SetActive(false);
-
-        if (isDebugging)
-        {
-            StartLevel();
-        }
         charactersController.PositionCharacters(currentRoom);
+    }
+
+    private void HandleSpawnedCustomer()
+    {
+        if (isDebugging) print("Handling customers spawning in Level Handler.");
+        currentAmountOfCustomers++;
+        if(isDebugging) print("New amount of spawned customers: " + currentAmountOfCustomers);
+        if (winningCondition != WinningCondition.CustomersLimit) return;
+
+        print("The type of winning is amount of customers spawned, so it will be checked.");
+        if (isDebugging) print("Spawned customers: " + currentAmountOfCustomers + "  Number to reach: " + customersTargetAmount);
+        if (currentAmountOfCustomers >= customersTargetAmount)
+        {
+            print("The max amount has been reached on the level handler, it will ask the custoemr spawner to stop spawning custoemrs.");
+            customerSpawner.StopSpawningCustomers();
+        }
+    }
+
+    private void OpenStartDayButton()
+    {
+        print("The level handler is opening start day button");
+        charactersController.RemoveBook();
+        startDayButton.SetActive(true);
     }
 
     public void ChangeRoom(InteractionEvents interactionEvent)
@@ -122,8 +146,18 @@ public class LevelHandler : MonoBehaviour
     {
         InteractionRaised?.Invoke(InteractionEvents.LevelStarted);
         startDayButton.SetActive(false);
-        StartCoroutine(LevelTimer());
-        print("The level has officially started!");
+
+        switch (winningCondition)
+        {
+            case WinningCondition.TimeLimit:
+                StartCoroutine(LevelTimer());
+                if (isDebugging) print("The level has officially started! The winning condition is Time. The level will last " + levelDurationSeconds + " seconds.");
+                break;
+            case WinningCondition.CustomersLimit:
+                if (isDebugging) print("The level has officially started! The winning condition is amount of customers. The level will end after " + customersTargetAmount + " customers have appeared.");
+                break;
+        }
+        
         charactersController.SetToLevelPosition();
         customerSpawner.SpawnCustomer();
     }

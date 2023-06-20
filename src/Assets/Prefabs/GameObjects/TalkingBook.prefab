@@ -487,7 +487,8 @@ MonoBehaviour:
     - interactionEvent: 13
       hasBeenFulfilled: 0
     needsClickToContinue: 0
-  - text: Great! To get staretd, how about you pick up an ingredient?
+  - text: Great! We are now in the brewing station. All of your ingredients are here,
+      how about you grab one?
     events:
       m_PersistentCalls:
         m_Calls: []
@@ -495,7 +496,8 @@ MonoBehaviour:
     - interactionEvent: 0
       hasBeenFulfilled: 0
     needsClickToContinue: 0
-  - text: Amazing! Now put it on the pot to get started with your first potion!
+  - text: Amazing! Now put it on the pot over there to get started with your first
+      potion!
     events:
       m_PersistentCalls:
         m_Calls: []
@@ -503,13 +505,14 @@ MonoBehaviour:
     - interactionEvent: 2
       hasBeenFulfilled: 0
     needsClickToContinue: 0
-  - text: 'Great! Different combination of ingredients will give different potions. '
+  - text: Great! Different combinations of ingredients give different potions, you
+      will learn them over time.
     events:
       m_PersistentCalls:
         m_Calls: []
     actionsToFulfill: []
     needsClickToContinue: 1
-  - text: To complete them grab an empty flask and collect your brew!
+  - text: To complete a potion grab an empty flask and collect your bubbling brew!
     events:
       m_PersistentCalls:
         m_Calls: []
@@ -517,8 +520,8 @@ MonoBehaviour:
     - interactionEvent: 15
       hasBeenFulfilled: 0
     needsClickToContinue: 0
-  - text: Great! Now, to get rid of an incorrect potion, just throw it on the garbage
-      can.
+  - text: Amazing! Unfortunately, we did not create a potion we need.  To get rid
+      of an incorrect potion, just grab it and throw it on the garbage can.
     events:
       m_PersistentCalls:
         m_Calls: []
@@ -547,14 +550,14 @@ MonoBehaviour:
     - interactionEvent: 12
       hasBeenFulfilled: 0
     needsClickToContinue: 0
-  - text: Here you can restock your ingredients. Just grab them from the containers
-      and they will appear back at your brewing station.
+  - text: Here you can restock your ingredients. Just interact with the containers
+      and they do their thing! The ingredients will appear back at your brewing station.
     events:
       m_PersistentCalls:
         m_Calls: []
     actionsToFulfill: []
     needsClickToContinue: 1
-  - text: You will not be able to restock more than can what fit in your station,
+  - text: You will not be able to restock more than can what fit in your shelfs,
       so just get a few ingredients!
     events:
       m_PersistentCalls:
@@ -565,7 +568,7 @@ MonoBehaviour:
     - interactionEvent: 4
       hasBeenFulfilled: 0
     needsClickToContinue: 0
-  - text: Now you can go back!
+  - text: Now lets gop back to see your restocked shelfs!
     events:
       m_PersistentCalls:
         m_Calls:
@@ -585,7 +588,7 @@ MonoBehaviour:
     - interactionEvent: 13
       hasBeenFulfilled: 0
     needsClickToContinue: 0
-  - text: You are now ready to get your first customer! Here they come!
+  - text: Amazing! You are now ready to get your first customer! Here they come!
     events:
       m_PersistentCalls:
         m_Calls:
@@ -606,7 +609,7 @@ MonoBehaviour:
       hasBeenFulfilled: 0
     needsClickToContinue: 0
   - text: See that image on top of them? It is their order! To know which ingredients
-      to put, look at the recipes poster.
+      to use, look at the recipes poster.
     events:
       m_PersistentCalls:
         m_Calls: []
@@ -635,8 +638,8 @@ MonoBehaviour:
         m_Calls: []
     actionsToFulfill: []
     needsClickToContinue: 1
-  - text: A few extra things! To pause the game, you can click the pause button in
-      your left hand.
+  - text: A few extra things! To pause your day, and change the sound settings, you
+      can click the pause button in your left hand.
     events:
       m_PersistentCalls:
         m_Calls: []
@@ -691,7 +694,7 @@ MonoBehaviour:
   characterDelay: 0.04
   _pressAAction: {fileID: 4323845545830496942, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   _pressYAction: {fileID: 2690011112501874771, guid: c348712bda248c246b8c49b3db54643f, type: 3}
-  dialogueToStart: 0
+  dialogueToStart: 21
   isDebugging: 1
 --- !u!1 &5379275239065122579
 GameObject:
