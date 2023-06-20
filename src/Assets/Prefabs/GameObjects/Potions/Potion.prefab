@@ -45,6 +45,7 @@ GameObject:
   - component: {fileID: 3969158547738472929}
   - component: {fileID: 9171588254847010733}
   - component: {fileID: 2657187546819064075}
+  - component: {fileID: 7804652055027962628}
   m_Layer: 0
   m_Name: Potion
   m_TagString: Potion
@@ -282,6 +283,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   soundEventName: 
+--- !u!95 &7804652055027962628
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4029073272115822870}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 79c88096f04b54ff6931dbbf75bcc601, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &4062093407075468291
 GameObject:
   m_ObjectHideFlags: 0
