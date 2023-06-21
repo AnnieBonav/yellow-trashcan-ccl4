@@ -18,7 +18,7 @@ namespace AK
         static const AkUniqueID PLAY_BUBBLES = 3381697299U;
         static const AkUniqueID PLAY_CORRECTPOTION = 3886503793U;
         static const AkUniqueID PLAY_DOOR = 2547633870U;
-        static const AkUniqueID PLAY_DROPGLASS = 3420405931U;
+        static const AkUniqueID PLAY_DROP = 2007351433U;
         static const AkUniqueID PLAY_FOOTSTEP = 1602358412U;
         static const AkUniqueID PLAY_HAPPYSOUND = 1832643493U;
         static const AkUniqueID PLAY_INCORRECTPOTION = 4198774158U;
@@ -57,6 +57,18 @@ namespace AK
                 static const AkUniqueID SOLDIER = 3121013053U;
             } // namespace SWITCH
         } // namespace CHARACTER
+
+        namespace MATERIAL
+        {
+            static const AkUniqueID GROUP = 3865314626U;
+
+            namespace SWITCH
+            {
+                static const AkUniqueID GLASS = 2449969375U;
+                static const AkUniqueID METAL = 2473969246U;
+                static const AkUniqueID SOLID = 744619566U;
+            } // namespace SWITCH
+        } // namespace MATERIAL
 
     } // namespace SWITCHES
 

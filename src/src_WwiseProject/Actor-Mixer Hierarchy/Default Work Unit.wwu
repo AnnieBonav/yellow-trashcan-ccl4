@@ -485,130 +485,6 @@
 							</ChildrenList>
 							<ObjectLists/>
 						</RandomSequenceContainer>
-						<RandomSequenceContainer Name="DropGlass" ID="{5E64E86C-403A-4EAD-8540-8C09D290EACD}" ShortID="133430633">
-							<PropertyList>
-								<Property Name="3DSpatialization" Type="int16" Value="2"/>
-								<Property Name="Pitch" Type="int32">
-									<ModifierList>
-										<ModifierInfo>
-											<Modifier Name="" ID="{75BE427A-8EC2-4156-88ED-1D7FD30AF0A5}">
-												<PropertyList>
-													<Property Name="Enabled" Type="bool" Value="True"/>
-													<Property Name="Max" Type="Real64" Value="200"/>
-													<Property Name="Min" Type="Real64" Value="-200"/>
-												</PropertyList>
-											</Modifier>
-										</ModifierInfo>
-									</ModifierList>
-								</Property>
-							</PropertyList>
-							<ReferenceList>
-								<Reference Name="Attenuation">
-									<ObjectRef Name="DropAttenuation" ID="{1AB8B469-6E30-45D7-94FD-D3C9E5C96037}" WorkUnitID="{EFF89E9F-0A82-49D6-88D5-0AA313488C01}"/>
-								</Reference>
-								<Reference Name="Conversion">
-									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{F4AF011D-EC8C-4834-8840-395EB0F23260}"/>
-								</Reference>
-								<Reference Name="OutputBus">
-									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2240F60-F21E-49E0-9C98-1F9198DDBECE}"/>
-								</Reference>
-							</ReferenceList>
-							<ChildrenList>
-								<Sound Name="SFX_DropGlass1" ID="{4FEB2186-2784-4530-BA8D-17946239641B}" ShortID="624949797">
-									<ReferenceList>
-										<Reference Name="Conversion">
-											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{F4AF011D-EC8C-4834-8840-395EB0F23260}"/>
-										</Reference>
-										<Reference Name="OutputBus">
-											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2240F60-F21E-49E0-9C98-1F9198DDBECE}"/>
-										</Reference>
-									</ReferenceList>
-									<ChildrenList>
-										<AudioFileSource Name="SFX_DropGlass1" ID="{819EDE71-6B73-4B17-9C81-F093CD5A104D}">
-											<Language>SFX</Language>
-											<AudioFile>SFX_DropGlass1.wav</AudioFile>
-											<MediaIDList>
-												<MediaID ID="745924077"/>
-											</MediaIDList>
-										</AudioFileSource>
-									</ChildrenList>
-									<ObjectLists/>
-									<ActiveSourceList>
-										<ActiveSource Name="SFX_DropGlass1" ID="{819EDE71-6B73-4B17-9C81-F093CD5A104D}" Platform="Linked"/>
-									</ActiveSourceList>
-								</Sound>
-								<Sound Name="SFX_DropGlass2" ID="{12CD3B4E-18DA-40EE-9574-8FD2724774DC}" ShortID="27512808">
-									<ReferenceList>
-										<Reference Name="Conversion">
-											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{F4AF011D-EC8C-4834-8840-395EB0F23260}"/>
-										</Reference>
-										<Reference Name="OutputBus">
-											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2240F60-F21E-49E0-9C98-1F9198DDBECE}"/>
-										</Reference>
-									</ReferenceList>
-									<ChildrenList>
-										<AudioFileSource Name="SFX_DropGlass2" ID="{8AFEA0C6-101E-4C54-A4C5-04F902D8A494}">
-											<Language>SFX</Language>
-											<AudioFile>SFX_DropGlass2.wav</AudioFile>
-											<MediaIDList>
-												<MediaID ID="290834582"/>
-											</MediaIDList>
-										</AudioFileSource>
-									</ChildrenList>
-									<ObjectLists/>
-									<ActiveSourceList>
-										<ActiveSource Name="SFX_DropGlass2" ID="{8AFEA0C6-101E-4C54-A4C5-04F902D8A494}" Platform="Linked"/>
-									</ActiveSourceList>
-								</Sound>
-								<Sound Name="SFX_DropGlass3" ID="{9369B390-E9D9-4A09-9CC9-68C16A84126B}" ShortID="906868854">
-									<ReferenceList>
-										<Reference Name="Conversion">
-											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{F4AF011D-EC8C-4834-8840-395EB0F23260}"/>
-										</Reference>
-										<Reference Name="OutputBus">
-											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2240F60-F21E-49E0-9C98-1F9198DDBECE}"/>
-										</Reference>
-									</ReferenceList>
-									<ChildrenList>
-										<AudioFileSource Name="SFX_DropGlass3" ID="{4B8FE546-7479-4230-8D9D-8FF9095A2918}">
-											<Language>SFX</Language>
-											<AudioFile>SFX_DropGlass3.wav</AudioFile>
-											<MediaIDList>
-												<MediaID ID="782290832"/>
-											</MediaIDList>
-										</AudioFileSource>
-									</ChildrenList>
-									<ObjectLists/>
-									<ActiveSourceList>
-										<ActiveSource Name="SFX_DropGlass3" ID="{4B8FE546-7479-4230-8D9D-8FF9095A2918}" Platform="Linked"/>
-									</ActiveSourceList>
-								</Sound>
-								<Sound Name="SFX_DropGlass4" ID="{E190B593-5319-4216-A662-896B9097887F}" ShortID="921956377">
-									<ReferenceList>
-										<Reference Name="Conversion">
-											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{F4AF011D-EC8C-4834-8840-395EB0F23260}"/>
-										</Reference>
-										<Reference Name="OutputBus">
-											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2240F60-F21E-49E0-9C98-1F9198DDBECE}"/>
-										</Reference>
-									</ReferenceList>
-									<ChildrenList>
-										<AudioFileSource Name="SFX_DropGlass4" ID="{86D12006-0921-444F-B526-4C1FD952BFDC}">
-											<Language>SFX</Language>
-											<AudioFile>SFX_DropGlass4.wav</AudioFile>
-											<MediaIDList>
-												<MediaID ID="767203002"/>
-											</MediaIDList>
-										</AudioFileSource>
-									</ChildrenList>
-									<ObjectLists/>
-									<ActiveSourceList>
-										<ActiveSource Name="SFX_DropGlass4" ID="{86D12006-0921-444F-B526-4C1FD952BFDC}" Platform="Linked"/>
-									</ActiveSourceList>
-								</Sound>
-							</ChildrenList>
-							<ObjectLists/>
-						</RandomSequenceContainer>
 						<Folder Name="Refillers" ID="{466689AB-9829-4CC2-A004-60A1D70231B1}" ShortID="547939260">
 							<ChildrenList>
 								<RandomSequenceContainer Name="RefillSolid" ID="{8F2C38F7-83F4-4F71-B727-70A4BB7F0199}" ShortID="993803004">
@@ -671,26 +547,6 @@
 								</RandomSequenceContainer>
 							</ChildrenList>
 						</Folder>
-						<RandomSequenceContainer Name="DropSolid" ID="{36B0BA84-8389-4CCC-BC74-AFB96025DAF7}" ShortID="1011156787">
-							<PropertyList>
-								<Property Name="Pitch" Type="int32">
-									<ModifierList>
-										<ModifierInfo>
-											<Modifier Name="" ID="{6A919C03-3B6B-4848-BD4E-33013FFEC9FF}"/>
-										</ModifierInfo>
-									</ModifierList>
-								</Property>
-							</PropertyList>
-							<ReferenceList>
-								<Reference Name="Conversion">
-									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{F4AF011D-EC8C-4834-8840-395EB0F23260}"/>
-								</Reference>
-								<Reference Name="OutputBus">
-									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2240F60-F21E-49E0-9C98-1F9198DDBECE}"/>
-								</Reference>
-							</ReferenceList>
-							<ObjectLists/>
-						</RandomSequenceContainer>
 						<Folder Name="Potions" ID="{06A73281-E8F2-42BC-B607-DB76F0586590}" ShortID="971405750">
 							<ChildrenList>
 								<RandomSequenceContainer Name="CorrectPotion" ID="{3A9E3BEB-5CB3-48DC-BB10-3D5DD6283731}" ShortID="106578452">
@@ -717,6 +573,281 @@
 								</RandomSequenceContainer>
 							</ChildrenList>
 						</Folder>
+						<SwitchContainer Name="Drop" ID="{E0196F00-AE47-4407-A42F-4B850B6B9B1B}" ShortID="632764673">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{F4AF011D-EC8C-4834-8840-395EB0F23260}"/>
+								</Reference>
+								<Reference Name="DefaultSwitchOrState">
+									<ObjectRef Name="Solid" ID="{BD216E59-F7ED-4FEF-9828-4DF5C55441E5}" WorkUnitID="{33AC2385-96B4-4090-91A0-52CFAEB08E0B}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2240F60-F21E-49E0-9C98-1F9198DDBECE}"/>
+								</Reference>
+								<Reference Name="SwitchGroupOrStateGroup">
+									<ObjectRef Name="Material" ID="{51A7145F-10E8-4B2F-8C72-A84149D07067}" WorkUnitID="{33AC2385-96B4-4090-91A0-52CFAEB08E0B}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<RandomSequenceContainer Name="DropGlass" ID="{5E64E86C-403A-4EAD-8540-8C09D290EACD}" ShortID="133430633">
+									<PropertyList>
+										<Property Name="3DSpatialization" Type="int16" Value="2"/>
+										<Property Name="Pitch" Type="int32">
+											<ModifierList>
+												<ModifierInfo>
+													<Modifier Name="" ID="{75BE427A-8EC2-4156-88ED-1D7FD30AF0A5}">
+														<PropertyList>
+															<Property Name="Enabled" Type="bool" Value="True"/>
+															<Property Name="Max" Type="Real64" Value="200"/>
+															<Property Name="Min" Type="Real64" Value="-200"/>
+														</PropertyList>
+													</Modifier>
+												</ModifierInfo>
+											</ModifierList>
+										</Property>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>2</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Attenuation">
+											<ObjectRef Name="DropAttenuation" ID="{1AB8B469-6E30-45D7-94FD-D3C9E5C96037}" WorkUnitID="{EFF89E9F-0A82-49D6-88D5-0AA313488C01}"/>
+										</Reference>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{F4AF011D-EC8C-4834-8840-395EB0F23260}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2240F60-F21E-49E0-9C98-1F9198DDBECE}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<Sound Name="SFX_DropGlass1" ID="{4FEB2186-2784-4530-BA8D-17946239641B}" ShortID="624949797">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{F4AF011D-EC8C-4834-8840-395EB0F23260}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2240F60-F21E-49E0-9C98-1F9198DDBECE}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="SFX_DropGlass1" ID="{819EDE71-6B73-4B17-9C81-F093CD5A104D}">
+													<Language>SFX</Language>
+													<AudioFile>SFX_DropGlass1.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="745924077"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ObjectLists/>
+											<ActiveSourceList>
+												<ActiveSource Name="SFX_DropGlass1" ID="{819EDE71-6B73-4B17-9C81-F093CD5A104D}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="SFX_DropGlass2" ID="{12CD3B4E-18DA-40EE-9574-8FD2724774DC}" ShortID="27512808">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{F4AF011D-EC8C-4834-8840-395EB0F23260}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2240F60-F21E-49E0-9C98-1F9198DDBECE}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="SFX_DropGlass2" ID="{8AFEA0C6-101E-4C54-A4C5-04F902D8A494}">
+													<Language>SFX</Language>
+													<AudioFile>SFX_DropGlass2.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="290834582"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ObjectLists/>
+											<ActiveSourceList>
+												<ActiveSource Name="SFX_DropGlass2" ID="{8AFEA0C6-101E-4C54-A4C5-04F902D8A494}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="SFX_DropGlass3" ID="{9369B390-E9D9-4A09-9CC9-68C16A84126B}" ShortID="906868854">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{F4AF011D-EC8C-4834-8840-395EB0F23260}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2240F60-F21E-49E0-9C98-1F9198DDBECE}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="SFX_DropGlass3" ID="{4B8FE546-7479-4230-8D9D-8FF9095A2918}">
+													<Language>SFX</Language>
+													<AudioFile>SFX_DropGlass3.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="782290832"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ObjectLists/>
+											<ActiveSourceList>
+												<ActiveSource Name="SFX_DropGlass3" ID="{4B8FE546-7479-4230-8D9D-8FF9095A2918}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="SFX_DropGlass4" ID="{E190B593-5319-4216-A662-896B9097887F}" ShortID="921956377">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{F4AF011D-EC8C-4834-8840-395EB0F23260}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2240F60-F21E-49E0-9C98-1F9198DDBECE}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="SFX_DropGlass4" ID="{86D12006-0921-444F-B526-4C1FD952BFDC}">
+													<Language>SFX</Language>
+													<AudioFile>SFX_DropGlass4.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="767203002"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ObjectLists/>
+											<ActiveSourceList>
+												<ActiveSource Name="SFX_DropGlass4" ID="{86D12006-0921-444F-B526-4C1FD952BFDC}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+									</ChildrenList>
+									<ObjectLists/>
+								</RandomSequenceContainer>
+								<RandomSequenceContainer Name="DropSolid" ID="{36B0BA84-8389-4CCC-BC74-AFB96025DAF7}" ShortID="1011156787">
+									<PropertyList>
+										<Property Name="Pitch" Type="int32">
+											<ModifierList>
+												<ModifierInfo>
+													<Modifier Name="" ID="{6A919C03-3B6B-4848-BD4E-33013FFEC9FF}"/>
+												</ModifierInfo>
+											</ModifierList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{F4AF011D-EC8C-4834-8840-395EB0F23260}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2240F60-F21E-49E0-9C98-1F9198DDBECE}"/>
+										</Reference>
+									</ReferenceList>
+									<ObjectLists/>
+								</RandomSequenceContainer>
+								<RandomSequenceContainer Name="DropMetal" ID="{D4160466-0AF3-45C0-9A26-D558D2C560AF}" ShortID="631339565">
+									<PropertyList>
+										<Property Name="Pitch" Type="int32">
+											<ModifierList>
+												<ModifierInfo>
+													<Modifier Name="" ID="{70F78129-6E29-4B04-8943-7DB2F5D79135}">
+														<PropertyList>
+															<Property Name="Enabled" Type="bool" Value="True"/>
+															<Property Name="Max" Type="Real64" Value="200"/>
+															<Property Name="Min" Type="Real64" Value="-200"/>
+														</PropertyList>
+													</Modifier>
+												</ModifierInfo>
+											</ModifierList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{F4AF011D-EC8C-4834-8840-395EB0F23260}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2240F60-F21E-49E0-9C98-1F9198DDBECE}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<Sound Name="SFX_DropMetal1" ID="{7C516F8F-0299-4071-8DB0-E35765EC28FD}" ShortID="158268661">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{F4AF011D-EC8C-4834-8840-395EB0F23260}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2240F60-F21E-49E0-9C98-1F9198DDBECE}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="SFX_DropMetal1" ID="{13131DDE-17B8-4B52-BF79-B8604DCFBFAF}">
+													<Language>SFX</Language>
+													<AudioFile>SFX_DropMetal1.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="301604732"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ObjectLists/>
+											<ActiveSourceList>
+												<ActiveSource Name="SFX_DropMetal1" ID="{13131DDE-17B8-4B52-BF79-B8604DCFBFAF}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="SFX_DropMetal2" ID="{A24FE165-0AD8-4625-9244-9C6B132F6656}" ShortID="23983863">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{F4AF011D-EC8C-4834-8840-395EB0F23260}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2240F60-F21E-49E0-9C98-1F9198DDBECE}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="SFX_DropMetal2" ID="{B2396AA2-D355-4A70-9DCF-254C0C4BC3A8}">
+													<Language>SFX</Language>
+													<AudioFile>SFX_DropMetal2.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="160237374"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ObjectLists/>
+											<ActiveSourceList>
+												<ActiveSource Name="SFX_DropMetal2" ID="{B2396AA2-D355-4A70-9DCF-254C0C4BC3A8}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+									</ChildrenList>
+									<ObjectLists/>
+								</RandomSequenceContainer>
+							</ChildrenList>
+							<ObjectLists/>
+							<GroupingInfo>
+								<GroupingBehaviorList>
+									<GroupingBehavior>
+										<ItemRef Name="DropMetal" ID="{D4160466-0AF3-45C0-9A26-D558D2C560AF}"/>
+									</GroupingBehavior>
+									<GroupingBehavior>
+										<ItemRef Name="DropGlass" ID="{5E64E86C-403A-4EAD-8540-8C09D290EACD}"/>
+									</GroupingBehavior>
+									<GroupingBehavior>
+										<ItemRef Name="DropSolid" ID="{36B0BA84-8389-4CCC-BC74-AFB96025DAF7}"/>
+									</GroupingBehavior>
+								</GroupingBehaviorList>
+								<GroupingList>
+									<Grouping>
+										<SwitchRef Name="Metal" ID="{19C4CA12-0BB6-4A6B-B03D-423C166977D0}"/>
+										<ItemList>
+											<ItemRef Name="DropMetal" ID="{D4160466-0AF3-45C0-9A26-D558D2C560AF}"/>
+										</ItemList>
+									</Grouping>
+									<Grouping>
+										<SwitchRef Name="Solid" ID="{BD216E59-F7ED-4FEF-9828-4DF5C55441E5}"/>
+										<ItemList>
+											<ItemRef Name="DropSolid" ID="{36B0BA84-8389-4CCC-BC74-AFB96025DAF7}"/>
+										</ItemList>
+									</Grouping>
+									<Grouping>
+										<SwitchRef Name="Glass" ID="{F7080E97-AE2E-4F64-81DD-977C6060FB73}"/>
+										<ItemList>
+											<ItemRef Name="DropGlass" ID="{5E64E86C-403A-4EAD-8540-8C09D290EACD}"/>
+										</ItemList>
+									</Grouping>
+								</GroupingList>
+							</GroupingInfo>
+						</SwitchContainer>
 					</ChildrenList>
 				</Folder>
 				<Folder Name="Customers" ID="{8F5DC414-3C32-4A96-BE3C-769071BC6370}" ShortID="888993016">
@@ -939,6 +1070,9 @@
 						</SwitchContainer>
 						<SwitchContainer Name="AngrySound" ID="{4EA1E538-287F-44F9-A441-588CE61A2062}" ShortID="73785501">
 							<ReferenceList>
+								<Reference Name="Attenuation">
+									<ObjectRef Name="ResponseAttenuation" ID="{FF5BF499-48C8-4186-9A7C-3B49E3FAB9B9}" WorkUnitID="{EFF89E9F-0A82-49D6-88D5-0AA313488C01}"/>
+								</Reference>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{F4AF011D-EC8C-4834-8840-395EB0F23260}"/>
 								</Reference>
@@ -954,6 +1088,20 @@
 							</ReferenceList>
 							<ChildrenList>
 								<RandomSequenceContainer Name="SoldierAngry" ID="{1C9FCCC5-653E-4536-9A29-B9F246837869}" ShortID="89502094">
+									<PropertyList>
+										<Property Name="Pitch" Type="int32">
+											<ModifierList>
+												<ModifierInfo>
+													<Modifier Name="" ID="{E0D04934-8827-4B55-A60E-DA14EDC62141}">
+														<PropertyList>
+															<Property Name="Enabled" Type="bool" Value="True"/>
+															<Property Name="Min" Type="Real64" Value="-300"/>
+														</PropertyList>
+													</Modifier>
+												</ModifierInfo>
+											</ModifierList>
+										</Property>
+									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{F4AF011D-EC8C-4834-8840-395EB0F23260}"/>
@@ -998,6 +1146,56 @@
 											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2240F60-F21E-49E0-9C98-1F9198DDBECE}"/>
 										</Reference>
 									</ReferenceList>
+									<ChildrenList>
+										<Sound Name="SFX_FairyAngry1" ID="{B94422B1-83B6-4E39-BCDA-753A01C0F33D}" ShortID="434683262">
+											<PropertyList>
+												<Property Name="Pitch" Type="int32">
+													<ModifierList>
+														<ModifierInfo>
+															<Modifier Name="" ID="{9BE42A12-BB1B-45BA-8513-FF38CA8DE115}">
+																<PropertyList>
+																	<Property Name="Enabled" Type="bool" Value="True"/>
+																	<Property Name="Max" Type="Real64" Value="50"/>
+																	<Property Name="Min" Type="Real64" Value="-50"/>
+																</PropertyList>
+															</Modifier>
+														</ModifierInfo>
+													</ModifierList>
+												</Property>
+												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>-6</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{F4AF011D-EC8C-4834-8840-395EB0F23260}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2240F60-F21E-49E0-9C98-1F9198DDBECE}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="SFX_FairyAngry1" ID="{A2376056-A491-4515-AFA8-3CF005971D53}">
+													<PropertyList>
+														<Property Name="FadeOutDuration" Type="Real64" Value="0.622461170848268"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimEnd" Type="Real64" Value="0.6415770609319"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>SFX_FairyAngry1.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="548293618"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ObjectLists/>
+											<ActiveSourceList>
+												<ActiveSource Name="SFX_FairyAngry1" ID="{A2376056-A491-4515-AFA8-3CF005971D53}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+									</ChildrenList>
 									<ObjectLists/>
 								</RandomSequenceContainer>
 							</ChildrenList>
@@ -1029,6 +1227,9 @@
 						</SwitchContainer>
 						<SwitchContainer Name="HappySound" ID="{20EF3FF5-5EE9-4B1D-877A-EE80AC0F0898}" ShortID="972684404">
 							<ReferenceList>
+								<Reference Name="Attenuation">
+									<ObjectRef Name="ResponseAttenuation" ID="{FF5BF499-48C8-4186-9A7C-3B49E3FAB9B9}" WorkUnitID="{EFF89E9F-0A82-49D6-88D5-0AA313488C01}"/>
+								</Reference>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{F4AF011D-EC8C-4834-8840-395EB0F23260}"/>
 								</Reference>
@@ -1044,6 +1245,21 @@
 							</ReferenceList>
 							<ChildrenList>
 								<RandomSequenceContainer Name="SoldierHappy" ID="{D307CA15-F87E-4008-8C46-8BA76FC9BB69}" ShortID="16670742">
+									<PropertyList>
+										<Property Name="Pitch" Type="int32">
+											<ModifierList>
+												<ModifierInfo>
+													<Modifier Name="" ID="{AE6CFE20-718B-41E4-9A5C-4A0447AC5259}">
+														<PropertyList>
+															<Property Name="Enabled" Type="bool" Value="True"/>
+															<Property Name="Max" Type="Real64" Value="200"/>
+															<Property Name="Min" Type="Real64" Value="-100"/>
+														</PropertyList>
+													</Modifier>
+												</ModifierInfo>
+											</ModifierList>
+										</Property>
+									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{F4AF011D-EC8C-4834-8840-395EB0F23260}"/>
@@ -1052,9 +1268,84 @@
 											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2240F60-F21E-49E0-9C98-1F9198DDBECE}"/>
 										</Reference>
 									</ReferenceList>
+									<ChildrenList>
+										<Sound Name="SFX_SoldierAprove1" ID="{77B73F19-6DC0-469C-931C-DA3454087633}" ShortID="394352402">
+											<PropertyList>
+												<Property Name="Inclusion" Type="bool">
+													<ValueList>
+														<Value>False</Value>
+													</ValueList>
+												</Property>
+												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>7</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{F4AF011D-EC8C-4834-8840-395EB0F23260}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2240F60-F21E-49E0-9C98-1F9198DDBECE}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="SFX_SoldierAprove1" ID="{58D0DACC-3764-49AA-A6A1-562031303710}">
+													<Language>SFX</Language>
+													<AudioFile>SFX_SoldierAprove1.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="689213505"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ObjectLists/>
+											<ActiveSourceList>
+												<ActiveSource Name="SFX_SoldierAprove1" ID="{58D0DACC-3764-49AA-A6A1-562031303710}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="SFX_SoldierAprove2" ID="{DD2DE648-48CD-4F7E-AF04-4D155686ADB0}" ShortID="404646262">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{F4AF011D-EC8C-4834-8840-395EB0F23260}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2240F60-F21E-49E0-9C98-1F9198DDBECE}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="SFX_SoldierAprove2" ID="{72084E99-BF7E-4603-B318-6BAC277B0EA5}">
+													<Language>SFX</Language>
+													<AudioFile>SFX_SoldierAprove2.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="977286599"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ObjectLists/>
+											<ActiveSourceList>
+												<ActiveSource Name="SFX_SoldierAprove2" ID="{72084E99-BF7E-4603-B318-6BAC277B0EA5}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+									</ChildrenList>
 									<ObjectLists/>
 								</RandomSequenceContainer>
 								<RandomSequenceContainer Name="FairyHappy" ID="{8E721F47-E178-4052-AC8F-F2017471E8E6}" ShortID="365102069">
+									<PropertyList>
+										<Property Name="Pitch" Type="int32">
+											<ModifierList>
+												<ModifierInfo>
+													<Modifier Name="" ID="{0F6EF35A-26AA-435A-BDD5-E4403B2F16A2}">
+														<PropertyList>
+															<Property Name="Enabled" Type="bool" Value="True"/>
+															<Property Name="Max" Type="Real64" Value="100"/>
+															<Property Name="Min" Type="Real64" Value="-50"/>
+														</PropertyList>
+													</Modifier>
+												</ModifierInfo>
+											</ModifierList>
+										</Property>
+									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{F4AF011D-EC8C-4834-8840-395EB0F23260}"/>
@@ -1063,6 +1354,38 @@
 											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2240F60-F21E-49E0-9C98-1F9198DDBECE}"/>
 										</Reference>
 									</ReferenceList>
+									<ChildrenList>
+										<Sound Name="SFX_FairyAprove1" ID="{C27B58C9-FAD6-482E-8B24-9BB46D4A29D0}" ShortID="81388446">
+											<PropertyList>
+												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>3</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{F4AF011D-EC8C-4834-8840-395EB0F23260}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2240F60-F21E-49E0-9C98-1F9198DDBECE}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="SFX_FairyAprove1" ID="{54081BBC-6B33-4619-9677-3128E1546E46}">
+													<Language>SFX</Language>
+													<AudioFile>SFX_FairyAprove1.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="122093724"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ObjectLists/>
+											<ActiveSourceList>
+												<ActiveSource Name="SFX_FairyAprove1" ID="{54081BBC-6B33-4619-9677-3128E1546E46}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+									</ChildrenList>
 									<ObjectLists/>
 								</RandomSequenceContainer>
 							</ChildrenList>

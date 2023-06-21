@@ -13,9 +13,10 @@ GameObject:
   - component: {fileID: 5516322432357017201}
   - component: {fileID: 4342312309736031364}
   - component: {fileID: 6952688764553136665}
+  - component: {fileID: 4879691937979907822}
   m_Layer: 0
   m_Name: Wateringcan
-  m_TagString: Untagged
+  m_TagString: Flask
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -215,6 +216,21 @@ MonoBehaviour:
   meshRenderers:
   - {fileID: 7390800981187845914}
   highlightMaterial: {fileID: 2100000, guid: d598ade039d555140bb12d06a68a0990, type: 2}
+--- !u!114 &4879691937979907822
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7178620887121331072}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efc5fdb72bd396044ae612c6a2a26080, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundEventName: Play_PickIngredient
+  soundsOnDrop: 1
+  soundMaterialType: 0
 --- !u!1001 &8165294354859934622
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -17,10 +17,10 @@ public class UIButton : MonoBehaviour
                 SceneManager.LoadSceneAsync("MainMenu");
                 break;
             case GameScenes.Tutorial:
-                SceneManager.LoadSceneAsync("SecondDemo");
+                SceneManager.LoadSceneAsync("Draft1");
                 break; // How do i tell it to open the tutorial and not the level?
             case GameScenes.Level:
-                SceneManager.LoadSceneAsync("SecondDemo");
+                SceneManager.LoadSceneAsync("Draft1");
                 break;
             case GameScenes.Settings:
                 SceneManager.LoadSceneAsync("Settings");

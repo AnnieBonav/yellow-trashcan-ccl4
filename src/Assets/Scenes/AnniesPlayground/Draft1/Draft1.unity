@@ -2249,7 +2249,7 @@ MonoBehaviour:
   _interactPauseMenu: {fileID: 6495535394599772413, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   pauseMenu: {fileID: 3446413}
   startDayButton: {fileID: 53898766}
-  startRoom: 2
+  startRoom: 1
   winningCondition: 1
   levelDurationSeconds: 200
   customersTargetAmount: 2
@@ -7761,6 +7761,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 4312682396965903038, guid: c7c3fafa8fb930240bafce1106ca6faf, type: 3}
+      propertyPath: dialogueToStart
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4312682396965903038, guid: c7c3fafa8fb930240bafce1106ca6faf, type: 3}
       propertyPath: textBlocks.Array.data[2].elementsToVFX.Array.size
       value: 4
       objectReference: {fileID: 0}
@@ -7800,6 +7804,10 @@ PrefabInstance:
       propertyPath: textBlocks.Array.data[8].elementsToVFX.Array.data[0]
       value: 
       objectReference: {fileID: 1517452341}
+    - target: {fileID: 4312682396965903038, guid: c7c3fafa8fb930240bafce1106ca6faf, type: 3}
+      propertyPath: textBlocks.Array.data[9].actionsToFulfill.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4312682396965903038, guid: c7c3fafa8fb930240bafce1106ca6faf, type: 3}
       propertyPath: textBlocks.Array.data[12].elementsToVFX.Array.data[0]
       value: 

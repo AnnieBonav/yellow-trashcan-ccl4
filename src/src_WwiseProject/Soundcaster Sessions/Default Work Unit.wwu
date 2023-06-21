@@ -10,8 +10,16 @@
 							<Position X="0" Y="0"/>
 						</Module>
 						<Module>
+							<ObjectRef Name="Play_AngrySound" ID="{8382E382-8059-4B30-93D3-2EA57D048758}" WorkUnitID="{BFC7D3B1-44B4-4C51-9812-44E9AEA27384}"/>
+							<Position X="0" Y="1"/>
+						</Module>
+						<Module>
 							<ObjectRef Name="Play_PickIngredient" ID="{E72313BC-28B2-46F0-A3AA-131A1A462620}" WorkUnitID="{BFC7D3B1-44B4-4C51-9812-44E9AEA27384}"/>
 							<Position X="1" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Play_HappySound" ID="{E259EB3A-BAE3-4B72-92DE-3F7B4DA4DFCA}" WorkUnitID="{BFC7D3B1-44B4-4C51-9812-44E9AEA27384}"/>
+							<Position X="1" Y="1"/>
 						</Module>
 						<Module>
 							<ObjectRef Name="Play_Footstep" ID="{E7DC6482-AF44-43A5-8FF7-FA92E9F2569B}" WorkUnitID="{BFC7D3B1-44B4-4C51-9812-44E9AEA27384}"/>
@@ -44,7 +52,8 @@
 						<CurrentStateRef Name="Brewing" ID="{CAE0A252-51F7-4514-A13A-E3887266E99D}"/>
 					</CurrentStateList>
 					<CurrentSwitchList ShowAll="true">
-						<CurrentSwitchRef Name="Fairy" ID="{E80D63B8-DA83-4824-9A9C-2E125EE9A4D3}"/>
+						<CurrentSwitchRef Name="Soldier" ID="{9A43A3BB-29F2-4A68-BC63-F07C5082C4A2}"/>
+						<CurrentSwitchRef Name="Solid" ID="{BD216E59-F7ED-4FEF-9828-4DF5C55441E5}"/>
 					</CurrentSwitchList>
 				</SoundcasterSession>
 			</ChildrenList>
