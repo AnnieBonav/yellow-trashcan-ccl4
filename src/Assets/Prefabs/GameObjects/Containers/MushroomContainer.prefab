@@ -62,6 +62,7 @@ MeshRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: ffb196c1b04d2644085c0756435dabce, type: 2}
+  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -221,3 +222,23 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7973029352480169490, guid: 7c593113245d72945b76ea6a5bb26973, type: 3}
   m_PrefabInstance: {fileID: 2964754003569135537}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &7223622450811731197 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5556204260809290572, guid: 7c593113245d72945b76ea6a5bb26973, type: 3}
+  m_PrefabInstance: {fileID: 2964754003569135537}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1748167383596928087
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7223622450811731197}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29dcd657c73447f4f8f0c0cfef1eeaac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  meshRenderer: {fileID: 3818864019811509809}
+  idOfHighlight: 1
+  highlightMaterial: {fileID: 2100000, guid: 4d981b1558558dd45a119c100165c506, type: 2}

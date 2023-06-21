@@ -36,6 +36,18 @@ public class Brew : MonoBehaviour
         _poofAlfa[0].time = 0.0f;
         _poofAlfa[1].alpha = 0.0f;
         _poofAlfa[1].time = 1.0f;
+
+        Potion.InteractionRaised += HandlePotionInteraction;
+    }
+
+    private void HandlePotionInteraction(InteractionEvents raisedEvent)
+    {
+        if(raisedEvent == InteractionEvents.GrabPotion || raisedEvent == InteractionEvents.ReleasePotion)
+        {
+            print("Potion grabbed");
+            importantEffect.Stop();
+            bubblesVFX.Play();
+        }
     }
 
     private void Start()
@@ -127,7 +139,16 @@ public class Brew : MonoBehaviour
 
     private void HandlePlayPoof(RecipeData currentBrew)
     {
-        _poofColor[1].color = currentBrew.PotionColor;
+        if(currentBrew == null)
+        {
+            print("It was wrong, handling poof as black.");
+            _poofColor[1].color = Color.black;
+        }
+        else
+        {
+            _poofColor[1].color = currentBrew.PotionColor;
+        }
+        
         _poofColor[1].time = 1.0f;
         _poofGradient.SetKeys(_poofColor, _poofAlfa);
 
