@@ -11,11 +11,27 @@
 	<StreamedFiles/>
 	<MediaFilesNotInAnyBank/>
 	<SoundBanks>
-		<SoundBank Id="782826392" Language="SFX" Hash="985196560">
+		<SoundBank Id="782826392" Language="SFX" Hash="1804076718">
 			<ObjectPath>\SoundBanks\Default Work Unit\Default</ObjectPath>
 			<ShortName>Default</ShortName>
 			<Path>Default.bnk</Path>
 			<IncludedEvents>
+				<Event Id="3825176718" Name="Play_AngrySound" ObjectPath="\Events\Default Work Unit\Play_AngrySound" DurationType="OneShot" DurationMin="0." DurationMax="1.">
+					<IncludedMemoryFiles>
+						<File Id="842489114" Language="SFX">
+							<ShortName>SFX_SoldierAngry1.wav</ShortName>
+							<Path>SFX\SFX_SoldierAngry1_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+					<DefaultSwitchValue>{E80D63B8-DA83-4824-9A9C-2E125EE9A4D3}</DefaultSwitchValue>
+					<SwitchContainers>
+						<SwitchContainer SwitchValue="{9A43A3BB-29F2-4A68-BC63-F07C5082C4A2}">
+							<Media>
+								<File Id="842489114"/>
+							</Media>
+						</SwitchContainer>
+					</SwitchContainers>
+				</Event>
 				<Event Id="548088167" Name="Play_BackgroundMusic" ObjectPath="\Events\Default Work Unit\Play_BackgroundMusic" DurationType="OneShot" DurationMin="145.130768" DurationMax="145.130768">
 					<IncludedMemoryFiles>
 						<File Id="486150385" Language="SFX">
@@ -46,15 +62,67 @@
 				</Event>
 				<Event Id="3886503793" Name="Play_CorrectPotion" ObjectPath="\Events\Default Work Unit\Play_CorrectPotion" DurationType="OneShot" DurationMin="0." DurationMax="0."/>
 				<Event Id="2547633870" Name="Play_Door" ObjectPath="\Events\Default Work Unit\Play_Door" DurationType="OneShot" DurationMin="0." DurationMax="0."/>
-				<Event Id="1602358412" Name="Play_Footstep" ObjectPath="\Events\Default Work Unit\Play_Footstep" DurationType="OneShot" DurationMin="0." DurationMax="0.">
+				<Event Id="3420405931" Name="Play_DropGlass" ObjectPath="\Events\Default Work Unit\Play_DropGlass" MaxAttenuation="100." DurationType="OneShot" DurationMin="0.890899" DurationMax="1.122462">
+					<IncludedMemoryFiles>
+						<File Id="290834582" Language="SFX">
+							<ShortName>SFX_DropGlass2.wav</ShortName>
+							<Path>SFX\SFX_DropGlass2_10C4C929.wem</Path>
+						</File>
+						<File Id="745924077" Language="SFX">
+							<ShortName>SFX_DropGlass1.wav</ShortName>
+							<Path>SFX\SFX_DropGlass1_10C4C929.wem</Path>
+						</File>
+						<File Id="767203002" Language="SFX">
+							<ShortName>SFX_DropGlass4.wav</ShortName>
+							<Path>SFX\SFX_DropGlass4_10C4C929.wem</Path>
+						</File>
+						<File Id="782290832" Language="SFX">
+							<ShortName>SFX_DropGlass3.wav</ShortName>
+							<Path>SFX\SFX_DropGlass3_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="1602358412" Name="Play_Footstep" ObjectPath="\Events\Default Work Unit\Play_Footstep" MaxAttenuation="20." DurationType="OneShot" DurationMin="0." DurationMax="1.122462">
+					<IncludedMemoryFiles>
+						<File Id="448379" Language="SFX">
+							<ShortName>SFX_HoofstepsWood3.wav</ShortName>
+							<Path>SFX\SFX_HoofstepsWood3_10C4C929.wem</Path>
+						</File>
+						<File Id="63221920" Language="SFX">
+							<ShortName>SFX_HoofstepsWood2.wav</ShortName>
+							<Path>SFX\SFX_HoofstepsWood2_10C4C929.wem</Path>
+						</File>
+						<File Id="90013358" Language="SFX">
+							<ShortName>SFX_HoofstepsWood4.wav</ShortName>
+							<Path>SFX\SFX_HoofstepsWood4_10C4C929.wem</Path>
+						</File>
+						<File Id="421605434" Language="SFX">
+							<ShortName>SFX_HoofstepsWood1.wav</ShortName>
+							<Path>SFX\SFX_HoofstepsWood1_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+					<DefaultSwitchValue>{E80D63B8-DA83-4824-9A9C-2E125EE9A4D3}</DefaultSwitchValue>
+					<SwitchContainers>
+						<SwitchContainer SwitchValue="{E80D63B8-DA83-4824-9A9C-2E125EE9A4D3}">
+							<Media>
+								<File Id="448379"/>
+								<File Id="63221920"/>
+								<File Id="90013358"/>
+								<File Id="421605434"/>
+							</Media>
+						</SwitchContainer>
+					</SwitchContainers>
+				</Event>
+				<Event Id="1832643493" Name="Play_HappySound" ObjectPath="\Events\Default Work Unit\Play_HappySound" DurationType="OneShot" DurationMin="0." DurationMax="0.">
+					<DefaultSwitchValue>{E80D63B8-DA83-4824-9A9C-2E125EE9A4D3}</DefaultSwitchValue>
 					<SwitchContainers/>
 				</Event>
 				<Event Id="4198774158" Name="Play_IncorrectPotion" ObjectPath="\Events\Default Work Unit\Play_IncorrectPotion" DurationType="OneShot" DurationMin="0." DurationMax="0."/>
-				<Event Id="644243960" Name="Play_PickIngredient" ObjectPath="\Events\Default Work Unit\Play_PickIngredient" DurationType="OneShot" DurationMin="0.274773" DurationMax="0.366778">
+				<Event Id="644243960" Name="Play_PickIngredient" ObjectPath="\Events\Default Work Unit\Play_PickIngredient" DurationType="OneShot" DurationMin="0.840896" DurationMax="1.122462">
 					<IncludedMemoryFiles>
-						<File Id="237706415" Language="SFX">
-							<ShortName>SFX_AbsorbG.wav</ShortName>
-							<Path>SFX\SFX_AbsorbG_77714374.wem</Path>
+						<File Id="891765297" Language="SFX">
+							<ShortName>SFX_Absorb.wav</ShortName>
+							<Path>SFX\SFX_Absorb_10C4C929.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
@@ -70,6 +138,14 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
+				<Event Id="423467974" Name="Play_RefillLiquid" ObjectPath="\Events\Default Work Unit\Play_RefillLiquid" MaxAttenuation="20." DurationType="OneShot" DurationMin="1." DurationMax="1.">
+					<IncludedMemoryFiles>
+						<File Id="962815575" Language="SFX">
+							<ShortName>SFX_LiquidRefilling1.wav</ShortName>
+							<Path>SFX\SFX_LiquidRefilling1_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
 				<Event Id="1962155989" Name="Stop_Bubbles" ObjectPath="\Events\Default Work Unit\Stop_Bubbles" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
 			</IncludedEvents>
 			<GameParameters>
@@ -80,7 +156,6 @@
 					<Switches>
 						<Switch Id="2469822380" Name="Fairy" ObjectPath="\Switches\Default Work Unit\Character\Fairy" GUID="{E80D63B8-DA83-4824-9A9C-2E125EE9A4D3}"/>
 						<Switch Id="3121013053" Name="Soldier" ObjectPath="\Switches\Default Work Unit\Character\Soldier" GUID="{9A43A3BB-29F2-4A68-BC63-F07C5082C4A2}"/>
-						<Switch Id="3202541808" Name="Wizard" ObjectPath="\Switches\Default Work Unit\Character\Wizard" GUID="{61F16407-D362-499C-B985-A35C48139FE2}"/>
 					</Switches>
 				</SwitchGroup>
 			</SwitchGroups>

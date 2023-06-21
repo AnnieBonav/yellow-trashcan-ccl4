@@ -105,6 +105,50 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="Play_DropGlass" ID="{D7AF8691-92FB-41E6-A297-56E131FD83D2}">
+					<ChildrenList>
+						<Action Name="" ID="{6A374BCE-249C-44CB-B52E-C37BFDECEA79}" ShortID="44296077">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="DropGlass" ID="{5E64E86C-403A-4EAD-8540-8C09D290EACD}" WorkUnitID="{D534BECF-C975-4104-9E89-B949A9C3F6A0}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_RefillLiquid" ID="{B23D3A91-DF78-4700-93B0-F39603CA61F3}">
+					<ChildrenList>
+						<Action Name="" ID="{E8F0DEDE-49DA-442A-AF5D-9050F5AEE2C1}" ShortID="442107300">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="RefillLiquid" ID="{A4688E4E-B85B-4383-8887-AE547A8DB993}" WorkUnitID="{D534BECF-C975-4104-9E89-B949A9C3F6A0}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_HappySound" ID="{E259EB3A-BAE3-4B72-92DE-3F7B4DA4DFCA}">
+					<ChildrenList>
+						<Action Name="" ID="{19959202-3ACF-405B-8CDF-E1F51F08ADF3}" ShortID="128767169">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="HappySound" ID="{20EF3FF5-5EE9-4B1D-877A-EE80AC0F0898}" WorkUnitID="{D534BECF-C975-4104-9E89-B949A9C3F6A0}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_AngrySound" ID="{8382E382-8059-4B30-93D3-2EA57D048758}">
+					<ChildrenList>
+						<Action Name="" ID="{444D242F-F637-4083-A424-B02AD2F1A022}" ShortID="917210570">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="AngrySound" ID="{4EA1E538-287F-44F9-A441-588CE61A2062}" WorkUnitID="{D534BECF-C975-4104-9E89-B949A9C3F6A0}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

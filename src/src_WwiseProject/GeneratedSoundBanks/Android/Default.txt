@@ -1,11 +1,15 @@
 Event	ID	Name			Wwise Object Path	Notes
+	423467974	Play_RefillLiquid			\Default Work Unit\Play_RefillLiquid	
 	548088167	Play_BackgroundMusic			\Default Work Unit\Play_BackgroundMusic	
 	644243960	Play_PickIngredient			\Default Work Unit\Play_PickIngredient	
 	1602358412	Play_Footstep			\Default Work Unit\Play_Footstep	
+	1832643493	Play_HappySound			\Default Work Unit\Play_HappySound	
 	1962155989	Stop_Bubbles			\Default Work Unit\Stop_Bubbles	
 	2547633870	Play_Door			\Default Work Unit\Play_Door	
 	2990278359	Play_Pop			\Default Work Unit\Play_Pop	
 	3381697299	Play_Bubbles			\Default Work Unit\Play_Bubbles	
+	3420405931	Play_DropGlass			\Default Work Unit\Play_DropGlass	
+	3825176718	Play_AngrySound			\Default Work Unit\Play_AngrySound	
 	3886503793	Play_CorrectPotion			\Default Work Unit\Play_CorrectPotion	
 	4198774158	Play_IncorrectPotion			\Default Work Unit\Play_IncorrectPotion	
 
@@ -15,18 +19,44 @@ Switch Group	ID	Name			Wwise Object Path	Notes
 Switch	ID	Name	Switch Group			Notes
 	2469822380	Fairy	Character			
 	3121013053	Soldier	Character			
-	3202541808	Wizard	Character			
+
+State Group	ID	Name			Wwise Object Path	Notes
+	1662371969	CurrentRoom			\Default Work Unit\CurrentRoom	
+
+State	ID	Name	State Group			Notes
+	278887670	Garden	CurrentRoom			
+	748895195	None	CurrentRoom			
+	2473152703	Brewing	CurrentRoom			
+	2656882895	Entrance	CurrentRoom			
+
+Custom State	ID	Name	State Group	Owner		Notes
+	81426259	Brewing	CurrentRoom	\Actor-Mixer Hierarchy\Default Work Unit\Ambient\BackgroundMusic\BG_Garden		
+	363270125	Brewing	CurrentRoom	\Actor-Mixer Hierarchy\Default Work Unit\Ambient\BackgroundMusic\BG_Entrance		
+	568805717	Entrance	CurrentRoom	\Actor-Mixer Hierarchy\Default Work Unit\Ambient\BackgroundMusic\BG_Garden		
+	784700288	Garden	CurrentRoom	\Actor-Mixer Hierarchy\Default Work Unit\Ambient\BackgroundMusic\BG_Entrance		
+	869608866	Garden	CurrentRoom	\Actor-Mixer Hierarchy\Default Work Unit\Ambient\BackgroundMusic\BG_Brewing		
+	950196612	Entrance	CurrentRoom	\Actor-Mixer Hierarchy\Default Work Unit\Ambient\BackgroundMusic\BG_Brewing		
 
 Game Parameter	ID	Name			Wwise Object Path	Notes
 	3064925121	BubblesIntensity			\Default Work Unit\BubblesIntensity	
 
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	448379	SFX_HoofstepsWood3	C:\Projects\YellowTrashcan\yellow-trashcan-ccl4\src\src_WwiseProject\.cache\Android\SFX\SFX_HoofstepsWood3_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Customers\Footsteps\FootstepsFairy\SFX_HoofstepsWood3		176464
+	63221920	SFX_HoofstepsWood2	C:\Projects\YellowTrashcan\yellow-trashcan-ccl4\src\src_WwiseProject\.cache\Android\SFX\SFX_HoofstepsWood2_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Customers\Footsteps\FootstepsFairy\SFX_HoofstepsWood2		176464
+	90013358	SFX_HoofstepsWood4	C:\Projects\YellowTrashcan\yellow-trashcan-ccl4\src\src_WwiseProject\.cache\Android\SFX\SFX_HoofstepsWood4_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Customers\Footsteps\FootstepsFairy\SFX_HoofstepsWood4		176464
 	228669474	SFX_BubblePop_HigherPitch	C:\Projects\YellowTrashcan\yellow-trashcan-ccl4\src\src_WwiseProject\.cache\Android\SFX\SFX_BubblePop_HigherPitch_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Pop\SFX_BubblePop_HigherPitch		107936
-	237706415	SFX_AbsorbG	C:\Projects\YellowTrashcan\yellow-trashcan-ccl4\src\src_WwiseProject\.cache\Android\SFX\SFX_AbsorbG_77714374.wem		\Actor-Mixer Hierarchy\Default Work Unit\Props\PickIngredient\SFX_AbsorbG		62800
+	290834582	SFX_DropGlass2	C:\Projects\YellowTrashcan\yellow-trashcan-ccl4\src\src_WwiseProject\.cache\Android\SFX\SFX_DropGlass2_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Props\DropGlass\SFX_DropGlass2		176464
 	321232555	SFX_Bubbles_VerySlow	C:\Projects\YellowTrashcan\yellow-trashcan-ccl4\src\src_WwiseProject\.cache\Android\SFX\SFX_Bubbles_VerySlow_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambient\Bubbles\SFX_Bubbles_VerySlow		4615356
+	421605434	SFX_HoofstepsWood1	C:\Projects\YellowTrashcan\yellow-trashcan-ccl4\src\src_WwiseProject\.cache\Android\SFX\SFX_HoofstepsWood1_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Customers\Footsteps\FootstepsFairy\SFX_HoofstepsWood1		176464
 	486150385	BG_Brewing	C:\Projects\YellowTrashcan\yellow-trashcan-ccl4\src\src_WwiseProject\.cache\Android\SFX\BG_Brewing_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambient\BackgroundMusic\BG_Brewing		25601676
 	499140612	SFX_Bubbles_VeryFast	C:\Projects\YellowTrashcan\yellow-trashcan-ccl4\src\src_WwiseProject\.cache\Android\SFX\SFX_Bubbles_VeryFast_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambient\Bubbles\SFX_Bubbles_VeryFast		4615356
 	569966857	SFX_Bubbles_Slow	C:\Projects\YellowTrashcan\yellow-trashcan-ccl4\src\src_WwiseProject\.cache\Android\SFX\SFX_Bubbles_Slow_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambient\Bubbles\SFX_Bubbles_Slow		4615356
+	745924077	SFX_DropGlass1	C:\Projects\YellowTrashcan\yellow-trashcan-ccl4\src\src_WwiseProject\.cache\Android\SFX\SFX_DropGlass1_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Props\DropGlass\SFX_DropGlass1		176464
+	767203002	SFX_DropGlass4	C:\Projects\YellowTrashcan\yellow-trashcan-ccl4\src\src_WwiseProject\.cache\Android\SFX\SFX_DropGlass4_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Props\DropGlass\SFX_DropGlass4		176464
 	769955546	SFX_Bubbles_Fast	C:\Projects\YellowTrashcan\yellow-trashcan-ccl4\src\src_WwiseProject\.cache\Android\SFX\SFX_Bubbles_Fast_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambient\Bubbles\SFX_Bubbles_Fast		4615356
+	782290832	SFX_DropGlass3	C:\Projects\YellowTrashcan\yellow-trashcan-ccl4\src\src_WwiseProject\.cache\Android\SFX\SFX_DropGlass3_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Props\DropGlass\SFX_DropGlass3		176464
+	842489114	SFX_SoldierAngry1	C:\Projects\YellowTrashcan\yellow-trashcan-ccl4\src\src_WwiseProject\.cache\Android\SFX\SFX_SoldierAngry1_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Customers\AngrySound\SoldierAngry\SFX_SoldierAngry1		176464
+	891765297	SFX_Absorb	C:\Projects\YellowTrashcan\yellow-trashcan-ccl4\src\src_WwiseProject\.cache\Android\SFX\SFX_Absorb_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Props\PickIngredient\SFX_Absorb		176464
 	925952195	SFX_BubblePop_NormalPitch	C:\Projects\YellowTrashcan\yellow-trashcan-ccl4\src\src_WwiseProject\.cache\Android\SFX\SFX_BubblePop_NormalPitch_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Pop\SFX_BubblePop_NormalPitch		107936
+	962815575	SFX_LiquidRefilling1	C:\Projects\YellowTrashcan\yellow-trashcan-ccl4\src\src_WwiseProject\.cache\Android\SFX\SFX_LiquidRefilling1_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Props\Refillers\RefillLiquid\SFX_LiquidRefilling1		176464
 
