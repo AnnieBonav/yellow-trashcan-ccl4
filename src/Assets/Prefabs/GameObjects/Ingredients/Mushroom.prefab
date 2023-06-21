@@ -70,7 +70,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: 459e6bc447cc94b2aa416cf54e1fc23c, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 7c14e5459bedd4f82a912c7313feff96, type: 2}
+      objectReference: {fileID: 2100000, guid: fec3d2e01905c4ec88f2d546bb3c9f8c, type: 2}
     - target: {fileID: 919132149155446097, guid: 459e6bc447cc94b2aa416cf54e1fc23c, type: 3}
       propertyPath: m_Name
       value: Mushroom_Cap
