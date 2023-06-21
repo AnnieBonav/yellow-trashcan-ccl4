@@ -454,7 +454,7 @@ MonoBehaviour:
     actionsToFulfill: []
     needsClickToContinue: 1
     elementsToVFX: []
-  - text: My name is Booko the book, and I will guide you in your exciting potions
+  - text: My name is Booko the book, and I will guide you through your exciting potions
       journey!
     events:
       m_PersistentCalls:
@@ -462,8 +462,8 @@ MonoBehaviour:
     actionsToFulfill: []
     needsClickToContinue: 1
     elementsToVFX: []
-  - text: For now, look around and feel free to interact objects. To do so, point
-      at the element and, if your vision gets pink, grab the object!
+  - text: For now, look around and feel free to interact with objects. To do so,
+      point at the element and, if your vision turns pink, grab it!
     events:
       m_PersistentCalls:
         m_Calls: []
@@ -472,7 +472,10 @@ MonoBehaviour:
     elementsToVFX:
     - {fileID: 0}
     - {fileID: 0}
-  - text: 'Whenever you are ready, just open the store and lets get this started! '
+    - {fileID: 0}
+    - {fileID: 0}
+  - text: 'Whenever you are ready, just turn the sign to open the store. Let''s get
+      this started! '
     events:
       m_PersistentCalls:
         m_Calls:
@@ -493,8 +496,8 @@ MonoBehaviour:
       hasBeenFulfilled: 0
     needsClickToContinue: 0
     elementsToVFX: []
-  - text: Great! We are now in the brewing station. All of your ingredients are here,
-      how about you grab one?
+  - text: You made it inside! We are now in the brewing station. All of your ingredients
+      are here, how about you grab one?
     events:
       m_PersistentCalls:
         m_Calls: []
@@ -504,8 +507,7 @@ MonoBehaviour:
     needsClickToContinue: 0
     elementsToVFX:
     - {fileID: 0}
-  - text: Amazing! Now put it on the pot over there to get started with your first
-      potion!
+  - text: Amazing! Now put it inside the pot to get started with your first potion!
     events:
       m_PersistentCalls:
         m_Calls: []
@@ -534,7 +536,7 @@ MonoBehaviour:
     elementsToVFX:
     - {fileID: 0}
   - text: Amazing! Unfortunately, we did not create a potion we need.  To get rid
-      of an incorrect potion, just grab it and throw it on the garbage can.
+      of an incorrect potion, just grab it and throw it in the garbage can.
     events:
       m_PersistentCalls:
         m_Calls: []
@@ -544,18 +546,16 @@ MonoBehaviour:
     needsClickToContinue: 0
     elementsToVFX:
     - {fileID: 0}
-  - text: It is important to get rid of the incorrect potions, as only then your
-      flasks will be refilled!
+  - text: It is important to throw incorrect potions in the Garbage can. Only then
+      your flasks will be refilled!
     events:
       m_PersistentCalls:
         m_Calls: []
-    actionsToFulfill:
-    - interactionEvent: 18
-      hasBeenFulfilled: 0
+    actionsToFulfill: []
     needsClickToContinue: 1
     elementsToVFX: []
   - text: Before we can start the day, how about we refill the ingredients? Open
-      the door and lets go to the garden!
+      the door next to you to go to the Garden!
     events:
       m_PersistentCalls:
         m_Calls:
@@ -584,21 +584,53 @@ MonoBehaviour:
     actionsToFulfill: []
     needsClickToContinue: 1
     elementsToVFX: []
-  - text: Grab a few ingredients! But remember, you will not be able to restock more
-      than can what fit in your shelfs.
+  - text: To refill your liquid, pull the Barrel's handle.
     events:
       m_PersistentCalls:
         m_Calls: []
     actionsToFulfill:
     - interactionEvent: 3
       hasBeenFulfilled: 0
-    - interactionEvent: 4
+    needsClickToContinue: 0
+    elementsToVFX: []
+  - text: To refill your Mushroom caps, grab them from the Tree!
+    events:
+      m_PersistentCalls:
+        m_Calls: []
+    actionsToFulfill:
+    - interactionEvent: 26
       hasBeenFulfilled: 0
+    needsClickToContinue: 0
+    elementsToVFX: []
+  - text: Grabbing bark from the tree log will put it inside your chest!
+    events:
+      m_PersistentCalls:
+        m_Calls: []
+    actionsToFulfill:
+    - interactionEvent: 25
+      hasBeenFulfilled: 0
+    needsClickToContinue: 0
+    elementsToVFX: []
+  - text: Finally, pluck herb branches from the plant to refill your herbs!
+    events:
+      m_PersistentCalls:
+        m_Calls: []
+    actionsToFulfill:
+    - interactionEvent: 24
+      hasBeenFulfilled: 0
+    needsClickToContinue: 0
+    elementsToVFX: []
+  - text: Good job! Remember, you will not be able to restock more than can what
+      fit in your shelfs!
+    events:
+      m_PersistentCalls:
+        m_Calls: []
+    actionsToFulfill: []
     needsClickToContinue: 0
     elementsToVFX:
     - {fileID: 0}
-    - {fileID: 0}
-  - text: Now lets gop back to see your restocked shelfs!
+  - text: Let's go back to the brewing area! Your shellfs will already be restocked,
+      and you can come back whenever you have ran out of an ingredient.
     events:
       m_PersistentCalls:
         m_Calls:
@@ -619,7 +651,8 @@ MonoBehaviour:
       hasBeenFulfilled: 0
     needsClickToContinue: 0
     elementsToVFX: []
-  - text: Amazing! You are now ready to get your first customer! Here they come!
+  - text: Now that you know your way around you are ready to greet your first customer!
+      Here they come!
     events:
       m_PersistentCalls:
         m_Calls:
@@ -648,8 +681,8 @@ MonoBehaviour:
     actionsToFulfill: []
     needsClickToContinue: 1
     elementsToVFX: []
-  - text: Now grab the ingredients you need and put them in the brew To create the
-      correct potion!
+  - text: Now grab the correct ingredients and put them in the brew to create the
+      potion they request! Do not forget to collect it with a flask!
     events:
       m_PersistentCalls:
         m_Calls: []
@@ -658,7 +691,7 @@ MonoBehaviour:
       hasBeenFulfilled: 0
     needsClickToContinue: 0
     elementsToVFX: []
-  - text: You created the correct potion! Now grab it and throw it to the customer.
+  - text: You have brewed the correct potion! Grab it and throw it to the customer.
     events:
       m_PersistentCalls:
         m_Calls: []
@@ -667,7 +700,7 @@ MonoBehaviour:
       hasBeenFulfilled: 0
     needsClickToContinue: 0
     elementsToVFX: []
-  - text: You did it! You are almost ready to get your day ready.
+  - text: You did it! You are almost ready to get your day started.
     events:
       m_PersistentCalls:
         m_Calls: []
@@ -694,7 +727,14 @@ MonoBehaviour:
       hasBeenFulfilled: 0
     needsClickToContinue: 0
     elementsToVFX: []
-  - text: Amazing, this is it! Good luck, and enjoy your potion making!
+  - text: Amazing, this is it! Good luck, and enjoy your potion brewing!
+    events:
+      m_PersistentCalls:
+        m_Calls: []
+    actionsToFulfill: []
+    needsClickToContinue: 1
+    elementsToVFX: []
+  - text: See you later!
     events:
       m_PersistentCalls:
         m_Calls: []
@@ -725,7 +765,7 @@ MonoBehaviour:
   characterDelay: 0.04
   _pressAAction: {fileID: 4323845545830496942, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   _pressYAction: {fileID: 2690011112501874771, guid: c348712bda248c246b8c49b3db54643f, type: 3}
-  dialogueToStart: 0
+  dialogueToStart: 7
   isDebugging: 0
 --- !u!1 &5379275239065122579
 GameObject:
@@ -1087,6 +1127,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 1e71bfa0c86ca43cf966125f2629fcdf, type: 3}
       propertyPath: m_Name
       value: Book
+      objectReference: {fileID: 0}
+    - target: {fileID: 4299901466802140116, guid: 1e71bfa0c86ca43cf966125f2629fcdf, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5237686185257241776, guid: 1e71bfa0c86ca43cf966125f2629fcdf, type: 3}
       propertyPath: m_LocalRotation.w

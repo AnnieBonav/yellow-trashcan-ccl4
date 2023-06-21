@@ -10,16 +10,32 @@
 							<Position X="0" Y="0"/>
 						</Module>
 						<Module>
+							<ObjectRef Name="Play_AngrySound" ID="{8382E382-8059-4B30-93D3-2EA57D048758}" WorkUnitID="{BFC7D3B1-44B4-4C51-9812-44E9AEA27384}"/>
+							<Position X="0" Y="1"/>
+						</Module>
+						<Module>
 							<ObjectRef Name="Play_PickIngredient" ID="{E72313BC-28B2-46F0-A3AA-131A1A462620}" WorkUnitID="{BFC7D3B1-44B4-4C51-9812-44E9AEA27384}"/>
 							<Position X="1" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Play_HappySound" ID="{E259EB3A-BAE3-4B72-92DE-3F7B4DA4DFCA}" WorkUnitID="{BFC7D3B1-44B4-4C51-9812-44E9AEA27384}"/>
+							<Position X="1" Y="1"/>
 						</Module>
 						<Module>
 							<ObjectRef Name="Play_Footstep" ID="{E7DC6482-AF44-43A5-8FF7-FA92E9F2569B}" WorkUnitID="{BFC7D3B1-44B4-4C51-9812-44E9AEA27384}"/>
 							<Position X="2" Y="0"/>
 						</Module>
 						<Module>
+							<ObjectRef Name="Play_BookoDialogue" ID="{017801CC-789A-4E37-85EC-41EC0D8FF3A2}" WorkUnitID="{BFC7D3B1-44B4-4C51-9812-44E9AEA27384}"/>
+							<Position X="2" Y="1"/>
+						</Module>
+						<Module>
 							<ObjectRef Name="Play_RefillLiquid" ID="{B23D3A91-DF78-4700-93B0-F39603CA61F3}" WorkUnitID="{BFC7D3B1-44B4-4C51-9812-44E9AEA27384}"/>
 							<Position X="3" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Play_Drop" ID="{7B248355-FEAA-4B16-AC53-1762B2243760}" WorkUnitID="{BFC7D3B1-44B4-4C51-9812-44E9AEA27384}"/>
+							<Position X="3" Y="1"/>
 						</Module>
 					</ModuleList>
 					<RTPCValueList ShowAll="true">
@@ -45,6 +61,7 @@
 					</CurrentStateList>
 					<CurrentSwitchList ShowAll="true">
 						<CurrentSwitchRef Name="Fairy" ID="{E80D63B8-DA83-4824-9A9C-2E125EE9A4D3}"/>
+						<CurrentSwitchRef Name="Metal" ID="{19C4CA12-0BB6-4A6B-B03D-423C166977D0}"/>
 					</CurrentSwitchList>
 				</SoundcasterSession>
 			</ChildrenList>

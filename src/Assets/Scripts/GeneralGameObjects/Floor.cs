@@ -14,12 +14,12 @@ public class Floor : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter(Collision collision)
+    /* private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Ingredient"))
         {
             print("An ingredient fell, collider. Should Play sound.");
             // Destroy(collision.gameObject);
         }
-    }
+    }*/
 }
