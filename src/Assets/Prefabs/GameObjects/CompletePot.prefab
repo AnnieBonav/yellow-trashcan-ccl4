@@ -430,7 +430,6 @@ MonoBehaviour:
   bubbling: 0
   swirl: 0
   colours: []
-  volatility: 0
   brewDisplay: {fileID: 4656718071025020875}
   bubbles: {fileID: 3311230619928423563}
   baseBrewColour: {fileID: 2100000, guid: fbc3458eb036fc644bc4293fa4a08fde, type: 2}
@@ -531,8 +530,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.7276306, y: 3.1949675, z: 1.7378951}
-  m_Center: {x: -0.12538412, y: 0.59747994, z: -0.027563471}
+  m_Size: {x: 2.3456478, y: 7.047567, z: 3.205483}
+  m_Center: {x: -0.13551314, y: -2.6897023, z: 0.20489097}
 --- !u!1 &7986614264129548262
 GameObject:
   m_ObjectHideFlags: 0

@@ -54,12 +54,14 @@ public class Dialogue : MonoBehaviour
     public static event Action AskToSpawnCustomer;
     public static event Action<InteractionEvents> InteractionRaised;
 
+    private InputAction pressA;
+    private InputAction pressY;
     private void Awake()
     {
-        var pressA = GetInputAction(_pressAAction);
+        pressA = GetInputAction(_pressAAction);
         pressA.canceled += PressedA;
 
-        var pressY = GetInputAction(_pressYAction);
+        pressY = GetInputAction(_pressYAction);
         pressY.canceled += PressedY;
 
         InteractionsHandler.InteractionRaised += HandleFlags;
@@ -68,7 +70,9 @@ public class Dialogue : MonoBehaviour
     private void OnDisable()
     {
         print("The dialogue was disabled");
-        InteractionsHandler.InteractionRaised += HandleFlags;
+        InteractionsHandler.InteractionRaised -= HandleFlags;
+        pressA.canceled -= PressedA;
+        pressY.canceled -= PressedY;
     }
 
     void Start()
