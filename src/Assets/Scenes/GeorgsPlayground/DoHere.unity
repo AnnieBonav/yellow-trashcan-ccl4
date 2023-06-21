@@ -7999,6 +7999,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5464041473872164209, guid: 97e3672abd9902b4789e0faf1333fa9e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.009
+      objectReference: {fileID: 0}
     - target: {fileID: 7986614263608142076, guid: 97e3672abd9902b4789e0faf1333fa9e, type: 3}
       propertyPath: bubblesVFX
       value: 
@@ -8011,6 +8015,14 @@ PrefabInstance:
       propertyPath: importantEffect
       value: 
       objectReference: {fileID: 719921947}
+    - target: {fileID: 7986614263926409300, guid: 97e3672abd9902b4789e0faf1333fa9e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.022
+      objectReference: {fileID: 0}
+    - target: {fileID: 7986614263926409301, guid: 97e3672abd9902b4789e0faf1333fa9e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7986614264849653630, guid: 97e3672abd9902b4789e0faf1333fa9e, type: 3}
       propertyPath: m_RootOrder
       value: 15
