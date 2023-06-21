@@ -89,6 +89,14 @@ PrefabInstance:
       propertyPath: meshRenderer
       value: 
       objectReference: {fileID: 820883692777997797}
+    - target: {fileID: 378004949626510654, guid: 9236f07cbc977b84d8f31d7fddc75ee3, type: 3}
+      propertyPath: meshRenderers.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 378004949626510654, guid: 9236f07cbc977b84d8f31d7fddc75ee3, type: 3}
+      propertyPath: meshRenderers.Array.data[0]
+      value: 
+      objectReference: {fileID: 820883692777997797}
     - target: {fileID: 1799584320645495790, guid: 9236f07cbc977b84d8f31d7fddc75ee3, type: 3}
       propertyPath: m_RootOrder
       value: 0

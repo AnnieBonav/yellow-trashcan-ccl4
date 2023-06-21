@@ -6,14 +6,14 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/AnniesPlayground/Demo2/MainMenu.unity
-    guid: fb05df3978f38974b97ac97521142ff6
+    path: Assets/Scenes/AnniesPlayground/Draft1/MainMenu.unity
+    guid: 166c694523dd1524a89e28164265bb35
   - enabled: 1
-    path: Assets/Scenes/AnniesPlayground/Demo2/SecondDemo.unity
-    guid: 325bfb56ddb59364396b916c7e947ae1
+    path: Assets/Scenes/AnniesPlayground/Draft1/Draft1.unity
+    guid: ba57b1f3493df044997aec3bcdf78340
   - enabled: 1
-    path: Assets/Scenes/AnniesPlayground/Demo2/Settings.unity
-    guid: 46258d4d7c337f440afbed6babc86f6c
+    path: Assets/Scenes/AnniesPlayground/Draft1/Settings.unity
+    guid: e5cff119418015a49a0ada8062c01ab4
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 1eff0fbf1da20314ca115340c248b674, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 8406497d1291d394c9a144d767050753, type: 2}
