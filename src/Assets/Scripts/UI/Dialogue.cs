@@ -134,14 +134,17 @@ public class Dialogue : MonoBehaviour
 
     private void HandleVFXElements()
     {
-        for (int i = 0; i < textBlocks[_currentDialogue].elementsToVFX.Count; i++) // Goes through all of the elements that should be dehilighted (in case they werent already)
-        {
-            textBlocks[_currentDialogue -1].elementsToVFX[i].DeactivateHighlight();
-        }
+        
 
         for (int i = 0; i < textBlocks[_currentDialogue].elementsToVFX.Count; i++) // Goes through all of the elements that should be highlighted
         {
             textBlocks[_currentDialogue].elementsToVFX[i].ActivateHighLight();
+        }
+
+        if (_currentDialogue <= 1) return;
+        for (int i = 0; i < textBlocks[_currentDialogue - 1].elementsToVFX.Count; i++) // Goes through all of the elements that should be dehilighted (in case they werent already)
+        {
+            textBlocks[_currentDialogue - 1].elementsToVFX[i].DeactivateHighlight();
         }
     }
 
