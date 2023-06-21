@@ -56,15 +56,28 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: e2256cfef9dfc491ea95930ef1de539e, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: e2256cfef9dfc491ea95930ef1de539e, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: c8e898835b1064b2dad93c573ab7a940, type: 2}
+    - target: {fileID: -7511558181221131132, guid: e2256cfef9dfc491ea95930ef1de539e, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: e2256cfef9dfc491ea95930ef1de539e, type: 3}
       propertyPath: m_Name
       value: Tree_Log
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e2256cfef9dfc491ea95930ef1de539e, type: 3}
+--- !u!23 &820883692777997797 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -7511558181221131132, guid: e2256cfef9dfc491ea95930ef1de539e, type: 3}
+  m_PrefabInstance: {fileID: 2064277003360737633}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3920924457958191557
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -72,6 +85,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 378004949626510654, guid: 9236f07cbc977b84d8f31d7fddc75ee3, type: 3}
+      propertyPath: meshRenderer
+      value: 
+      objectReference: {fileID: 820883692777997797}
     - target: {fileID: 1799584320645495790, guid: 9236f07cbc977b84d8f31d7fddc75ee3, type: 3}
       propertyPath: m_RootOrder
       value: 0
