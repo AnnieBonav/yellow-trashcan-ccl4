@@ -207,6 +207,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Liquid_Barrel
       objectReference: {fileID: 0}
+    - target: {fileID: 4640717602789015768, guid: 2f535b96a933443c8882bf8588377768, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: c9f1c9fb8a6c749ab89037768a516c06, type: 2}
     - target: {fileID: 5494659886970537693, guid: 2f535b96a933443c8882bf8588377768, type: 3}
       propertyPath: m_CastShadows
       value: 0

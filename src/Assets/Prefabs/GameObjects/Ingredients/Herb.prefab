@@ -27,6 +27,10 @@ PrefabInstance:
       propertyPath: m_RetainTransformParent
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2933799209459649083, guid: 1157d7efe1da0ab4c9e0a4d31fd5fc44, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 3548943897423797720, guid: 3d99b96a9678647529798dee07e0fbe5, type: 3}
     - target: {fileID: 4709143365650862300, guid: 1157d7efe1da0ab4c9e0a4d31fd5fc44, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -74,10 +78,22 @@ PrefabInstance:
     - target: {fileID: 4991547865506119024, guid: 1157d7efe1da0ab4c9e0a4d31fd5fc44, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: d4935bc6a3a4040fbbe1a4037a4eee19, type: 2}
+      objectReference: {fileID: 2100000, guid: 831bd96155776459b878ddbdad5c22f6, type: 2}
     - target: {fileID: 5053701683856031596, guid: 1157d7efe1da0ab4c9e0a4d31fd5fc44, type: 3}
       propertyPath: m_Name
       value: Herb
+      objectReference: {fileID: 0}
+    - target: {fileID: 6695270731009522914, guid: 1157d7efe1da0ab4c9e0a4d31fd5fc44, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6695270731009522914, guid: 1157d7efe1da0ab4c9e0a4d31fd5fc44, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6695270731009522914, guid: 1157d7efe1da0ab4c9e0a4d31fd5fc44, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1157d7efe1da0ab4c9e0a4d31fd5fc44, type: 3}
