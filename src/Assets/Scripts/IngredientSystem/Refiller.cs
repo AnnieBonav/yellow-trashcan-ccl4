@@ -6,8 +6,7 @@ using UnityEngine.Experimental.XR.Interaction;
 
 public class Refiller : MonoBehaviour
 {
-    public static event Action<InteractionEvents> InteractionRaised;
-
+    [SerializeField] private InteractionsHandler interactionsHandler;
     [SerializeField] private IngredientContainer ingredientContainer;
     [SerializeField] private bool refillsContainer;
 
@@ -29,11 +28,11 @@ public class Refiller : MonoBehaviour
         print("Refilled liquid");
         if (isLiquid)
         {
-            InteractionRaised?.Invoke(InteractionEvents.RefilledLiquid);
+            interactionsHandler.RaiseInteraction(InteractionEvents.RefilledLiquid);
         }
         else
         {
-            InteractionRaised?.Invoke(InteractionEvents.RefilledSolid);
+            interactionsHandler.RaiseInteraction(InteractionEvents.RefilledSolid);
         }
     }
 }

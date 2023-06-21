@@ -62,32 +62,13 @@ public class Dialogue : MonoBehaviour
         var pressY = GetInputAction(_pressYAction);
         pressY.canceled += PressedY;
 
-        TestFlags.InteractionRaised += HandleFlags;
-        Ingredient.InteractionRaised += HandleFlags;
-        Refiller.InteractionRaised += HandleFlags;
-        Brew.InteractionRaised += HandleFlags;
-        Door.InteractionRaised += HandleFlags;
-        IngredientAcceptor.InteractionRaised += HandleFlags;
-        Potion.InteractionRaised += HandleFlags;
-        Customer.InteractionRaised += HandleFlags;
-        GarbageCan.InteractionRaised += HandleFlags;
-        LevelHandler.InteractionRaised += HandleFlags;
-        MagicCandle.InteractionRaised += HandleFlags;
+        InteractionsHandler.InteractionRaised += HandleFlags;
     }
 
     private void OnDisable()
     {
         print("The dialogue was disabled");
-        TestFlags.InteractionRaised -= HandleFlags;
-        Ingredient.InteractionRaised -= HandleFlags;
-        Refiller.InteractionRaised -= HandleFlags;
-        Brew.InteractionRaised -= HandleFlags;
-        Door.InteractionRaised -= HandleFlags;
-        IngredientAcceptor.InteractionRaised -= HandleFlags;
-        Customer.InteractionRaised -= HandleFlags;
-        GarbageCan.InteractionRaised -= HandleFlags;
-        LevelHandler.InteractionRaised -= HandleFlags;
-        MagicCandle.InteractionRaised -= HandleFlags;
+        InteractionsHandler.InteractionRaised += HandleFlags;
     }
 
     void Start()

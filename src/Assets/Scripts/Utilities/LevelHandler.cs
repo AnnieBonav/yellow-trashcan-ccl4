@@ -8,8 +8,7 @@ using UnityEngine.InputSystem;
 public enum WinningCondition { TimeLimit, CustomersLimit }
 public class LevelHandler : MonoBehaviour
 {
-    public static event Action<InteractionEvents> InteractionRaised;
-
+    [SerializeField] private InteractionsHandler interactionsHandler;
     [SerializeField] private bool isDebugging = false;
 
     [Header("Scene components")]
@@ -55,10 +54,15 @@ public class LevelHandler : MonoBehaviour
         var interactPauseAction = GetInputAction(_interactPauseMenu);
         interactPauseAction.canceled += HandlePauseMenu;
 
-        Door.InteractionRaised += ChangeRoom;
+        InteractionsHandler.InteractionRaised += ChangeRoom;
         Dialogue.InteractionRaised += HandleInteractionRaised;
         CustomerSpawner.SpawnedCustomer += HandleSpawnedCustomer;
         currentRoom = startRoom;
+    }
+
+    private void OnDisable()
+    {
+        InteractionsHandler.InteractionRaised -= ChangeRoom;
     }
 
     private void Start()
@@ -117,13 +121,13 @@ public class LevelHandler : MonoBehaviour
         {
             pauseMenu.SetActive(false);
             menuOpened = false;
-            InteractionRaised?.Invoke(InteractionEvents.ResumeGame);
+            interactionsHandler.RaiseInteraction(InteractionEvents.ResumeGame);
         }
         else
         {
             pauseMenu.SetActive(true);
             menuOpened = true;
-            InteractionRaised?.Invoke(InteractionEvents.PauseGame);
+            interactionsHandler.RaiseInteraction(InteractionEvents.PauseGame);
         }
     }
 
@@ -144,7 +148,7 @@ public class LevelHandler : MonoBehaviour
     }
     public void StartLevel()
     {
-        InteractionRaised?.Invoke(InteractionEvents.LevelStarted);
+        interactionsHandler.RaiseInteraction(InteractionEvents.LevelStarted);
         startDayButton.SetActive(false);
 
         switch (winningCondition)
@@ -166,6 +170,6 @@ public class LevelHandler : MonoBehaviour
     {
         yield return levelTimer;
         print("level timer has ended.");
-        InteractionRaised?.Invoke(InteractionEvents.LevelEnded);
+        interactionsHandler.RaiseInteraction(InteractionEvents.LevelEnded);
     }
 }

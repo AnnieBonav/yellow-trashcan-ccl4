@@ -5,8 +5,7 @@ using UnityEngine;
 
 public class Ingredient : MonoBehaviour
 {
-    public static event Action<InteractionEvents> InteractionRaised;
-
+    [SerializeField] private InteractionsHandler interactionsHandler;
     [SerializeField] private IngredientType ingredientType;
     [SerializeField] private Color colourModifier;
     [SerializeField] private float intensityModifier;
@@ -54,7 +53,7 @@ public class Ingredient : MonoBehaviour
     public void GrabbedIngredient()
     {
         print("Grabbed ingredient");
-        InteractionRaised?.Invoke(InteractionEvents.GrabIngredient);
+        interactionsHandler.RaiseInteraction(InteractionEvents.GrabIngredient);
     }
 
     public void ReleasedIngredient()
@@ -67,7 +66,7 @@ public class Ingredient : MonoBehaviour
     {
         print("Reset rb");
         rb.constraints = RigidbodyConstraints.None;
-        InteractionRaised?.Invoke(InteractionEvents.ReleaseIngredient);
+        interactionsHandler.RaiseInteraction(InteractionEvents.ReleaseIngredient);
     }
 
 }

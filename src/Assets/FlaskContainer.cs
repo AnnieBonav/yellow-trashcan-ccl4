@@ -11,8 +11,7 @@ public class FlaskContainer : MonoBehaviour
 
     private void Awake()
     {
-        GarbageCan.InteractionRaised += HandleRaisedInteractions;
-        Customer.InteractionRaised += HandleRaisedInteractions;
+        InteractionsHandler.InteractionRaised += HandleRaisedInteractions;
         if (spawnPositions.Count > 0)
         {
             maximumCapacity = spawnPositions.Count;
@@ -28,16 +27,15 @@ public class FlaskContainer : MonoBehaviour
 
     private void OnDisable()
     {
-        GarbageCan.InteractionRaised -= HandleRaisedInteractions;
-        Customer.InteractionRaised -= HandleRaisedInteractions;
+        InteractionsHandler.InteractionRaised -= HandleRaisedInteractions;
     }
 
     private void HandleRaisedInteractions(InteractionEvents raisedEvent)
     {
         print("Handling brew interaction");
-        if(raisedEvent == InteractionEvents.ThrowPotionGarbage || raisedEvent == InteractionEvents.DeliverCorrectPotion)
+        if(raisedEvent == InteractionEvents.ThrowPotionGarbage || raisedEvent == InteractionEvents.DeliverCorrectPotion || raisedEvent == InteractionEvents.DeliverIncorrectPotion)
         {
-            print("Threw potion garbage or delivered correct potion");
+            print("Threw potion garbage or delivered in/correct potion");
             RefillSlot();
         }
     }

@@ -5,8 +5,7 @@ using UnityEngine;
 
 public class Door : MonoBehaviour
 {
-    public static event Action<InteractionEvents> InteractionRaised;
-
+    [SerializeField] private InteractionsHandler interactionsHandler;
     [SerializeField] private CurrentRoom currentRoom;
     [SerializeField] private CurrentRoom roomToGo;
 
@@ -28,13 +27,13 @@ public class Door : MonoBehaviour
         switch (roomToGo)
         {
             case CurrentRoom.Garden:
-                InteractionRaised?.Invoke(InteractionEvents.TravelledGarden);
+                interactionsHandler.RaiseInteraction(InteractionEvents.TravelledGarden);
                 break;
             case CurrentRoom.Brewing:
-                InteractionRaised?.Invoke(InteractionEvents.TravelledBrewing);
+                interactionsHandler.RaiseInteraction(InteractionEvents.TravelledBrewing);
                 break;
             case CurrentRoom.Entrance:
-                InteractionRaised?.Invoke(InteractionEvents.TravelledEntrance);
+                interactionsHandler.RaiseInteraction(InteractionEvents.TravelledEntrance);
                 break;
         }
     }

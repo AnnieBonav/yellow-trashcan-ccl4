@@ -7,8 +7,7 @@ using UnityEngine.VFX;
 
 public class Brew : MonoBehaviour
 {
-    public static event Action<InteractionEvents> InteractionRaised;
-
+    [SerializeField] private InteractionsHandler interactionsHandler;
     [SerializeField] private List<RecipeData> recipes;
     [SerializeField] private IngredientDictionary _currentIngredients;
     [SerializeField] private Transform _potionSpawnOrigin;
@@ -37,7 +36,12 @@ public class Brew : MonoBehaviour
         _poofAlfa[1].alpha = 0.0f;
         _poofAlfa[1].time = 1.0f;
 
-        Potion.InteractionRaised += HandlePotionInteraction;
+        InteractionsHandler.InteractionRaised += HandlePotionInteraction;
+    }
+
+    private void OnDisable()
+    {
+        InteractionsHandler.InteractionRaised -= HandlePotionInteraction;
     }
 
     private void HandlePotionInteraction(InteractionEvents raisedEvent)
@@ -108,16 +112,16 @@ public class Brew : MonoBehaviour
             Debug.Log($"You made a {currentBrew.name}!!");
             GameObject noobPotion = Instantiate(currentBrew.PotionPrefab);
             noobPotion.transform.position = _potionSpawnOrigin.transform.position;
-            InteractionRaised?.Invoke(InteractionEvents.CreateCorrectPotion);
+            interactionsHandler.RaiseInteraction(InteractionEvents.CreateCorrectPotion);
         }
         else
         {
             Debug.Log("You made trash.");
             GameObject noobPotion = Instantiate(trashPotion);
             noobPotion.transform.position = _potionSpawnOrigin.transform.position;
-            InteractionRaised?.Invoke(InteractionEvents.CreateIncorrectPotion);
+            interactionsHandler.RaiseInteraction(InteractionEvents.CreateIncorrectPotion);
         }
-        InteractionRaised?.Invoke(InteractionEvents.CreatePotion);
+        interactionsHandler.RaiseInteraction(InteractionEvents.CreatePotion);
         ResetCurrentIngredients();
         Destroy(flask.transform.parent.gameObject);
     }
