@@ -11,7 +11,7 @@
 	<StreamedFiles/>
 	<MediaFilesNotInAnyBank/>
 	<SoundBanks>
-		<SoundBank Id="782826392" Language="SFX" Hash="920168753">
+		<SoundBank Id="782826392" Language="SFX" Hash="1531444976">
 			<ObjectPath>\SoundBanks\Default Work Unit\Default</ObjectPath>
 			<ShortName>Default</ShortName>
 			<Path>Default.bnk</Path>
@@ -20,7 +20,7 @@
 					<IncludedMemoryFiles>
 						<File Id="548293618" Language="SFX">
 							<ShortName>SFX_FairyAngry1.wav</ShortName>
-							<Path>SFX\SFX_FairyAngry1_4503DEB7.wem</Path>
+							<Path>SFX\SFX_FairyAngry1_E002D02F.wem</Path>
 						</File>
 						<File Id="842489114" Language="SFX">
 							<ShortName>SFX_SoldierAngry1.wav</ShortName>

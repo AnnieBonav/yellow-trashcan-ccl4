@@ -19,7 +19,7 @@ public class SoundEmitter : MonoBehaviour
 
     private void Start()
     {
-        AkSoundEngine.SetState("Material", soundMaterialType.ToString());
+        AkSoundEngine.SetSwitch("Material", soundMaterialType.ToString(), gameObject);
     }
 
     private IEnumerator CoolOff()

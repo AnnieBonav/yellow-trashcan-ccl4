@@ -2249,7 +2249,7 @@ MonoBehaviour:
   _interactPauseMenu: {fileID: 6495535394599772413, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   pauseMenu: {fileID: 3446413}
   startDayButton: {fileID: 53898766}
-  startRoom: 1
+  startRoom: 2
   winningCondition: 1
   levelDurationSeconds: 200
   customersTargetAmount: 2
@@ -5034,7 +5034,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6011072303523264847, guid: 4eef8864fd3b145a3b3f7739903162d1, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.312
+      value: -2.38
       objectReference: {fileID: 0}
     - target: {fileID: 6011072303523264847, guid: 4eef8864fd3b145a3b3f7739903162d1, type: 3}
       propertyPath: m_LocalPosition.y
@@ -5042,7 +5042,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6011072303523264847, guid: 4eef8864fd3b145a3b3f7739903162d1, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -3.255
+      value: -4.335
       objectReference: {fileID: 0}
     - target: {fileID: 6011072303523264847, guid: 4eef8864fd3b145a3b3f7739903162d1, type: 3}
       propertyPath: m_LocalRotation.w
@@ -5071,6 +5071,10 @@ PrefabInstance:
     - target: {fileID: 6011072303523264847, guid: 4eef8864fd3b145a3b3f7739903162d1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8821352122416833081, guid: 4eef8864fd3b145a3b3f7739903162d1, type: 3}
+      propertyPath: soundMaterialType
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4eef8864fd3b145a3b3f7739903162d1, type: 3}
@@ -7761,16 +7765,18 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 4312682396965903038, guid: c7c3fafa8fb930240bafce1106ca6faf, type: 3}
-      propertyPath: dialogueToStart
-      value: 7
+      propertyPath: textBlocks.Array.data[8].text
+      value: Well done! Unfortunately, we did not create a potion we need.  To get
+        rid of an incorrect potion, just grab it and throw it in the garbage can.
       objectReference: {fileID: 0}
     - target: {fileID: 4312682396965903038, guid: c7c3fafa8fb930240bafce1106ca6faf, type: 3}
-      propertyPath: textBlocks.Array.data[2].elementsToVFX.Array.size
-      value: 4
+      propertyPath: textBlocks.Array.data[13].text
+      value: To refill your Mushroom caps, grab them from the Mushroom Tree!
       objectReference: {fileID: 0}
     - target: {fileID: 4312682396965903038, guid: c7c3fafa8fb930240bafce1106ca6faf, type: 3}
-      propertyPath: textBlocks.Array.data[12].elementsToVFX.Array.size
-      value: 1
+      propertyPath: textBlocks.Array.data[17].text
+      value: Let's go back to the brewing area! Your shellfs will already be restocked,
+        and you can come back to the garden whenever you have ran out of an ingredient.
       objectReference: {fileID: 0}
     - target: {fileID: 4312682396965903038, guid: c7c3fafa8fb930240bafce1106ca6faf, type: 3}
       propertyPath: textBlocks.Array.data[2].elementsToVFX.Array.data[0]
@@ -7805,15 +7811,7 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1517452341}
     - target: {fileID: 4312682396965903038, guid: c7c3fafa8fb930240bafce1106ca6faf, type: 3}
-      propertyPath: textBlocks.Array.data[9].actionsToFulfill.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4312682396965903038, guid: c7c3fafa8fb930240bafce1106ca6faf, type: 3}
-      propertyPath: textBlocks.Array.data[12].elementsToVFX.Array.data[0]
-      value: 
-      objectReference: {fileID: 1959801244}
-    - target: {fileID: 4312682396965903038, guid: c7c3fafa8fb930240bafce1106ca6faf, type: 3}
-      propertyPath: textBlocks.Array.data[12].elementsToVFX.Array.data[1]
+      propertyPath: textBlocks.Array.data[16].elementsToVFX.Array.data[0]
       value: 
       objectReference: {fileID: 1959801244}
     - target: {fileID: 5379275238940091479, guid: c7c3fafa8fb930240bafce1106ca6faf, type: 3}
@@ -7862,30 +7860,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5379275238940091480, guid: c7c3fafa8fb930240bafce1106ca6faf, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5379275239257989450, guid: c7c3fafa8fb930240bafce1106ca6faf, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5379275239257989450, guid: c7c3fafa8fb930240bafce1106ca6faf, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5379275239257989450, guid: c7c3fafa8fb930240bafce1106ca6faf, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5379275239257989450, guid: c7c3fafa8fb930240bafce1106ca6faf, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5379275239257989450, guid: c7c3fafa8fb930240bafce1106ca6faf, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5379275239257989450, guid: c7c3fafa8fb930240bafce1106ca6faf, type: 3}
-      propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
