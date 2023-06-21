@@ -28,6 +28,7 @@ public class IngredientAcceptor : MonoBehaviour
 
     private void OnTriggerEnter(Collider collider)
     {
+        Debug.Log("Collided");
         if (collider.gameObject.CompareTag("Ingredient"))
         {
             Take(collider.gameObject.GetComponentInParent<Ingredient>());
