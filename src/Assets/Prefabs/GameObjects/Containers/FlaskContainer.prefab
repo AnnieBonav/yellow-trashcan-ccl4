@@ -148,7 +148,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29dcd657c73447f4f8f0c0cfef1eeaac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  meshRenderer: {fileID: 0}
+  meshRenderers:
+  - {fileID: 6417804823003926054}
   highlightMaterial: {fileID: 2100000, guid: 4d981b1558558dd45a119c100165c506, type: 2}
 --- !u!1 &2493018743152324554
 GameObject:
@@ -562,5 +563,10 @@ PrefabInstance:
 --- !u!4 &5286016119183766857 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 11f8e97352b1141b7892447c27ab2b40, type: 3}
+  m_PrefabInstance: {fileID: 5679332536951673506}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &6417804823003926054 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -7511558181221131132, guid: 11f8e97352b1141b7892447c27ab2b40, type: 3}
   m_PrefabInstance: {fileID: 5679332536951673506}
   m_PrefabAsset: {fileID: 0}

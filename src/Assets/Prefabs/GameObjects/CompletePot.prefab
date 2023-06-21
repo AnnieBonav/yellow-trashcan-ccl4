@@ -667,7 +667,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29dcd657c73447f4f8f0c0cfef1eeaac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  meshRenderer: {fileID: 5229982544856336393}
+  meshRenderers:
+  - {fileID: 5229982544856336393}
   highlightMaterial: {fileID: 2100000, guid: 320fdf76a7ff3ce45b59345fc79e52d0, type: 2}
 --- !u!1 &7986614265045014006
 GameObject:

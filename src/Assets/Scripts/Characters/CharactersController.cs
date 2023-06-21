@@ -44,32 +44,31 @@ public class CharactersController : MonoBehaviour
             case CurrentRoom.Entrance:
                 player.position = playerEntrance.position;
                 book.position = bookEntrance.position;
+                uiPause.position = uiEntrance.position;
 
-                uiPause.transform.position = uiEntrance.transform.position;
-                uiPause.transform.LookAt(uiEntrance.transform.forward * -1);
+                player.LookAt(playerEntrance.forward);
                 break;
 
             case CurrentRoom.Brewing:
                 player.position = playerBrewing.position;
                 book.position = bookBrewing.position;
+                uiPause.position = uiBrewing.position;
 
-                uiPause.transform.position = uiBrewing.transform.position;
-                uiPause.transform.LookAt(uiBrewing.transform.forward * -1);
+                player.LookAt(playerBrewing.forward);
                 break;
 
             case CurrentRoom.Garden:
                 player.position = playerGarden.position;
                 book.position = bookGarden.position;
+                uiPause.position = uiGarden.position;
 
-                uiPause.transform.position = uiGarden.transform.position;
-                uiPause.transform.LookAt(uiGarden.transform.forward * -1);
+                player.LookAt(playerGarden.forward);
                 break;
         }
 
         // ROTATE
         book.LookAt(player);
-        uiPause.transform.rotation = Quaternion.Euler(0, transform.rotation.eulerAngles.y, 0);
-
-
+        uiPause.LookAt(player);
+        uiPause.rotation = Quaternion.Euler(0, uiPause.rotation.eulerAngles.y, 0);
     }
 }
