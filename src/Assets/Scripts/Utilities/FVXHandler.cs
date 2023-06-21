@@ -7,26 +7,29 @@ public class FVXHandler : MonoBehaviour
 {
     [SerializeField] private MeshRenderer meshRenderer;
     [Tooltip("This is the id of which material will be the highlight. Could change on elements iwth more than one material.")]
-    [SerializeField] private int idOfHighlight;
     [SerializeField] private Material highlightMaterial;
+    private int idOfHighlight = 0;
 
     public void ActivateHighLight()
     {
-        print("Activating highlight in " + idOfHighlight);
+        print("Activating highlight");
+        meshRenderer.AddMaterial(highlightMaterial);
         Material[] materials = meshRenderer.materials;
-        Destroy(materials[idOfHighlight]);
-        materials[idOfHighlight] = highlightMaterial; // We are saying which is the material, so I do not need to add and do weird stuff...this problem does not exist yet
-        meshRenderer.materials = materials;
-        meshRenderer.materials[idOfHighlight] = highlightMaterial; 
+        idOfHighlight = meshRenderer.materials.Length - 1;
+
+        print("New id: " +  idOfHighlight);
     }
 
     public void DeactivateHighlight()
     {
         int numberOfCurrentMaterials = meshRenderer.materials.Length;
         print("Deactivating highlight #" + (numberOfCurrentMaterials - 1) );
-        Material[] materials = meshRenderer.materials;
-        Destroy(materials[numberOfCurrentMaterials - 1]);
-        materials[numberOfCurrentMaterials - 1] = null;
+        Material[] materials = new Material[idOfHighlight]; // Creates an array with the amount of materials we need without conuting the highlight
+        for(int i = 0; i < materials.Length - 1; i++)
+        {
+            materials[i] = meshRenderer.materials[i];
+        }
+        
         meshRenderer.materials = materials;
 
     }
