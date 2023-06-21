@@ -2030,11 +2030,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2101a90e82e98414eb558bcda859226c, type: 3}
---- !u!1 &477846423 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6142575414266099787, guid: 2f0e90c884eeb0840ae1d78112ae9bb0, type: 3}
-  m_PrefabInstance: {fileID: 1959801243}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &497081101 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3929220674519948395, guid: 2caae71bd534bec4f8589e01e4fd889a, type: 3}
@@ -2203,21 +2198,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2270773793078980879, guid: 2f0e90c884eeb0840ae1d78112ae9bb0, type: 3}
   m_PrefabInstance: {fileID: 1959801243}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &592071860
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 477846423}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 29dcd657c73447f4f8f0c0cfef1eeaac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  meshRenderer: {fileID: 1810173640}
-  idOfHighlight: 1
-  highlightMaterial: {fileID: 2100000, guid: 5b0ce73f61a5c7b47a425f04b400fdfc, type: 2}
 --- !u!4 &624404198 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4905650411321168775, guid: a29979ddd8ac4d34095699400ee0f4be, type: 3}
@@ -2557,7 +2537,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   meshRenderer: {fileID: 1102337624}
-  idOfHighlight: 1
   highlightMaterial: {fileID: 2100000, guid: d598ade039d555140bb12d06a68a0990, type: 2}
 --- !u!4 &701662354
 Transform:
@@ -6221,11 +6200,6 @@ VisualEffect:
   m_CorrespondingSourceObject: {fileID: 714884783785913582, guid: 97e3672abd9902b4789e0faf1333fa9e, type: 3}
   m_PrefabInstance: {fileID: 7986614264191553113}
   m_PrefabAsset: {fileID: 0}
---- !u!23 &1810173640 stripped
-MeshRenderer:
-  m_CorrespondingSourceObject: {fileID: 6033896006156389601, guid: 2f0e90c884eeb0840ae1d78112ae9bb0, type: 3}
-  m_PrefabInstance: {fileID: 1959801243}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1825570635 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1094684603365639054, guid: 2101a90e82e98414eb558bcda859226c, type: 3}
@@ -6504,7 +6478,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 163521172145772511, guid: 2f0e90c884eeb0840ae1d78112ae9bb0, type: 3}
   m_PrefabInstance: {fileID: 1959801243}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 477846423}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 29dcd657c73447f4f8f0c0cfef1eeaac, type: 3}
@@ -6798,7 +6772,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   meshRenderer: {fileID: 1880878906}
-  idOfHighlight: 1
   highlightMaterial: {fileID: 2100000, guid: d598ade039d555140bb12d06a68a0990, type: 2}
 --- !u!4 &2074728985
 Transform:
@@ -7797,6 +7770,30 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5379275238940091480, guid: c7c3fafa8fb930240bafce1106ca6faf, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5379275239257989450, guid: c7c3fafa8fb930240bafce1106ca6faf, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5379275239257989450, guid: c7c3fafa8fb930240bafce1106ca6faf, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5379275239257989450, guid: c7c3fafa8fb930240bafce1106ca6faf, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5379275239257989450, guid: c7c3fafa8fb930240bafce1106ca6faf, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5379275239257989450, guid: c7c3fafa8fb930240bafce1106ca6faf, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5379275239257989450, guid: c7c3fafa8fb930240bafce1106ca6faf, type: 3}
+      propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
