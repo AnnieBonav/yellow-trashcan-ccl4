@@ -90,6 +90,7 @@ GameObject:
   - component: {fileID: 3525487269154610735}
   - component: {fileID: 5040256205708862864}
   - component: {fileID: 378004949626510654}
+  - component: {fileID: 3919338512383672986}
   m_Layer: 0
   m_Name: Refiller
   m_TagString: Untagged
@@ -313,6 +314,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83007f3604f75df4a86f12d794cd47d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interactionsHandler: {fileID: 3919338512383672986}
   ingredientContainer: {fileID: 0}
   refillsContainer: 0
 --- !u!114 &5040256205708862864
@@ -341,5 +343,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   meshRenderer: {fileID: 0}
-  idOfHighlight: 1
   highlightMaterial: {fileID: 2100000, guid: d598ade039d555140bb12d06a68a0990, type: 2}
+--- !u!114 &3919338512383672986
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5928090707749384874}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c9ac785ff6246c409413615753a5d5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

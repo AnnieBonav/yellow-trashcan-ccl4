@@ -170,6 +170,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6877585616608748666}
   - component: {fileID: 6877585616608748614}
+  - component: {fileID: 8403310123090412795}
   m_Layer: 0
   m_Name: Door
   m_TagString: Untagged
@@ -207,11 +208,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b7b990c916227a4eaae00391f47fef2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interactionsHandler: {fileID: 8403310123090412795}
+  currentRoom: 0
   roomToGo: 1
   handleMesh: {fileID: 6877585616710667354}
   activeMaterial: {fileID: 2100000, guid: f6d3652dbf6870249b36140683c1a093, type: 2}
   inactiveMaterial: {fileID: 2100000, guid: 32de8cd2eeba28746a13d03d6d1afd79, type: 2}
   hoveredMaterial: {fileID: 2100000, guid: 71f031ef9e736d843aaa9f1b52d396ba, type: 2}
+--- !u!114 &8403310123090412795
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6877585616608748615}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c9ac785ff6246c409413615753a5d5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6877585616710667355
 GameObject:
   m_ObjectHideFlags: 0
