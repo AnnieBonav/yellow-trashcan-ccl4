@@ -5,7 +5,13 @@ using UnityEngine;
 public class TestIngredientBox : MonoBehaviour
 {
     [SerializeField] private IngredientContainer container;
+    [SerializeField] private FVXHandler handler;
+    private void Start()
+    {
+        
+        StartCoroutine(Test());
 
+    }
     public void SpawnIngredient()
     {
         container.TakeIngredient();
@@ -14,7 +20,10 @@ public class TestIngredientBox : MonoBehaviour
 
     private IEnumerator Test()
     {
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(5);
+        handler.ActivateHighLight();
+        yield return new WaitForSeconds(5);
+        handler.DeactivateHighlight();
         /* var tmp = container.TakeIngredient();
         tmp.transform.Translate(2, 3, 2);
         Debug.Log(tmp);

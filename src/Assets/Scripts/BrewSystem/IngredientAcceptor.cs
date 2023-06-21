@@ -6,8 +6,7 @@ using UnityEngine;
 [RequireComponent(typeof(BrewProperties),typeof(Brew))]
 public class IngredientAcceptor : MonoBehaviour
 {
-    public static event Action<InteractionEvents> InteractionRaised;
-
+    [SerializeField] private InteractionsHandler interactionsHandler;
     private BrewProperties _brewProperties;
     private Brew _brew;
 
@@ -29,10 +28,11 @@ public class IngredientAcceptor : MonoBehaviour
 
     private void OnTriggerEnter(Collider collider)
     {
+        Debug.Log("Collided");
         if (collider.gameObject.CompareTag("Ingredient"))
         {
             Take(collider.gameObject.GetComponentInParent<Ingredient>());
-            InteractionRaised?.Invoke(InteractionEvents.PutIngredientPot);
+            interactionsHandler.RaiseInteraction(InteractionEvents.PutIngredientPot);
             return;
         }
 

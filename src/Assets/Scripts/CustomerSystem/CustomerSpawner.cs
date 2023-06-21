@@ -1,9 +1,12 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class CustomerSpawner : MonoBehaviour
 {
+    public static event Action SpawnedCustomer;
+
     [SerializeField] private List<OrderPoint> orderPoints;
     [SerializeField] private Transform lookAtPoint;
     [SerializeField] private Transform exitPoint;
@@ -18,6 +21,7 @@ public class CustomerSpawner : MonoBehaviour
     private void Awake()
     {
         ExitPoint.CustomerLeft += HandleSpaceFreed;
+        Dialogue.AskToSpawnCustomer += SpawnTutorialCustomer;
     }
 
     private void Start()
@@ -25,13 +29,14 @@ public class CustomerSpawner : MonoBehaviour
         if(isDebugging) SpawnCustomer();
     }
 
-    public void SpawnTutorialCustomer()
+    private void SpawnTutorialCustomer()
     {
         if (isDebugging) print("Spawning Tutorial customer");
-        int orderPosition = 0; // Overwritten so it works in scene with only one position
-        GameObject noobCustomer = Instantiate(customerPrefabs[Random.Range(0, customerPrefabs.Count)], transform.position, Quaternion.identity);
+        int orderPosition = 1; // Hardcoded so it always go to same spot
+        GameObject noobCustomer = Instantiate(customerPrefabs[UnityEngine.Random.Range(0, customerPrefabs.Count)], transform.position, Quaternion.identity);
         Customer customerComponent = noobCustomer.GetComponent<Customer>();
         customerComponent.StartTutorialCustomer(orderPoints[orderPosition].transform.position, lookAtPoint, orderPosition, exitPoint.position);
+
         orderPoints[orderPosition].isOccupied = true;
         orderPoints[orderPosition].whichCustomerIsHere = noobCustomer;
     }
@@ -41,7 +46,7 @@ public class CustomerSpawner : MonoBehaviour
         if (!isCooledDown) return;
         if (isDebugging) print("Start spawning normal customers");
 
-        List<int> freeOrderPoints = new List<int>(); // Stores reference to the int of the free order point
+        List<int> freeOrderPoints = new List<int>(); // Stores reference to the int of the free order points
         for(int i = 0; i < orderPoints.Count; i++) // Go through all of the points to see which are available
         {
             if (!orderPoints[i].isOccupied)
@@ -52,10 +57,10 @@ public class CustomerSpawner : MonoBehaviour
 
         if(freeOrderPoints.Count > 0) // If there are free points then I can spawn one
         {
-            int orderPointIndex = Random.Range(0, freeOrderPoints.Count);
+            int orderPointIndex = UnityEngine.Random.Range(0, freeOrderPoints.Count);
             int orderPosition = freeOrderPoints[orderPointIndex];
 
-            GameObject noobCustomer = Instantiate(customerPrefabs[Random.Range(0, customerPrefabs.Count)], transform.position, Quaternion.identity);
+            GameObject noobCustomer = Instantiate(customerPrefabs[UnityEngine.Random.Range(0, customerPrefabs.Count)], transform.position, Quaternion.identity);
             Customer customerComponent = noobCustomer.GetComponent<Customer>();
             customerComponent.StartCustomerBehaviour(orderPoints[orderPosition].transform.position, lookAtPoint, orderPosition, exitPoint.position); // TODO: can change tp be cleaner and use the same start customer behaviour
             
@@ -81,7 +86,6 @@ public class CustomerSpawner : MonoBehaviour
         }
     }
 
-
     private IEnumerator CoolDownCustomer()
     {
         if(isDebugging) print("Called cool down, so a customer was spawned");
@@ -89,5 +93,11 @@ public class CustomerSpawner : MonoBehaviour
         yield return new WaitForSeconds(timeBetweenCustomers);
         isCooledDown = true;
         SpawnCustomer();
+    }
+
+    public void StopSpawningCustomers()
+    {
+        print("Asked to stop spawning");
+        StopAllCoroutines();
     }
 }

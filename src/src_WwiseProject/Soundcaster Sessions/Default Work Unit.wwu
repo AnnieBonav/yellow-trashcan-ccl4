@@ -13,6 +13,14 @@
 							<ObjectRef Name="Play_PickIngredient" ID="{E72313BC-28B2-46F0-A3AA-131A1A462620}" WorkUnitID="{BFC7D3B1-44B4-4C51-9812-44E9AEA27384}"/>
 							<Position X="1" Y="0"/>
 						</Module>
+						<Module>
+							<ObjectRef Name="Play_Footstep" ID="{E7DC6482-AF44-43A5-8FF7-FA92E9F2569B}" WorkUnitID="{BFC7D3B1-44B4-4C51-9812-44E9AEA27384}"/>
+							<Position X="2" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Play_RefillLiquid" ID="{B23D3A91-DF78-4700-93B0-F39603CA61F3}" WorkUnitID="{BFC7D3B1-44B4-4C51-9812-44E9AEA27384}"/>
+							<Position X="3" Y="0"/>
+						</Module>
 					</ModuleList>
 					<RTPCValueList ShowAll="true">
 						<RTPCValue>
@@ -32,7 +40,9 @@
 							<Value>50</Value>
 						</RTPCValue>
 					</RTPCValueList>
-					<CurrentStateList ShowAll="true"/>
+					<CurrentStateList ShowAll="true">
+						<CurrentStateRef Name="Brewing" ID="{CAE0A252-51F7-4514-A13A-E3887266E99D}"/>
+					</CurrentStateList>
 					<CurrentSwitchList ShowAll="true">
 						<CurrentSwitchRef Name="Fairy" ID="{E80D63B8-DA83-4824-9A9C-2E125EE9A4D3}"/>
 					</CurrentSwitchList>

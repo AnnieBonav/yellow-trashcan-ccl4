@@ -7,8 +7,7 @@ using UnityEngine.VFX;
 
 public class Brew : MonoBehaviour
 {
-    public static event Action<InteractionEvents> InteractionRaised;
-
+    [SerializeField] private InteractionsHandler interactionsHandler;
     [SerializeField] private List<RecipeData> recipes;
     [SerializeField] private IngredientDictionary _currentIngredients;
     [SerializeField] private Transform _potionSpawnOrigin;
@@ -16,8 +15,9 @@ public class Brew : MonoBehaviour
     [SerializeField] private GameObject trashPotion;
 
     [Header("VFX")]
-    [SerializeField] private VisualEffect correctPotionPoof;
-    [SerializeField] private VisualEffect trashPotionPoof;
+    [SerializeField] private VisualEffect potionPoof;
+    [SerializeField] private VisualEffect importantEffect;
+    [SerializeField] private VisualEffect bubblesVFX;
 
     private Gradient _poofGradient;
     private GradientColorKey[] _poofColor;
@@ -36,7 +36,29 @@ public class Brew : MonoBehaviour
         _poofAlfa[1].alpha = 0.0f;
         _poofAlfa[1].time = 1.0f;
 
+        InteractionsHandler.InteractionRaised += HandlePotionInteraction;
     }
+
+    private void OnDisable()
+    {
+        InteractionsHandler.InteractionRaised -= HandlePotionInteraction;
+    }
+
+    private void HandlePotionInteraction(InteractionEvents raisedEvent)
+    {
+        if(raisedEvent == InteractionEvents.GrabPotion || raisedEvent == InteractionEvents.ReleasePotion)
+        {
+            print("Potion grabbed");
+            importantEffect.Stop();
+            bubblesVFX.Play();
+        }
+    }
+
+    private void Start()
+    {
+        importantEffect.Stop();
+    }
+
     private RecipeData CurrentBrew()
     {
         for (int i = 0; i < recipes.Count; i++)
@@ -83,32 +105,23 @@ public class Brew : MonoBehaviour
     public void MakePotion(GameObject flask)
     {
         RecipeData currentBrew = CurrentBrew();
-
+        HandlePlayPoof(currentBrew);
+        HandleVFX();
         if (currentBrew is not null)
         {
             Debug.Log($"You made a {currentBrew.name}!!");
             GameObject noobPotion = Instantiate(currentBrew.PotionPrefab);
             noobPotion.transform.position = _potionSpawnOrigin.transform.position;
-            InteractionRaised?.Invoke(InteractionEvents.CreateCorrectPotion);
-
-            _poofColor[1].color = currentBrew.PotionColor;
-            _poofColor[1].time = 1.0f;
-            _poofGradient.SetKeys(_poofColor, _poofAlfa);
-
-            correctPotionPoof.SetGradient("ColourGradient", _poofGradient);
-            correctPotionPoof.Play();
-
-            // PlayPotion(true);
+            interactionsHandler.RaiseInteraction(InteractionEvents.CreateCorrectPotion);
         }
         else
         {
             Debug.Log("You made trash.");
             GameObject noobPotion = Instantiate(trashPotion);
             noobPotion.transform.position = _potionSpawnOrigin.transform.position;
-            InteractionRaised?.Invoke(InteractionEvents.CreateIncorrectPotion);
-            PlayPotion(false);
+            interactionsHandler.RaiseInteraction(InteractionEvents.CreateIncorrectPotion);
         }
-        InteractionRaised?.Invoke(InteractionEvents.CreatePotion);
+        interactionsHandler.RaiseInteraction(InteractionEvents.CreatePotion);
         ResetCurrentIngredients();
         Destroy(flask.transform.parent.gameObject);
     }
@@ -121,14 +134,29 @@ public class Brew : MonoBehaviour
         _currentIngredients.herb = 0;
     }
 
-    
-
-    private void PlayPotion(bool wasCorrect)
+    private void HandleVFX()
     {
-        if (wasCorrect)
+        // importantEffect
+        importantEffect.Play();
+        bubblesVFX.Stop(); // TODO: Add that when the potion is picked the effects are reset
+    }
+
+    private void HandlePlayPoof(RecipeData currentBrew)
+    {
+        if(currentBrew == null)
         {
-            
+            print("It was wrong, handling poof as black.");
+            _poofColor[1].color = Color.black;
         }
-        else trashPotionPoof.Play();
+        else
+        {
+            _poofColor[1].color = currentBrew.PotionColor;
+        }
+        
+        _poofColor[1].time = 1.0f;
+        _poofGradient.SetKeys(_poofColor, _poofAlfa);
+
+        potionPoof.SetGradient("ColourGradient", _poofGradient);
+        potionPoof.Play();
     }
 }
