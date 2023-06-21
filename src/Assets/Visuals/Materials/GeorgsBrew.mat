@@ -101,11 +101,11 @@ Material:
     - _Smoothness: 0.5
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
-    - _Speed: 0.4
+    - _Speed: 0.73
     - _SrcBlend: 1
     - _Strength: 1
     - _Surface: 0
-    - _Swirl: 4.55
+    - _Swirl: 6.03
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
