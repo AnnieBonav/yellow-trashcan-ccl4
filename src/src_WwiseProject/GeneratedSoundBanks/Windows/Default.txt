@@ -7,6 +7,7 @@ Event	ID	Name			Wwise Object Path	Notes
 	1962155989	Stop_Bubbles			\Default Work Unit\Stop_Bubbles	
 	2007351433	Play_Drop			\Default Work Unit\Play_Drop	
 	2547633870	Play_Door			\Default Work Unit\Play_Door	
+	2906353518	Play_BookoDialogue			\Default Work Unit\Play_BookoDialogue	
 	2990278359	Play_Pop			\Default Work Unit\Play_Pop	
 	3381697299	Play_Bubbles			\Default Work Unit\Play_Bubbles	
 	3825176718	Play_AngrySound			\Default Work Unit\Play_AngrySound	
@@ -35,37 +36,68 @@ State	ID	Name	State Group			Notes
 
 Custom State	ID	Name	State Group	Owner		Notes
 	81426259	Brewing	CurrentRoom	\Actor-Mixer Hierarchy\Default Work Unit\Ambient\BackgroundMusic\BG_Garden		
+	127733122	Garden	CurrentRoom	\Actor-Mixer Hierarchy\Default Work Unit\Ambient\BackgroundMusic\BG_Brewing\Brewing_01		
+	338268511	Entrance	CurrentRoom	\Actor-Mixer Hierarchy\Default Work Unit\Ambient\BackgroundMusic\BG_Brewing		
 	363270125	Brewing	CurrentRoom	\Actor-Mixer Hierarchy\Default Work Unit\Ambient\BackgroundMusic\BG_Entrance		
+	448224894	Garden	CurrentRoom	\Actor-Mixer Hierarchy\Default Work Unit\Ambient\BackgroundMusic\BG_Brewing		
 	568805717	Entrance	CurrentRoom	\Actor-Mixer Hierarchy\Default Work Unit\Ambient\BackgroundMusic\BG_Garden		
 	784700288	Garden	CurrentRoom	\Actor-Mixer Hierarchy\Default Work Unit\Ambient\BackgroundMusic\BG_Entrance		
-	869608866	Garden	CurrentRoom	\Actor-Mixer Hierarchy\Default Work Unit\Ambient\BackgroundMusic\BG_Brewing		
-	950196612	Entrance	CurrentRoom	\Actor-Mixer Hierarchy\Default Work Unit\Ambient\BackgroundMusic\BG_Brewing		
+	869608866	Garden	CurrentRoom	\Actor-Mixer Hierarchy\Default Work Unit\Ambient\BackgroundMusic\BG_Brewing\Brewing		
+	921083106	Entrance	CurrentRoom	\Actor-Mixer Hierarchy\Default Work Unit\Ambient\BackgroundMusic\BG_Brewing\Brewing_01		
+	950196612	Entrance	CurrentRoom	\Actor-Mixer Hierarchy\Default Work Unit\Ambient\BackgroundMusic\BG_Brewing\Brewing		
 
 Game Parameter	ID	Name			Wwise Object Path	Notes
 	3064925121	BubblesIntensity			\Default Work Unit\BubblesIntensity	
 
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
-	448379	SFX_HoofstepsWood3	C:\Projects\YellowTrashcan\yellow-trashcan-ccl4\src\src_WwiseProject\.cache\Windows\SFX\SFX_HoofstepsWood3_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Customers\Footsteps\FootstepsFairy\SFX_HoofstepsWood3		176464
-	63221920	SFX_HoofstepsWood2	C:\Projects\YellowTrashcan\yellow-trashcan-ccl4\src\src_WwiseProject\.cache\Windows\SFX\SFX_HoofstepsWood2_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Customers\Footsteps\FootstepsFairy\SFX_HoofstepsWood2		176464
-	90013358	SFX_HoofstepsWood4	C:\Projects\YellowTrashcan\yellow-trashcan-ccl4\src\src_WwiseProject\.cache\Windows\SFX\SFX_HoofstepsWood4_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Customers\Footsteps\FootstepsFairy\SFX_HoofstepsWood4		176464
-	122093724	SFX_FairyAprove1	C:\Projects\YellowTrashcan\yellow-trashcan-ccl4\src\src_WwiseProject\.cache\Windows\SFX\SFX_FairyAprove1_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Customers\HappySound\FairyHappy\SFX_FairyAprove1		176464
+	448379	SFX_HoofstepsWood3	C:\Projects\YellowTrashcan\yellow-trashcan-ccl4\src\src_WwiseProject\.cache\Windows\SFX\SFX_HoofstepsWood3_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Characters\Customers\Footsteps\FootstepsFairy\SFX_HoofstepsWood3		176464
+	14848095	020	C:\Projects\YellowTrashcan\yellow-trashcan-ccl4\src\src_WwiseProject\.cache\Windows\SFX\020_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Characters\Booko\BookoDialogue\020		1665088
+	45520093	010	C:\Projects\YellowTrashcan\yellow-trashcan-ccl4\src\src_WwiseProject\.cache\Windows\SFX\010_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Characters\Booko\BookoDialogue\010		1329216
+	54166612	009	C:\Projects\YellowTrashcan\yellow-trashcan-ccl4\src\src_WwiseProject\.cache\Windows\SFX\009_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Characters\Booko\BookoDialogue\009		1771584
+	63221920	SFX_HoofstepsWood2	C:\Projects\YellowTrashcan\yellow-trashcan-ccl4\src\src_WwiseProject\.cache\Windows\SFX\SFX_HoofstepsWood2_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Characters\Customers\Footsteps\FootstepsFairy\SFX_HoofstepsWood2		176464
+	90013358	SFX_HoofstepsWood4	C:\Projects\YellowTrashcan\yellow-trashcan-ccl4\src\src_WwiseProject\.cache\Windows\SFX\SFX_HoofstepsWood4_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Characters\Customers\Footsteps\FootstepsFairy\SFX_HoofstepsWood4		176464
+	122093724	SFX_FairyAprove1	C:\Projects\YellowTrashcan\yellow-trashcan-ccl4\src\src_WwiseProject\.cache\Windows\SFX\SFX_FairyAprove1_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Characters\Customers\HappySound\FairyHappy\SFX_FairyAprove1		176464
+	128584436	022	C:\Projects\YellowTrashcan\yellow-trashcan-ccl4\src\src_WwiseProject\.cache\Windows\SFX\022_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Characters\Booko\BookoDialogue\022		1038400
+	159324121	023	C:\Projects\YellowTrashcan\yellow-trashcan-ccl4\src\src_WwiseProject\.cache\Windows\SFX\023_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Characters\Booko\BookoDialogue\023		921664
 	160237374	SFX_DropMetal2	C:\Projects\YellowTrashcan\yellow-trashcan-ccl4\src\src_WwiseProject\.cache\Windows\SFX\SFX_DropMetal2_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Props\Drop\DropMetal\SFX_DropMetal2		176464
+	160390231	025	C:\Projects\YellowTrashcan\yellow-trashcan-ccl4\src\src_WwiseProject\.cache\Windows\SFX\025_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Characters\Booko\BookoDialogue\025		1159232
+	193554736	015	C:\Projects\YellowTrashcan\yellow-trashcan-ccl4\src\src_WwiseProject\.cache\Windows\SFX\015_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Characters\Booko\BookoDialogue\015		845888
+	217362964	027	C:\Projects\YellowTrashcan\yellow-trashcan-ccl4\src\src_WwiseProject\.cache\Windows\SFX\027_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Characters\Booko\BookoDialogue\027		333888
 	228669474	SFX_BubblePop_HigherPitch	C:\Projects\YellowTrashcan\yellow-trashcan-ccl4\src\src_WwiseProject\.cache\Windows\SFX\SFX_BubblePop_HigherPitch_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Pop\SFX_BubblePop_HigherPitch		107936
+	266773743	024	C:\Projects\YellowTrashcan\yellow-trashcan-ccl4\src\src_WwiseProject\.cache\Windows\SFX\024_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Characters\Booko\BookoDialogue\024		1628224
 	290834582	SFX_DropGlass2	C:\Projects\YellowTrashcan\yellow-trashcan-ccl4\src\src_WwiseProject\.cache\Windows\SFX\SFX_DropGlass2_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Props\Drop\DropGlass\SFX_DropGlass2		176464
 	301604732	SFX_DropMetal1	C:\Projects\YellowTrashcan\yellow-trashcan-ccl4\src\src_WwiseProject\.cache\Windows\SFX\SFX_DropMetal1_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Props\Drop\DropMetal\SFX_DropMetal1		176464
 	321232555	SFX_Bubbles_VerySlow	C:\Projects\YellowTrashcan\yellow-trashcan-ccl4\src\src_WwiseProject\.cache\Windows\SFX\SFX_Bubbles_VerySlow_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambient\Bubbles\SFX_Bubbles_VerySlow		4615356
-	421605434	SFX_HoofstepsWood1	C:\Projects\YellowTrashcan\yellow-trashcan-ccl4\src\src_WwiseProject\.cache\Windows\SFX\SFX_HoofstepsWood1_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Customers\Footsteps\FootstepsFairy\SFX_HoofstepsWood1		176464
-	486150385	BG_Brewing	C:\Projects\YellowTrashcan\yellow-trashcan-ccl4\src\src_WwiseProject\.cache\Windows\SFX\BG_Brewing_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambient\BackgroundMusic\BG_Brewing		25601676
+	365961136	014	C:\Projects\YellowTrashcan\yellow-trashcan-ccl4\src\src_WwiseProject\.cache\Windows\SFX\014_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Characters\Booko\BookoDialogue\014		1017920
+	419168636	011	C:\Projects\YellowTrashcan\yellow-trashcan-ccl4\src\src_WwiseProject\.cache\Windows\SFX\011_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Characters\Booko\BookoDialogue\011		1531968
+	421605434	SFX_HoofstepsWood1	C:\Projects\YellowTrashcan\yellow-trashcan-ccl4\src\src_WwiseProject\.cache\Windows\SFX\SFX_HoofstepsWood1_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Characters\Customers\Footsteps\FootstepsFairy\SFX_HoofstepsWood1		176464
+	471895313	026	C:\Projects\YellowTrashcan\yellow-trashcan-ccl4\src\src_WwiseProject\.cache\Windows\SFX\026_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Characters\Booko\BookoDialogue\026		1079360
+	476147019	006	C:\Projects\YellowTrashcan\yellow-trashcan-ccl4\src\src_WwiseProject\.cache\Windows\SFX\006_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Characters\Booko\BookoDialogue\006		936000
+	485541155	021	C:\Projects\YellowTrashcan\yellow-trashcan-ccl4\src\src_WwiseProject\.cache\Windows\SFX\021_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Characters\Booko\BookoDialogue\021		1890368
+	486150385	Brewing	C:\Projects\YellowTrashcan\yellow-trashcan-ccl4\src\src_WwiseProject\.cache\Windows\SFX\BG_Brewing_D79FB2B7.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambient\BackgroundMusic\BG_Brewing\Brewing		25601676
+	495003881	019	C:\Projects\YellowTrashcan\yellow-trashcan-ccl4\src\src_WwiseProject\.cache\Windows\SFX\019_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Characters\Booko\BookoDialogue\019		1376320
+	498860804	005	C:\Projects\YellowTrashcan\yellow-trashcan-ccl4\src\src_WwiseProject\.cache\Windows\SFX\005_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Characters\Booko\BookoDialogue\005		1505344
 	499140612	SFX_Bubbles_VeryFast	C:\Projects\YellowTrashcan\yellow-trashcan-ccl4\src\src_WwiseProject\.cache\Windows\SFX\SFX_Bubbles_VeryFast_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambient\Bubbles\SFX_Bubbles_VeryFast		4615356
-	548293618	SFX_FairyAngry1	C:\Projects\YellowTrashcan\yellow-trashcan-ccl4\src\src_WwiseProject\.cache\Windows\SFX\SFX_FairyAngry1_E002D02F.wem		\Actor-Mixer Hierarchy\Default Work Unit\Customers\AngrySound\FairyAngry\SFX_FairyAngry1		113240
+	548293618	SFX_FairyAngry1	C:\Projects\YellowTrashcan\yellow-trashcan-ccl4\src\src_WwiseProject\.cache\Windows\SFX\SFX_FairyAngry1_E002D02F.wem		\Actor-Mixer Hierarchy\Default Work Unit\Characters\Customers\AngrySound\FairyAngry\SFX_FairyAngry1		113240
 	569966857	SFX_Bubbles_Slow	C:\Projects\YellowTrashcan\yellow-trashcan-ccl4\src\src_WwiseProject\.cache\Windows\SFX\SFX_Bubbles_Slow_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambient\Bubbles\SFX_Bubbles_Slow		4615356
+	576124631	012	C:\Projects\YellowTrashcan\yellow-trashcan-ccl4\src\src_WwiseProject\.cache\Windows\SFX\012_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Characters\Booko\BookoDialogue\012		1712192
+	579781312	018	C:\Projects\YellowTrashcan\yellow-trashcan-ccl4\src\src_WwiseProject\.cache\Windows\SFX\018_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Characters\Booko\BookoDialogue\018		2041920
+	677113138	007	C:\Projects\YellowTrashcan\yellow-trashcan-ccl4\src\src_WwiseProject\.cache\Windows\SFX\007_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Characters\Booko\BookoDialogue\007		1245248
+	679511128	002	C:\Projects\YellowTrashcan\yellow-trashcan-ccl4\src\src_WwiseProject\.cache\Windows\SFX\002_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Characters\Booko\BookoDialogue\002		1278016
+	688478243	001	C:\Projects\YellowTrashcan\yellow-trashcan-ccl4\src\src_WwiseProject\.cache\Windows\SFX\001_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Characters\Booko\BookoDialogue\001		364608
+	699966756	013	C:\Projects\YellowTrashcan\yellow-trashcan-ccl4\src\src_WwiseProject\.cache\Windows\SFX\013_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Characters\Booko\BookoDialogue\013		729152
 	745924077	SFX_DropGlass1	C:\Projects\YellowTrashcan\yellow-trashcan-ccl4\src\src_WwiseProject\.cache\Windows\SFX\SFX_DropGlass1_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Props\Drop\DropGlass\SFX_DropGlass1		176464
 	767203002	SFX_DropGlass4	C:\Projects\YellowTrashcan\yellow-trashcan-ccl4\src\src_WwiseProject\.cache\Windows\SFX\SFX_DropGlass4_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Props\Drop\DropGlass\SFX_DropGlass4		176464
 	769955546	SFX_Bubbles_Fast	C:\Projects\YellowTrashcan\yellow-trashcan-ccl4\src\src_WwiseProject\.cache\Windows\SFX\SFX_Bubbles_Fast_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambient\Bubbles\SFX_Bubbles_Fast		4615356
 	782290832	SFX_DropGlass3	C:\Projects\YellowTrashcan\yellow-trashcan-ccl4\src\src_WwiseProject\.cache\Windows\SFX\SFX_DropGlass3_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Props\Drop\DropGlass\SFX_DropGlass3		176464
-	842489114	SFX_SoldierAngry1	C:\Projects\YellowTrashcan\yellow-trashcan-ccl4\src\src_WwiseProject\.cache\Windows\SFX\SFX_SoldierAngry1_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Customers\AngrySound\SoldierAngry\SFX_SoldierAngry1		176464
+	842489114	SFX_SoldierAngry1	C:\Projects\YellowTrashcan\yellow-trashcan-ccl4\src\src_WwiseProject\.cache\Windows\SFX\SFX_SoldierAngry1_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Characters\Customers\AngrySound\SoldierAngry\SFX_SoldierAngry1		176464
 	891765297	SFX_Absorb	C:\Projects\YellowTrashcan\yellow-trashcan-ccl4\src\src_WwiseProject\.cache\Windows\SFX\SFX_Absorb_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Props\PickIngredient\SFX_Absorb		176464
+	917031630	017	C:\Projects\YellowTrashcan\yellow-trashcan-ccl4\src\src_WwiseProject\.cache\Windows\SFX\017_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Characters\Booko\BookoDialogue\017		1499200
 	925952195	SFX_BubblePop_NormalPitch	C:\Projects\YellowTrashcan\yellow-trashcan-ccl4\src\src_WwiseProject\.cache\Windows\SFX\SFX_BubblePop_NormalPitch_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Pop\SFX_BubblePop_NormalPitch		107936
+	939993744	003	C:\Projects\YellowTrashcan\yellow-trashcan-ccl4\src\src_WwiseProject\.cache\Windows\SFX\003_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Characters\Booko\BookoDialogue\003		1912896
+	944607167	004	C:\Projects\YellowTrashcan\yellow-trashcan-ccl4\src\src_WwiseProject\.cache\Windows\SFX\004_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Characters\Booko\BookoDialogue\004		1030208
 	962815575	SFX_LiquidRefilling1	C:\Projects\YellowTrashcan\yellow-trashcan-ccl4\src\src_WwiseProject\.cache\Windows\SFX\SFX_LiquidRefilling1_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Props\Refillers\RefillLiquid\SFX_LiquidRefilling1		176464
-	977286599	SFX_SoldierAprove2	C:\Projects\YellowTrashcan\yellow-trashcan-ccl4\src\src_WwiseProject\.cache\Windows\SFX\SFX_SoldierAprove2_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Customers\HappySound\SoldierHappy\SFX_SoldierAprove2		176464
+	977286599	SFX_SoldierAprove2	C:\Projects\YellowTrashcan\yellow-trashcan-ccl4\src\src_WwiseProject\.cache\Windows\SFX\SFX_SoldierAprove2_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Characters\Customers\HappySound\SoldierHappy\SFX_SoldierAprove2		176464
+	1018333912	008	C:\Projects\YellowTrashcan\yellow-trashcan-ccl4\src\src_WwiseProject\.cache\Windows\SFX\008_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Characters\Booko\BookoDialogue\008		1089600
+	1033362488	016	C:\Projects\YellowTrashcan\yellow-trashcan-ccl4\src\src_WwiseProject\.cache\Windows\SFX\016_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Characters\Booko\BookoDialogue\016		1196096
 

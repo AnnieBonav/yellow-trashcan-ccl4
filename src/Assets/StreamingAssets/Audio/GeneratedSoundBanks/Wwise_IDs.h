@@ -15,6 +15,7 @@ namespace AK
     {
         static const AkUniqueID PLAY_ANGRYSOUND = 3825176718U;
         static const AkUniqueID PLAY_BACKGROUNDMUSIC = 548088167U;
+        static const AkUniqueID PLAY_BOOKODIALOGUE = 2906353518U;
         static const AkUniqueID PLAY_BUBBLES = 3381697299U;
         static const AkUniqueID PLAY_CORRECTPOTION = 3886503793U;
         static const AkUniqueID PLAY_DOOR = 2547633870U;

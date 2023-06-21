@@ -11,7 +11,7 @@
 	<StreamedFiles/>
 	<MediaFilesNotInAnyBank/>
 	<SoundBanks>
-		<SoundBank Id="782826392" Language="SFX" Hash="1531444976">
+		<SoundBank Id="782826392" Language="SFX" Hash="2750999780">
 			<ObjectPath>\SoundBanks\Default Work Unit\Default</ObjectPath>
 			<ShortName>Default</ShortName>
 			<Path>Default.bnk</Path>
@@ -41,11 +41,123 @@
 						</SwitchContainer>
 					</SwitchContainers>
 				</Event>
-				<Event Id="548088167" Name="Play_BackgroundMusic" ObjectPath="\Events\Default Work Unit\Play_BackgroundMusic" DurationType="OneShot" DurationMin="145.130768" DurationMax="145.130768">
+				<Event Id="548088167" Name="Play_BackgroundMusic" ObjectPath="\Events\Default Work Unit\Play_BackgroundMusic" DurationType="Infinite">
 					<IncludedMemoryFiles>
 						<File Id="486150385" Language="SFX">
 							<ShortName>BG_Brewing.wav</ShortName>
-							<Path>SFX\BG_Brewing_10C4C929.wem</Path>
+							<Path>SFX\BG_Brewing_D79FB2B7.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="2906353518" Name="Play_BookoDialogue" ObjectPath="\Events\Default Work Unit\Play_BookoDialogue" DurationType="OneShot" DurationMin="1.892426" DurationMax="11.575148">
+					<IncludedMemoryFiles>
+						<File Id="14848095" Language="SFX">
+							<ShortName>020.wav</ShortName>
+							<Path>SFX\020_10C4C929.wem</Path>
+						</File>
+						<File Id="45520093" Language="SFX">
+							<ShortName>010.wav</ShortName>
+							<Path>SFX\010_10C4C929.wem</Path>
+						</File>
+						<File Id="54166612" Language="SFX">
+							<ShortName>009.wav</ShortName>
+							<Path>SFX\009_10C4C929.wem</Path>
+						</File>
+						<File Id="128584436" Language="SFX">
+							<ShortName>022.wav</ShortName>
+							<Path>SFX\022_10C4C929.wem</Path>
+						</File>
+						<File Id="159324121" Language="SFX">
+							<ShortName>023.wav</ShortName>
+							<Path>SFX\023_10C4C929.wem</Path>
+						</File>
+						<File Id="160390231" Language="SFX">
+							<ShortName>025.wav</ShortName>
+							<Path>SFX\025_10C4C929.wem</Path>
+						</File>
+						<File Id="193554736" Language="SFX">
+							<ShortName>015.wav</ShortName>
+							<Path>SFX\015_10C4C929.wem</Path>
+						</File>
+						<File Id="217362964" Language="SFX">
+							<ShortName>027.wav</ShortName>
+							<Path>SFX\027_10C4C929.wem</Path>
+						</File>
+						<File Id="266773743" Language="SFX">
+							<ShortName>024.wav</ShortName>
+							<Path>SFX\024_10C4C929.wem</Path>
+						</File>
+						<File Id="365961136" Language="SFX">
+							<ShortName>014.wav</ShortName>
+							<Path>SFX\014_10C4C929.wem</Path>
+						</File>
+						<File Id="419168636" Language="SFX">
+							<ShortName>011.wav</ShortName>
+							<Path>SFX\011_10C4C929.wem</Path>
+						</File>
+						<File Id="471895313" Language="SFX">
+							<ShortName>026.wav</ShortName>
+							<Path>SFX\026_10C4C929.wem</Path>
+						</File>
+						<File Id="476147019" Language="SFX">
+							<ShortName>006.wav</ShortName>
+							<Path>SFX\006_10C4C929.wem</Path>
+						</File>
+						<File Id="485541155" Language="SFX">
+							<ShortName>021.wav</ShortName>
+							<Path>SFX\021_10C4C929.wem</Path>
+						</File>
+						<File Id="495003881" Language="SFX">
+							<ShortName>019.wav</ShortName>
+							<Path>SFX\019_10C4C929.wem</Path>
+						</File>
+						<File Id="498860804" Language="SFX">
+							<ShortName>005.wav</ShortName>
+							<Path>SFX\005_10C4C929.wem</Path>
+						</File>
+						<File Id="576124631" Language="SFX">
+							<ShortName>012.wav</ShortName>
+							<Path>SFX\012_10C4C929.wem</Path>
+						</File>
+						<File Id="579781312" Language="SFX">
+							<ShortName>018.wav</ShortName>
+							<Path>SFX\018_10C4C929.wem</Path>
+						</File>
+						<File Id="677113138" Language="SFX">
+							<ShortName>007.wav</ShortName>
+							<Path>SFX\007_10C4C929.wem</Path>
+						</File>
+						<File Id="679511128" Language="SFX">
+							<ShortName>002.wav</ShortName>
+							<Path>SFX\002_10C4C929.wem</Path>
+						</File>
+						<File Id="688478243" Language="SFX">
+							<ShortName>001.wav</ShortName>
+							<Path>SFX\001_10C4C929.wem</Path>
+						</File>
+						<File Id="699966756" Language="SFX">
+							<ShortName>013.wav</ShortName>
+							<Path>SFX\013_10C4C929.wem</Path>
+						</File>
+						<File Id="917031630" Language="SFX">
+							<ShortName>017.wav</ShortName>
+							<Path>SFX\017_10C4C929.wem</Path>
+						</File>
+						<File Id="939993744" Language="SFX">
+							<ShortName>003.wav</ShortName>
+							<Path>SFX\003_10C4C929.wem</Path>
+						</File>
+						<File Id="944607167" Language="SFX">
+							<ShortName>004.wav</ShortName>
+							<Path>SFX\004_10C4C929.wem</Path>
+						</File>
+						<File Id="1018333912" Language="SFX">
+							<ShortName>008.wav</ShortName>
+							<Path>SFX\008_10C4C929.wem</Path>
+						</File>
+						<File Id="1033362488" Language="SFX">
+							<ShortName>016.wav</ShortName>
+							<Path>SFX\016_10C4C929.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 				</Event>

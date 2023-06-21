@@ -26,8 +26,16 @@
 							<Position X="2" Y="0"/>
 						</Module>
 						<Module>
+							<ObjectRef Name="Play_BookoDialogue" ID="{017801CC-789A-4E37-85EC-41EC0D8FF3A2}" WorkUnitID="{BFC7D3B1-44B4-4C51-9812-44E9AEA27384}"/>
+							<Position X="2" Y="1"/>
+						</Module>
+						<Module>
 							<ObjectRef Name="Play_RefillLiquid" ID="{B23D3A91-DF78-4700-93B0-F39603CA61F3}" WorkUnitID="{BFC7D3B1-44B4-4C51-9812-44E9AEA27384}"/>
 							<Position X="3" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Play_Drop" ID="{7B248355-FEAA-4B16-AC53-1762B2243760}" WorkUnitID="{BFC7D3B1-44B4-4C51-9812-44E9AEA27384}"/>
+							<Position X="3" Y="1"/>
 						</Module>
 					</ModuleList>
 					<RTPCValueList ShowAll="true">
@@ -52,8 +60,8 @@
 						<CurrentStateRef Name="Brewing" ID="{CAE0A252-51F7-4514-A13A-E3887266E99D}"/>
 					</CurrentStateList>
 					<CurrentSwitchList ShowAll="true">
-						<CurrentSwitchRef Name="Soldier" ID="{9A43A3BB-29F2-4A68-BC63-F07C5082C4A2}"/>
-						<CurrentSwitchRef Name="Solid" ID="{BD216E59-F7ED-4FEF-9828-4DF5C55441E5}"/>
+						<CurrentSwitchRef Name="Fairy" ID="{E80D63B8-DA83-4824-9A9C-2E125EE9A4D3}"/>
+						<CurrentSwitchRef Name="Metal" ID="{19C4CA12-0BB6-4A6B-B03D-423C166977D0}"/>
 					</CurrentSwitchList>
 				</SoundcasterSession>
 			</ChildrenList>

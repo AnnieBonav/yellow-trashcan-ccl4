@@ -92,6 +92,7 @@ public class Dialogue : MonoBehaviour
 
     private IEnumerator NextTextblock()
     {
+        AkSoundEngine.PostEvent("Play_BookoDialogue", gameObject);
         bookoFacade.BookoAnimator.SetBool("IsTalking", true);
         HandleVFXElements();
 
@@ -119,8 +120,6 @@ public class Dialogue : MonoBehaviour
 
     private void HandleVFXElements()
     {
-        
-
         for (int i = 0; i < textBlocks[_currentDialogue].elementsToVFX.Count; i++) // Goes through all of the elements that should be highlighted
         {
             textBlocks[_currentDialogue].elementsToVFX[i].ActivateHighLight();

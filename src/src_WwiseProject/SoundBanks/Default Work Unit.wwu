@@ -18,6 +18,7 @@
 						<ObjectRef Name="Play_BackgroundMusic" ID="{87C0199A-1A13-4CDB-A19D-B9633C11A305}" WorkUnitID="{BFC7D3B1-44B4-4C51-9812-44E9AEA27384}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Stop_Bubbles" ID="{7F720301-4987-4D41-BDC8-98509A41F425}" WorkUnitID="{BFC7D3B1-44B4-4C51-9812-44E9AEA27384}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_Pop" ID="{D2327E7F-C68C-4DC6-8853-2B3D4B218282}" WorkUnitID="{BFC7D3B1-44B4-4C51-9812-44E9AEA27384}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_BookoDialogue" ID="{017801CC-789A-4E37-85EC-41EC0D8FF3A2}" WorkUnitID="{BFC7D3B1-44B4-4C51-9812-44E9AEA27384}" Origin="Manual" Filter="7"/>
 					</ObjectInclusionList>
 					<ObjectExclusionList/>
 					<GameSyncExclusionList/>
