@@ -285,7 +285,7 @@ VisualEffect:
       m_Array: []
     m_Vector4f:
       m_Array:
-      - m_Value: {x: 0.84508765, y: 2.453358, z: 3.2941177, w: 0}
+      - m_Value: {x: 4.397906, y: 4.397906, z: 4.397906, w: 0}
         m_Name: Color
         m_Overridden: 1
     m_Uint:
@@ -356,6 +356,7 @@ GameObject:
   - component: {fileID: 7986614263608142074}
   - component: {fileID: 7986614263608142075}
   - component: {fileID: 7986614263608142079}
+  - component: {fileID: 4171883621338589212}
   m_Layer: 0
   m_Name: Brew
   m_TagString: Untagged
@@ -392,6 +393,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb76d1955fdfd4f6fb35d73f5d8b1b1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interactionsHandler: {fileID: 4171883621338589212}
   recipes:
   - {fileID: 11400000, guid: 4fc8b2e3237e34b47a95a42ffa86475e, type: 2}
   - {fileID: 11400000, guid: a5c14d3444b850b4eafca36f7476a9f4, type: 2}
@@ -409,9 +411,9 @@ MonoBehaviour:
   _potionSpawnOrigin: {fileID: 7986614264129548185}
   _debugIngredientsIn: 0
   trashPotion: {fileID: 1517099294185381978, guid: 14413ef61ad62fa428f1ec2124a75b76, type: 3}
-  potionPoof: {fileID: 0}
-  importantEffect: {fileID: 0}
-  bubblesVFX: {fileID: 0}
+  potionPoof: {fileID: 7986614265045013993}
+  importantEffect: {fileID: 2093039111170453107}
+  bubblesVFX: {fileID: 714884783785913582}
 --- !u!114 &7986614263608142077
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -429,9 +431,8 @@ MonoBehaviour:
   swirl: 0
   colours: []
   volatility: 0
-  colourDisplay: {fileID: 7986614263926409302}
-  bubblingDisplay: {fileID: 0}
-  swirlDisplay: {fileID: 0}
+  brewDisplay: {fileID: 4656718071025020875}
+  bubbles: {fileID: 3311230619928423563}
   baseBrewColour: {fileID: 2100000, guid: fbc3458eb036fc644bc4293fa4a08fde, type: 2}
 --- !u!114 &7986614263608142074
 MonoBehaviour:
@@ -445,6 +446,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f9efa9976a404119975418c8bae98a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interactionsHandler: {fileID: 4171883621338589212}
 --- !u!54 &7986614263608142075
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -474,6 +476,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   soundEventName: Play_Bubbles
+--- !u!114 &4171883621338589212
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7986614263608142073}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c9ac785ff6246c409413615753a5d5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7986614263926409301
 GameObject:
   m_ObjectHideFlags: 0
@@ -483,11 +497,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7986614263926409300}
-  - component: {fileID: 7986614263926409289}
-  - component: {fileID: 7986614263926409302}
   - component: {fileID: 7986614263926409303}
   m_Layer: 0
-  m_Name: PotionColor
+  m_Name: Collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -508,56 +520,6 @@ Transform:
   m_Father: {fileID: 7986614263608142072}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &7986614263926409289
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7986614263926409301}
-  m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &7986614263926409302
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7986614263926409301}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: fbc3458eb036fc644bc4293fa4a08fde, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!65 &7986614263926409303
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -569,8 +531,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.0000001, y: 2.1082337, z: 1.0000008}
-  m_Center: {x: 0.000000062088176, y: 0.054113384, z: -0.00000021730861}
+  m_Size: {x: 1.7276306, y: 3.1949675, z: 1.7378951}
+  m_Center: {x: -0.12538412, y: 0.59747994, z: -0.027563471}
 --- !u!1 &7986614264129548262
 GameObject:
   m_ObjectHideFlags: 0
@@ -595,7 +557,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7986614264129548262}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.061, z: 0}
+  m_LocalPosition: {x: 0, y: 1.109, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -611,6 +573,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7986614264849653630}
+  - component: {fileID: 1445943104075803863}
   m_Layer: 0
   m_Name: CompletePot
   m_TagString: Untagged
@@ -639,6 +602,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1445943104075803863
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7986614264849653631}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29dcd657c73447f4f8f0c0cfef1eeaac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  meshRenderer: {fileID: 5229982544856336393}
+  highlightMaterial: {fileID: 2100000, guid: 320fdf76a7ff3ce45b59345fc79e52d0, type: 2}
 --- !u!1 &7986614265045014006
 GameObject:
   m_ObjectHideFlags: 0
@@ -957,6 +934,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ba06ea55ecfc1459d9a90c8d5f29c54a, type: 3}
+--- !u!1 &4656718071025020875 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: ba06ea55ecfc1459d9a90c8d5f29c54a, type: 3}
+  m_PrefabInstance: {fileID: 5503000412981793434}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &5464041473872164209 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: ba06ea55ecfc1459d9a90c8d5f29c54a, type: 3}
@@ -1014,15 +996,28 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: 7a92fa594c0db43f8b637907ce6b5827, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 7a92fa594c0db43f8b637907ce6b5827, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 0bf2a09b741b04b4a9b7f6e8c8d2108d, type: 2}
+    - target: {fileID: -7511558181221131132, guid: 7a92fa594c0db43f8b637907ce6b5827, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 7a92fa594c0db43f8b637907ce6b5827, type: 3}
       propertyPath: m_Name
       value: Pot
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7a92fa594c0db43f8b637907ce6b5827, type: 3}
+--- !u!23 &5229982544856336393 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -7511558181221131132, guid: 7a92fa594c0db43f8b637907ce6b5827, type: 3}
+  m_PrefabInstance: {fileID: 6869454856948896909}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6403993010580239206 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 7a92fa594c0db43f8b637907ce6b5827, type: 3}

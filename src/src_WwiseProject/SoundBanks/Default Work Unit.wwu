@@ -5,12 +5,16 @@
 			<ChildrenList>
 				<SoundBank Name="Default" ID="{98562D9D-A15B-45A4-A98E-94A1DA0C532C}">
 					<ObjectInclusionList>
+						<ObjectRef Name="Play_DropGlass" ID="{D7AF8691-92FB-41E6-A297-56E131FD83D2}" WorkUnitID="{BFC7D3B1-44B4-4C51-9812-44E9AEA27384}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_CorrectPotion" ID="{672AAD94-8EA3-4366-8AB2-56E0B74091D1}" WorkUnitID="{BFC7D3B1-44B4-4C51-9812-44E9AEA27384}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_Footstep" ID="{E7DC6482-AF44-43A5-8FF7-FA92E9F2569B}" WorkUnitID="{BFC7D3B1-44B4-4C51-9812-44E9AEA27384}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_IncorrectPotion" ID="{7FD00F68-9BBC-4668-9BEA-613686C35DED}" WorkUnitID="{BFC7D3B1-44B4-4C51-9812-44E9AEA27384}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_PickIngredient" ID="{E72313BC-28B2-46F0-A3AA-131A1A462620}" WorkUnitID="{BFC7D3B1-44B4-4C51-9812-44E9AEA27384}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_RefillLiquid" ID="{B23D3A91-DF78-4700-93B0-F39603CA61F3}" WorkUnitID="{BFC7D3B1-44B4-4C51-9812-44E9AEA27384}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_Bubbles" ID="{9F4E5CE3-B5E3-47DF-88F7-59D8E787AE02}" WorkUnitID="{BFC7D3B1-44B4-4C51-9812-44E9AEA27384}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_Door" ID="{08D89655-4DF5-47E1-B2F4-805A4664E481}" WorkUnitID="{BFC7D3B1-44B4-4C51-9812-44E9AEA27384}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_AngrySound" ID="{8382E382-8059-4B30-93D3-2EA57D048758}" WorkUnitID="{BFC7D3B1-44B4-4C51-9812-44E9AEA27384}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_HappySound" ID="{E259EB3A-BAE3-4B72-92DE-3F7B4DA4DFCA}" WorkUnitID="{BFC7D3B1-44B4-4C51-9812-44E9AEA27384}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_BackgroundMusic" ID="{87C0199A-1A13-4CDB-A19D-B9633C11A305}" WorkUnitID="{BFC7D3B1-44B4-4C51-9812-44E9AEA27384}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Stop_Bubbles" ID="{7F720301-4987-4D41-BDC8-98509A41F425}" WorkUnitID="{BFC7D3B1-44B4-4C51-9812-44E9AEA27384}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_Pop" ID="{D2327E7F-C68C-4DC6-8853-2B3D4B218282}" WorkUnitID="{BFC7D3B1-44B4-4C51-9812-44E9AEA27384}" Origin="Manual" Filter="7"/>

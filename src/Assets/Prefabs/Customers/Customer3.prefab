@@ -485,6 +485,7 @@ GameObject:
   - component: {fileID: 3579765008133966695}
   - component: {fileID: 1537460060639974700}
   - component: {fileID: 4108191631887479536}
+  - component: {fileID: 4246551567191122490}
   m_Layer: 0
   m_Name: Customer3
   m_TagString: Customer
@@ -546,6 +547,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e447f7ed1cccb4bfc883b679084decc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interactionsHandler: {fileID: 4246551567191122490}
   distanceEpsilon: 0.1
   orderText: {fileID: 874850114023247579}
   timeUntilAngry: 40
@@ -567,6 +569,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!114 &4246551567191122490
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8053947594520236510}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c9ac785ff6246c409413615753a5d5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &9063758234827272606
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -3,12 +3,12 @@ using UnityEngine;
 
 public class GarbageCan : MonoBehaviour
 {
-    public static event Action<InteractionEvents> InteractionRaised;
+    [SerializeField] private InteractionsHandler interactionsHandler;
     private void OnTriggerEnter(Collider collider)
     {
         if (collider.CompareTag("Potion")){
             print("Putting Potion in garbage");
-            InteractionRaised?.Invoke(InteractionEvents.ThrowPotionGarbage);
+            interactionsHandler.RaiseInteraction(InteractionEvents.ThrowPotionGarbage);
             Destroy(collider.gameObject.transform.parent.gameObject);
         }
     }

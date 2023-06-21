@@ -5,18 +5,17 @@ using UnityEngine;
 
 public class Potion : MonoBehaviour
 {
-    public static event Action<InteractionEvents> InteractionRaised;
-
+    [SerializeField] private InteractionsHandler interactionsHandler;
     [SerializeField] private RecipeData type;
     public RecipeData Type => type;
 
     public void GrabPotion()
     {
-        InteractionRaised?.Invoke(InteractionEvents.GrabPotion);
+        interactionsHandler.RaiseInteraction(InteractionEvents.GrabPotion);
     }
 
     public void ReleasePotion()
     {
-        InteractionRaised?.Invoke(InteractionEvents.ReleasePotion);
+        interactionsHandler.RaiseInteraction(InteractionEvents.ReleasePotion);
     }
 }

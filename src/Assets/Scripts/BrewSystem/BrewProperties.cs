@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.VFX;
 
 public class BrewProperties : MonoBehaviour
 {
@@ -9,13 +10,9 @@ public class BrewProperties : MonoBehaviour
     [SerializeField] private float bubbling;
     [SerializeField] private float swirl;
     [SerializeField] private List<Color> colours;
-    [SerializeField] private float volatility;
 
-
-    [SerializeField] private MeshRenderer colourDisplay;
-    [SerializeField] private Transform bubblingDisplay;
-    [SerializeField] private Transform swirlDisplay;
-
+    [SerializeField] private GameObject brewDisplay;
+    [SerializeField] private GameObject bubbles;
     [SerializeField] private Material baseBrewColour;
 
     private float _colourTimer = 0;
@@ -31,15 +28,19 @@ public class BrewProperties : MonoBehaviour
     private float _currentSwirl;
 
 
+    private Material _brewMaterial;
+    private VisualEffect _bubblesVFX;
+
     void Start()
     {
         _currentColour = baseBrewColour.color;
         _lastColour = _currentColour;
         _lastSwirl = _currentSwirl;
         _lastBubbling = _currentBubbling;
+        if (brewDisplay is not null) _brewMaterial = brewDisplay.GetComponent<Renderer>().material;
+        if (bubbles is not null) _bubblesVFX = bubbles.GetComponent<VisualEffect>();
     }
-
-    // Update is called once per frame
+    
     void Update()
     {
         if (colours.Count > 0)
@@ -56,14 +57,25 @@ public class BrewProperties : MonoBehaviour
         {
             InterpolateSwirl(Time.deltaTime);
         }
-
-        colourDisplay.material.color = _currentColour;
-        //bubblingDisplay.localPosition = new Vector3(bubblingDisplay.localPosition.x, _currentBubbling,
-        //bubblingDisplay.localPosition.z);
-        //swirlDisplay.Rotate(Vector3.back, _currentSwirl * Time.deltaTime);
-        
+        UpdateEffects();
     }
 
+    public void UpdateEffects()
+    {
+        if (_brewMaterial is not null)
+        {
+            _brewMaterial.SetColor("_Color", _currentColour);
+            _brewMaterial.SetFloat("_Strength", _currentBubbling);
+            _brewMaterial.SetFloat("_Speed", _currentBubbling);
+        }
+
+        if (_bubblesVFX is not null)
+        {
+            _bubblesVFX.SetFloat("Rate", 1f+bubbling);
+            _bubblesVFX.SetVector4("Colour", _currentColour);
+        }
+    }
+    
     private void InterpolateColour(float delta)
     {
         if (_colourTimer < easeTime)

@@ -5,11 +5,10 @@ using UnityEngine;
 
 public class MagicCandle : MonoBehaviour
 {
-    public static event Action<InteractionEvents> InteractionRaised;
-
+    [SerializeField] private InteractionsHandler interactionsHandler;
     public void TriggerMagicVision()
     {
         print("Magic vision started");
-        InteractionRaised?.Invoke(InteractionEvents.RevealIngredients);
+        interactionsHandler.RaiseInteraction(InteractionEvents.RevealIngredients);
     }
 }

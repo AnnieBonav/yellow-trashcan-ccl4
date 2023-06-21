@@ -7,8 +7,7 @@ using UnityEngine.VFX;
 
 public class Brew : MonoBehaviour
 {
-    public static event Action<InteractionEvents> InteractionRaised;
-
+    [SerializeField] private InteractionsHandler interactionsHandler;
     [SerializeField] private List<RecipeData> recipes;
     [SerializeField] private IngredientDictionary _currentIngredients;
     [SerializeField] private Transform _potionSpawnOrigin;
@@ -36,6 +35,23 @@ public class Brew : MonoBehaviour
         _poofAlfa[0].time = 0.0f;
         _poofAlfa[1].alpha = 0.0f;
         _poofAlfa[1].time = 1.0f;
+
+        InteractionsHandler.InteractionRaised += HandlePotionInteraction;
+    }
+
+    private void OnDisable()
+    {
+        InteractionsHandler.InteractionRaised -= HandlePotionInteraction;
+    }
+
+    private void HandlePotionInteraction(InteractionEvents raisedEvent)
+    {
+        if(raisedEvent == InteractionEvents.GrabPotion || raisedEvent == InteractionEvents.ReleasePotion)
+        {
+            print("Potion grabbed");
+            importantEffect.Stop();
+            bubblesVFX.Play();
+        }
     }
 
     private void Start()
@@ -96,16 +112,16 @@ public class Brew : MonoBehaviour
             Debug.Log($"You made a {currentBrew.name}!!");
             GameObject noobPotion = Instantiate(currentBrew.PotionPrefab);
             noobPotion.transform.position = _potionSpawnOrigin.transform.position;
-            InteractionRaised?.Invoke(InteractionEvents.CreateCorrectPotion);
+            interactionsHandler.RaiseInteraction(InteractionEvents.CreateCorrectPotion);
         }
         else
         {
             Debug.Log("You made trash.");
             GameObject noobPotion = Instantiate(trashPotion);
             noobPotion.transform.position = _potionSpawnOrigin.transform.position;
-            InteractionRaised?.Invoke(InteractionEvents.CreateIncorrectPotion);
+            interactionsHandler.RaiseInteraction(InteractionEvents.CreateIncorrectPotion);
         }
-        InteractionRaised?.Invoke(InteractionEvents.CreatePotion);
+        interactionsHandler.RaiseInteraction(InteractionEvents.CreatePotion);
         ResetCurrentIngredients();
         Destroy(flask.transform.parent.gameObject);
     }
@@ -127,7 +143,16 @@ public class Brew : MonoBehaviour
 
     private void HandlePlayPoof(RecipeData currentBrew)
     {
-        _poofColor[1].color = currentBrew.PotionColor;
+        if(currentBrew == null)
+        {
+            print("It was wrong, handling poof as black.");
+            _poofColor[1].color = Color.black;
+        }
+        else
+        {
+            _poofColor[1].color = currentBrew.PotionColor;
+        }
+        
         _poofColor[1].time = 1.0f;
         _poofGradient.SetKeys(_poofColor, _poofAlfa);
 
