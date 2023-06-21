@@ -7,7 +7,6 @@
 					<ChildrenList>
 						<Switch Name="Fairy" ID="{E80D63B8-DA83-4824-9A9C-2E125EE9A4D3}"/>
 						<Switch Name="Soldier" ID="{9A43A3BB-29F2-4A68-BC63-F07C5082C4A2}"/>
-						<Switch Name="Wizard" ID="{61F16407-D362-499C-B985-A35C48139FE2}"/>
 					</ChildrenList>
 				</SwitchGroup>
 			</ChildrenList>

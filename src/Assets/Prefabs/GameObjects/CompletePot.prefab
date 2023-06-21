@@ -356,6 +356,7 @@ GameObject:
   - component: {fileID: 7986614263608142074}
   - component: {fileID: 7986614263608142075}
   - component: {fileID: 7986614263608142079}
+  - component: {fileID: 4171883621338589212}
   m_Layer: 0
   m_Name: Brew
   m_TagString: Untagged
@@ -392,6 +393,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb76d1955fdfd4f6fb35d73f5d8b1b1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interactionsHandler: {fileID: 4171883621338589212}
   recipes:
   - {fileID: 11400000, guid: 4fc8b2e3237e34b47a95a42ffa86475e, type: 2}
   - {fileID: 11400000, guid: a5c14d3444b850b4eafca36f7476a9f4, type: 2}
@@ -445,6 +447,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f9efa9976a404119975418c8bae98a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interactionsHandler: {fileID: 4171883621338589212}
 --- !u!54 &7986614263608142075
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -474,6 +477,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   soundEventName: Play_Bubbles
+--- !u!114 &4171883621338589212
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7986614263608142073}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c9ac785ff6246c409413615753a5d5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7986614263926409301
 GameObject:
   m_ObjectHideFlags: 0
@@ -653,7 +668,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   meshRenderer: {fileID: 5229982544856336393}
-  idOfHighlight: 1
   highlightMaterial: {fileID: 2100000, guid: 320fdf76a7ff3ce45b59345fc79e52d0, type: 2}
 --- !u!1 &7986614265045014006
 GameObject:
@@ -1031,7 +1045,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: 7a92fa594c0db43f8b637907ce6b5827, type: 3}
       propertyPath: m_Materials.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: 7a92fa594c0db43f8b637907ce6b5827, type: 3}
       propertyPath: m_Materials.Array.data[0]

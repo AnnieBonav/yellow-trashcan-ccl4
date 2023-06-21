@@ -15,8 +15,7 @@ public class Customer : MonoBehaviour
         GoAway
     }
 
-    public static event Action<InteractionEvents> InteractionRaised;
-
+    [SerializeField] private InteractionsHandler interactionsHandler;
     [SerializeField] private float distanceEpsilon = 0.1f;
     [SerializeField] private TextMeshProUGUI orderText;
     [SerializeField] private float timeUntilAngry = 15f;
@@ -64,7 +63,7 @@ public class Customer : MonoBehaviour
         if (orderPoint == orderPosition)
         {
             print("The customer" + transform.name + " Arrived to its place #" + orderPoint);
-            InteractionRaised?.Invoke(InteractionEvents.CustomerArrives);
+            interactionsHandler.RaiseInteraction(InteractionEvents.CustomerArrives);
             ChangeState();
         }
     }
@@ -187,13 +186,13 @@ public class Customer : MonoBehaviour
         {
             if(hasLimit) StopCoroutine(_getAngryCoroutine);
             orderText.text = "Thank you, exactly what I wanted";
-            InteractionRaised?.Invoke(InteractionEvents.DeliverCorrectPotion);
+            interactionsHandler.RaiseInteraction(InteractionEvents.DeliverCorrectPotion);
             StartCoroutine(MoveToDespawnIn(timeAfterReceived));
         }
         else
         {
             orderText.text = "That is not what I ordered! Try Again?";
-            InteractionRaised?.Invoke(InteractionEvents.DeliverIncorrectPotion);
+            interactionsHandler.RaiseInteraction(InteractionEvents.DeliverIncorrectPotion);
             if (!hasLimit)
             {
                 print("This is a tutorial, you can try again");
