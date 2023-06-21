@@ -54,12 +54,14 @@ public class Dialogue : MonoBehaviour
     public static event Action AskToSpawnCustomer;
     public static event Action<InteractionEvents> InteractionRaised;
 
+    private InputAction pressA;
+    private InputAction pressY;
     private void Awake()
     {
-        var pressA = GetInputAction(_pressAAction);
+        pressA = GetInputAction(_pressAAction);
         pressA.canceled += PressedA;
 
-        var pressY = GetInputAction(_pressYAction);
+        pressY = GetInputAction(_pressYAction);
         pressY.canceled += PressedY;
 
         InteractionsHandler.InteractionRaised += HandleFlags;
@@ -68,7 +70,9 @@ public class Dialogue : MonoBehaviour
     private void OnDisable()
     {
         print("The dialogue was disabled");
-        InteractionsHandler.InteractionRaised += HandleFlags;
+        InteractionsHandler.InteractionRaised -= HandleFlags;
+        pressA.canceled -= PressedA;
+        pressY.canceled -= PressedY;
     }
 
     void Start()
@@ -88,6 +92,7 @@ public class Dialogue : MonoBehaviour
 
     private IEnumerator NextTextblock()
     {
+        AkSoundEngine.PostEvent("Play_BookoDialogue", gameObject);
         bookoFacade.BookoAnimator.SetBool("IsTalking", true);
         HandleVFXElements();
 
@@ -115,8 +120,6 @@ public class Dialogue : MonoBehaviour
 
     private void HandleVFXElements()
     {
-        
-
         for (int i = 0; i < textBlocks[_currentDialogue].elementsToVFX.Count; i++) // Goes through all of the elements that should be highlighted
         {
             textBlocks[_currentDialogue].elementsToVFX[i].ActivateHighLight();

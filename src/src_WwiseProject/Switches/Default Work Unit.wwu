@@ -9,6 +9,13 @@
 						<Switch Name="Soldier" ID="{9A43A3BB-29F2-4A68-BC63-F07C5082C4A2}"/>
 					</ChildrenList>
 				</SwitchGroup>
+				<SwitchGroup Name="Material" ID="{51A7145F-10E8-4B2F-8C72-A84149D07067}">
+					<ChildrenList>
+						<Switch Name="Glass" ID="{F7080E97-AE2E-4F64-81DD-977C6060FB73}"/>
+						<Switch Name="Metal" ID="{19C4CA12-0BB6-4A6B-B03D-423C166977D0}"/>
+						<Switch Name="Solid" ID="{BD216E59-F7ED-4FEF-9828-4DF5C55441E5}"/>
+					</ChildrenList>
+				</SwitchGroup>
 			</ChildrenList>
 		</WorkUnit>
 	</Switches>
