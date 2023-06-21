@@ -8,11 +8,4 @@ public enum InteractionEvents { GrabIngredient, ReleaseIngredient, PutIngredient
 
 public class TestFlags : MonoBehaviour
 {
-
-    public static event Action<InteractionEvents> InteractionRaised;
-    private void OnTriggerExit(Collider collider)
-    {
-        print(collider.name + " Exited");
-        InteractionRaised?.Invoke(InteractionEvents.GrabIngredient);
-    }
 }
