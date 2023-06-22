@@ -3,7 +3,12 @@ guid: 99e248881c79b42a5a57ff19803d3a44
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: beer Base Color
+    second: {fileID: 2800000, guid: 2df9d8903c23945359bad4641b3f6e49, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0
