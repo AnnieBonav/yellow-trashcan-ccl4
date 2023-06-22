@@ -142,6 +142,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3525487269154610735, guid: 9236f07cbc977b84d8f31d7fddc75ee3, type: 3}
+      propertyPath: ingredientType
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3525487269154610735, guid: 9236f07cbc977b84d8f31d7fddc75ee3, type: 3}
       propertyPath: refillsContainer
       value: 1
       objectReference: {fileID: 0}

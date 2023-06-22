@@ -31,6 +31,7 @@ public class IngredientAcceptor : MonoBehaviour
         Debug.Log("Collided");
         if (collider.gameObject.CompareTag("Ingredient"))
         {
+            AkSoundEngine.PostEvent("Play_PutIngredient", gameObject);
             Take(collider.gameObject.GetComponentInParent<Ingredient>());
             interactionsHandler.RaiseInteraction(InteractionEvents.PutIngredientPot);
             return;

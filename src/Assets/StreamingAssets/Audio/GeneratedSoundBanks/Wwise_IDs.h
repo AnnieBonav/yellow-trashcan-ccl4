@@ -23,7 +23,9 @@ namespace AK
         static const AkUniqueID PLAY_FOOTSTEP = 1602358412U;
         static const AkUniqueID PLAY_HAPPYSOUND = 1832643493U;
         static const AkUniqueID PLAY_INCORRECTPOTION = 4198774158U;
+        static const AkUniqueID PLAY_NOMOREREFILL = 4286878652U;
         static const AkUniqueID PLAY_PICKINGREDIENT = 644243960U;
+        static const AkUniqueID PLAY_PUTINGREDIENT = 1663402548U;
         static const AkUniqueID PLAY_REFILL = 4075562094U;
         static const AkUniqueID STOP_BUBBLES = 1962155989U;
     } // namespace EVENTS

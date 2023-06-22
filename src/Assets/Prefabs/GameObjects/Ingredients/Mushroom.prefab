@@ -105,6 +105,10 @@ PrefabInstance:
       value: 0.11135638
       objectReference: {fileID: 0}
     - target: {fileID: 2839164663644878909, guid: 1157d7efe1da0ab4c9e0a4d31fd5fc44, type: 3}
+      propertyPath: m_MovementType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2839164663644878909, guid: 1157d7efe1da0ab4c9e0a4d31fd5fc44, type: 3}
       propertyPath: m_RetainTransformParent
       value: 0
       objectReference: {fileID: 0}

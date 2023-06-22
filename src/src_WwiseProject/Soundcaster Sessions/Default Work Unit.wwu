@@ -14,6 +14,10 @@
 							<Position X="0" Y="1"/>
 						</Module>
 						<Module>
+							<ObjectRef Name="Play_PutIngredient" ID="{DFDC0D52-9541-4D19-BF37-0D6F0614197A}" WorkUnitID="{BFC7D3B1-44B4-4C51-9812-44E9AEA27384}"/>
+							<Position X="0" Y="2"/>
+						</Module>
+						<Module>
 							<ObjectRef Name="Play_PickIngredient" ID="{E72313BC-28B2-46F0-A3AA-131A1A462620}" WorkUnitID="{BFC7D3B1-44B4-4C51-9812-44E9AEA27384}"/>
 							<Position X="1" Y="0"/>
 						</Module>
@@ -53,6 +57,10 @@
 							<ObjectRef Name="RefillMushroom" ID="{8F2C38F7-83F4-4F71-B727-70A4BB7F0199}" WorkUnitID="{D534BECF-C975-4104-9E89-B949A9C3F6A0}"/>
 							<Position X="4" Y="1"/>
 						</Module>
+						<Module>
+							<ObjectRef Name="Play_PickIngredient" ID="{E72313BC-28B2-46F0-A3AA-131A1A462620}" WorkUnitID="{BFC7D3B1-44B4-4C51-9812-44E9AEA27384}"/>
+							<Position X="4" Y="2"/>
+						</Module>
 					</ModuleList>
 					<RTPCValueList ShowAll="true">
 						<RTPCValue>
@@ -73,12 +81,12 @@
 						</RTPCValue>
 					</RTPCValueList>
 					<CurrentStateList ShowAll="true">
-						<CurrentStateRef Name="Entrance" ID="{334A35C3-4FCF-4D56-985A-BAB25095ADED}"/>
+						<CurrentStateRef Name="Brewing" ID="{CAE0A252-51F7-4514-A13A-E3887266E99D}"/>
 					</CurrentStateList>
 					<CurrentSwitchList ShowAll="true">
 						<CurrentSwitchRef Name="Fairy" ID="{E80D63B8-DA83-4824-9A9C-2E125EE9A4D3}"/>
 						<CurrentSwitchRef Name="Bark" ID="{C2C4332E-26A0-45D4-8829-C1E51BF46BE6}"/>
-						<CurrentSwitchRef Name="Metal" ID="{19C4CA12-0BB6-4A6B-B03D-423C166977D0}"/>
+						<CurrentSwitchRef Name="Glass" ID="{F7080E97-AE2E-4F64-81DD-977C6060FB73}"/>
 					</CurrentSwitchList>
 				</SoundcasterSession>
 			</ChildrenList>

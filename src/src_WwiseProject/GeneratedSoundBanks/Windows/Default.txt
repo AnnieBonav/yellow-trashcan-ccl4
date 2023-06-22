@@ -2,6 +2,7 @@ Event	ID	Name			Wwise Object Path	Notes
 	548088167	Play_BackgroundMusic			\Default Work Unit\Play_BackgroundMusic	
 	644243960	Play_PickIngredient			\Default Work Unit\Play_PickIngredient	
 	1602358412	Play_Footstep			\Default Work Unit\Play_Footstep	
+	1663402548	Play_PutIngredient			\Default Work Unit\Play_PutIngredient	
 	1832643493	Play_HappySound			\Default Work Unit\Play_HappySound	
 	1962155989	Stop_Bubbles			\Default Work Unit\Stop_Bubbles	
 	2007351433	Play_Drop			\Default Work Unit\Play_Drop	
@@ -12,6 +13,7 @@ Event	ID	Name			Wwise Object Path	Notes
 	3886503793	Play_CorrectPotion			\Default Work Unit\Play_CorrectPotion	
 	4075562094	Play_Refill			\Default Work Unit\Play_Refill	
 	4198774158	Play_IncorrectPotion			\Default Work Unit\Play_IncorrectPotion	
+	4286878652	Play_NoMoreRefill			\Default Work Unit\Play_NoMoreRefill	
 
 Switch Group	ID	Name			Wwise Object Path	Notes
 	436743010	Character			\Default Work Unit\Character	
@@ -62,6 +64,7 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	90013358	SFX_HoofstepsWood4	C:\Projects\YellowTrashcan\yellow-trashcan-ccl4\src\src_WwiseProject\.cache\Windows\SFX\SFX_HoofstepsWood4_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Characters\Customers\Footsteps\FootstepsFairy\SFX_HoofstepsWood4		176464
 	122093724	SFX_FairyAprove1	C:\Projects\YellowTrashcan\yellow-trashcan-ccl4\src\src_WwiseProject\.cache\Windows\SFX\SFX_FairyAprove1_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Characters\Customers\HappySound\FairyHappy\SFX_FairyAprove1		176464
 	128584436	022	C:\Projects\YellowTrashcan\yellow-trashcan-ccl4\src\src_WwiseProject\.cache\Windows\SFX\022_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Characters\Booko\BookoDialogue\022		1038400
+	140767616	SFX_AddIngredient2	C:\Projects\YellowTrashcan\yellow-trashcan-ccl4\src\src_WwiseProject\.cache\Windows\SFX\SFX_AddIngredient2_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Props\Ingredients\PutIngredient\SFX_AddIngredient2		176464
 	153117831	SFX_ShortSoldierWalk2	C:\Projects\YellowTrashcan\yellow-trashcan-ccl4\src\src_WwiseProject\.cache\Windows\SFX\SFX_ShortSoldierWalk2_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Characters\Customers\Footsteps\FootstepsSoldier\SFX_ShortSoldierWalk2		176464
 	159324121	023	C:\Projects\YellowTrashcan\yellow-trashcan-ccl4\src\src_WwiseProject\.cache\Windows\SFX\023_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Characters\Booko\BookoDialogue\023		921664
 	160237374	SFX_DropMetal2	C:\Projects\YellowTrashcan\yellow-trashcan-ccl4\src\src_WwiseProject\.cache\Windows\SFX\SFX_DropMetal2_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Props\Drop\DropMetal\SFX_DropMetal2		176464
@@ -95,6 +98,7 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	579781312	018	C:\Projects\YellowTrashcan\yellow-trashcan-ccl4\src\src_WwiseProject\.cache\Windows\SFX\018_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Characters\Booko\BookoDialogue\018		2041920
 	632397808	SFX_CorrectPotion1	C:\Projects\YellowTrashcan\yellow-trashcan-ccl4\src\src_WwiseProject\.cache\Windows\SFX\SFX_CorrectPotion1_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Props\Potions\CorrectPotion\SFX_CorrectPotion1		352864
 	657366227	SFX_HerbRefill1	C:\Projects\YellowTrashcan\yellow-trashcan-ccl4\src\src_WwiseProject\.cache\Windows\SFX\SFX_HerbRefill1_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Props\Refill\RefillHerb\SFX_HerbRefill1		176464
+	664101432	SFX_AddIngredient1	C:\Projects\YellowTrashcan\yellow-trashcan-ccl4\src\src_WwiseProject\.cache\Windows\SFX\SFX_AddIngredient1_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Props\Ingredients\PutIngredient\SFX_AddIngredient1		176464
 	677113138	007	C:\Projects\YellowTrashcan\yellow-trashcan-ccl4\src\src_WwiseProject\.cache\Windows\SFX\007_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Characters\Booko\BookoDialogue\007		1245248
 	679511128	002	C:\Projects\YellowTrashcan\yellow-trashcan-ccl4\src\src_WwiseProject\.cache\Windows\SFX\002_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Characters\Booko\BookoDialogue\002		1278016
 	688478243	001	C:\Projects\YellowTrashcan\yellow-trashcan-ccl4\src\src_WwiseProject\.cache\Windows\SFX\001_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Characters\Booko\BookoDialogue\001		364608

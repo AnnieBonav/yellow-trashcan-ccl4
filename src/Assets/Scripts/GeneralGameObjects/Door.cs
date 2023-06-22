@@ -24,6 +24,7 @@ public class Door : MonoBehaviour
     public void ChangeScenery()
     {
         if (!canActivateDoor) return; // Cannot activate if it is not the time to do so
+        print("Wants to go to room");
         switch (roomToGo)
         {
             case CurrentRoom.Garden:
@@ -36,6 +37,8 @@ public class Door : MonoBehaviour
                 interactionsHandler.RaiseInteraction(InteractionEvents.TravelledEntrance);
                 break;
         }
+
+        AkSoundEngine.SetState("CurrentRoom", roomToGo.ToString());
     }
 
     private void ActivateDoor(CurrentRoom commingCurrentRoom)

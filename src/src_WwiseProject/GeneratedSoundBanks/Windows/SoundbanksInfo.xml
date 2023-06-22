@@ -11,7 +11,7 @@
 	<StreamedFiles/>
 	<MediaFilesNotInAnyBank/>
 	<SoundBanks>
-		<SoundBank Id="782826392" Language="SFX" Hash="3212020527">
+		<SoundBank Id="782826392" Language="SFX" Hash="1089774422">
 			<ObjectPath>\SoundBanks\Default Work Unit\Default</ObjectPath>
 			<ShortName>Default</ShortName>
 			<Path>Default.bnk</Path>
@@ -341,11 +341,24 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
+				<Event Id="4286878652" Name="Play_NoMoreRefill" ObjectPath="\Events\Default Work Unit\Play_NoMoreRefill" DurationType="OneShot" DurationMin="0." DurationMax="0."/>
 				<Event Id="644243960" Name="Play_PickIngredient" ObjectPath="\Events\Default Work Unit\Play_PickIngredient" MaxAttenuation="2." DurationType="OneShot" DurationMin="0.840896" DurationMax="1.122462">
 					<IncludedMemoryFiles>
 						<File Id="891765297" Language="SFX">
 							<ShortName>SFX_Absorb.wav</ShortName>
 							<Path>SFX\SFX_Absorb_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="1663402548" Name="Play_PutIngredient" ObjectPath="\Events\Default Work Unit\Play_PutIngredient" MaxAttenuation="2." DurationType="OneShot" DurationMin="1." DurationMax="1.">
+					<IncludedMemoryFiles>
+						<File Id="140767616" Language="SFX">
+							<ShortName>SFX_AddIngredient2.wav</ShortName>
+							<Path>SFX\SFX_AddIngredient2_10C4C929.wem</Path>
+						</File>
+						<File Id="664101432" Language="SFX">
+							<ShortName>SFX_AddIngredient1.wav</ShortName>
+							<Path>SFX\SFX_AddIngredient1_10C4C929.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 				</Event>

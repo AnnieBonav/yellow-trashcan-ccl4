@@ -149,6 +149,28 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="Play_NoMoreRefill" ID="{63268ABB-62F2-44FF-9C06-C4D060660982}">
+					<ChildrenList>
+						<Action Name="" ID="{D725FAAB-3186-43F8-9A25-DBB405806652}" ShortID="881634463">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="NoMoreRefill" ID="{32253FAA-F59A-40C4-9E52-8CCAFEF16964}" WorkUnitID="{D534BECF-C975-4104-9E89-B949A9C3F6A0}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_PutIngredient" ID="{DFDC0D52-9541-4D19-BF37-0D6F0614197A}">
+					<ChildrenList>
+						<Action Name="" ID="{05AEC740-EDA8-4677-906C-5BD64F036857}" ShortID="235575430">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="PutIngredient" ID="{8CE5DC7E-6E6B-4ABB-9B02-975507A1FA4F}" WorkUnitID="{D534BECF-C975-4104-9E89-B949A9C3F6A0}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

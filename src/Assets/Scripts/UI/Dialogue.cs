@@ -69,7 +69,7 @@ public class Dialogue : MonoBehaviour
 
     private void OnDisable()
     {
-        print("The dialogue was disabled");
+        if (isDebugging) print("The dialogue was disabled");
         InteractionsHandler.InteractionRaised -= HandleFlags;
         pressA.canceled -= PressedA;
         pressY.canceled -= PressedY;
@@ -113,7 +113,7 @@ public class Dialogue : MonoBehaviour
         if (textBlocks[_currentDialogue].needsClickToContinue)
         {
             bookoFacade.ContinueButton.SetActive(true);
-            print("Setting in Next block");
+            if (isDebugging) print("Setting in Next block");
         }
         bookoFacade.BookoAnimator.SetBool("IsTalking", false);
     }
