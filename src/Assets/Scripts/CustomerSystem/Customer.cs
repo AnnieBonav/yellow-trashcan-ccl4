@@ -195,12 +195,14 @@ public class Customer : MonoBehaviour
         {
             if(hasLimit) StopCoroutine(_getAngryCoroutine);
             // TODO ADD HAPPY SOUND
+            AkSoundEngine.PostEvent("Play_CorrectPotion", gameObject);
             interactionsHandler.RaiseInteraction(InteractionEvents.DeliverCorrectPotion);
             StartCoroutine(MoveToDespawnIn(timeAfterReceived));
         }
         else
         {
             // TODO ADD SAD SOUND
+            AkSoundEngine.PostEvent("Play_IncorrectPotion", gameObject);
             interactionsHandler.RaiseInteraction(InteractionEvents.DeliverIncorrectPotion);
             if (!hasLimit)
             {
@@ -208,6 +210,8 @@ public class Customer : MonoBehaviour
                 return;
             }
         }
+
+        requestUI.SetActive(false);
     }
 
     private IEnumerator MoveToDespawnIn(float seconds)
