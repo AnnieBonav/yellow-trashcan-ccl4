@@ -11,7 +11,7 @@
 	<StreamedFiles/>
 	<MediaFilesNotInAnyBank/>
 	<SoundBanks>
-		<SoundBank Id="782826392" Language="SFX" Hash="3281225008">
+		<SoundBank Id="782826392" Language="SFX" Hash="2561020840">
 			<ObjectPath>\SoundBanks\Default Work Unit\Default</ObjectPath>
 			<ShortName>Default</ShortName>
 			<Path>Default.bnk</Path>
@@ -341,33 +341,33 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="4286878652" Name="Play_NoMoreRefill" ObjectPath="\Events\Default Work Unit\Play_NoMoreRefill" DurationType="OneShot" DurationMin="2." DurationMax="2.">
+				<Event Id="4286878652" Name="Play_NoMoreRefill" ObjectPath="\Events\Default Work Unit\Play_NoMoreRefill" MaxAttenuation="8." DurationType="OneShot" DurationMin="1." DurationMax="1.">
 					<IncludedMemoryFiles>
-						<File Id="215722493" Language="SFX">
-							<ShortName>SFX_Fail1.wav</ShortName>
-							<Path>SFX\SFX_Fail1_10C4C929.wem</Path>
+						<File Id="691921600" Language="SFX">
+							<ShortName>SFX_NoIngredient1.wav</ShortName>
+							<Path>SFX\SFX_NoIngredient1_10C4C929.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 					<DefaultSwitchValue>{A978BBFD-9690-49C1-9E9D-B1BB03B5CEC1}</DefaultSwitchValue>
 					<SwitchContainers>
 						<SwitchContainer SwitchValue="{C2C4332E-26A0-45D4-8829-C1E51BF46BE6}">
 							<Media>
-								<File Id="215722493"/>
+								<File Id="691921600"/>
 							</Media>
 						</SwitchContainer>
 						<SwitchContainer SwitchValue="{BB5A936C-1D46-467D-9FD4-3EF6F0E73ADD}">
 							<Media>
-								<File Id="215722493"/>
+								<File Id="691921600"/>
 							</Media>
 						</SwitchContainer>
 						<SwitchContainer SwitchValue="{0701D7B4-648F-490C-94BB-21137D2659E5}">
 							<Media>
-								<File Id="215722493"/>
+								<File Id="691921600"/>
 							</Media>
 						</SwitchContainer>
 						<SwitchContainer SwitchValue="{A978BBFD-9690-49C1-9E9D-B1BB03B5CEC1}">
 							<Media>
-								<File Id="215722493"/>
+								<File Id="691921600"/>
 							</Media>
 						</SwitchContainer>
 					</SwitchContainers>

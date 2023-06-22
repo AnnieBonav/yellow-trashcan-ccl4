@@ -146,7 +146,7 @@
 				</Attenuation>
 				<Attenuation Name="RefillersAttenuation" ID="{399FC38F-9AFD-4295-BC15-4B85ED7B8AC2}" ShortID="382658339">
 					<PropertyList>
-						<Property Name="RadiusMax" Type="Real64" Value="20"/>
+						<Property Name="RadiusMax" Type="Real64" Value="8"/>
 					</PropertyList>
 					<CurveUsageInfoList>
 						<VolumeDryUsage>
@@ -162,7 +162,7 @@
 											<Flags>5</Flags>
 										</Point>
 										<Point>
-											<XPos>20</XPos>
+											<XPos>8</XPos>
 											<YPos>-200</YPos>
 											<Flags>37</Flags>
 										</Point>
