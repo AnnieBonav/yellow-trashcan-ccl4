@@ -73,5 +73,6 @@ public class Door : MonoBehaviour
     private void TriggerOpenDoor()
     {
         animator.SetTrigger("OpenDoor");
+        AkSoundEngine.PostEvent("Play_Door", gameObject);
     }
 }

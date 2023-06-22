@@ -179,7 +179,7 @@ public class Dialogue : MonoBehaviour
 
     private void DisableContinue()
     {
-        print("Setting inactive in disable");
+        if (isDebugging) print("Setting inactive in disable");
         bookoFacade.ContinueButton.SetActive(false);
         _canAdvance = false;
     }

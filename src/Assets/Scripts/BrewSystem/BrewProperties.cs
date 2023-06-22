@@ -79,8 +79,8 @@ public class BrewProperties : MonoBehaviour
     {
         if (_brewMaterial is not null)
         {
-            _brewMaterial.SetColor("_Color", _currentColour);
-            _brewMaterial.SetFloat("_Strength", _currentBubbling);
+            _brewMaterial.SetColor("_Color", _currentColour );
+            _brewMaterial.SetFloat("_Strength", _currentBubbling / 10);
             _brewMaterial.SetFloat("_Speed", _currentBubbling);
         }
 

@@ -11,12 +11,12 @@
 	<StreamedFiles/>
 	<MediaFilesNotInAnyBank/>
 	<SoundBanks>
-		<SoundBank Id="782826392" Language="SFX" Hash="1349171095">
+		<SoundBank Id="782826392" Language="SFX" Hash="854041170">
 			<ObjectPath>\SoundBanks\Default Work Unit\Default</ObjectPath>
 			<ShortName>Default</ShortName>
 			<Path>Default.bnk</Path>
 			<IncludedEvents>
-				<Event Id="3825176718" Name="Play_AngrySound" ObjectPath="\Events\Default Work Unit\Play_AngrySound" MaxAttenuation="100." DurationType="OneShot" DurationMin="0.623313" DurationMax="1.189207">
+				<Event Id="3825176718" Name="Play_AngrySound" ObjectPath="\Events\Default Work Unit\Play_AngrySound" MaxAttenuation="6." DurationType="OneShot" DurationMin="0.623313" DurationMax="1.189207">
 					<IncludedMemoryFiles>
 						<File Id="548293618" Language="SFX">
 							<ShortName>SFX_FairyAngry1.wav</ShortName>
@@ -193,7 +193,14 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="2547633870" Name="Play_Door" ObjectPath="\Events\Default Work Unit\Play_Door" DurationType="OneShot" DurationMin="0." DurationMax="0."/>
+				<Event Id="2547633870" Name="Play_Door" ObjectPath="\Events\Default Work Unit\Play_Door" MaxAttenuation="10." DurationType="OneShot" DurationMin="1." DurationMax="1.">
+					<IncludedMemoryFiles>
+						<File Id="748633941" Language="SFX">
+							<ShortName>SFX_Door1.wav</ShortName>
+							<Path>SFX\SFX_Door1_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
 				<Event Id="2007351433" Name="Play_Drop" ObjectPath="\Events\Default Work Unit\Play_Drop" MaxAttenuation="6." DurationType="OneShot" DurationMin="0.890899" DurationMax="1.122462">
 					<IncludedMemoryFiles>
 						<File Id="160237374" Language="SFX">
@@ -248,7 +255,7 @@
 						</SwitchContainer>
 					</SwitchContainers>
 				</Event>
-				<Event Id="1602358412" Name="Play_Footstep" ObjectPath="\Events\Default Work Unit\Play_Footstep" MaxAttenuation="20." DurationType="OneShot" DurationMin="0.943874" DurationMax="1.122462">
+				<Event Id="1602358412" Name="Play_Footstep" ObjectPath="\Events\Default Work Unit\Play_Footstep" MaxAttenuation="10." DurationType="OneShot" DurationMin="0.943874" DurationMax="1.122462">
 					<IncludedMemoryFiles>
 						<File Id="448379" Language="SFX">
 							<ShortName>SFX_HoofstepsWood3.wav</ShortName>
@@ -308,7 +315,7 @@
 						</SwitchContainer>
 					</SwitchContainers>
 				</Event>
-				<Event Id="1832643493" Name="Play_HappySound" ObjectPath="\Events\Default Work Unit\Play_HappySound" MaxAttenuation="100." DurationType="OneShot" DurationMin="0.890899" DurationMax="1.059463">
+				<Event Id="1832643493" Name="Play_HappySound" ObjectPath="\Events\Default Work Unit\Play_HappySound" MaxAttenuation="6." DurationType="OneShot" DurationMin="0.890899" DurationMax="1.059463">
 					<IncludedMemoryFiles>
 						<File Id="122093724" Language="SFX">
 							<ShortName>SFX_FairyAprove1.wav</ShortName>
@@ -453,7 +460,9 @@
 				<Event Id="1962155989" Name="Stop_Bubbles" ObjectPath="\Events\Default Work Unit\Stop_Bubbles" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
 			</IncludedEvents>
 			<GameParameters>
+				<GameParameter Id="399092848" Name="VolumeSFX" ObjectPath="\Game Parameters\Default Work Unit\Volume\VolumeSFX"/>
 				<GameParameter Id="3064925121" Name="BubblesIntensity" ObjectPath="\Game Parameters\Default Work Unit\BubblesIntensity"/>
+				<GameParameter Id="3923584592" Name="VolumeMusic" ObjectPath="\Game Parameters\Default Work Unit\Volume\VolumeMusic"/>
 			</GameParameters>
 			<SwitchGroups>
 				<SwitchGroup Id="436743010" Name="Character" ObjectPath="\Switches\Default Work Unit\Character" GUID="{4FA7F62D-013F-499C-A583-B5D6AA09A184}">

@@ -10,17 +10,21 @@ public class IngredientContainer : MonoBehaviour
     [SerializeField] private List<GameObject> spawnPositions;
     [SerializeField] private int maximumCapacity = 3;
     [SerializeField] private int currentAmount;
-    [SerializeField] private TextMeshProUGUI fillDisplay;
 
+    [SerializeField] private bool isDebugging;
+
+    [Header("Only if bark container")]
     [SerializeField] private bool needsEmpty;
     [SerializeField] private GameObject emptyIngredient;
-    [SerializeField] private bool isDebugging;
+    [SerializeField] private Animator animator;
+    [SerializeField] private GameObject barkDirt;
 
     private IngredientSpawner _spawner;
 
     private void Awake()
     {
         _spawner = GetComponent<IngredientSpawner>();
+        EmptyGrabbable.HoverBarkContainer += HandleBarkHover;
 
         if (spawnPositions.Count > 0)
         {
@@ -37,6 +41,15 @@ public class IngredientContainer : MonoBehaviour
         {
             RefillSlot();
         }
+
+        
+    }
+
+    private void HandleBarkHover(bool isHovered)
+    {
+        if (!needsEmpty) return;
+        animator.SetBool("IsOpened", isHovered);
+        print("Setting bool");
     }
 
     private void Start()
@@ -52,7 +65,7 @@ public class IngredientContainer : MonoBehaviour
             return false;
         }
         currentAmount = maximumCapacity;
-        UpdateFillDisplayText();
+        barkDirt.SetActive(true);
         return true;
     }
 
@@ -66,7 +79,6 @@ public class IngredientContainer : MonoBehaviour
                 noobIngredient.gameObject.transform.SetParent(spawnPosition.transform, false);
                 noobIngredient.transform.position = spawnPosition.transform.position;
                 currentAmount++;
-                UpdateFillDisplayText();
                 return;
             }
         }       
@@ -92,10 +104,10 @@ public class IngredientContainer : MonoBehaviour
         if (currentAmount <= 0)
         {
             if (isDebugging) print("There are no more ingredients");
+            barkDirt.SetActive(false);
             return null;
         }
         currentAmount--;
-        UpdateFillDisplayText();
 
         Ingredient noobIngredient = _spawner.SpawnIngredient();
         if (isDebugging) print("Returning new ingredient");
@@ -105,11 +117,6 @@ public class IngredientContainer : MonoBehaviour
     public void ResetEmptyIngredient()
     {
         Instantiate(emptyIngredient, transform);
-    }
-
-    private void UpdateFillDisplayText()
-    {
-        if (fillDisplay is not null) fillDisplay.text = $"{currentAmount}/{maximumCapacity}";
     }
 
     private void OnTriggerExit(Collider collider)

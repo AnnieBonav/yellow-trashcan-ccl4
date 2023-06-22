@@ -173,7 +173,7 @@ public class Customer : MonoBehaviour
     public IEnumerator AngryInSeconds(float seconds)
     {
         yield return new WaitForSeconds(seconds);
-        // TODO: Make angry sound
+        AkSoundEngine.PostEvent("Play_AngrySound", gameObject);
         yield return new WaitForSeconds(3);
         MoveToDespawn();
     }
@@ -195,14 +195,14 @@ public class Customer : MonoBehaviour
         {
             if(hasLimit) StopCoroutine(_getAngryCoroutine);
             // TODO ADD HAPPY SOUND
-            AkSoundEngine.PostEvent("Play_CorrectPotion", gameObject);
+            AkSoundEngine.PostEvent("Play_HappySound", gameObject);
             interactionsHandler.RaiseInteraction(InteractionEvents.DeliverCorrectPotion);
             StartCoroutine(MoveToDespawnIn(timeAfterReceived));
         }
         else
         {
             // TODO ADD SAD SOUND
-            AkSoundEngine.PostEvent("Play_IncorrectPotion", gameObject);
+            AkSoundEngine.PostEvent("Play_AngrySound", gameObject);
             interactionsHandler.RaiseInteraction(InteractionEvents.DeliverIncorrectPotion);
             if (!hasLimit)
             {
