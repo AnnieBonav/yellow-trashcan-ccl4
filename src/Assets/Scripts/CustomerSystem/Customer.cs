@@ -3,6 +3,7 @@ using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UI;
 
 [RequireComponent(typeof(NavMeshAgent))]
 public class Customer : MonoBehaviour
@@ -20,6 +21,7 @@ public class Customer : MonoBehaviour
     [SerializeField] private TextMeshProUGUI orderText;
     [SerializeField] private float timeUntilAngry = 15f;
     [SerializeField] private Animator animator;
+    [SerializeField] private Image potionImage;
 
     [SerializeField] private float timeAfterReceived = 3f;
     
@@ -88,6 +90,7 @@ public class Customer : MonoBehaviour
     void Start()
     {
         _requestedPotion = PotionKnowledgebase.Instance.RandomRecipe();
+        potionImage.sprite = _requestedPotion.PotionImage;
     }
 
     private bool isRotating = false;
