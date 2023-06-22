@@ -99,7 +99,7 @@
 				</Attenuation>
 				<Attenuation Name="WalkingAttenuation" ID="{7ED347C9-764D-4C17-BE97-30DEFAAB590A}" ShortID="219338296">
 					<PropertyList>
-						<Property Name="RadiusMax" Type="Real64" Value="8"/>
+						<Property Name="RadiusMax" Type="Real64" Value="20"/>
 					</PropertyList>
 					<CurveUsageInfoList>
 						<VolumeDryUsage>
@@ -116,7 +116,7 @@
 											<SegmentShape>Exp3</SegmentShape>
 										</Point>
 										<Point>
-											<XPos>8</XPos>
+											<XPos>20</XPos>
 											<YPos>-200</YPos>
 											<Flags>37</Flags>
 										</Point>

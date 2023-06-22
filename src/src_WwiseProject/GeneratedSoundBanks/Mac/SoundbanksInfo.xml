@@ -11,7 +11,7 @@
 	<StreamedFiles/>
 	<MediaFilesNotInAnyBank/>
 	<SoundBanks>
-		<SoundBank Id="782826392" Language="SFX" Hash="2561020840">
+		<SoundBank Id="782826392" Language="SFX" Hash="1349171095">
 			<ObjectPath>\SoundBanks\Default Work Unit\Default</ObjectPath>
 			<ShortName>Default</ShortName>
 			<Path>Default.bnk</Path>
@@ -248,7 +248,7 @@
 						</SwitchContainer>
 					</SwitchContainers>
 				</Event>
-				<Event Id="1602358412" Name="Play_Footstep" ObjectPath="\Events\Default Work Unit\Play_Footstep" MaxAttenuation="8." DurationType="OneShot" DurationMin="0.943874" DurationMax="1.122462">
+				<Event Id="1602358412" Name="Play_Footstep" ObjectPath="\Events\Default Work Unit\Play_Footstep" MaxAttenuation="20." DurationType="OneShot" DurationMin="0.943874" DurationMax="1.122462">
 					<IncludedMemoryFiles>
 						<File Id="448379" Language="SFX">
 							<ShortName>SFX_HoofstepsWood3.wav</ShortName>
