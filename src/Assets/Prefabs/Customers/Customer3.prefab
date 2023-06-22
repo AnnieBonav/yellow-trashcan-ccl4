@@ -506,7 +506,6 @@ GameObject:
   - component: {fileID: 1537460060639974700}
   - component: {fileID: 4108191631887479536}
   - component: {fileID: 4246551567191122490}
-  - component: {fileID: 4589164385021177432}
   m_Layer: 0
   m_Name: Customer3
   m_TagString: Customer
@@ -602,22 +601,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c9ac785ff6246c409413615753a5d5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &4589164385021177432
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8053947594520236510}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e900d1639dca44bf68e4c8cf9eb29f35, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  audioEvent:
-    idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 525c40d598a8e7d4a93865d23f2a970f, type: 2}
 --- !u!1001 &9063758234827272606
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -717,6 +700,22 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &7498600434968313869
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8145210478250659023}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e900d1639dca44bf68e4c8cf9eb29f35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioEvent:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 525c40d598a8e7d4a93865d23f2a970f, type: 2}
 --- !u!4 &8809684543966271093 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: aca90d05650a34460be5819fe3f65061, type: 3}

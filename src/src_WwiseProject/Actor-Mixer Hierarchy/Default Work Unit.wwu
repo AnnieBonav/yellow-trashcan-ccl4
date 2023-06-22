@@ -598,6 +598,9 @@
 								</Property>
 							</PropertyList>
 							<ReferenceList>
+								<Reference Name="Attenuation">
+									<ObjectRef Name="DoorAttenuation" ID="{B8754C4F-9DF8-46B1-8AF4-A9A468419787}" WorkUnitID="{EFF89E9F-0A82-49D6-88D5-0AA313488C01}"/>
+								</Reference>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{F4AF011D-EC8C-4834-8840-395EB0F23260}"/>
 								</Reference>
@@ -1812,7 +1815,7 @@
 										<Property Name="3DSpatialization" Type="int16" Value="2"/>
 										<Property Name="Volume" Type="Real64">
 											<ValueList>
-												<Value>-12</Value>
+												<Value>-16</Value>
 											</ValueList>
 										</Property>
 									</PropertyList>
@@ -2148,6 +2151,7 @@
 								</SwitchContainer>
 								<SwitchContainer Name="AngrySound" ID="{4EA1E538-287F-44F9-A441-588CE61A2062}" ShortID="73785501">
 									<PropertyList>
+										<Property Name="3DSpatialization" Type="int16" Value="2"/>
 										<Property Name="Volume" Type="Real64">
 											<ValueList>
 												<Value>-10</Value>
@@ -2312,6 +2316,7 @@
 								</SwitchContainer>
 								<SwitchContainer Name="HappySound" ID="{20EF3FF5-5EE9-4B1D-877A-EE80AC0F0898}" ShortID="972684404">
 									<PropertyList>
+										<Property Name="3DSpatialization" Type="int16" Value="2"/>
 										<Property Name="Volume" Type="Real64">
 											<ValueList>
 												<Value>-10</Value>
@@ -2515,6 +2520,9 @@
 									<PropertyList>
 										<Property Name="RandomOrSequence" Type="int16" Value="0"/>
 										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>-96</Value>
+											</ValueList>
 											<RTPCList>
 												<RTPC Name="" ID="{55632877-D690-435E-AFA1-03CF4B765195}" ShortID="247870229">
 													<ReferenceList>
