@@ -8,6 +8,7 @@ public class Door : MonoBehaviour
     [SerializeField] private InteractionsHandler interactionsHandler;
     [SerializeField] private CurrentRoom currentRoom;
     [SerializeField] private CurrentRoom roomToGo;
+    [SerializeField] private Animator animator;
 
     [Header("Active/unactive settings")]
     [SerializeField] private MeshRenderer handleMesh;
@@ -60,5 +61,17 @@ public class Door : MonoBehaviour
     {
         if (!canActivateDoor) return;
         handleMesh.material = activeMaterial;
+    }
+
+    private void OnTriggerEnter(Collider collider)
+    {
+        if (collider.CompareTag("Customer")){
+            TriggerOpenDoor();
+        }
+    }
+
+    private void TriggerOpenDoor()
+    {
+        animator.SetTrigger("OpenDoor");
     }
 }
