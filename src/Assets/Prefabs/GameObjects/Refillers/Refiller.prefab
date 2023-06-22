@@ -329,7 +329,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efc5fdb72bd396044ae612c6a2a26080, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  soundEventName: 
+  soundEventName: Play_Refill
+  isRefiller: 1
+  ingredientType: 0
+  soundsOnDrop: 0
+  soundMaterialType: 0
 --- !u!114 &378004949626510654
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -342,7 +346,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29dcd657c73447f4f8f0c0cfef1eeaac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  meshRenderer: {fileID: 0}
+  meshRenderers: []
   highlightMaterial: {fileID: 2100000, guid: d598ade039d555140bb12d06a68a0990, type: 2}
 --- !u!114 &3919338512383672986
 MonoBehaviour:

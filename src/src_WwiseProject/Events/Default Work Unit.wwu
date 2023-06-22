@@ -3,17 +3,6 @@
 	<Events>
 		<WorkUnit Name="Default Work Unit" ID="{BFC7D3B1-44B4-4C51-9812-44E9AEA27384}" PersistMode="Standalone">
 			<ChildrenList>
-				<Event Name="Play_Pop" ID="{D2327E7F-C68C-4DC6-8853-2B3D4B218282}">
-					<ChildrenList>
-						<Action Name="" ID="{ADA40F61-EBEB-44CA-AF9E-7AC038D95B68}" ShortID="265454164">
-							<ReferenceList>
-								<Reference Name="Target">
-									<ObjectRef Name="Pop" ID="{C430E259-50B5-46CA-B9E4-BAFD8B6B3720}" WorkUnitID="{D534BECF-C975-4104-9E89-B949A9C3F6A0}"/>
-								</Reference>
-							</ReferenceList>
-						</Action>
-					</ChildrenList>
-				</Event>
 				<Event Name="Play_BackgroundMusic" ID="{87C0199A-1A13-4CDB-A19D-B9633C11A305}">
 					<ChildrenList>
 						<Action Name="" ID="{952B1E1C-9FF5-459B-AA17-033A58914867}" ShortID="760707001">
@@ -105,17 +94,6 @@
 						</Action>
 					</ChildrenList>
 				</Event>
-				<Event Name="Play_RefillLiquid" ID="{B23D3A91-DF78-4700-93B0-F39603CA61F3}">
-					<ChildrenList>
-						<Action Name="" ID="{E8F0DEDE-49DA-442A-AF5D-9050F5AEE2C1}" ShortID="442107300">
-							<ReferenceList>
-								<Reference Name="Target">
-									<ObjectRef Name="RefillLiquid" ID="{A4688E4E-B85B-4383-8887-AE547A8DB993}" WorkUnitID="{D534BECF-C975-4104-9E89-B949A9C3F6A0}"/>
-								</Reference>
-							</ReferenceList>
-						</Action>
-					</ChildrenList>
-				</Event>
 				<Event Name="Play_HappySound" ID="{E259EB3A-BAE3-4B72-92DE-3F7B4DA4DFCA}">
 					<ChildrenList>
 						<Action Name="" ID="{19959202-3ACF-405B-8CDF-E1F51F08ADF3}" ShortID="128767169">
@@ -155,6 +133,17 @@
 							<ReferenceList>
 								<Reference Name="Target">
 									<ObjectRef Name="BookoDialogue" ID="{73D5D0E3-E702-43B3-9681-F776EDD53307}" WorkUnitID="{D534BECF-C975-4104-9E89-B949A9C3F6A0}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_Refill" ID="{370FDB6A-4C7A-477F-A839-19631BFCDC8C}">
+					<ChildrenList>
+						<Action Name="" ID="{7A6778A6-D35C-45D3-86B7-0518732E08C6}" ShortID="915573957">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Refill" ID="{6B04C0A4-8CFC-47C6-A109-849BE47FFC44}" WorkUnitID="{D534BECF-C975-4104-9E89-B949A9C3F6A0}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>

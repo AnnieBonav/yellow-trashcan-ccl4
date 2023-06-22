@@ -57,6 +57,7 @@ public class Brew : MonoBehaviour
     private void Start()
     {
         importantEffect.Stop();
+        AkSoundEngine.PostEvent("Play_Bubbles", gameObject);
     }
 
     private RecipeData CurrentBrew()

@@ -24,8 +24,7 @@ namespace AK
         static const AkUniqueID PLAY_HAPPYSOUND = 1832643493U;
         static const AkUniqueID PLAY_INCORRECTPOTION = 4198774158U;
         static const AkUniqueID PLAY_PICKINGREDIENT = 644243960U;
-        static const AkUniqueID PLAY_POP = 2990278359U;
-        static const AkUniqueID PLAY_REFILLLIQUID = 423467974U;
+        static const AkUniqueID PLAY_REFILL = 4075562094U;
         static const AkUniqueID STOP_BUBBLES = 1962155989U;
     } // namespace EVENTS
 
@@ -58,6 +57,19 @@ namespace AK
                 static const AkUniqueID SOLDIER = 3121013053U;
             } // namespace SWITCH
         } // namespace CHARACTER
+
+        namespace INGREDIENT
+        {
+            static const AkUniqueID GROUP = 1746288848U;
+
+            namespace SWITCH
+            {
+                static const AkUniqueID BARK = 1274655755U;
+                static const AkUniqueID HERB = 3196610212U;
+                static const AkUniqueID LIQUID = 4087983317U;
+                static const AkUniqueID MUSHROOM = 1941802987U;
+            } // namespace SWITCH
+        } // namespace INGREDIENT
 
         namespace MATERIAL
         {

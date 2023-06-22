@@ -5,6 +5,10 @@ public enum SoundMaterialType { Metal, Glass, Solid }
 public class SoundEmitter : MonoBehaviour
 {
     [SerializeField] private string soundEventName;
+    [Header("Complete if it is a refiller")]
+    [SerializeField] private bool isRefiller;
+    [SerializeField] private IngredientType ingredientType;
+
     [Header("Complete if it needs to sound on drop")]
     [SerializeField] private bool soundsOnDrop;
     [SerializeField] private SoundMaterialType soundMaterialType;
@@ -19,6 +23,7 @@ public class SoundEmitter : MonoBehaviour
 
     private void Start()
     {
+        AkSoundEngine.SetSwitch("Ingredient", ingredientType.ToString(), gameObject);
         AkSoundEngine.SetSwitch("Material", soundMaterialType.ToString(), gameObject);
     }
 

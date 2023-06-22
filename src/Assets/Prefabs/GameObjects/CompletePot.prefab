@@ -475,6 +475,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   soundEventName: Play_Bubbles
+  soundsOnDrop: 0
+  soundMaterialType: 0
 --- !u!114 &4171883621338589212
 MonoBehaviour:
   m_ObjectHideFlags: 0
