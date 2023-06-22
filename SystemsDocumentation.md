@@ -59,3 +59,37 @@ We use this to represent the current state of the brew in the cauldron. It calcu
 ### IngredientAcceptor.cs
 
 This component uses a Collider to detect what was thrown into the cauldron and call the appropiate functions on the brew to do that it uses the `Take(Ingredient ingredient)` functiion.
+
+## Customer System
+
+The customer System consists of 2 MonoBehaviours that spawn customers and start their behaviour in the game.
+
+### Customer.cs
+
+This Component is attached to Gameobjects that represent Customers, it handles the logic of the customer using a statemachine that runs through the states:
+ - Waiting
+ - WalkingToOrder
+ - Ordered
+ - GoAway
+
+A spawned customer will walk to its assigned order position, order, and wait until it receives the potion or if it's angry timer ran out. This class also handles which animation to play on the customer.
+
+### CustomerSpawner.cs
+
+The CustomerSpawner is responsible for spawning customers in an interval and setting them to walk to order points.
+
+## General Game Objects
+
+A collection of objects that are necessary for the game to function.
+
+### Floor.cs
+
+This script is responsible for playing sounds when objects hit the ground.
+
+### Door.cs
+
+This attaches to all doors we have in game. It is used to transport the player between the positions the game takes place in.
+
+### GarbageCan.cs
+
+This component is responsible for throwing away potions that were wrongly created.
