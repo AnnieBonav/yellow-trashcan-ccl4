@@ -7,31 +7,67 @@ using UnityEngine.Experimental.XR.Interaction;
 public class Refiller : MonoBehaviour
 {
     [SerializeField] private InteractionsHandler interactionsHandler;
+    [SerializeField] private IngredientType ingredientType;
     [SerializeField] private IngredientContainer ingredientContainer;
-    [SerializeField] private bool refillsContainer;
 
+    [Header("refill if the container has children (herb and mushropom")]
+    [SerializeField] private bool hasChildren;
+    [SerializeField] private GameObject childrenIngredients;
+
+    private void Start()
+    {
+        AkSoundEngine.SetSwitch("Ingredient", ingredientType.ToString(), gameObject);
+        print("Ingredient: " + ingredientType.ToString());
+    }
     public void RefillContainer()
     {
-        if (refillsContainer)
+        bool couldRefill;
+        if(ingredientType == IngredientType.Bark)
         {
-            ingredientContainer.Refill(); // Basically if it refills bark
+            couldRefill = ingredientContainer.Refill();
         }
         else
         {
-            ingredientContainer.RefillSingle();
+            couldRefill = ingredientContainer.RefillSingle(); // If could refill is false, then another sounds should be played
         }
-        
+        InteractedRefiller();
+        if (couldRefill)
+        {
+            AkSoundEngine.PostEvent("Play_Refill", gameObject);
+            if (!hasChildren) return;
+            foreach(Transform child in childrenIngredients.GetComponentInChildren<Transform>())
+            {
+                if (child.gameObject.activeInHierarchy)
+                {
+                    print("Child " + child.name + " Was active and will now be deactivated");
+                    child.gameObject.SetActive(false);
+                    return;
+                }
+            }
+            
+        }
+        else
+        {
+            AkSoundEngine.PostEvent("Play_NoMoreRefill", gameObject);
+        }
     }
 
-    public void InteractedRefiller(bool isLiquid)
+    private void InteractedRefiller()
     {
-        if (isLiquid)
+        switch (ingredientType)
         {
-            interactionsHandler.RaiseInteraction(InteractionEvents.RefilledLiquid);
-        }
-        else
-        {
-            interactionsHandler.RaiseInteraction(InteractionEvents.RefilledSolid);
+            case IngredientType.Bark:
+                interactionsHandler.RaiseInteraction(InteractionEvents.RefilledBark);
+                break;
+            case IngredientType.Mushroom:
+                interactionsHandler.RaiseInteraction(InteractionEvents.RefilledMushroom);
+                break;
+            case IngredientType.Liquid:
+                interactionsHandler.RaiseInteraction(InteractionEvents.RefilledLiquid);
+                break;
+            case IngredientType.Herb:
+                interactionsHandler.RaiseInteraction(InteractionEvents.RefilledHerb);
+                break;
         }
     }
 }

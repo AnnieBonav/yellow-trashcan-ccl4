@@ -1,26 +1,32 @@
 Event	ID	Name			Wwise Object Path	Notes
-	423467974	Play_RefillLiquid			\Default Work Unit\Play_RefillLiquid	
 	548088167	Play_BackgroundMusic			\Default Work Unit\Play_BackgroundMusic	
 	644243960	Play_PickIngredient			\Default Work Unit\Play_PickIngredient	
 	1602358412	Play_Footstep			\Default Work Unit\Play_Footstep	
+	1663402548	Play_PutIngredient			\Default Work Unit\Play_PutIngredient	
 	1832643493	Play_HappySound			\Default Work Unit\Play_HappySound	
 	1962155989	Stop_Bubbles			\Default Work Unit\Stop_Bubbles	
 	2007351433	Play_Drop			\Default Work Unit\Play_Drop	
 	2547633870	Play_Door			\Default Work Unit\Play_Door	
 	2906353518	Play_BookoDialogue			\Default Work Unit\Play_BookoDialogue	
-	2990278359	Play_Pop			\Default Work Unit\Play_Pop	
 	3381697299	Play_Bubbles			\Default Work Unit\Play_Bubbles	
 	3825176718	Play_AngrySound			\Default Work Unit\Play_AngrySound	
 	3886503793	Play_CorrectPotion			\Default Work Unit\Play_CorrectPotion	
+	4075562094	Play_Refill			\Default Work Unit\Play_Refill	
 	4198774158	Play_IncorrectPotion			\Default Work Unit\Play_IncorrectPotion	
+	4286878652	Play_NoMoreRefill			\Default Work Unit\Play_NoMoreRefill	
 
 Switch Group	ID	Name			Wwise Object Path	Notes
 	436743010	Character			\Default Work Unit\Character	
+	1746288848	Ingredient			\Default Work Unit\Ingredient	
 	3865314626	Material			\Default Work Unit\Material	
 
 Switch	ID	Name	Switch Group			Notes
 	2469822380	Fairy	Character			
 	3121013053	Soldier	Character			
+	1274655755	Bark	Ingredient			
+	1941802987	Mushroom	Ingredient			
+	3196610212	Herb	Ingredient			
+	4087983317	Liquid	Ingredient			
 	744619566	Solid	Material			
 	2449969375	Glass	Material			
 	2473969246	Metal	Material			
@@ -58,17 +64,24 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	90013358	SFX_HoofstepsWood4	C:\Projects\YellowTrashcan\yellow-trashcan-ccl4\src\src_WwiseProject\.cache\Android\SFX\SFX_HoofstepsWood4_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Characters\Customers\Footsteps\FootstepsFairy\SFX_HoofstepsWood4		176464
 	122093724	SFX_FairyAprove1	C:\Projects\YellowTrashcan\yellow-trashcan-ccl4\src\src_WwiseProject\.cache\Android\SFX\SFX_FairyAprove1_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Characters\Customers\HappySound\FairyHappy\SFX_FairyAprove1		176464
 	128584436	022	C:\Projects\YellowTrashcan\yellow-trashcan-ccl4\src\src_WwiseProject\.cache\Android\SFX\022_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Characters\Booko\BookoDialogue\022		1038400
+	140767616	SFX_AddIngredient2	C:\Projects\YellowTrashcan\yellow-trashcan-ccl4\src\src_WwiseProject\.cache\Android\SFX\SFX_AddIngredient2_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Props\Ingredients\PutIngredient\SFX_AddIngredient2		176464
+	153117831	SFX_ShortSoldierWalk2	C:\Projects\YellowTrashcan\yellow-trashcan-ccl4\src\src_WwiseProject\.cache\Android\SFX\SFX_ShortSoldierWalk2_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Characters\Customers\Footsteps\FootstepsSoldier\SFX_ShortSoldierWalk2		176464
 	159324121	023	C:\Projects\YellowTrashcan\yellow-trashcan-ccl4\src\src_WwiseProject\.cache\Android\SFX\023_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Characters\Booko\BookoDialogue\023		921664
 	160237374	SFX_DropMetal2	C:\Projects\YellowTrashcan\yellow-trashcan-ccl4\src\src_WwiseProject\.cache\Android\SFX\SFX_DropMetal2_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Props\Drop\DropMetal\SFX_DropMetal2		176464
 	160390231	025	C:\Projects\YellowTrashcan\yellow-trashcan-ccl4\src\src_WwiseProject\.cache\Android\SFX\025_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Characters\Booko\BookoDialogue\025		1159232
+	183635799	SFX_NatureSounds	C:\Projects\YellowTrashcan\yellow-trashcan-ccl4\src\src_WwiseProject\.cache\Android\SFX\SFX_NatureSounds_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambient\BackgroundMusic\BG_Garden\NatureSounds\SFX_NatureSounds		5468464
 	193554736	015	C:\Projects\YellowTrashcan\yellow-trashcan-ccl4\src\src_WwiseProject\.cache\Android\SFX\015_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Characters\Booko\BookoDialogue\015		845888
+	215722493	SFX_Fail1	C:\Projects\YellowTrashcan\yellow-trashcan-ccl4\src\src_WwiseProject\.cache\Android\SFX\SFX_Fail1_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Props\Potions\IncorrectPotion\SFX_Fail1		352864
 	217362964	027	C:\Projects\YellowTrashcan\yellow-trashcan-ccl4\src\src_WwiseProject\.cache\Android\SFX\027_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Characters\Booko\BookoDialogue\027		333888
-	228669474	SFX_BubblePop_HigherPitch	C:\Projects\YellowTrashcan\yellow-trashcan-ccl4\src\src_WwiseProject\.cache\Android\SFX\SFX_BubblePop_HigherPitch_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Pop\SFX_BubblePop_HigherPitch		107936
+	228669474	SFX_BubblePop_HigherPitch	C:\Projects\YellowTrashcan\yellow-trashcan-ccl4\src\src_WwiseProject\.cache\Android\SFX\SFX_BubblePop_HigherPitch_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Props\Refill\RefillMushroom\SFX_BubblePop_HigherPitch		107936
+	261700132	SFX_HerbRefill2	C:\Projects\YellowTrashcan\yellow-trashcan-ccl4\src\src_WwiseProject\.cache\Android\SFX\SFX_HerbRefill2_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Props\Refill\RefillHerb\SFX_HerbRefill2		176464
 	266773743	024	C:\Projects\YellowTrashcan\yellow-trashcan-ccl4\src\src_WwiseProject\.cache\Android\SFX\024_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Characters\Booko\BookoDialogue\024		1628224
 	290834582	SFX_DropGlass2	C:\Projects\YellowTrashcan\yellow-trashcan-ccl4\src\src_WwiseProject\.cache\Android\SFX\SFX_DropGlass2_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Props\Drop\DropGlass\SFX_DropGlass2		176464
 	301604732	SFX_DropMetal1	C:\Projects\YellowTrashcan\yellow-trashcan-ccl4\src\src_WwiseProject\.cache\Android\SFX\SFX_DropMetal1_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Props\Drop\DropMetal\SFX_DropMetal1		176464
 	321232555	SFX_Bubbles_VerySlow	C:\Projects\YellowTrashcan\yellow-trashcan-ccl4\src\src_WwiseProject\.cache\Android\SFX\SFX_Bubbles_VerySlow_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambient\Bubbles\SFX_Bubbles_VerySlow		4615356
 	365961136	014	C:\Projects\YellowTrashcan\yellow-trashcan-ccl4\src\src_WwiseProject\.cache\Android\SFX\014_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Characters\Booko\BookoDialogue\014		1017920
+	370086604	SFX_SoldierWalk1	C:\Projects\YellowTrashcan\yellow-trashcan-ccl4\src\src_WwiseProject\.cache\Android\SFX\SFX_SoldierWalk1_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Characters\Customers\Footsteps\FootstepsSoldier\SFX_SoldierWalk1		176464
+	373353163	SFX_ShortSoldierWalk1	C:\Projects\YellowTrashcan\yellow-trashcan-ccl4\src\src_WwiseProject\.cache\Android\SFX\SFX_ShortSoldierWalk1_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Characters\Customers\Footsteps\FootstepsSoldier\SFX_ShortSoldierWalk1		176464
 	419168636	011	C:\Projects\YellowTrashcan\yellow-trashcan-ccl4\src\src_WwiseProject\.cache\Android\SFX\011_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Characters\Booko\BookoDialogue\011		1531968
 	421605434	SFX_HoofstepsWood1	C:\Projects\YellowTrashcan\yellow-trashcan-ccl4\src\src_WwiseProject\.cache\Android\SFX\SFX_HoofstepsWood1_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Characters\Customers\Footsteps\FootstepsFairy\SFX_HoofstepsWood1		176464
 	471895313	026	C:\Projects\YellowTrashcan\yellow-trashcan-ccl4\src\src_WwiseProject\.cache\Android\SFX\026_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Characters\Booko\BookoDialogue\026		1079360
@@ -78,25 +91,34 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	495003881	019	C:\Projects\YellowTrashcan\yellow-trashcan-ccl4\src\src_WwiseProject\.cache\Android\SFX\019_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Characters\Booko\BookoDialogue\019		1376320
 	498860804	005	C:\Projects\YellowTrashcan\yellow-trashcan-ccl4\src\src_WwiseProject\.cache\Android\SFX\005_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Characters\Booko\BookoDialogue\005		1505344
 	499140612	SFX_Bubbles_VeryFast	C:\Projects\YellowTrashcan\yellow-trashcan-ccl4\src\src_WwiseProject\.cache\Android\SFX\SFX_Bubbles_VeryFast_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambient\Bubbles\SFX_Bubbles_VeryFast		4615356
+	510954927	SFX_DropSolid1	C:\Projects\YellowTrashcan\yellow-trashcan-ccl4\src\src_WwiseProject\.cache\Android\SFX\SFX_DropSolid1_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Props\Drop\DropSolid\SFX_DropSolid1		176464
 	548293618	SFX_FairyAngry1	C:\Projects\YellowTrashcan\yellow-trashcan-ccl4\src\src_WwiseProject\.cache\Android\SFX\SFX_FairyAngry1_E002D02F.wem		\Actor-Mixer Hierarchy\Default Work Unit\Characters\Customers\AngrySound\FairyAngry\SFX_FairyAngry1		113240
 	569966857	SFX_Bubbles_Slow	C:\Projects\YellowTrashcan\yellow-trashcan-ccl4\src\src_WwiseProject\.cache\Android\SFX\SFX_Bubbles_Slow_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambient\Bubbles\SFX_Bubbles_Slow		4615356
 	576124631	012	C:\Projects\YellowTrashcan\yellow-trashcan-ccl4\src\src_WwiseProject\.cache\Android\SFX\012_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Characters\Booko\BookoDialogue\012		1712192
 	579781312	018	C:\Projects\YellowTrashcan\yellow-trashcan-ccl4\src\src_WwiseProject\.cache\Android\SFX\018_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Characters\Booko\BookoDialogue\018		2041920
+	632397808	SFX_CorrectPotion1	C:\Projects\YellowTrashcan\yellow-trashcan-ccl4\src\src_WwiseProject\.cache\Android\SFX\SFX_CorrectPotion1_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Props\Potions\CorrectPotion\SFX_CorrectPotion1		352864
+	657366227	SFX_HerbRefill1	C:\Projects\YellowTrashcan\yellow-trashcan-ccl4\src\src_WwiseProject\.cache\Android\SFX\SFX_HerbRefill1_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Props\Refill\RefillHerb\SFX_HerbRefill1		176464
+	664101432	SFX_AddIngredient1	C:\Projects\YellowTrashcan\yellow-trashcan-ccl4\src\src_WwiseProject\.cache\Android\SFX\SFX_AddIngredient1_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Props\Ingredients\PutIngredient\SFX_AddIngredient1		176464
 	677113138	007	C:\Projects\YellowTrashcan\yellow-trashcan-ccl4\src\src_WwiseProject\.cache\Android\SFX\007_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Characters\Booko\BookoDialogue\007		1245248
 	679511128	002	C:\Projects\YellowTrashcan\yellow-trashcan-ccl4\src\src_WwiseProject\.cache\Android\SFX\002_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Characters\Booko\BookoDialogue\002		1278016
 	688478243	001	C:\Projects\YellowTrashcan\yellow-trashcan-ccl4\src\src_WwiseProject\.cache\Android\SFX\001_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Characters\Booko\BookoDialogue\001		364608
+	691921600	SFX_NoIngredient1	C:\Projects\YellowTrashcan\yellow-trashcan-ccl4\src\src_WwiseProject\.cache\Android\SFX\SFX_NoIngredient1_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Props\Ingredients\NoMoreRefill\NoMoreRefillSound\SFX_NoIngredient1		176464
 	699966756	013	C:\Projects\YellowTrashcan\yellow-trashcan-ccl4\src\src_WwiseProject\.cache\Android\SFX\013_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Characters\Booko\BookoDialogue\013		729152
 	745924077	SFX_DropGlass1	C:\Projects\YellowTrashcan\yellow-trashcan-ccl4\src\src_WwiseProject\.cache\Android\SFX\SFX_DropGlass1_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Props\Drop\DropGlass\SFX_DropGlass1		176464
 	767203002	SFX_DropGlass4	C:\Projects\YellowTrashcan\yellow-trashcan-ccl4\src\src_WwiseProject\.cache\Android\SFX\SFX_DropGlass4_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Props\Drop\DropGlass\SFX_DropGlass4		176464
 	769955546	SFX_Bubbles_Fast	C:\Projects\YellowTrashcan\yellow-trashcan-ccl4\src\src_WwiseProject\.cache\Android\SFX\SFX_Bubbles_Fast_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambient\Bubbles\SFX_Bubbles_Fast		4615356
 	782290832	SFX_DropGlass3	C:\Projects\YellowTrashcan\yellow-trashcan-ccl4\src\src_WwiseProject\.cache\Android\SFX\SFX_DropGlass3_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Props\Drop\DropGlass\SFX_DropGlass3		176464
+	794764726	SFX_HerbRefill3	C:\Projects\YellowTrashcan\yellow-trashcan-ccl4\src\src_WwiseProject\.cache\Android\SFX\SFX_HerbRefill3_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Props\Refill\RefillHerb\SFX_HerbRefill3		176464
 	842489114	SFX_SoldierAngry1	C:\Projects\YellowTrashcan\yellow-trashcan-ccl4\src\src_WwiseProject\.cache\Android\SFX\SFX_SoldierAngry1_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Characters\Customers\AngrySound\SoldierAngry\SFX_SoldierAngry1		176464
-	891765297	SFX_Absorb	C:\Projects\YellowTrashcan\yellow-trashcan-ccl4\src\src_WwiseProject\.cache\Android\SFX\SFX_Absorb_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Props\PickIngredient\SFX_Absorb		176464
+	881199041	SFX_SoldierWalk2	C:\Projects\YellowTrashcan\yellow-trashcan-ccl4\src\src_WwiseProject\.cache\Android\SFX\SFX_SoldierWalk2_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Characters\Customers\Footsteps\FootstepsSoldier\SFX_SoldierWalk2		176464
+	884342128	SFX_SoldierWalk3	C:\Projects\YellowTrashcan\yellow-trashcan-ccl4\src\src_WwiseProject\.cache\Android\SFX\SFX_SoldierWalk3_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Characters\Customers\Footsteps\FootstepsSoldier\SFX_SoldierWalk3		176464
+	891765297	SFX_Absorb	C:\Projects\YellowTrashcan\yellow-trashcan-ccl4\src\src_WwiseProject\.cache\Android\SFX\SFX_Absorb_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Props\Ingredients\PickIngredient\SFX_Absorb		176464
 	917031630	017	C:\Projects\YellowTrashcan\yellow-trashcan-ccl4\src\src_WwiseProject\.cache\Android\SFX\017_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Characters\Booko\BookoDialogue\017		1499200
-	925952195	SFX_BubblePop_NormalPitch	C:\Projects\YellowTrashcan\yellow-trashcan-ccl4\src\src_WwiseProject\.cache\Android\SFX\SFX_BubblePop_NormalPitch_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Pop\SFX_BubblePop_NormalPitch		107936
+	925952195	SFX_BubblePop_NormalPitch	C:\Projects\YellowTrashcan\yellow-trashcan-ccl4\src\src_WwiseProject\.cache\Android\SFX\SFX_BubblePop_NormalPitch_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Props\Refill\RefillMushroom\SFX_BubblePop_NormalPitch		107936
 	939993744	003	C:\Projects\YellowTrashcan\yellow-trashcan-ccl4\src\src_WwiseProject\.cache\Android\SFX\003_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Characters\Booko\BookoDialogue\003		1912896
 	944607167	004	C:\Projects\YellowTrashcan\yellow-trashcan-ccl4\src\src_WwiseProject\.cache\Android\SFX\004_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Characters\Booko\BookoDialogue\004		1030208
-	962815575	SFX_LiquidRefilling1	C:\Projects\YellowTrashcan\yellow-trashcan-ccl4\src\src_WwiseProject\.cache\Android\SFX\SFX_LiquidRefilling1_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Props\Refillers\RefillLiquid\SFX_LiquidRefilling1		176464
+	951042747	SFX_WoodScratch1	C:\Projects\YellowTrashcan\yellow-trashcan-ccl4\src\src_WwiseProject\.cache\Android\SFX\SFX_WoodScratch1_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Props\Refill\RefillBark\SFX_WoodScratch1		176464
+	962815575	SFX_LiquidRefilling1	C:\Projects\YellowTrashcan\yellow-trashcan-ccl4\src\src_WwiseProject\.cache\Android\SFX\SFX_LiquidRefilling1_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Props\Refill\RefillLiquid\SFX_LiquidRefilling1		176464
 	977286599	SFX_SoldierAprove2	C:\Projects\YellowTrashcan\yellow-trashcan-ccl4\src\src_WwiseProject\.cache\Android\SFX\SFX_SoldierAprove2_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Characters\Customers\HappySound\SoldierHappy\SFX_SoldierAprove2		176464
 	1018333912	008	C:\Projects\YellowTrashcan\yellow-trashcan-ccl4\src\src_WwiseProject\.cache\Android\SFX\008_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Characters\Booko\BookoDialogue\008		1089600
 	1033362488	016	C:\Projects\YellowTrashcan\yellow-trashcan-ccl4\src\src_WwiseProject\.cache\Android\SFX\016_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Characters\Booko\BookoDialogue\016		1196096

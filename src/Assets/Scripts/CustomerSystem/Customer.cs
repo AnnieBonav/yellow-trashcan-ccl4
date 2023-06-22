@@ -1,8 +1,13 @@
 using System;
 using System.Collections;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Android;
+using UnityEngine.UI;
+
+public enum CustomerType { Fairy, Soldier }
 
 [RequireComponent(typeof(NavMeshAgent))]
 public class Customer : MonoBehaviour
@@ -17,12 +22,15 @@ public class Customer : MonoBehaviour
 
     [SerializeField] private InteractionsHandler interactionsHandler;
     [SerializeField] private float distanceEpsilon = 0.1f;
-    [SerializeField] private TextMeshProUGUI orderText;
     [SerializeField] private float timeUntilAngry = 15f;
     [SerializeField] private Animator animator;
+    [SerializeField] private Image potionImage;
+
+    [SerializeField] private GameObject requestUI;
 
     [SerializeField] private float timeAfterReceived = 3f;
-    
+
+    [SerializeField] private CustomerType customerType;
     
     private NavMeshAgent _navMeshAgent;
     private CustomerState _state = CustomerState.Waiting;
@@ -50,7 +58,6 @@ public class Customer : MonoBehaviour
     {
         OrderPoint.CustomerArrived += HandleCustomerArrive;
     }
-
 
     private void OnDisable()
     {
@@ -87,7 +94,10 @@ public class Customer : MonoBehaviour
 
     void Start()
     {
+        requestUI.SetActive(false);
         _requestedPotion = PotionKnowledgebase.Instance.RandomRecipe();
+        potionImage.sprite = _requestedPotion.PotionImage;
+        AkSoundEngine.SetSwitch("Character", customerType.ToString(), gameObject);
     }
 
     private bool isRotating = false;
@@ -142,8 +152,7 @@ public class Customer : MonoBehaviour
 
     private void Order() 
     {
-        orderText.text = $"Hello I want a {_requestedPotion.name}!";
-        orderText.gameObject.SetActive(true);
+        requestUI.SetActive(true);
         _state = CustomerState.Ordered;
         _previousForward = transform.forward;
         ChangeState();
@@ -164,7 +173,7 @@ public class Customer : MonoBehaviour
     public IEnumerator AngryInSeconds(float seconds)
     {
         yield return new WaitForSeconds(seconds);
-        orderText.text = "I am angry, you did not give me the potion in time!";
+        // TODO: Make angry sound
         yield return new WaitForSeconds(3);
         MoveToDespawn();
     }
@@ -185,13 +194,15 @@ public class Customer : MonoBehaviour
         if (vial.Type.name == _requestedPotion.name)
         {
             if(hasLimit) StopCoroutine(_getAngryCoroutine);
-            orderText.text = "Thank you, exactly what I wanted";
+            // TODO ADD HAPPY SOUND
+            AkSoundEngine.PostEvent("Play_CorrectPotion", gameObject);
             interactionsHandler.RaiseInteraction(InteractionEvents.DeliverCorrectPotion);
             StartCoroutine(MoveToDespawnIn(timeAfterReceived));
         }
         else
         {
-            orderText.text = "That is not what I ordered! Try Again?";
+            // TODO ADD SAD SOUND
+            AkSoundEngine.PostEvent("Play_IncorrectPotion", gameObject);
             interactionsHandler.RaiseInteraction(InteractionEvents.DeliverIncorrectPotion);
             if (!hasLimit)
             {
@@ -199,6 +210,8 @@ public class Customer : MonoBehaviour
                 return;
             }
         }
+
+        requestUI.SetActive(false);
     }
 
     private IEnumerator MoveToDespawnIn(float seconds)

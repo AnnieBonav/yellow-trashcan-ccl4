@@ -63,8 +63,12 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2839164663644878909, guid: 1157d7efe1da0ab4c9e0a4d31fd5fc44, type: 3}
+      propertyPath: m_ThrowVelocityScale
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2839164663644878909, guid: 1157d7efe1da0ab4c9e0a4d31fd5fc44, type: 3}
       propertyPath: m_MatchAttachPosition
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2839164663644878909, guid: 1157d7efe1da0ab4c9e0a4d31fd5fc44, type: 3}
       propertyPath: m_RetainTransformParent

@@ -5,6 +5,7 @@ public enum SoundMaterialType { Metal, Glass, Solid }
 public class SoundEmitter : MonoBehaviour
 {
     [SerializeField] private string soundEventName;
+
     [Header("Complete if it needs to sound on drop")]
     [SerializeField] private bool soundsOnDrop;
     [SerializeField] private SoundMaterialType soundMaterialType;

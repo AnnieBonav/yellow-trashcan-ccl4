@@ -9,11 +9,12 @@ public class IngredientContainer : MonoBehaviour
 {
     [SerializeField] private List<GameObject> spawnPositions;
     [SerializeField] private int maximumCapacity = 3;
-    [SerializeField] private int currentCapacity;
+    [SerializeField] private int currentAmount;
     [SerializeField] private TextMeshProUGUI fillDisplay;
 
     [SerializeField] private bool needsEmpty;
     [SerializeField] private GameObject emptyIngredient;
+    [SerializeField] private bool isDebugging;
 
     private IngredientSpawner _spawner;
 
@@ -26,17 +27,33 @@ public class IngredientContainer : MonoBehaviour
             maximumCapacity = spawnPositions.Count;
         }
 
+        if (needsEmpty)
+        {
+            Refill();
+            return;
+        }
+
         for(int i = 0; i < spawnPositions.Count; i++)
         {
             RefillSlot();
         }
-
-        Refill();
     }
 
     private void Start()
     {
         if(needsEmpty) ResetEmptyIngredient(); // Only bark
+    }
+
+    public bool Refill()
+    {
+        if(currentAmount == maximumCapacity)
+        {
+            if(isDebugging) print("There was already max in bark");
+            return false;
+        }
+        currentAmount = maximumCapacity;
+        UpdateFillDisplayText();
+        return true;
     }
 
     private void RefillSlot()
@@ -48,43 +65,40 @@ public class IngredientContainer : MonoBehaviour
             {
                 noobIngredient.gameObject.transform.SetParent(spawnPosition.transform, false);
                 noobIngredient.transform.position = spawnPosition.transform.position;
-
+                currentAmount++;
+                UpdateFillDisplayText();
                 return;
             }
-        }
+        }       
     }
 
-    public void RefillSingle()
+    public bool RefillSingle()
     {
-        print("Current capacity: " + currentCapacity + " Max capacity: " + maximumCapacity);
-        if(currentCapacity != maximumCapacity)
+        if (isDebugging) print("Current amount: " + currentAmount + " Max capacity: " + maximumCapacity);
+        if(currentAmount < maximumCapacity)
         {
             RefillSlot();
-            currentCapacity--;
+            return true;
         }
         else
         {
-            print("You have refilled max!");
+            if (isDebugging) print("You have refilled max!");
+            return false;
         }
-    }
-    public void Refill()
-    {
-        currentCapacity = maximumCapacity;
-        UpdateFillDisplayText();
     }
 
     public Ingredient TakeIngredient()
     {
-        if (currentCapacity < 0)
+        if (currentAmount <= 0)
         {
-            print("There are no more ingredients");
+            if (isDebugging) print("There are no more ingredients");
             return null;
         }
-        currentCapacity--;
+        currentAmount--;
         UpdateFillDisplayText();
 
         Ingredient noobIngredient = _spawner.SpawnIngredient();
-        print("Returning new ingredient");
+        if (isDebugging) print("Returning new ingredient");
         return noobIngredient;
     }
 
@@ -95,24 +109,16 @@ public class IngredientContainer : MonoBehaviour
 
     private void UpdateFillDisplayText()
     {
-        if (fillDisplay is not null) fillDisplay.text = $"{currentCapacity}/{maximumCapacity}";
+        if (fillDisplay is not null) fillDisplay.text = $"{currentAmount}/{maximumCapacity}";
     }
-
-    /* Mess with parents
-        GameObject parent = collider.transform.parent.gameObject;
-        GameObject grandParent = parent.transform.parent.gameObject;
-        GameObject greatGrandParent = grandParent.transform.parent.gameObject;
-        GameObject greatGreatGrandParent = greatGrandParent.transform.parent.gameObject;
-        GameObject superParent = collider.transform.parent.parent.parent.parent.gameObject; // This will be the parent container
-
-    */
 
     private void OnTriggerExit(Collider collider)
     {
         if (collider.CompareTag("Ingredient")) // If they have the same parent, then the ingredient should be unparented because it is taken away
         {
-            currentCapacity--;
-            print("An ingredient left. Current capacity: " + currentCapacity);
+            currentAmount--;
+            if(currentAmount <= 0) currentAmount = 0; // WORKAROUND Kinda Fixes bug of some other ingredients leave the box and mess up the counter so there is endless refill
+            if (isDebugging) print("An ingredient left  " + collider + " Current amount: " + currentAmount);
         }
     }
 

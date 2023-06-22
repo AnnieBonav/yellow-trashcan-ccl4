@@ -31,6 +31,21 @@ public class BrewProperties : MonoBehaviour
     private Material _brewMaterial;
     private VisualEffect _bubblesVFX;
 
+    private void ResetProperties()
+    {
+        _colourTimer = 0;
+        _bubblingTimer = 0;
+        _swirlTimer = 0;
+        _currentColour = baseBrewColour.color;
+        _lastColour = _currentColour;
+
+        _currentBubbling = 0;
+        _lastBubbling = _currentBubbling;
+
+        _currentSwirl = 0;
+        _lastSwirl = _currentSwirl;
+    }
+
     void Start()
     {
         _currentColour = baseBrewColour.color;
@@ -177,6 +192,6 @@ public class BrewProperties : MonoBehaviour
 
     public void ResetColor()
     {
-        _currentColour = baseBrewColour.color;
+        ResetProperties();
     }
 }

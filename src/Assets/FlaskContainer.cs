@@ -32,7 +32,6 @@ public class FlaskContainer : MonoBehaviour
 
     private void HandleRaisedInteractions(InteractionEvents raisedEvent)
     {
-        print("Handling brew interaction");
         if(raisedEvent == InteractionEvents.ThrowPotionGarbage || raisedEvent == InteractionEvents.DeliverCorrectPotion || raisedEvent == InteractionEvents.DeliverIncorrectPotion)
         {
             print("Threw potion garbage or delivered in/correct potion");

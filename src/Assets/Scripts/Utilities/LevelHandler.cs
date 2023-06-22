@@ -46,7 +46,7 @@ public class LevelHandler : MonoBehaviour
         if(winningCondition == WinningCondition.TimeLimit && levelDurationSeconds <= 10)
         {
             levelDurationSeconds = 10;
-            print("The level will not last less than 10 seconds.");
+            if (isDebugging) print("The level will not last less than 10 seconds.");
         }
 
         levelTimer = new WaitForSeconds(levelDurationSeconds);
@@ -69,6 +69,7 @@ public class LevelHandler : MonoBehaviour
     {
         pauseMenu.SetActive(false);
         charactersController.PositionCharacters(currentRoom);
+        AkSoundEngine.SetState("CurrentRoom", currentRoom.ToString());
     }
 
     private void HandleSpawnedCustomer()
@@ -78,7 +79,7 @@ public class LevelHandler : MonoBehaviour
         if(isDebugging) print("New amount of spawned customers: " + currentAmountOfCustomers);
         if (winningCondition != WinningCondition.CustomersLimit) return;
 
-        print("The type of winning is amount of customers spawned, so it will be checked.");
+        if (isDebugging) print("The type of winning is amount of customers spawned, so it will be checked.");
         if (isDebugging) print("Spawned customers: " + currentAmountOfCustomers + "  Number to reach: " + customersTargetAmount);
         if (currentAmountOfCustomers >= customersTargetAmount)
         {
@@ -96,6 +97,7 @@ public class LevelHandler : MonoBehaviour
 
     public void ChangeRoom(InteractionEvents interactionEvent)
     {
+        if (!(interactionEvent == InteractionEvents.TravelledEntrance || interactionEvent == InteractionEvents.TravelledBrewing || interactionEvent == InteractionEvents.TravelledGarden)) return;
         switch (interactionEvent)
         {
             case InteractionEvents.TravelledEntrance:
@@ -169,7 +171,7 @@ public class LevelHandler : MonoBehaviour
     private IEnumerator LevelTimer()
     {
         yield return levelTimer;
-        print("level timer has ended.");
+        if (isDebugging) print("level timer has ended.");
         interactionsHandler.RaiseInteraction(InteractionEvents.LevelEnded);
     }
 }

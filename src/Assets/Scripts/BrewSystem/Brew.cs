@@ -57,6 +57,7 @@ public class Brew : MonoBehaviour
     private void Start()
     {
         importantEffect.Stop();
+        AkSoundEngine.PostEvent("Play_Bubbles", gameObject);
     }
 
     private RecipeData CurrentBrew()
@@ -113,6 +114,8 @@ public class Brew : MonoBehaviour
             GameObject noobPotion = Instantiate(currentBrew.PotionPrefab);
             noobPotion.transform.position = _potionSpawnOrigin.transform.position;
             interactionsHandler.RaiseInteraction(InteractionEvents.CreateCorrectPotion);
+
+            AkSoundEngine.PostEvent("Play_CorrectPotion", gameObject);
         }
         else
         {
@@ -120,6 +123,8 @@ public class Brew : MonoBehaviour
             GameObject noobPotion = Instantiate(trashPotion);
             noobPotion.transform.position = _potionSpawnOrigin.transform.position;
             interactionsHandler.RaiseInteraction(InteractionEvents.CreateIncorrectPotion);
+
+            AkSoundEngine.PostEvent("Play_IncorrectPotion", gameObject);
         }
         interactionsHandler.RaiseInteraction(InteractionEvents.CreatePotion);
         ResetCurrentIngredients();
