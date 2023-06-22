@@ -25,7 +25,6 @@ public class Refiller : MonoBehaviour
 
     public void InteractedRefiller(bool isLiquid)
     {
-        print("Refilled liquid");
         if (isLiquid)
         {
             interactionsHandler.RaiseInteraction(InteractionEvents.RefilledLiquid);
