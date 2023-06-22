@@ -2527,7 +2527,7 @@
 												<RTPC Name="" ID="{55632877-D690-435E-AFA1-03CF4B765195}" ShortID="247870229">
 													<ReferenceList>
 														<Reference Name="ControlInput">
-															<ObjectRef Name="VolumeSFX" ID="{DD73AF90-7824-4C01-9A73-EC4A9DB262E0}" WorkUnitID="{B7525D08-4589-4CAC-8BCC-B5B97CD4A921}"/>
+															<ObjectRef Name="VolumeTutorial" ID="{A83FEBE7-3110-4B41-89CD-1D310ABDA7A5}" WorkUnitID="{B7525D08-4589-4CAC-8BCC-B5B97CD4A921}"/>
 														</Reference>
 													</ReferenceList>
 													<Curve Name="" ID="{B8FB7810-A180-4385-AC71-1F53CA970808}">
