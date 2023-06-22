@@ -17,6 +17,7 @@ public class Refiller : MonoBehaviour
     private void Start()
     {
         AkSoundEngine.SetSwitch("Ingredient", ingredientType.ToString(), gameObject);
+        print("Ingredient: " + ingredientType.ToString());
     }
     public void RefillContainer()
     {

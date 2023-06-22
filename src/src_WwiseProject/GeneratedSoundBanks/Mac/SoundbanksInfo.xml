@@ -11,7 +11,7 @@
 	<StreamedFiles/>
 	<MediaFilesNotInAnyBank/>
 	<SoundBanks>
-		<SoundBank Id="782826392" Language="SFX" Hash="998117124">
+		<SoundBank Id="782826392" Language="SFX" Hash="3281225008">
 			<ObjectPath>\SoundBanks\Default Work Unit\Default</ObjectPath>
 			<ShortName>Default</ShortName>
 			<Path>Default.bnk</Path>
@@ -341,7 +341,37 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="4286878652" Name="Play_NoMoreRefill" ObjectPath="\Events\Default Work Unit\Play_NoMoreRefill" DurationType="OneShot" DurationMin="0." DurationMax="0."/>
+				<Event Id="4286878652" Name="Play_NoMoreRefill" ObjectPath="\Events\Default Work Unit\Play_NoMoreRefill" DurationType="OneShot" DurationMin="2." DurationMax="2.">
+					<IncludedMemoryFiles>
+						<File Id="215722493" Language="SFX">
+							<ShortName>SFX_Fail1.wav</ShortName>
+							<Path>SFX\SFX_Fail1_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+					<DefaultSwitchValue>{A978BBFD-9690-49C1-9E9D-B1BB03B5CEC1}</DefaultSwitchValue>
+					<SwitchContainers>
+						<SwitchContainer SwitchValue="{C2C4332E-26A0-45D4-8829-C1E51BF46BE6}">
+							<Media>
+								<File Id="215722493"/>
+							</Media>
+						</SwitchContainer>
+						<SwitchContainer SwitchValue="{BB5A936C-1D46-467D-9FD4-3EF6F0E73ADD}">
+							<Media>
+								<File Id="215722493"/>
+							</Media>
+						</SwitchContainer>
+						<SwitchContainer SwitchValue="{0701D7B4-648F-490C-94BB-21137D2659E5}">
+							<Media>
+								<File Id="215722493"/>
+							</Media>
+						</SwitchContainer>
+						<SwitchContainer SwitchValue="{A978BBFD-9690-49C1-9E9D-B1BB03B5CEC1}">
+							<Media>
+								<File Id="215722493"/>
+							</Media>
+						</SwitchContainer>
+					</SwitchContainers>
+				</Event>
 				<Event Id="644243960" Name="Play_PickIngredient" ObjectPath="\Events\Default Work Unit\Play_PickIngredient" MaxAttenuation="2." DurationType="OneShot" DurationMin="0.840896" DurationMax="1.122462">
 					<IncludedMemoryFiles>
 						<File Id="891765297" Language="SFX">

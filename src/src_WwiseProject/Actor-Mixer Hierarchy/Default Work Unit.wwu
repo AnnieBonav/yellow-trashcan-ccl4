@@ -1401,17 +1401,94 @@
 									</ChildrenList>
 									<ObjectLists/>
 								</RandomSequenceContainer>
-								<RandomSequenceContainer Name="NoMoreRefill" ID="{32253FAA-F59A-40C4-9E52-8CCAFEF16964}" ShortID="1028117151">
+								<SwitchContainer Name="NoMoreRefill" ID="{2DA34C89-8670-4C7C-860E-6BC26ED73980}" ShortID="815177105">
 									<ReferenceList>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{F4AF011D-EC8C-4834-8840-395EB0F23260}"/>
 										</Reference>
+										<Reference Name="DefaultSwitchOrState">
+											<ObjectRef Name="Liquid" ID="{A978BBFD-9690-49C1-9E9D-B1BB03B5CEC1}" WorkUnitID="{33AC2385-96B4-4090-91A0-52CFAEB08E0B}"/>
+										</Reference>
 										<Reference Name="OutputBus">
 											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2240F60-F21E-49E0-9C98-1F9198DDBECE}"/>
 										</Reference>
+										<Reference Name="SwitchGroupOrStateGroup">
+											<ObjectRef Name="Ingredient" ID="{C92D846F-A948-4A4F-A83A-362FA87CDB7D}" WorkUnitID="{33AC2385-96B4-4090-91A0-52CFAEB08E0B}"/>
+										</Reference>
 									</ReferenceList>
+									<ChildrenList>
+										<RandomSequenceContainer Name="NoMoreRefillSound" ID="{32253FAA-F59A-40C4-9E52-8CCAFEF16964}" ShortID="1028117151">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{F4AF011D-EC8C-4834-8840-395EB0F23260}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2240F60-F21E-49E0-9C98-1F9198DDBECE}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<Sound Name="SFX_Fail1" ID="{15FCF4D9-4814-4696-BD0F-A7798D8028C5}" ShortID="454093003">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{F4AF011D-EC8C-4834-8840-395EB0F23260}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2240F60-F21E-49E0-9C98-1F9198DDBECE}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="SFX_Fail1" ID="{AFE94962-571A-4172-BA5F-6FF37B8F68F4}">
+															<Language>SFX</Language>
+															<AudioFile>SFX_Fail1.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="215722493"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ObjectLists/>
+													<ActiveSourceList>
+														<ActiveSource Name="SFX_Fail1" ID="{AFE94962-571A-4172-BA5F-6FF37B8F68F4}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+											</ChildrenList>
+											<ObjectLists/>
+										</RandomSequenceContainer>
+									</ChildrenList>
 									<ObjectLists/>
-								</RandomSequenceContainer>
+									<GroupingInfo>
+										<GroupingBehaviorList>
+											<GroupingBehavior>
+												<ItemRef Name="NoMoreRefillSound" ID="{32253FAA-F59A-40C4-9E52-8CCAFEF16964}"/>
+											</GroupingBehavior>
+										</GroupingBehaviorList>
+										<GroupingList>
+											<Grouping>
+												<SwitchRef Name="Bark" ID="{C2C4332E-26A0-45D4-8829-C1E51BF46BE6}"/>
+												<ItemList>
+													<ItemRef Name="NoMoreRefillSound" ID="{32253FAA-F59A-40C4-9E52-8CCAFEF16964}"/>
+												</ItemList>
+											</Grouping>
+											<Grouping>
+												<SwitchRef Name="Herb" ID="{BB5A936C-1D46-467D-9FD4-3EF6F0E73ADD}"/>
+												<ItemList>
+													<ItemRef Name="NoMoreRefillSound" ID="{32253FAA-F59A-40C4-9E52-8CCAFEF16964}"/>
+												</ItemList>
+											</Grouping>
+											<Grouping>
+												<SwitchRef Name="Mushroom" ID="{0701D7B4-648F-490C-94BB-21137D2659E5}"/>
+												<ItemList>
+													<ItemRef Name="NoMoreRefillSound" ID="{32253FAA-F59A-40C4-9E52-8CCAFEF16964}"/>
+												</ItemList>
+											</Grouping>
+											<Grouping>
+												<SwitchRef Name="Liquid" ID="{A978BBFD-9690-49C1-9E9D-B1BB03B5CEC1}"/>
+												<ItemList>
+													<ItemRef Name="NoMoreRefillSound" ID="{32253FAA-F59A-40C4-9E52-8CCAFEF16964}"/>
+												</ItemList>
+											</Grouping>
+										</GroupingList>
+									</GroupingInfo>
+								</SwitchContainer>
 							</ChildrenList>
 						</Folder>
 					</ChildrenList>
