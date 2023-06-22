@@ -3431,7 +3431,7 @@ MonoBehaviour:
   _interactPauseMenu: {fileID: 6495535394599772413, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   pauseMenu: {fileID: 3446413}
   startDayButton: {fileID: 53898766}
-  startRoom: 1
+  startRoom: 0
   winningCondition: 1
   levelDurationSeconds: 200
   customersTargetAmount: 4
@@ -3594,7 +3594,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 653834596}
   m_LocalRotation: {x: 0, y: -0.728072, z: 0, w: 0.68550074}
-  m_LocalPosition: {x: 4.184, y: 0.408, z: 3.045}
+  m_LocalPosition: {x: 4.22, y: 0.408, z: 2.865}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -12256,7 +12256,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4312682396965903038, guid: c7c3fafa8fb930240bafce1106ca6faf, type: 3}
       propertyPath: dialogueToStart
-      value: 4
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4312682396965903038, guid: c7c3fafa8fb930240bafce1106ca6faf, type: 3}
       propertyPath: textBlocks.Array.data[8].text
@@ -12339,7 +12339,7 @@ PrefabInstance:
     - target: {fileID: 4312682396965903038, guid: c7c3fafa8fb930240bafce1106ca6faf, type: 3}
       propertyPath: textBlocks.Array.data[4].elementsToVFX.Array.data[3]
       value: 
-      objectReference: {fileID: 900897586}
+      objectReference: {fileID: 653834600}
     - target: {fileID: 4312682396965903038, guid: c7c3fafa8fb930240bafce1106ca6faf, type: 3}
       propertyPath: textBlocks.Array.data[5].elementsToVFX.Array.data[0]
       value: 
