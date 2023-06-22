@@ -73,10 +73,10 @@
 						</RTPCValue>
 					</RTPCValueList>
 					<CurrentStateList ShowAll="true">
-						<CurrentStateRef Name="Brewing" ID="{CAE0A252-51F7-4514-A13A-E3887266E99D}"/>
+						<CurrentStateRef Name="Entrance" ID="{334A35C3-4FCF-4D56-985A-BAB25095ADED}"/>
 					</CurrentStateList>
 					<CurrentSwitchList ShowAll="true">
-						<CurrentSwitchRef Name="Soldier" ID="{9A43A3BB-29F2-4A68-BC63-F07C5082C4A2}"/>
+						<CurrentSwitchRef Name="Fairy" ID="{E80D63B8-DA83-4824-9A9C-2E125EE9A4D3}"/>
 						<CurrentSwitchRef Name="Bark" ID="{C2C4332E-26A0-45D4-8829-C1E51BF46BE6}"/>
 						<CurrentSwitchRef Name="Metal" ID="{19C4CA12-0BB6-4A6B-B03D-423C166977D0}"/>
 					</CurrentSwitchList>
