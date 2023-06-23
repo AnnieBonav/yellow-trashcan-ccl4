@@ -19,7 +19,7 @@ public class FVXHandler : MonoBehaviour
     {
         if (hasSkinnedMesh)
         {
-            print("Handling skinned mesh");
+            // Actually does not work
             skinnedMeshRenderer.AddMaterial(highlightMaterial);
             idOfHighlight = skinnedMeshRenderer.materials.Length;
             return;

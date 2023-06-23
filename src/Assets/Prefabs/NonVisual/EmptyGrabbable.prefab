@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3077461975620922710}
   - component: {fileID: 3077461975620922709}
   - component: {fileID: 3901291888137385066}
+  - component: {fileID: 7538442337440649408}
   m_Layer: 0
   m_Name: EmptyGrabbable
   m_TagString: Container
@@ -161,7 +162,19 @@ MonoBehaviour:
         m_CallState: 2
   m_SelectEntered:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7538442337440649408}
+        m_TargetAssemblyTypeName: SoundEmitter, Assembly-CSharp
+        m_MethodName: PlaySound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_SelectExited:
     m_PersistentCalls:
       m_Calls: []
@@ -261,6 +274,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   emptyCollider: {fileID: 3077461976508911832}
   rb: {fileID: 3077461975620922710}
+--- !u!114 &7538442337440649408
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3077461975620922705}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efc5fdb72bd396044ae612c6a2a26080, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundEventName: Play_PickIngredient
+  soundsOnDrop: 0
+  soundMaterialType: 0
 --- !u!1 &3077461975751760309
 GameObject:
   m_ObjectHideFlags: 0

@@ -15,7 +15,6 @@ public class SliderController : MonoBehaviour
         switch(soundType)
         {
             case SoundType.BackgroundMusic:
-                print("New music volume: " + newValue);
                 AkSoundEngine.SetRTPCValue("VolumeMusic", newValue);
                 break;
             case SoundType.SFX:

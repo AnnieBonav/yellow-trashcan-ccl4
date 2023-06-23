@@ -26,7 +26,6 @@ public class CharactersController : MonoBehaviour
 
     public void SetToLevelPosition()
     {
-        print("Setting to level position");
         player.position = playerBrewing.position;
         uiPause.position = uiBrewing.position;
         book.position = bookBrewing.position;
@@ -39,7 +38,6 @@ public class CharactersController : MonoBehaviour
     }
     public void PositionCharacters(CurrentRoom currentRoom)
     {
-        print("Sent room to characters: " + currentRoom);
         switch (currentRoom)
         {
             case CurrentRoom.Entrance:

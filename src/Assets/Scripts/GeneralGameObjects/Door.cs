@@ -46,7 +46,6 @@ public class Door : MonoBehaviour
     {
         if(currentRoom == commingCurrentRoom)
         {
-            print("It is activating the door");
             canActivateDoor = true;
         }
     }

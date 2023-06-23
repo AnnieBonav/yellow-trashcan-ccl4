@@ -15,7 +15,6 @@ public class OrderPoint : MonoBehaviour
         // if (isOccupied) return; // Do not care what happens when it is opccupied
         if (collider.CompareTag("Customer"))
         {
-            print("A customer arrived to the order point");
             CustomerArrived?.Invoke(pointNumber);
         }
     }

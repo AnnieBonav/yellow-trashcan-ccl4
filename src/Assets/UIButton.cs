@@ -8,11 +8,6 @@ public class UIButton : MonoBehaviour
     public static event Action<bool> GoIngame; // Bool is whether to do tutorial or not
     [SerializeField] private GameScenes sceneToGo;
 
-    public void StartLevel()
-    {
-        print("Start level from menu");
-    }
-
     public void ChangeScene()
     {
         print("Asked to change Scene to" +  sceneToGo);

@@ -45,26 +45,17 @@ public class Ingredient : MonoBehaviour
         EmptyGrabbable emptyContainer = GetComponentInParent<EmptyGrabbable>();
         if(emptyContainer != null)
         {
-            print("It had an empty container");
             emptyContainer.DestroyContainer();
         }
     }
 
     public void GrabbedIngredient()
     {
-        print("Grabbed ingredient");
         interactionsHandler.RaiseInteraction(InteractionEvents.GrabIngredient);
-    }
-
-    public void ReleasedIngredient()
-    {
-        print("Released ingredient");
-        // Does not get called
     }
 
     public void ResetFreeze()
     {
-        print("Reset rb");
         rb.constraints = RigidbodyConstraints.None;
         interactionsHandler.RaiseInteraction(InteractionEvents.ReleaseIngredient);
     }

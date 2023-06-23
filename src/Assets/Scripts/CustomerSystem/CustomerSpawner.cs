@@ -97,7 +97,7 @@ public class CustomerSpawner : MonoBehaviour
 
     public void StopSpawningCustomers()
     {
-        print("Asked to stop spawning");
+        if (isDebugging) print("Asked to stop spawning");
         StopAllCoroutines();
     }
 }

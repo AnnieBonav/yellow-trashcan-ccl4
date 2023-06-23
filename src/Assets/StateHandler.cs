@@ -1,6 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEditorInternal;
 using UnityEngine;
 
 public class StateHandler : MonoBehaviour
@@ -12,15 +9,14 @@ public class StateHandler : MonoBehaviour
 
     private void Awake()
     {
-        if(Instance == null)
+        if (Instance != null && Instance != this)
         {
-            Instance = this;
-            UIButton.GoIngame += HandleIngameDecision;
-            DontDestroyOnLoad(gameObject);
+            Destroy(this);
         }
         else
         {
-            Destroy(gameObject);
+            Instance = this;
+            UIButton.GoIngame += HandleIngameDecision;
         }
     }
 

@@ -41,6 +41,8 @@ public class LevelHandler : MonoBehaviour
     private int currentAmountOfCustomers = 0; // How many customers have been served (correct or wrong, does not matter)
     private int amountOfCorrectPotions = 0;
     private bool levelIsRunning = false;
+
+    private bool _doTutorial;
     private void Awake()
     {
         startDayButton.SetActive(false);
@@ -58,7 +60,7 @@ public class LevelHandler : MonoBehaviour
         InteractionsHandler.InteractionRaised += ChangeRoom;
         Dialogue.InteractionRaised += HandleInteractionRaised;
         CustomerSpawner.SpawnedCustomer += HandleSpawnedCustomer;
-        currentRoom = startRoom;
+        
     }
 
     private void OnDisable()
@@ -68,6 +70,12 @@ public class LevelHandler : MonoBehaviour
 
     private void Start()
     {
+        if(StateHandler.Instance != null)
+        {
+            _doTutorial = StateHandler.Instance.StartWithTutorial;
+        }
+        print("Decided to do tutorial? " + _doTutorial);
+        currentRoom = startRoom;
         pauseMenu.SetActive(false);
         charactersController.PositionCharacters(currentRoom);
         AkSoundEngine.SetState("CurrentRoom", currentRoom.ToString());

@@ -48,7 +48,6 @@ public class EmptyGrabbable : MonoBehaviour
 
     public void ResetFreeze()
     {
-        print("Reset rb");
         rb.constraints = RigidbodyConstraints.None;
     }
 }

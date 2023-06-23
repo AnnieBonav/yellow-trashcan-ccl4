@@ -17,7 +17,6 @@ public class Refiller : MonoBehaviour
     private void Start()
     {
         AkSoundEngine.SetSwitch("Ingredient", ingredientType.ToString(), gameObject);
-        print("Ingredient: " + ingredientType.ToString());
     }
     public void RefillContainer()
     {
@@ -39,12 +38,10 @@ public class Refiller : MonoBehaviour
             {
                 if (child.gameObject.activeInHierarchy)
                 {
-                    print("Child " + child.name + " Was active and will now be deactivated");
                     child.gameObject.SetActive(false);
                     return;
                 }
             }
-            
         }
         else
         {

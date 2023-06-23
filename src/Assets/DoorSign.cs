@@ -18,7 +18,6 @@ public class DoorSign : MonoBehaviour
     {
         if (currentRoom == commingCurrentRoom)
         {
-            print("It is activating the door");
             canActivateSign = true;
             animator.SetBool("IsIdling", canActivateSign);
         }
@@ -32,10 +31,8 @@ public class DoorSign : MonoBehaviour
 
     private IEnumerator ActivateSign()
     {
-        print("Turning sign");
         animator.SetTrigger("TurnSign");
         yield return new WaitForSeconds(3f);
-        print("Travelling to brewing");
         interactionsHandler.RaiseInteraction(InteractionEvents.TravelledBrewing);
     }
 }
