@@ -34,7 +34,6 @@ public class FlaskContainer : MonoBehaviour
     {
         if(raisedEvent == InteractionEvents.ThrowPotionGarbage || raisedEvent == InteractionEvents.DeliverCorrectPotion || raisedEvent == InteractionEvents.DeliverIncorrectPotion)
         {
-            print("Threw potion garbage or delivered in/correct potion");
             RefillSlot();
         }
     }
@@ -58,15 +57,10 @@ public class FlaskContainer : MonoBehaviour
 
     public void RefillSingle()
     {
-        print("Current capacity: " + currentCapacity + " Max capacity: " + maximumCapacity);
         if (currentCapacity != maximumCapacity)
         {
             RefillSlot();
             currentCapacity--;
-        }
-        else
-        {
-            print("You have refilled max!");
         }
     }
     public void Refill()
@@ -76,10 +70,9 @@ public class FlaskContainer : MonoBehaviour
 
     private void OnTriggerExit(Collider collider)
     {
-        if (collider.CompareTag("Ingredient")) // If they have the same parent, then the ingredient should be unparented because it is taken away
+        if (collider.CompareTag("Ingredient"))
         {
             currentCapacity--;
-            print("An ingredient left. Current capacity: " + currentCapacity);
         }
     }
 }

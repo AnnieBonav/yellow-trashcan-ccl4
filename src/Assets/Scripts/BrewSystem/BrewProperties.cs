@@ -44,6 +44,10 @@ public class BrewProperties : MonoBehaviour
 
         _currentSwirl = 0;
         _lastSwirl = _currentSwirl;
+
+        easeTime = 3;
+        bubbling = 0;
+        swirl = 0;
     }
 
     void Start()

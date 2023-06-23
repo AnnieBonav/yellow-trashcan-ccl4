@@ -66,10 +66,8 @@ public class Customer : MonoBehaviour
 
     private void HandleCustomerArrive(int orderPoint)
     {
-        print("A customer was said to arrive in: " + orderPoint);
         if (orderPoint == orderPosition)
         {
-            print("The customer" + transform.name + " Arrived to its place #" + orderPoint);
             interactionsHandler.RaiseInteraction(InteractionEvents.CustomerArrives);
             ChangeState();
         }
@@ -86,7 +84,6 @@ public class Customer : MonoBehaviour
         
         if (animator is not null)
         {
-            Debug.Log("Set bool Walking to true");
             animator.SetBool(Walking, true);
         }
     }
@@ -159,7 +156,6 @@ public class Customer : MonoBehaviour
 
         if (hasLimit)
         {
-            print("Get angry is starting cause there is a limit");
             _getAngryCoroutine = AngryInSeconds(timeUntilAngry);
             StartCoroutine(_getAngryCoroutine);
         }
@@ -194,14 +190,12 @@ public class Customer : MonoBehaviour
         if (vial.Type.name == _requestedPotion.name)
         {
             if(hasLimit) StopCoroutine(_getAngryCoroutine);
-            // TODO ADD HAPPY SOUND
             AkSoundEngine.PostEvent("Play_HappySound", gameObject);
             interactionsHandler.RaiseInteraction(InteractionEvents.DeliverCorrectPotion);
             StartCoroutine(MoveToDespawnIn(timeAfterReceived));
         }
         else
         {
-            // TODO ADD SAD SOUND
             AkSoundEngine.PostEvent("Play_AngrySound", gameObject);
             interactionsHandler.RaiseInteraction(InteractionEvents.DeliverIncorrectPotion);
             if (!hasLimit)
@@ -232,6 +226,5 @@ public class Customer : MonoBehaviour
         {
             animator.SetBool(Walking, true);
         }
-        // _state = CustomerState.GoAway;
     }
 }

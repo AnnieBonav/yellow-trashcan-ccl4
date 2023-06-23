@@ -10,8 +10,8 @@ public class ExitPoint : MonoBehaviour
         if (collider.CompareTag("Customer")){
             print("A customer arrived");
             Customer customer = collider.transform.GetComponentInParent<Customer>();
-            Destroy(customer.gameObject);
             CustomerLeft?.Invoke();
+            Destroy(customer.gameObject);
         }
     }
 }

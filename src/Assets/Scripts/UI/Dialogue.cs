@@ -67,6 +67,30 @@ public class Dialogue : MonoBehaviour
         InteractionsHandler.InteractionRaised += HandleFlags;
     }
 
+    public void ActivateATip()
+    {
+        bookoFacade.DeactivateTips();
+        bookoFacade.ATip.SetActive(true);
+    }
+
+    public void ActivateBTip()
+    {
+        bookoFacade.DeactivateTips();
+        bookoFacade.BTip.SetActive(true);
+    }
+
+    public void ActivateTriggerTip()
+    {
+        bookoFacade.DeactivateTips();
+        bookoFacade.TriggerTip.SetActive(true);
+    }
+
+    public void ActivateGrabTip()
+    {
+        bookoFacade.DeactivateTips();
+        bookoFacade.GrabTip.SetActive(true);
+    }
+
     private void OnDisable()
     {
         if (isDebugging) print("The dialogue was disabled");
@@ -95,6 +119,7 @@ public class Dialogue : MonoBehaviour
         AkSoundEngine.PostEvent("Play_BookoDialogue", gameObject);
         bookoFacade.BookoAnimator.SetBool("IsTalking", true);
         HandleVFXElements();
+        bookoFacade.DeactivateTips();
 
         if (_currentDialogue < textBlocks.Count)
         {

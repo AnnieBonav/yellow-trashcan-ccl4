@@ -39,7 +39,10 @@ public class LevelHandler : MonoBehaviour
     [Tooltip("How many customers will appear in the whole level. When this amount is reached, the level ends.")]
     [SerializeField] private int customersTargetAmount;
     private int currentAmountOfCustomers = 0; // How many customers have been served (correct or wrong, does not matter)
+    private int amountOfCorrectPotions = 0;
+    private bool levelIsRunning = false;
 
+    private bool _doTutorial;
     private void Awake()
     {
         startDayButton.SetActive(false);
@@ -57,7 +60,7 @@ public class LevelHandler : MonoBehaviour
         InteractionsHandler.InteractionRaised += ChangeRoom;
         Dialogue.InteractionRaised += HandleInteractionRaised;
         CustomerSpawner.SpawnedCustomer += HandleSpawnedCustomer;
-        currentRoom = startRoom;
+        
     }
 
     private void OnDisable()
@@ -67,6 +70,12 @@ public class LevelHandler : MonoBehaviour
 
     private void Start()
     {
+        if(StateHandler.Instance != null)
+        {
+            _doTutorial = StateHandler.Instance.StartWithTutorial;
+        }
+        print("Decided to do tutorial? " + _doTutorial);
+        currentRoom = startRoom;
         pauseMenu.SetActive(false);
         charactersController.PositionCharacters(currentRoom);
         AkSoundEngine.SetState("CurrentRoom", currentRoom.ToString());
@@ -83,10 +92,16 @@ public class LevelHandler : MonoBehaviour
         if (isDebugging) print("Spawned customers: " + currentAmountOfCustomers + "  Number to reach: " + customersTargetAmount);
         if (currentAmountOfCustomers >= customersTargetAmount)
         {
-            print("The max amount has been reached on the level handler, it will ask the custoemr spawner to stop spawning custoemrs.");
-            customerSpawner.StopSpawningCustomers();
+            HandleFinishLevel();
         }
     }
+
+    private void HandleFinishLevel()
+    {
+        print("The max amount has been reached on the level handler, it will ask the custoemr spawner to stop spawning custoemrs. Correct potions: " + amountOfCorrectPotions);
+        customerSpawner.StopSpawningCustomers();
+    }
+
 
     private void OpenStartDayButton()
     {
@@ -97,6 +112,14 @@ public class LevelHandler : MonoBehaviour
 
     public void ChangeRoom(InteractionEvents interactionEvent)
     {
+        // TODO: Have its own function
+        if(interactionEvent == InteractionEvents.DeliverCorrectPotion)
+        {
+            if (!levelIsRunning) return; // Do not care about correct potions when level is not running
+            amountOfCorrectPotions++;
+            print("Delivered correct potion. Correct potions: " + amountOfCorrectPotions);
+        }
+
         if (!(interactionEvent == InteractionEvents.TravelledEntrance || interactionEvent == InteractionEvents.TravelledBrewing || interactionEvent == InteractionEvents.TravelledGarden)) return;
         switch (interactionEvent)
         {
@@ -150,8 +173,10 @@ public class LevelHandler : MonoBehaviour
     }
     public void StartLevel()
     {
+        levelIsRunning = true;
         interactionsHandler.RaiseInteraction(InteractionEvents.LevelStarted);
         startDayButton.SetActive(false);
+        pauseMenu.SetActive(false);
 
         switch (winningCondition)
         {

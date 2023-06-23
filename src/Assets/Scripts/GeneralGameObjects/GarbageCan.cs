@@ -7,8 +7,8 @@ public class GarbageCan : MonoBehaviour
     private void OnTriggerEnter(Collider collider)
     {
         if (collider.CompareTag("Potion")){
-            print("Putting Potion in garbage");
             interactionsHandler.RaiseInteraction(InteractionEvents.ThrowPotionGarbage);
+            // TODO: Add dissapear sound
             Destroy(collider.gameObject.transform.parent.gameObject);
         }
     }

@@ -6,6 +6,7 @@ public class EmptyGrabbable : MonoBehaviour
     public static event Action<bool> HoverBarkContainer;
     [SerializeField] private Collider emptyCollider;
     private IngredientContainer ingredientContainer;
+    [SerializeField] Rigidbody rb;
 
     private void Awake()
     {
@@ -43,5 +44,10 @@ public class EmptyGrabbable : MonoBehaviour
     public void UnhoverBark()
     {
         HoverBarkContainer?.Invoke(false);
+    }
+
+    public void ResetFreeze()
+    {
+        rb.constraints = RigidbodyConstraints.None;
     }
 }

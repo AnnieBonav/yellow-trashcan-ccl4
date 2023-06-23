@@ -48,7 +48,6 @@ public class Brew : MonoBehaviour
     {
         if(raisedEvent == InteractionEvents.GrabPotion || raisedEvent == InteractionEvents.ReleasePotion)
         {
-            print("Potion grabbed");
             importantEffect.Stop();
             bubblesVFX.Play();
         }
@@ -110,7 +109,6 @@ public class Brew : MonoBehaviour
         HandleVFX();
         if (currentBrew is not null)
         {
-            Debug.Log($"You made a {currentBrew.name}!!");
             GameObject noobPotion = Instantiate(currentBrew.PotionPrefab);
             noobPotion.transform.position = _potionSpawnOrigin.transform.position;
             interactionsHandler.RaiseInteraction(InteractionEvents.CreateCorrectPotion);
@@ -119,7 +117,6 @@ public class Brew : MonoBehaviour
         }
         else
         {
-            Debug.Log("You made trash.");
             GameObject noobPotion = Instantiate(trashPotion);
             noobPotion.transform.position = _potionSpawnOrigin.transform.position;
             interactionsHandler.RaiseInteraction(InteractionEvents.CreateIncorrectPotion);
@@ -141,16 +138,14 @@ public class Brew : MonoBehaviour
 
     private void HandleVFX()
     {
-        // importantEffect
         importantEffect.Play();
-        bubblesVFX.Stop(); // TODO: Add that when the potion is picked the effects are reset
+        bubblesVFX.Stop();
     }
 
     private void HandlePlayPoof(RecipeData currentBrew)
     {
         if(currentBrew == null)
         {
-            print("It was wrong, handling poof as black.");
             _poofColor[1].color = Color.black;
         }
         else

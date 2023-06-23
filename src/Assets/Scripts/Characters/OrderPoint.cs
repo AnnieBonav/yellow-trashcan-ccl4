@@ -15,26 +15,15 @@ public class OrderPoint : MonoBehaviour
         // if (isOccupied) return; // Do not care what happens when it is opccupied
         if (collider.CompareTag("Customer"))
         {
-            print("A customer arrived to the order point");
             CustomerArrived?.Invoke(pointNumber);
         }
     }
 
     private void OnTriggerExit(Collider collider)
     {
-        print(collider.transform.parent.name + " vs  " + whichCustomerIsHere.name);
-        // Scary ghost code collider.transform.parent == whichCustomerIsHere
         if (collider.CompareTag("Customer"))
         {
             isOccupied = false;
-            // StopAllCoroutines();
-            // StartCoroutine(SetUnoccupied());
         }
-    }
-
-    private IEnumerator SetUnoccupied()
-    {
-        yield return new WaitForSeconds(3);
-        isOccupied = false;
     }
 }

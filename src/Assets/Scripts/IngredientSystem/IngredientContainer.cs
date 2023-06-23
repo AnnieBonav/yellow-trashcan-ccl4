@@ -49,7 +49,6 @@ public class IngredientContainer : MonoBehaviour
     {
         if (!needsEmpty) return;
         animator.SetBool("IsOpened", isHovered);
-        print("Setting bool");
     }
 
     private void Start()

@@ -23,6 +23,14 @@ PrefabInstance:
       propertyPath: colourModifier.r
       value: 0.37574235
       objectReference: {fileID: 0}
+    - target: {fileID: 1437690602889683380, guid: 1157d7efe1da0ab4c9e0a4d31fd5fc44, type: 3}
+      propertyPath: soundsOnDrop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1437690602889683380, guid: 1157d7efe1da0ab4c9e0a4d31fd5fc44, type: 3}
+      propertyPath: soundMaterialType
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1591705865005863710, guid: 1157d7efe1da0ab4c9e0a4d31fd5fc44, type: 3}
       propertyPath: m_IsActive
       value: 1

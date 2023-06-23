@@ -31,17 +31,14 @@ public class SoundEmitter : MonoBehaviour
     public void PlaySound()
     {
         AkSoundEngine.PostEvent(soundEventName, gameObject);
-        print("Playing pick ingredient");
     }
 
     private void OnCollisionEnter(Collision collision)
     {
         if (!canSound) return;
         if (!soundsOnDrop) return;
-        print("Triggered");
         if (collision.transform.CompareTag("Floor"))
         {
-            print("Collided with floor");
             AkSoundEngine.PostEvent("Play_Drop", gameObject);
         }
     }
