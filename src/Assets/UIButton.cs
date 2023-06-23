@@ -5,9 +5,8 @@ using UnityEngine.SceneManagement;
 public enum GameScenes {  MainMenu, Tutorial, Level, Settings, Credits }
 public class UIButton : MonoBehaviour
 {
-    public static event Action<bool> GoIngame; // Bool is whether to do tutorial or not
     [SerializeField] private GameScenes sceneToGo;
-
+    
     public void ChangeScene()
     {
         print("Asked to change Scene to" +  sceneToGo);
@@ -16,14 +15,17 @@ public class UIButton : MonoBehaviour
             case GameScenes.MainMenu:
                 SceneManager.LoadSceneAsync("MainMenu");
                 break;
+
             case GameScenes.Tutorial:
-                GoIngame?.Invoke(true);
-                SceneManager.LoadSceneAsync("Ingame");
-                break; // How do i tell it to open the tutorial and not the level?
-            case GameScenes.Level:
-                GoIngame?.Invoke(false);
+                StateHandler.Instance.StartWithTutorial = true;
                 SceneManager.LoadSceneAsync("Ingame");
                 break;
+
+            case GameScenes.Level:
+                StateHandler.Instance.StartWithTutorial = false;
+                SceneManager.LoadSceneAsync("Ingame");
+                break;
+
             case GameScenes.Settings:
                 SceneManager.LoadSceneAsync("Settings");
                 break;

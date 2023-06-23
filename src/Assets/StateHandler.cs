@@ -4,7 +4,11 @@ public class StateHandler : MonoBehaviour
 {
     public static StateHandler Instance;
     private bool startWithTutorial;
-    public bool StartWithTutorial => startWithTutorial;
+    public bool StartWithTutorial
+    {
+        get { return startWithTutorial; }
+        set { startWithTutorial = value;}
+    }
 
 
     private void Awake()
@@ -16,19 +20,7 @@ public class StateHandler : MonoBehaviour
         else
         {
             Instance = this;
-            UIButton.GoIngame += HandleIngameDecision;
-        }
-    }
-
-    private void HandleIngameDecision(bool choseTutorial)
-    {
-        if (choseTutorial)
-        {
-            print("Start with tutorial");
-        }
-        else
-        {
-            print("DO NOT Start with tutorial");
+            DontDestroyOnLoad(gameObject);
         }
     }
 }
