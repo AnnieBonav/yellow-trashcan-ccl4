@@ -43,7 +43,6 @@ GameObject:
   - component: {fileID: 2192359753174651755}
   - component: {fileID: 2192359753174651754}
   - component: {fileID: 2192359753174651752}
-  - component: {fileID: 2192359753174651749}
   m_Layer: 0
   m_Name: BarkContainer
   m_TagString: Untagged
@@ -102,22 +101,6 @@ MonoBehaviour:
   emptyIngredient: {fileID: 3077461975620922705, guid: 20799f32b19ff654c99202cb6cd27a9c, type: 3}
   animator: {fileID: 7829914420781402467}
   barkDirt: {fileID: 9045439674979068829}
---- !u!114 &2192359753174651749
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2192359753174651753}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 29dcd657c73447f4f8f0c0cfef1eeaac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  meshRenderers: []
-  highlightMaterial: {fileID: 2100000, guid: 4d981b1558558dd45a119c100165c506, type: 2}
-  hasSkinnedMesh: 1
-  skinnedMeshRenderer: {fileID: 2974926980212456936}
 --- !u!1001 &2192359752181889306
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -191,11 +174,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cca4c5c94f5a843e190efbbf204baba7, type: 3}
---- !u!137 &2974926980212456936 stripped
-SkinnedMeshRenderer:
-  m_CorrespondingSourceObject: {fileID: 3973797508255302898, guid: cca4c5c94f5a843e190efbbf204baba7, type: 3}
-  m_PrefabInstance: {fileID: 2192359752181889306}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &3472071930347072527 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3333671505620571413, guid: cca4c5c94f5a843e190efbbf204baba7, type: 3}
@@ -273,7 +251,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 64686921195093944, guid: 267e13bb9e88241f7b1ce0d22e83e3c5, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 267e13bb9e88241f7b1ce0d22e83e3c5, type: 3}
 --- !u!1 &9045439674979068829 stripped
 GameObject:

@@ -260,6 +260,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   emptyCollider: {fileID: 3077461976508911832}
+  rb: {fileID: 3077461975620922710}
 --- !u!1 &3077461975751760309
 GameObject:
   m_ObjectHideFlags: 0
