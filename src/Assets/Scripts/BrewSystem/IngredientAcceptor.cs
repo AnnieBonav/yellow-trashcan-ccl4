@@ -28,9 +28,9 @@ public class IngredientAcceptor : MonoBehaviour
 
     private void OnTriggerEnter(Collider collider)
     {
-        Debug.Log("Collided");
         if (collider.gameObject.CompareTag("Ingredient"))
         {
+            AkSoundEngine.PostEvent("Play_PutIngredient", gameObject);
             Take(collider.gameObject.GetComponentInParent<Ingredient>());
             interactionsHandler.RaiseInteraction(InteractionEvents.PutIngredientPot);
             return;
@@ -38,7 +38,6 @@ public class IngredientAcceptor : MonoBehaviour
 
         if (collider.gameObject.CompareTag("Flask"))
         {
-            print("Collided with flask");
             _brew.MakePotion(collider.gameObject);
             _brewProperties.ResetColor();
         }

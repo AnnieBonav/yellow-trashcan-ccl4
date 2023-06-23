@@ -8,6 +8,8 @@ using UnityEngine.InputSystem;
 public enum WinningCondition { TimeLimit, CustomersLimit }
 public class LevelHandler : MonoBehaviour
 {
+    public static event Action<CurrentRoom> AskToActivateDoor;
+
     [SerializeField] private InteractionsHandler interactionsHandler;
     [SerializeField] private bool isDebugging = false;
 
@@ -39,14 +41,17 @@ public class LevelHandler : MonoBehaviour
     [Tooltip("How many customers will appear in the whole level. When this amount is reached, the level ends.")]
     [SerializeField] private int customersTargetAmount;
     private int currentAmountOfCustomers = 0; // How many customers have been served (correct or wrong, does not matter)
+    private int amountOfCorrectPotions = 0;
+    private bool levelIsRunning = false;
 
+    private bool _doTutorial;
     private void Awake()
     {
         startDayButton.SetActive(false);
         if(winningCondition == WinningCondition.TimeLimit && levelDurationSeconds <= 10)
         {
             levelDurationSeconds = 10;
-            print("The level will not last less than 10 seconds.");
+            if (isDebugging) print("The level will not last less than 10 seconds.");
         }
 
         levelTimer = new WaitForSeconds(levelDurationSeconds);
@@ -57,7 +62,6 @@ public class LevelHandler : MonoBehaviour
         InteractionsHandler.InteractionRaised += ChangeRoom;
         Dialogue.InteractionRaised += HandleInteractionRaised;
         CustomerSpawner.SpawnedCustomer += HandleSpawnedCustomer;
-        currentRoom = startRoom;
     }
 
     private void OnDisable()
@@ -68,7 +72,26 @@ public class LevelHandler : MonoBehaviour
     private void Start()
     {
         pauseMenu.SetActive(false);
+
+        if (StateHandler.Instance != null)
+        {
+            _doTutorial = StateHandler.Instance.StartWithTutorial;
+        }
+        else
+        {
+            _doTutorial = true;
+        }
+
+        if (!_doTutorial)
+        {
+            StartLevel();
+            return;
+        }
+        print("Decided to do tutorial? " + _doTutorial);
+        currentRoom = startRoom;
+        
         charactersController.PositionCharacters(currentRoom);
+        AkSoundEngine.SetState("CurrentRoom", currentRoom.ToString());
     }
 
     private void HandleSpawnedCustomer()
@@ -78,14 +101,20 @@ public class LevelHandler : MonoBehaviour
         if(isDebugging) print("New amount of spawned customers: " + currentAmountOfCustomers);
         if (winningCondition != WinningCondition.CustomersLimit) return;
 
-        print("The type of winning is amount of customers spawned, so it will be checked.");
+        if (isDebugging) print("The type of winning is amount of customers spawned, so it will be checked.");
         if (isDebugging) print("Spawned customers: " + currentAmountOfCustomers + "  Number to reach: " + customersTargetAmount);
         if (currentAmountOfCustomers >= customersTargetAmount)
         {
-            print("The max amount has been reached on the level handler, it will ask the custoemr spawner to stop spawning custoemrs.");
-            customerSpawner.StopSpawningCustomers();
+            HandleFinishLevel();
         }
     }
+
+    private void HandleFinishLevel()
+    {
+        print("The max amount has been reached on the level handler, it will ask the custoemr spawner to stop spawning custoemrs. Correct potions: " + amountOfCorrectPotions);
+        customerSpawner.StopSpawningCustomers();
+    }
+
 
     private void OpenStartDayButton()
     {
@@ -96,6 +125,15 @@ public class LevelHandler : MonoBehaviour
 
     public void ChangeRoom(InteractionEvents interactionEvent)
     {
+        // TODO: Have its own function
+        if(interactionEvent == InteractionEvents.DeliverCorrectPotion)
+        {
+            if (!levelIsRunning) return; // Do not care about correct potions when level is not running
+            amountOfCorrectPotions++;
+            print("Delivered correct potion. Correct potions: " + amountOfCorrectPotions);
+        }
+
+        if (!(interactionEvent == InteractionEvents.TravelledEntrance || interactionEvent == InteractionEvents.TravelledBrewing || interactionEvent == InteractionEvents.TravelledGarden)) return;
         switch (interactionEvent)
         {
             case InteractionEvents.TravelledEntrance:
@@ -148,9 +186,11 @@ public class LevelHandler : MonoBehaviour
     }
     public void StartLevel()
     {
+        levelIsRunning = true;
         interactionsHandler.RaiseInteraction(InteractionEvents.LevelStarted);
         startDayButton.SetActive(false);
-
+        pauseMenu.SetActive(false);
+        currentRoom = CurrentRoom.Brewing;
         switch (winningCondition)
         {
             case WinningCondition.TimeLimit:
@@ -164,12 +204,14 @@ public class LevelHandler : MonoBehaviour
         
         charactersController.SetToLevelPosition();
         customerSpawner.SpawnCustomer();
+        AkSoundEngine.SetState("CurrentRoom", currentRoom.ToString());
+        AskToActivateDoor?.Invoke(CurrentRoom.Garden);
     }
 
     private IEnumerator LevelTimer()
     {
         yield return levelTimer;
-        print("level timer has ended.");
+        if (isDebugging) print("level timer has ended.");
         interactionsHandler.RaiseInteraction(InteractionEvents.LevelEnded);
     }
 }

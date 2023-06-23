@@ -1,13 +1,12 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public enum GameScenes {  MainMenu, Tutorial, Level, Settings}
+public enum GameScenes {  MainMenu, Tutorial, Level, Settings, Credits }
 public class UIButton : MonoBehaviour
 {
     [SerializeField] private GameScenes sceneToGo;
-
+    
     public void ChangeScene()
     {
         print("Asked to change Scene to" +  sceneToGo);
@@ -16,12 +15,17 @@ public class UIButton : MonoBehaviour
             case GameScenes.MainMenu:
                 SceneManager.LoadSceneAsync("MainMenu");
                 break;
+
             case GameScenes.Tutorial:
-                SceneManager.LoadSceneAsync("Draft1");
-                break; // How do i tell it to open the tutorial and not the level?
-            case GameScenes.Level:
-                SceneManager.LoadSceneAsync("Draft1");
+                StateHandler.Instance.StartWithTutorial = true;
+                SceneManager.LoadSceneAsync("Ingame");
                 break;
+
+            case GameScenes.Level:
+                StateHandler.Instance.StartWithTutorial = false;
+                SceneManager.LoadSceneAsync("Ingame");
+                break;
+
             case GameScenes.Settings:
                 SceneManager.LoadSceneAsync("Settings");
                 break;

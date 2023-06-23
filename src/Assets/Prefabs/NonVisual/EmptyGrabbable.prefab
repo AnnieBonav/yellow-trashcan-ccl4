@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3077461975620922710}
   - component: {fileID: 3077461975620922709}
   - component: {fileID: 3901291888137385066}
+  - component: {fileID: 7538442337440649408}
   m_Layer: 0
   m_Name: EmptyGrabbable
   m_TagString: Container
@@ -51,7 +52,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 2
 --- !u!114 &3077461975620922709
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -89,10 +90,34 @@ MonoBehaviour:
       m_Calls: []
   m_HoverEntered:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 3901291888137385066}
+        m_TargetAssemblyTypeName: EmptyGrabbable, Assembly-CSharp
+        m_MethodName: HoverBark
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_HoverExited:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 3901291888137385066}
+        m_TargetAssemblyTypeName: EmptyGrabbable, Assembly-CSharp
+        m_MethodName: UnhoverBark
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_FirstSelectEntered:
     m_PersistentCalls:
       m_Calls:
@@ -137,7 +162,19 @@ MonoBehaviour:
         m_CallState: 2
   m_SelectEntered:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7538442337440649408}
+        m_TargetAssemblyTypeName: SoundEmitter, Assembly-CSharp
+        m_MethodName: PlaySound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_SelectExited:
     m_PersistentCalls:
       m_Calls: []
@@ -179,13 +216,13 @@ MonoBehaviour:
       m_Calls: []
   m_AttachTransform: {fileID: 0}
   m_SecondaryAttachTransform: {fileID: 0}
-  m_UseDynamicAttach: 0
+  m_UseDynamicAttach: 1
   m_MatchAttachPosition: 1
   m_MatchAttachRotation: 1
   m_SnapToColliderVolume: 1
   m_ReinitializeDynamicAttachEverySingleGrab: 1
   m_AttachEaseInTime: 0.15
-  m_MovementType: 2
+  m_MovementType: 0
   m_VelocityDamping: 1
   m_VelocityScale: 1
   m_AngularVelocityDamping: 1
@@ -236,6 +273,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   emptyCollider: {fileID: 3077461976508911832}
+  rb: {fileID: 3077461975620922710}
+--- !u!114 &7538442337440649408
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3077461975620922705}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efc5fdb72bd396044ae612c6a2a26080, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundEventName: Play_PickIngredient
+  soundsOnDrop: 0
+  soundMaterialType: 0
 --- !u!1 &3077461975751760309
 GameObject:
   m_ObjectHideFlags: 0
@@ -362,5 +415,5 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.5, y: 0.5, z: 0.5}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 0.5, y: 0.31979355, z: 0.3447378}
+  m_Center: {x: 1.03549225e-10, y: -0.090102926, z: 0.077631116}

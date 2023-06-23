@@ -5,7 +5,6 @@ using UnityEngine;
 public class IngredientSpawner : MonoBehaviour
 {
     [SerializeField] private Ingredient prefabToSpawn;
-
     [SerializeField] private IngredientData ingredientData;
     
     private float VarianceToValue(float variance)

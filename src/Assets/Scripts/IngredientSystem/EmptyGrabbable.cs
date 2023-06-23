@@ -1,11 +1,12 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
 
 public class EmptyGrabbable : MonoBehaviour
 {
+    public static event Action<bool> HoverBarkContainer;
     [SerializeField] private Collider emptyCollider;
     private IngredientContainer ingredientContainer;
+    [SerializeField] Rigidbody rb;
 
     private void Awake()
     {
@@ -26,7 +27,6 @@ public class EmptyGrabbable : MonoBehaviour
 
     public void ChangeIsTrigger()
     {
-        print("Changing trigger");
         emptyCollider.isTrigger = true;
     }
 
@@ -34,5 +34,20 @@ public class EmptyGrabbable : MonoBehaviour
     {
         //ingredientContainer.ResetEmptyIngredient();
         //Destroy(gameObject);
+    }
+
+    public void HoverBark()
+    {
+        HoverBarkContainer?.Invoke(true);
+    }
+
+    public void UnhoverBark()
+    {
+        HoverBarkContainer?.Invoke(false);
+    }
+
+    public void ResetFreeze()
+    {
+        rb.constraints = RigidbodyConstraints.None;
     }
 }

@@ -67,9 +67,33 @@ public class Dialogue : MonoBehaviour
         InteractionsHandler.InteractionRaised += HandleFlags;
     }
 
+    public void ActivateATip()
+    {
+        bookoFacade.DeactivateTips();
+        bookoFacade.ATip.SetActive(true);
+    }
+
+    public void ActivateBTip()
+    {
+        bookoFacade.DeactivateTips();
+        bookoFacade.BTip.SetActive(true);
+    }
+
+    public void ActivateTriggerTip()
+    {
+        bookoFacade.DeactivateTips();
+        bookoFacade.TriggerTip.SetActive(true);
+    }
+
+    public void ActivateGrabTip()
+    {
+        bookoFacade.DeactivateTips();
+        bookoFacade.GrabTip.SetActive(true);
+    }
+
     private void OnDisable()
     {
-        print("The dialogue was disabled");
+        if (isDebugging) print("The dialogue was disabled");
         InteractionsHandler.InteractionRaised -= HandleFlags;
         pressA.canceled -= PressedA;
         pressY.canceled -= PressedY;
@@ -95,6 +119,7 @@ public class Dialogue : MonoBehaviour
         AkSoundEngine.PostEvent("Play_BookoDialogue", gameObject);
         bookoFacade.BookoAnimator.SetBool("IsTalking", true);
         HandleVFXElements();
+        bookoFacade.DeactivateTips();
 
         if (_currentDialogue < textBlocks.Count)
         {
@@ -113,7 +138,7 @@ public class Dialogue : MonoBehaviour
         if (textBlocks[_currentDialogue].needsClickToContinue)
         {
             bookoFacade.ContinueButton.SetActive(true);
-            print("Setting in Next block");
+            if (isDebugging) print("Setting in Next block");
         }
         bookoFacade.BookoAnimator.SetBool("IsTalking", false);
     }
@@ -179,7 +204,7 @@ public class Dialogue : MonoBehaviour
 
     private void DisableContinue()
     {
-        print("Setting inactive in disable");
+        if (isDebugging) print("Setting inactive in disable");
         bookoFacade.ContinueButton.SetActive(false);
         _canAdvance = false;
     }

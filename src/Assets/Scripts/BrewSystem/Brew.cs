@@ -48,7 +48,6 @@ public class Brew : MonoBehaviour
     {
         if(raisedEvent == InteractionEvents.GrabPotion || raisedEvent == InteractionEvents.ReleasePotion)
         {
-            print("Potion grabbed");
             importantEffect.Stop();
             bubblesVFX.Play();
         }
@@ -57,6 +56,7 @@ public class Brew : MonoBehaviour
     private void Start()
     {
         importantEffect.Stop();
+        AkSoundEngine.PostEvent("Play_Bubbles", gameObject);
     }
 
     private RecipeData CurrentBrew()
@@ -109,17 +109,19 @@ public class Brew : MonoBehaviour
         HandleVFX();
         if (currentBrew is not null)
         {
-            Debug.Log($"You made a {currentBrew.name}!!");
             GameObject noobPotion = Instantiate(currentBrew.PotionPrefab);
             noobPotion.transform.position = _potionSpawnOrigin.transform.position;
             interactionsHandler.RaiseInteraction(InteractionEvents.CreateCorrectPotion);
+
+            AkSoundEngine.PostEvent("Play_CorrectPotion", gameObject);
         }
         else
         {
-            Debug.Log("You made trash.");
             GameObject noobPotion = Instantiate(trashPotion);
             noobPotion.transform.position = _potionSpawnOrigin.transform.position;
             interactionsHandler.RaiseInteraction(InteractionEvents.CreateIncorrectPotion);
+
+            AkSoundEngine.PostEvent("Play_IncorrectPotion", gameObject);
         }
         interactionsHandler.RaiseInteraction(InteractionEvents.CreatePotion);
         ResetCurrentIngredients();
@@ -136,16 +138,14 @@ public class Brew : MonoBehaviour
 
     private void HandleVFX()
     {
-        // importantEffect
         importantEffect.Play();
-        bubblesVFX.Stop(); // TODO: Add that when the potion is picked the effects are reset
+        bubblesVFX.Stop();
     }
 
     private void HandlePlayPoof(RecipeData currentBrew)
     {
         if(currentBrew == null)
         {
-            print("It was wrong, handling poof as black.");
             _poofColor[1].color = Color.black;
         }
         else

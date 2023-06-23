@@ -51,8 +51,12 @@ MonoBehaviour:
   lookAtPoint: {fileID: 0}
   exitPoint: {fileID: 0}
   customerPrefabs:
-  - {fileID: 8053947594520236510, guid: 73a1ba04c464f4380b3f4aabace761cb, type: 3}
-  - {fileID: 8053947594520236510, guid: 779afc0b5ee724d9492a8485ff35b482, type: 3}
+  - {fileID: 6395009455511417603, guid: 04c0304cff3dd5147b9eb7840e6148f7, type: 3}
+  - {fileID: 8303076241640005955, guid: a7d4463f9f6c8c94d8e074f0fbebb19d, type: 3}
+  - {fileID: 360838037014021870, guid: 07a724dccfbf7c54e909754d05763e12, type: 3}
+  - {fileID: 5736730182521533598, guid: 446803cb747d2424caed6479b3e85bf8, type: 3}
+  - {fileID: 7779930019108241370, guid: 8d22e2241ef7b94488c83e141d549aee, type: 3}
+  - {fileID: 866738840751882915, guid: 9f87ea332c254c7428e9b90a6a28a8ba, type: 3}
   isDebugging: 0
   timeBetweenCustomers: 10
 --- !u!1 &3145667482023691211

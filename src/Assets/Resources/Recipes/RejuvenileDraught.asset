@@ -19,3 +19,4 @@ MonoBehaviour:
     bark: 1
   potionPrefab: {fileID: 1517099294185381978, guid: 058fb1705a0279046bf4c7d476e7738a, type: 3}
   potionColor: {r: 0.9150943, g: 0.88852274, b: 0.10014244, a: 0}
+  potionImage: {fileID: 21300000, guid: 1e1eb057740d4f2448ce212f053983df, type: 3}

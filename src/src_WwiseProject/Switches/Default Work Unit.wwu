@@ -16,6 +16,14 @@
 						<Switch Name="Solid" ID="{BD216E59-F7ED-4FEF-9828-4DF5C55441E5}"/>
 					</ChildrenList>
 				</SwitchGroup>
+				<SwitchGroup Name="Ingredient" ID="{C92D846F-A948-4A4F-A83A-362FA87CDB7D}">
+					<ChildrenList>
+						<Switch Name="Liquid" ID="{A978BBFD-9690-49C1-9E9D-B1BB03B5CEC1}"/>
+						<Switch Name="Bark" ID="{C2C4332E-26A0-45D4-8829-C1E51BF46BE6}"/>
+						<Switch Name="Mushroom" ID="{0701D7B4-648F-490C-94BB-21137D2659E5}"/>
+						<Switch Name="Herb" ID="{BB5A936C-1D46-467D-9FD4-3EF6F0E73ADD}"/>
+					</ChildrenList>
+				</SwitchGroup>
 			</ChildrenList>
 		</WorkUnit>
 	</Switches>
