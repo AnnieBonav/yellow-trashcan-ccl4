@@ -1,4 +1,4 @@
-# Potionshop Simulator VR Systems
+# Systems
 
 ## Ingredient System
 
@@ -93,3 +93,11 @@ This attaches to all doors we have in game. It is used to transport the player b
 ### GarbageCan.cs
 
 This component is responsible for throwing away potions that were wrongly created.
+
+## Dialogue System
+
+The dialogue system leverages on the Unity serializable classes. We created a modular system where you can add blocks of dialogue on the editor, in which there are multiple possible things like defining which sentence booko (or the NPC) will say, any events that you want to trigger when the dialogue start, and any mesh renderers you want to highlight during that dialogue. It is all modular and scalable, making it easy to add any amount of dialogues, change the order, and attach functions from other components to be executed.
+
+The dialogue system is hearing from the InteractionEvents class that we created, which is our component-based approach to emit a static event in any object where we can pass which en un it represents and then use it on whoever hears it (like the dialogue) to perform an action.
+
+The dialogue system also has an impact on which doors can be opened at which moment, and making sure the Level handler performs needed actions like changing the position of the characters.
