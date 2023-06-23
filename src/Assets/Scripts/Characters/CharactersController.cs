@@ -28,6 +28,7 @@ public class CharactersController : MonoBehaviour
     {
         print("Setting to level position");
         player.position = playerBrewing.position;
+        uiPause.position = uiBrewing.position;
         book.position = bookBrewing.position;
         book.gameObject.SetActive(false);
     }
