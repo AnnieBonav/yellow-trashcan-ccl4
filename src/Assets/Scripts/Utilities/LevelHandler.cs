@@ -8,6 +8,8 @@ using UnityEngine.InputSystem;
 public enum WinningCondition { TimeLimit, CustomersLimit }
 public class LevelHandler : MonoBehaviour
 {
+    public static event Action<CurrentRoom> AskToActivateDoor;
+
     [SerializeField] private InteractionsHandler interactionsHandler;
     [SerializeField] private bool isDebugging = false;
 
@@ -60,7 +62,6 @@ public class LevelHandler : MonoBehaviour
         InteractionsHandler.InteractionRaised += ChangeRoom;
         Dialogue.InteractionRaised += HandleInteractionRaised;
         CustomerSpawner.SpawnedCustomer += HandleSpawnedCustomer;
-        
     }
 
     private void OnDisable()
@@ -70,13 +71,25 @@ public class LevelHandler : MonoBehaviour
 
     private void Start()
     {
-        if(StateHandler.Instance != null)
+        pauseMenu.SetActive(false);
+
+        if (StateHandler.Instance != null)
         {
             _doTutorial = StateHandler.Instance.StartWithTutorial;
         }
+        else
+        {
+            _doTutorial = true;
+        }
+
+        if (!_doTutorial)
+        {
+            StartLevel();
+            return;
+        }
         print("Decided to do tutorial? " + _doTutorial);
         currentRoom = startRoom;
-        pauseMenu.SetActive(false);
+        
         charactersController.PositionCharacters(currentRoom);
         AkSoundEngine.SetState("CurrentRoom", currentRoom.ToString());
     }
@@ -177,7 +190,7 @@ public class LevelHandler : MonoBehaviour
         interactionsHandler.RaiseInteraction(InteractionEvents.LevelStarted);
         startDayButton.SetActive(false);
         pauseMenu.SetActive(false);
-
+        currentRoom = CurrentRoom.Brewing;
         switch (winningCondition)
         {
             case WinningCondition.TimeLimit:
@@ -191,6 +204,8 @@ public class LevelHandler : MonoBehaviour
         
         charactersController.SetToLevelPosition();
         customerSpawner.SpawnCustomer();
+        AkSoundEngine.SetState("CurrentRoom", currentRoom.ToString());
+        AskToActivateDoor?.Invoke(CurrentRoom.Garden);
     }
 
     private IEnumerator LevelTimer()

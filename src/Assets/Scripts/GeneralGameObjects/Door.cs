@@ -21,6 +21,7 @@ public class Door : MonoBehaviour
     private void Awake()
     {
         Dialogue.AskToActivateDoor += ActivateDoor;
+        LevelHandler.AskToActivateDoor += ActivateDoor;
     }
     public void ChangeScenery()
     {

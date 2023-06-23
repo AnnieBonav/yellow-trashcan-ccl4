@@ -28,8 +28,36 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 461367490766119136, guid: 9236f07cbc977b84d8f31d7fddc75ee3, type: 3}
-      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_BoolArgument
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 461367490766119136, guid: 9236f07cbc977b84d8f31d7fddc75ee3, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 461367490766119136, guid: 9236f07cbc977b84d8f31d7fddc75ee3, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 4951731050589472426}
+    - target: {fileID: 461367490766119136, guid: 9236f07cbc977b84d8f31d7fddc75ee3, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 461367490766119136, guid: 9236f07cbc977b84d8f31d7fddc75ee3, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: PlayRefillAnimation
+      objectReference: {fileID: 0}
+    - target: {fileID: 461367490766119136, guid: 9236f07cbc977b84d8f31d7fddc75ee3, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: LiquidRefillerAnimation, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 461367490766119136, guid: 9236f07cbc977b84d8f31d7fddc75ee3, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_BoolArgument
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 461367490766119136, guid: 9236f07cbc977b84d8f31d7fddc75ee3, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 1799584320645495790, guid: 9236f07cbc977b84d8f31d7fddc75ee3, type: 3}
       propertyPath: m_RootOrder
